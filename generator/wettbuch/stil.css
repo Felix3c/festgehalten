@@ -1,0 +1,19 @@
+/* generator/wettbuch/stil.css */
+:root { --bg:#fbfaf7; --fg:#1b1b1b; --mute:#6b6b6b; --line:#d9d5cc; --ok:#2a7a3b; --bad:#a83232; --acc:#2b4a7a; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#151515; --fg:#e8e6e1; --mute:#9a9a9a; --line:#333; --ok:#6fcf80; --bad:#e07b7b; --acc:#8fb3e8; }
+}
+body { margin:0 auto; padding:2rem 1rem; max-width:64rem; background:var(--bg); color:var(--fg);
+  font:16px/1.5 Georgia, "Times New Roman", serif; }
+h1,h2,h3 { line-height:1.2; }
+a { color:var(--acc); }
+table { border-collapse:collapse; width:100%; margin:1rem 0; font-size:.95rem; }
+th,td { text-align:left; padding:.4rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+th { color:var(--mute); font-weight:normal; }
+.zahl { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.mute { color:var(--mute); }
+.ja { color:var(--ok); } .nein { color:var(--bad); }
+.status { font-size:.85rem; padding:.1rem .4rem; border:1px solid var(--line); border-radius:.3rem; }
+blockquote { margin:1rem 0; padding:.5rem 1rem; border-left:3px solid var(--line); }
+.tabelle-wrap { overflow-x:auto; }
+footer { margin-top:3rem; color:var(--mute); font-size:.85rem; border-top:1px solid var(--line); padding-top:1rem; }
