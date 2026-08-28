@@ -134,7 +134,7 @@ def test_alle_baut_mehrere_buecher_und_uebersicht(buecher_ordner: Path, tmp_path
     assert (ausgabe / "stil.css").exists()
 
     uebersicht = (ausgabe / "index.html").read_text(encoding="utf-8")
-    assert "Wettbuch" in uebersicht
+    assert "festgehalten" in uebersicht
     assert "Erstes Buch" in uebersicht
     assert "Zweites Buch" in uebersicht
     assert "erstes/index.html" in uebersicht

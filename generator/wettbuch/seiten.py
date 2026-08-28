@@ -206,7 +206,7 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) ->
                "</tr></thead><tbody>"
                + "".join(_uebersicht_zeile_html(b) for b in sortiert)
                + "</tbody></table></div>")
-    koerper = ("<h1>Wettbuch</h1>"
+    koerper = ("<h1>festgehalten</h1>"
                "<p>Institutionen an ihren eigenen Prognosen messen. Jedes Buch ist ein Ordner; "
                "das Format ist offen — FORMAT.md.</p>" + tabelle)
     seite = ('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'

@@ -1,6 +1,6 @@
-# Wettbuch
+# festgehalten
 
-Ein offenes Format, um Institutionen an ihren eigenen Prognosen zu messen.
+Institutionen beim Wort genommen: was sie angekündigt haben, was eingetreten ist, wer wie oft recht hatte. Offenes Format (»Wettbuch-Format v1«), ein Buch pro Institution, eine Übersicht über alle Bücher — in jeder Sprache, in der es jemand führt.
 
 - **Format:** [FORMAT.md](FORMAT.md) — wer diese Regeln einhält, führt ein Wettbuch.
 - **Generator:** `python -m wettbuch bauen <buch> <ausgabe>` — macht aus einem Ordner
