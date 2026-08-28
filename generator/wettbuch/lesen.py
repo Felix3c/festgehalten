@@ -36,3 +36,24 @@ def wette_lesen(pfad: Path) -> dict:
     kopf["_datei"] = pfad.name
     kopf["_text"] = text
     return kopf
+
+
+AUSGESCHLOSSEN = {"BUCH.md", "README.md", "FORMAT.md"}
+
+
+def buch_lesen(ordner: Path) -> dict:
+    buch_md = ordner / "BUCH.md"
+    if not buch_md.exists():
+        raise LeseFehler("BUCH.md", f"nicht gefunden in {ordner}")
+    meta, meta_text = _kopf_und_text(buch_md)
+    meta["_text"] = meta_text
+
+    wetten: list[dict] = []
+    for pfad in sorted(ordner.rglob("*.md")):
+        if pfad.name in AUSGESCHLOSSEN:
+            continue
+        if "docs" in pfad.relative_to(ordner).parts:
+            continue
+        wetten.append(wette_lesen(pfad))
+    wetten.sort(key=lambda w: str(w.get("id", "")))
+    return {"meta": meta, "wetten": wetten, "ordner": ordner}
