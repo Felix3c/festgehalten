@@ -38,3 +38,22 @@ def test_python_m_wettbuch_laeuft(buch: Path, tmp_path: Path):
     r = subprocess.run([sys.executable, "-m", "wettbuch", "bauen", str(buch), str(tmp_path / "s")],
                        capture_output=True, text=True)
     assert r.returncode == 0, r.stderr
+
+
+def test_slug_kollision_bricht_sauber_ab(buch: Path, tmp_path: Path, capsys):
+    src = (buch / "wetten" / "test-2025-001.md").read_text(encoding="utf-8")
+    zweite = src.replace("id: test-2025-001", "id: test-2025-002").replace("institution: Stadt Test", "institution: Stadt-Test")
+    (buch / "wetten" / "test-2025-002.md").write_text(zweite, encoding="utf-8")
+    aus = tmp_path / "site"
+    rc = cli.main(["bauen", str(buch), str(aus)])
+    assert rc == 1
+    assert not aus.exists()
+    assert "Slug-Kollision" in capsys.readouterr().err
+
+
+def test_lesefehler_format(tmp_path: Path, capsys):
+    rc = cli.main(["bauen", str(tmp_path), str(tmp_path / "site")])
+    assert rc == 1
+    err = capsys.readouterr().err
+    assert "BUCH.md: kopf — " in err
+    assert "1 Fehler, nichts geschrieben." in err

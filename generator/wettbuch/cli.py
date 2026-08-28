@@ -22,7 +22,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         buch = lesen.buch_lesen(buch_ordner)
     except lesen.LeseFehler as e:
-        print(f"{e.datei}: {e.text}", file=sys.stderr)
+        print(f"{e.datei}: kopf — {e.text}", file=sys.stderr)
+        print("1 Fehler, nichts geschrieben.", file=sys.stderr)
         return 1
 
     fehler = pruefen.buch_pruefen(buch)
@@ -40,6 +41,11 @@ def main(argv: list[str] | None = None) -> int:
 
     bewertet = bewerten.buch_bewerten(buch)
     build_zeit = datetime.now().strftime("%Y-%m-%d %H:%M")
-    pfade = seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe, build_zeit)
+    try:
+        pfade = seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe, build_zeit)
+    except ValueError as e:
+        print(f"seiten: institution — {e}", file=sys.stderr)
+        print("1 Fehler, nichts geschrieben.", file=sys.stderr)
+        return 1
     print(f"OK: {n} Wette{plural}, {len(pfade)} Dateien nach {ausgabe}")
     return 0

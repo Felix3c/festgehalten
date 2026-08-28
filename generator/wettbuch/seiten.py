@@ -122,6 +122,19 @@ def _json_faehig(x):
 
 
 def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str) -> list[Path]:
+    # Build nach_inst and check for slug collisions before any filesystem writes
+    nach_inst: dict[str, list[dict]] = {}
+    for w in bewertet["wetten"]:
+        nach_inst.setdefault(w["institution"], []).append(w)
+
+    slugs: dict[str, str] = {}
+    for inst in nach_inst:
+        s = slug(inst)
+        if s in slugs and slugs[s] != inst:
+            raise ValueError(f"Slug-Kollision: {inst!r} und {slugs[s]!r} ergeben beide {s!r}")
+        slugs[s] = inst
+
+    # Now safe to write files
     ausgabe.mkdir(parents=True, exist_ok=True)
     (ausgabe / "institution").mkdir(exist_ok=True)
     (ausgabe / "wette").mkdir(exist_ok=True)
@@ -141,17 +154,6 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
                "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
                "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0)]
     schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel))
-
-    nach_inst: dict[str, list[dict]] = {}
-    for w in bewertet["wetten"]:
-        nach_inst.setdefault(w["institution"], []).append(w)
-
-    slugs: dict[str, str] = {}
-    for inst in nach_inst:
-        s = slug(inst)
-        if s in slugs and slugs[s] != inst:
-            raise ValueError(f"Slug-Kollision: {inst!r} und {slugs[s]!r} ergeben beide {s!r}")
-        slugs[s] = inst
 
     for inst, ws in nach_inst.items():
         koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1)]
