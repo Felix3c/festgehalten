@@ -13,12 +13,14 @@ prognosen:
     wert: 0.8
     hinterlegt_am: 2025-07-21
     art: voraussichtlich
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 0
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.antenneduesseldorf.de/artikel/isr-uebernimmt-altes-gymnasium-2594063
 vermerke:
   - am: 2026-08-28
     text: "keine Auflösungsquelle gefunden; gesucht: Bestätigung der Fertigstellung des Neubaus am Comenius-Gymnasium Düsseldorf zum 31.12.2025. Presseauswertung findet nur ältere/unpassende Comenius-Treffer (Handyverbot, ISR International School an anderem Standort), keine aktuelle Fertigstellungsmeldung."
+  - am: 2026-08-28
+    text: "Aufgelöst (2. Lauf) für den Halter; Beleg: Antenne Düsseldorf (09.03.2026, 'ISR übernimmt altes Gymnasium'): 'Das Gebäude an der Comeniusstraße steht seit Ende letzten Jahres leer' — die alte Schule wurde erst nach dem 31.12.2025 vollständig geräumt/verlassen, der Neubau war zum Stichtag noch nicht bezogen; als Nein gewertet (Teilerfüllung, §2.2)."
 ---
 
 ## Kontext

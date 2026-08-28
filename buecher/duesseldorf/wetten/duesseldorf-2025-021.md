@@ -21,6 +21,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-08-28
     text: "keine Auflösungsquelle gefunden; gesucht: tatsächliche (finale) Kosten des 1. Bauabschnitts der Radleitroute 2. Pressemitteilung vom 11.07.2025 nennt nur die zu diesem Zeitpunkt „gegenwärtig” geschätzten Kosten von rund 5,4 Mio. €, keine spätere Abrechnung gefunden."
+  - am: 2026-08-28
+    text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Endkosten 1. Bauabschnitt Radleitroute 2. bund-duesseldorf.de (15.08.2025) und Facebook-Kanal Stadt Düsseldorf wiederholen nur die geschätzten 5,4 Mio. € (davon 3,8 Mio. € Fördermittel), keine spätere Abrechnung gefunden."
 ---
 
 ## Kontext

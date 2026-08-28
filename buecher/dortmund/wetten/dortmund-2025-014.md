@@ -21,6 +21,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-08-28
     text: "keine Auflösungsquelle gefunden; gesucht: Bericht über die tatsächlichen Kosten der DSW21-Dieselbus-Beschaffung. Gleiche Suchlage wie dortmund-2025-013 — keine aktuellen Zahlen auffindbar."
+  - am: 2026-08-28
+    text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Kosten DSW21-Dieselbusbeschaffung. Gleiche Suchlage wie dortmund-2025-013 — keine Zahlen gefunden."
 ---
 
 ## Kontext

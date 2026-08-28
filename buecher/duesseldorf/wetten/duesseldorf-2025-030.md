@@ -13,12 +13,14 @@ prognosen:
     wert: 1.0
     hinterlegt_am: 2025-05-28
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 1
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.antenneduesseldorf.de/artikel/freibad-benrath-neue-attraktionen-entdecken-2340619
 vermerke:
   - am: 2026-08-28
     text: "keine unabhängige Auflösungsquelle gefunden; gesucht: Bestätigung, dass das Freibad Benrath tatsächlich am 30.05.2025 geöffnet hat. Nur die Ankündigung selbst (ddorf-aktuell.de, 28.05.2025, bereits als quelle hinterlegt) auffindbar, keine nachträgliche Bestätigung oder Meldung einer Verschiebung."
+  - am: 2026-08-28
+    text: "Aufgelöst (2. Lauf) für den Halter; Beleg: Antenne Düsseldorf (30.05.2025, 08:46 Uhr, unabhängig von der Stadt-Ankündigung): 'Das Freibad Benrath in Düsseldorf hat ab sofort wieder geöffnet.'"
 ---
 
 ## Kontext

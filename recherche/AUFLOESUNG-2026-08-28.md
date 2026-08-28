@@ -68,6 +68,69 @@ hin, Quelle nicht mehr auffindbar), koeln-2025-049/-050 (Straßenbaumpflanzungen
 2025/26), koeln-2025-059 (Gymnasium Kreuzgasse Hauptmaßnahme), koeln-2025-068
 (Offenlage Wärmeplanung — Zeitraum selbst nicht unabhängig bestätigt)
 
+## 2. Lauf (28.08.2026) — Ratsinformationssysteme und Jahresabschlüsse
+
+Auftrag: die 49 im 1. Lauf offen gebliebenen Wetten (siehe oben), gezielt über
+Ratsinformationssysteme (ratsinformation.stadt-koeln.de, ris.duesseldorf.de,
+dosys.dortmund.de/rathaus.dortmund.de, ris.essen.de, bonn.sitzung-online.de),
+Jahresabschlüsse/Amtsblätter, Pressemitteilungen der Städte und Lokalpresse
+erneut recherchiert (Browser-Suche statt reiner WebFetch-Suchmaschinenabfrage).
+9 weitere Wetten konnten aufgelöst werden, 40 blieben offen (davon 9 mit dem
+klaren Befund, dass der jeweilige Jahresabschluss 2025 noch nicht festgestellt
+ist).
+
+| id | Ausgang | Beleg | Anmerkung |
+|---|---|---|---|
+| dortmund-2025-006 | 1 | [dortmund.de](https://www.dortmund.de/newsroom/presse-mitteilungen/medieneinladung-willkommensfest-in-der-fabido-kita-kleyer-weg.html) | Kita Kleyer Weg am 1.10.2025 eröffnet, ausgelegt für 75 Plätze (≥72) |
+| duesseldorf-2025-017 | 3000 | [duesseldorf.de](https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/wohnungsbau-geht-kontinuierlich-voran-seit-2024-baugenehmigungen-fuer-6000-wohnungen-erteilt) | 2024 ca. 3.000 Wohnungen genehmigt laut Stadt (PM 08.09.2025) |
+| duesseldorf-2025-024 | 0 | [antenneduesseldorf.de](https://www.antenneduesseldorf.de/artikel/isr-uebernimmt-altes-gymnasium-2594063) | altes Gebäude erst „seit Ende letzten Jahres" leer — Neubau nicht bis 31.12.2025 bezogen |
+| duesseldorf-2025-030 | 1 | [antenneduesseldorf.de](https://www.antenneduesseldorf.de/artikel/freibad-benrath-neue-attraktionen-entdecken-2340619) | unabhängige Bestätigung der Öffnung am 30.05.2025 |
+| essen-2025-006 | 23787 | [essen.de](https://www.essen.de/meldungen/pressemeldung_1586705.de.html) | Jugendhilfeausschuss-Vorlage 10.02.2026: 21.220 Kita- + 2.567 KTP-Plätze zum Ende 2025/26 |
+| essen-2025-010 | 0 | [essen.de](https://www.essen.de/meldungen/pressemeldung_1566736.de.html) | Schulbetrieb laut späterem Beschluss erst ab 3.9.2026 geplant, nicht 17.08.2026 |
+| essen-2025-018 | 1 | [waz.de](https://www.waz.de/lokales/essen/article412948165/essens-neue-gesamtschule-startet-wer-sein-kind-hier-angemeldet-hat-ist-mutig.html) | Gesamtschule im Park startet am Interimsstandort |
+| essen-2025-019 | 4 | [waz.de](https://www.waz.de/lokales/essen/article412948165/essens-neue-gesamtschule-startet-wer-sein-kind-hier-angemeldet-hat-ist-mutig.html) | „beginnen mit vier fünften Klassen" — wie angekündigt |
+| essen-2025-033 | 1 | [radioessen.de](https://www.radioessen.de/artikel/stadt-essen-steuert-auf-grosses-haushaltsloch-zu-2655900) | Kämmerer kündigt am 21.05.2026 einen neuen, einjährigen Einstellungsstopp an — der bis 30.04.2026 befristete alte muss dafür ausgelaufen sein |
+| koeln-2025-037 | 0 | [ksta.de](https://www.ksta.de/koeln/wohn-und-bueroviertel-entsteht-im-deutzer-hafen-sollen-bald-die-bauarbeiten-beginnen-2-1137652) | laut KSTA (04.11.2025) sollten Bauarbeiten erst „im kommenden Jahr" (2026) beginnen |
+| koeln-2025-038 | 0 | [baustelle-deutzer-hafen.koeln](https://baustelle-deutzer-hafen.koeln/aktuelles/hafenpark-nimmt-gestalt-an-kanalbau-auf-der-zielgeraden) | Rückbau/Bodensanierung der Hafenpark-Fläche liefen laut Update vom 26.08.2026 noch bis September 2026 |
+| bonn-2025-019 | offen | — | keine Jahresbilanz PV-Leistung 2024 gefunden |
+| bonn-2025-025 | offen | — | keine finale Investitionssumme eCitaro gefunden |
+| bonn-2025-028 | offen | — | keine tatsächlichen Mietkosten Dottendorf gefunden |
+| dortmund-2025-001 | offen | — | Jahresabschluss 2025 Dortmund noch nicht festgestellt (zuletzt JA 2021 gefunden) |
+| dortmund-2025-009 | offen | — | keine 2025er-Teilzahl Glasfaser-Schulanschlüsse gefunden |
+| dortmund-2025-013 | offen | — | keine Stückzahl DSW21-Dieselbusse gefunden |
+| dortmund-2025-014 | offen | — | keine Kosten DSW21-Dieselbusse gefunden |
+| duesseldorf-2025-019 | offen | — | nur Fällzahl (1.907), keine Pflanzzahl Saison 2024/25 gefunden |
+| duesseldorf-2025-021 | offen | — | keine Endabrechnung 1. BA Radleitroute 2 gefunden |
+| duesseldorf-2025-025 | offen | — | keine Endabrechnung Comenius-Neubau gefunden |
+| essen-2025-001 | offen | — | Jahresabschluss 2025 Essen noch nicht festgestellt (zuletzt JA 2024, Ratsbeschluss 19.11.2025) |
+| essen-2025-032 | offen | — | wie essen-2025-001 |
+| essen-2025-034 | offen | — | wie essen-2025-001 |
+| essen-2025-007 | offen | — | keine Vorjahresvergleichszahl für Platzzuwachs 2025/26 gefunden |
+| essen-2025-008 | offen | — | keine exakte U3-Quote 2025/26 gefunden (nur „Ziel übertroffen") |
+| essen-2025-009 | offen | — | keine exakte Ü3-Quote 2025/26 gefunden (nur „672 Plätze fehlen") |
+| essen-2025-024 | offen | — | keine Berichterstattung zur Ratsentscheidung Rechenzentrum |
+| essen-2025-025 | offen | — | Programm zum 03.07.2025 gestoppt, aber keine verausgabte Summe gefunden |
+| koeln-2025-005 | offen | — | Jahresabschluss 2025 Köln noch nicht festgestellt (zuletzt JA 2023, Ratsbeschluss 04.09.2025) |
+| koeln-2025-006 | offen | — | wie koeln-2025-005 |
+| koeln-2025-007 | offen | — | wie koeln-2025-005 |
+| koeln-2025-008 | offen | — | wie koeln-2025-005 |
+| koeln-2025-015 | offen | — | wie koeln-2025-005 |
+| koeln-2025-028 | offen | — | keine Bedarfszahl Juli 2025 gefunden |
+| koeln-2025-029 | offen | — | keine Zahl neu geschaffener Plätze gefunden |
+| koeln-2025-030 | offen | — | keine Zahl bis Ende 2024 geschaffener Plätze gefunden |
+| koeln-2025-031 | offen | — | keine Einzeljahresbilanz Kitajahr 2024/25 gefunden |
+| koeln-2025-032 | offen | — | wie koeln-2025-031 |
+| koeln-2025-033 | offen | — | wie koeln-2025-031 |
+| koeln-2025-034 | offen | — | wie koeln-2025-031 |
+| koeln-2025-040 | offen | — | keine Bestätigung/Widerlegung volle Einsatzfähigkeit Eigenbetrieb gefunden |
+| koeln-2025-041 | offen | — | keine Bestätigung Planungsbeginn Rheinbrücken gefunden |
+| koeln-2025-042 | offen | — | keine Bestätigung Vorentwurfsplanung Rheinbrücken gefunden |
+| koeln-2025-047 | offen | — | keine Jahresbilanz Radverkehr 2025 gefunden |
+| koeln-2025-049 | offen | — | keine Pflanzbilanz 2025/26 gefunden |
+| koeln-2025-050 | offen | — | wie koeln-2025-049 |
+| koeln-2025-059 | offen | — | keine Bestätigung der Beauftragung Hauptmaßnahme gefunden |
+| koeln-2025-068 | offen | — | keine unabhängige Bestätigung des Offenlage-Zeitraums gefunden |
+
 ## Hinweis zur Suchmethode
 
 WebSearch war ab einem bestimmten Punkt in dieser Sitzung durch ein

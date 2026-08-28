@@ -13,12 +13,14 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2024-11-12
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 1
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.dortmund.de/newsroom/presse-mitteilungen/medieneinladung-willkommensfest-in-der-fabido-kita-kleyer-weg.html
 vermerke:
   - am: 2026-08-28
     text: "keine belastbare Auflösungsquelle gefunden; gesucht: exaktes Eröffnungsdatum der Fabido-Kita Kleyer Weg. Ruhr Nachrichten (11.11.2025, https://www.ruhrnachrichten.de/dortmund-west/neue-fabido-kita-dortmund-kleyer-weg-modern-viele-freie-plaetze-w1103938-2001872099/) bestätigt nur, dass die Kita zu diesem Zeitpunkt bereits eröffnet war, nennt aber kein genaues Datum — damit nicht sicher belegbar, ob der Stichtag 1.10.2025 eingehalten wurde."
+  - am: 2026-08-28
+    text: "Aufgelöst (2. Lauf) für den Halter; Beleg: dortmund.de-Pressemitteilung vom 06.11.2025 (Willkommensfest): 'Die neugebaute FABIDO-Kita Kleyer Weg hat am 1. Oktober ihren Betrieb aufgenommen', ausgelegt für 75 Kinder (≥72 Plätze); bestätigt auch durch Nordstadtblogger (15.10.2025) und dortmund-app.de."
 ---
 
 ## Kontext
