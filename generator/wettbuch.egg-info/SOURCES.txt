@@ -1,9 +1,0 @@
-pyproject.toml
-generator/tests/conftest.py
-generator/tests/test_lesen.py
-generator/wettbuch/__init__.py
-generator/wettbuch.egg-info/PKG-INFO
-generator/wettbuch.egg-info/SOURCES.txt
-generator/wettbuch.egg-info/dependency_links.txt
-generator/wettbuch.egg-info/requires.txt
-generator/wettbuch.egg-info/top_level.txt
