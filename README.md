@@ -4,7 +4,9 @@ Ein offenes Format, um Institutionen an ihren eigenen Prognosen zu messen.
 
 - **Format:** [FORMAT.md](FORMAT.md) — wer diese Regeln einhält, führt ein Wettbuch.
 - **Generator:** `python -m wettbuch bauen <buch> <ausgabe>` — macht aus einem Ordner
-  eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`.
+  eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`. Mit
+  `python -m wettbuch alle <buecher-ordner> <ausgabe>` baut er jedes Unterverzeichnis
+  mit `BUCH.md` und schreibt zusätzlich eine Übersichtsseite über alle Bücher.
 - **Erstes Buch:** [buecher/koeln](buecher/koeln) — „Köln gegen Köln".
 
 ## Selbst ein Buch führen

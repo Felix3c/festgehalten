@@ -176,3 +176,49 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
              "tabelle": bewertet["tabelle"], "wetten": _json_faehig(bewertet["wetten"])}
     schreib("wettbuch.json", json.dumps(daten, ensure_ascii=False, indent=2))
     return geschrieben
+
+
+def _uebersicht_zeile_html(b: dict) -> str:
+    institutionen = ", ".join(_e(i) for i in b.get("institutionen", []))
+    return (f'<tr><td><a href="{_e(b["ordner"])}/index.html">{_e(b["titel"])}</a></td>'
+            f"<td>{institutionen}</td><td class=zahl>{b['wetten']}</td>"
+            f"<td class=zahl>{b['aufgeloest']}</td><td class=zahl>{b['offen']}</td></tr>")
+
+
+def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) -> list[Path]:
+    """Übersichtsseite über mehrere Bücher (FORMAT.md §5). Kein Verzeichnis im Sinne von §6,
+    nur eine lokale Liste über das, was `alle` gerade gebaut hat."""
+    sortiert = sorted(buecher, key=lambda b: b["ordner"])
+
+    ausgabe.mkdir(parents=True, exist_ok=True)
+    geschrieben: list[Path] = []
+
+    def schreib(rel: str, inhalt: str) -> None:
+        p = ausgabe / rel
+        p.write_text(inhalt, encoding="utf-8")
+        geschrieben.append(p)
+
+    schreib("stil.css", STIL.read_text(encoding="utf-8"))
+
+    tabelle = ('<div class="tabelle-wrap"><table><thead><tr>'
+               "<th>Buch</th><th>Institution(en)</th><th class=zahl>Wetten gesamt</th>"
+               "<th class=zahl>davon aufgelöst</th><th class=zahl>davon offen</th>"
+               "</tr></thead><tbody>"
+               + "".join(_uebersicht_zeile_html(b) for b in sortiert)
+               + "</tbody></table></div>")
+    koerper = ("<h1>Wettbuch</h1>"
+               "<p>Institutionen an ihren eigenen Prognosen messen. Jedes Buch ist ein Ordner; "
+               "das Format ist offen — FORMAT.md.</p>" + tabelle)
+    seite = ('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
+             '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+             "<title>Wettbuch</title>\n"
+             '<link rel="stylesheet" href="stil.css"></head>\n<body>\n'
+             f"{koerper}\n"
+             f"<footer>Wettbuch-Format v1 · gebaut {_e(build_zeit)}</footer>\n"
+             "</body></html>\n")
+    schreib("index.html", seite)
+
+    daten = [{"ordner": b["ordner"], "titel": b["titel"], "wetten": b["wetten"],
+              "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
+    schreib("alle.json", json.dumps(daten, ensure_ascii=False, indent=2))
+    return geschrieben

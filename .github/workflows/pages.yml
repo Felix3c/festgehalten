@@ -16,7 +16,7 @@ jobs:
         with: { python-version: "3.12" }
       - run: python -m pip install -e ".[test]"
       - run: python -m pytest -q
-      - run: python -m wettbuch bauen buecher/koeln site
+      - run: python -m wettbuch alle buecher site
       - uses: actions/upload-pages-artifact@v3
         with: { path: site }
   veroeffentlichen:

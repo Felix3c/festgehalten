@@ -212,6 +212,10 @@ Sprache der Referenz-Implementierung: Python 3, keine Abhängigkeiten außer
 `pyyaml` und `markdown`. Andere Implementierungen sind ausdrücklich erwünscht; das
 Format ist die Vereinbarung, nicht der Code.
 
+Die Referenz-Implementierung kann mit `alle` mehrere Bücher aus einem Ordner bauen
+und eine Übersicht erzeugen; die Übersicht ist kein Verzeichnis im Sinne von §6, nur
+eine lokale Liste.
+
 ## 6. Was v1 nicht tut
 
 - Kein Verzeichnis aller Wettbücher. (Später: eine Datei, die Bücher auflistet — auch
