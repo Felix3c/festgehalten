@@ -112,3 +112,30 @@ def test_meta_format_muss_v1_sein(gueltig):
     gueltig["meta"]["format"] = "v2"
     f = pruefen.buch_pruefen(gueltig)
     assert f and f[0].datei == "BUCH.md" and f[0].feld == "format"
+
+
+def test_ausgang_ungueltiger_wert(gueltig):
+    w = _wette(gueltig)
+    w["ausgang"] = "vielleicht"
+    f = pruefen.buch_pruefen(gueltig)
+    assert f and f[0].feld == "ausgang"
+
+
+def test_ja_nein_ausgang_nur_0_oder_1(gueltig):
+    w = _wette(gueltig)
+    w["ausgang"] = 0.5
+    w["aufgeloest_am"] = date(2025, 11, 2)
+    w["beleg_ausgang"] = "https://example.org/pm/2"
+    f = pruefen.buch_pruefen(gueltig)
+    assert f and f[0].feld == "ausgang"
+
+
+def test_unhashbare_werte_werfen_nicht(gueltig):
+    w = _wette(gueltig)
+    w["typ"] = ["ja_nein"]
+    w["ausgang"] = {"x": 1}
+    w["prognosen"][1]["art"] = ["geschaetzt"]
+    f = pruefen.buch_pruefen(gueltig)  # darf nicht werfen
+    assert any(x.feld == "typ" for x in f)
+    assert any(x.feld == "ausgang" for x in f)
+    assert any(x.feld == "prognosen[1].art" for x in f)

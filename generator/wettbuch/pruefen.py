@@ -50,7 +50,7 @@ def _prognosen_pruefen(d: str, typ: str, prognosen) -> list[Fehler]:
             f.append(Fehler(d, f"{pf}.{k}", "fehlt"))
         if fehlend:
             continue
-        if p["art"] not in ARTEN:
+        if not isinstance(p["art"], str) or p["art"] not in ARTEN:
             f.append(Fehler(d, f"{pf}.art", f"muss angekuendigt, voraussichtlich oder geschaetzt sein, ist {p['art']!r}"))
         if not _ist_datum(p["hinterlegt_am"]):
             f.append(Fehler(d, f"{pf}.hinterlegt_am", "muss ein Datum sein"))
@@ -68,7 +68,7 @@ def _prognosen_pruefen(d: str, typ: str, prognosen) -> list[Fehler]:
 def _ausgang_pruefen(d: str, w: dict) -> list[Fehler]:
     f: list[Fehler] = []
     a = w["ausgang"]
-    if a is None or a in NICHT_AUFGELOEST:
+    if a is None or (isinstance(a, str) and a in NICHT_AUFGELOEST):
         return f
     if not _ist_zahl(a):
         return [Fehler(d, "ausgang", "muss null, 0, 1, Zahl, 'verfallen' oder 'strittig' sein")]
@@ -89,7 +89,7 @@ def _wette_pruefen(w: dict) -> list[Fehler]:
 
     f: list[Fehler] = []
     typ = w["typ"]
-    if typ not in TYPEN:
+    if not isinstance(typ, str) or typ not in TYPEN:
         f.append(Fehler(d, "typ", f"muss ja_nein oder punkt sein, ist {typ!r}"))
     for feld in ("gesagt_am", "pruefung_am"):
         if not _ist_datum(w[feld]):
