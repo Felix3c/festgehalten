@@ -15,6 +15,10 @@ prognosen:
     wert: 98
     hinterlegt_am: 2025-05-29
     art: voraussichtlich
+  - von: Computer
+    wert: 92
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -30,3 +34,6 @@ städtische Glasfaserquote von 98 Prozent erreichbar.
 Zahl mit Zieljahr 2026 → `punkt` in Prozent, Stichtag 31.12.2026, `pruefung_am` =
 Tag danach. Die Formulierung "sei … erreichbar" ist ein Vorbehalt in derselben
 Kategorie wie "soll/geplant/voraussichtlich" → `voraussichtlich`.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.

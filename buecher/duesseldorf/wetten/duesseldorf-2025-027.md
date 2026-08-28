@@ -15,6 +15,10 @@ prognosen:
     wert: 106
     hinterlegt_am: 2025-07-21
     art: angekuendigt
+  - von: Computer
+    wert: 118
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Gleiche Pressetour wie duesseldorf-2025-023/-026; hier nur die genannten Kosten 
 
 ## Übersetzung
 Zahl → typ punkt, Einheit Mio EUR, Toleranz 10 %, pruefung_am aus 'Prüfbar ab' der Recherche (2026-08, Schuljahresbeginn 2026/27); auf Monatsende gelegt, da am Recherchedatum 28.08.2026 noch nicht erreicht.
+
+## Begründung Computer
+Kostenfeststellungen liegen typischerweise 10-20 % über der letzten Ankündigung. Hinterlegt am 28.08.2026, vor `pruefung_am`.

@@ -15,6 +15,10 @@ prognosen:
     wert: 8000
     hinterlegt_am: 2025-09-08
     art: angekuendigt
+  - von: Computer
+    wert: 6200
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Folgemeldung vom 08.09.2025, die das 8.000er-Ziel aus duesseldorf-2025-016 erneu
 
 ## Übersetzung
 Zielzahl mit Enddatum → typ punkt, Einheit Wohneinheiten, Toleranz 10 %, pruefung_am = Stichtag 31.12.2030.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.

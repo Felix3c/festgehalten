@@ -15,6 +15,10 @@ prognosen:
     wert: 2000
     hinterlegt_am: 2025-07-21
     art: angekuendigt
+  - von: Computer
+    wert: 1650
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Pressetour zur Schulbauoffensive am 21.07.2025. Die Gesamtsumme wird hier als ei
 
 ## Übersetzung
 Zahl mit Enddatum → typ punkt, Einheit Mio EUR (aus 2 Mrd. €), Toleranz 10 %, pruefung_am = Stichtag 31.12.2030.
+
+## Begründung Computer
+Investitionsauszahlungen bleiben in NRW-Kommunen regelmäßig 15-25 % hinter dem Plan. Hinterlegt am 28.08.2026, vor `pruefung_am`.

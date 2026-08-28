@@ -13,6 +13,10 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2025-05-29
     art: voraussichtlich
+  - von: Computer
+    wert: 0.50
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ sollen Ende 2026 alle Dortmunder Schulen am Netz hängen.
 ## Übersetzung
 Frist ("bis Ende 2026", "alle Schulen") → `ja_nein` mit Stichtag 31.12.2026,
 `pruefung_am` = Tag danach. Vorbehalt "sollen" → `voraussichtlich`, `wert` 0,80.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.

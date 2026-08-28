@@ -15,6 +15,10 @@ prognosen:
     wert: 34.2
     hinterlegt_am: 2025-12-11
     art: angekuendigt
+  - von: Computer
+    wert: 26
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Gleiche Mitteilung wie duesseldorf-2025-014; hier nur der U81-Teilbetrag am ÖPN
 
 ## Übersetzung
 Zahl mit Jahresbezug → typ punkt, Einheit Mio EUR, Toleranz 10 %, pruefung_am wie -010.
+
+## Begründung Computer
+Investitionsauszahlungen bleiben in NRW-Kommunen regelmäßig 15-25 % hinter dem Plan. Hinterlegt am 28.08.2026, vor `pruefung_am`.

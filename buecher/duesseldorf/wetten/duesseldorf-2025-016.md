@@ -15,6 +15,10 @@ prognosen:
     wert: 8000
     hinterlegt_am: 2024-12-06
     art: voraussichtlich
+  - von: Computer
+    wert: 6200
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Pressemitteilung vom 06.12.2024 zum Fortschritt der 2023 beschlossenen Wohnungsb
 
 ## Übersetzung
 Frist-und-Menge-Aussage (FORMAT.md §1.3.4) → hier als Zahl übersetzt: typ punkt, Einheit Wohnungen, Toleranz 10 %, pruefung_am = Stichtag 31.12.2030.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.

@@ -13,6 +13,10 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2025-06-05
     art: voraussichtlich
+  - von: Computer
+    wert: 0.45
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -29,3 +33,6 @@ Schulen sowie Ausweich- und Reserveflächen geprüft, mit dem Ziel, zum Schuljah
 Frist ("zum Schuljahr 2027/2028") → Stichtag 1.8.2027 (Schuljahresbeginn),
 `pruefung_am` = Tag danach. Die Aussage trägt den Vorbehalt "plant" → `voraussichtlich`,
 `wert` 0,80.
+
+## Begründung Computer
+Bautermine im kommunalen Hochbau halten zu etwa einem Drittel; 'voraussichtlich'-Termine etwas öfter. Hinterlegt am 28.08.2026, vor `pruefung_am`.

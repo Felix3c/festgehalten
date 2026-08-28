@@ -15,6 +15,10 @@ prognosen:
     wert: 19
     hinterlegt_am: 2025-06-05
     art: voraussichtlich
+  - von: Computer
+    wert: 16
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -28,3 +32,6 @@ der Zahl der neuen Schulen auch den zusätzlichen Zugbedarf.
 ## Übersetzung
 Zahl aus derselben Ankündigung → `punkt` in Schulzügen, geprüft zum selben Stichtag
 wie dortmund-2025-003. Vorbehalt "plant/dafür werden … benötigt" → `voraussichtlich`.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.

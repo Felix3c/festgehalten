@@ -15,6 +15,10 @@ prognosen:
     wert: 676.5
     hinterlegt_am: 2025-12-11
     art: voraussichtlich
+  - von: Computer
+    wert: 560
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -26,3 +30,6 @@ Gleiche Etateinbringung wie duesseldorf-2025-010; hier das geplante Investitions
 
 ## Übersetzung
 Zahl mit Jahresbezug → typ punkt, Einheit Mio EUR, Toleranz 10 %, pruefung_am wie -010.
+
+## Begründung Computer
+Investitionsauszahlungen bleiben in NRW-Kommunen regelmäßig 15-25 % hinter dem Plan. Hinterlegt am 28.08.2026, vor `pruefung_am`.

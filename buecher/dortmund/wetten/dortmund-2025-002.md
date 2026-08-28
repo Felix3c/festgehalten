@@ -15,6 +15,10 @@ prognosen:
     wert: 55
     hinterlegt_am: 2024-12-12
     art: voraussichtlich
+  - von: Computer
+    wert: 90
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -30,3 +34,6 @@ Konsolidierungsmaßnahmen sollten erst 2026 greifen.
 Zahl aus dem Haushaltsplan → `punkt` in Mio EUR. Der Jahresabschluss 2026 liegt dem
 Rat voraussichtlich Mitte 2027 vor; `pruefung_am` ist analog zum Vorjahresmuster
 (Jahresabschluss 2025 im Mai) geschätzt.
+
+## Begründung Computer
+Haushaltsprognosen verschlechtern sich im Vollzug; Trend aus 2025/26 fortgeschrieben. Hinterlegt am 28.08.2026, vor `pruefung_am`.

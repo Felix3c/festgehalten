@@ -13,6 +13,10 @@ prognosen:
     wert: 1.0
     hinterlegt_am: 2025-07-21
     art: angekuendigt
+  - von: Computer
+    wert: 0.50
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Gleiche Pressetour wie duesseldorf-2025-023. Die Aussage nennt Termin und Kosten
 
 ## Übersetzung
 Frist 'zum Schuljahr 2026/27' → Stichtag 31.08.2026 (Ende der NRW-Sommerferien/Schuljahresbeginn 2026/27, da am Recherchedatum 28.08.2026 noch nicht erreicht), typ ja_nein, pruefung_am = Tag nach Stichtag (01.09.2026).
+
+## Begründung Computer
+Bautermine im kommunalen Hochbau halten zu etwa einem Drittel; 'voraussichtlich'-Termine etwas öfter. Hinterlegt am 28.08.2026, vor `pruefung_am`.

@@ -15,6 +15,10 @@ prognosen:
     wert: 368
     hinterlegt_am: 2024-11-12
     art: voraussichtlich
+  - von: Computer
+    wert: 300
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -32,3 +36,6 @@ deshalb eine Wette für die Gesamtsumme statt drei Einzelwetten.
 Frist ("für 2026") + Menge (368 Plätze) → `punkt` in Plätzen, Stichtag 31.12.2026
 (Jahresende als Zieldatum), `pruefung_am` = Tag danach. Vorbehalt "geplant" →
 `voraussichtlich`.
+
+## Begründung Computer
+Zielzahlen (Plätze, Quoten, Stellen) werden meist zu 70-85 % erreicht. Hinterlegt am 28.08.2026, vor `pruefung_am`.
