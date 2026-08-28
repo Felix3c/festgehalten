@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: Bilanz des Gartenamts zur tatsächlichen Zahl gepflanzter Bäume in der Pflanzsaison 2024/25 gegenüber dem Ziel von 1.500. Keine Presseberichte dazu auffindbar."
 ---
 
 ## Kontext

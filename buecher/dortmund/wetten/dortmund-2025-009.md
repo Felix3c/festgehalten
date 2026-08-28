@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: Zwischen-/Jahresbilanz zur Zahl der bis 31.12.2025 ans Glasfasernetz angeschlossenen Schulen. Ein Folgeartikel (mengede-intakt.de, 14.07.2026) beschreibt den Ausbau als noch laufend („Endspurt … bis Ende 2026”, 150 Schulen insgesamt), ohne die 2025er-Teilzahl (41 Schulen) zu bestätigen oder zu widerlegen."
 ---
 
 ## Kontext

@@ -16,7 +16,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: Bestätigung der Fertigstellung des Neubaus am Comenius-Gymnasium Düsseldorf zum 31.12.2025. Presseauswertung findet nur ältere/unpassende Comenius-Treffer (Handyverbot, ISR International School an anderem Standort), keine aktuelle Fertigstellungsmeldung."
 ---
 
 ## Kontext

@@ -13,10 +13,12 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2024-11-12
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 1
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.ruhrnachrichten.de/dortmund/stadt-dortmund-eroeffnet-riesen-kita-fabido-kinder-betreuung-kindergarten-200-plaetze-fredenbaum-eving-w1089011-2001843945/
+vermerke:
+  - am: 2026-08-28
+    text: "Aufgelöst durch Claude für den Halter; Beleg: Ruhr Nachrichten (15.10.2025) berichtet über die feierliche Eröffnung der Fabido-Kita am Burgweg mit 200 Plätzen in zehn Gruppenräumen — passend zur angekündigten Eröffnung zum 1.10.2025."
 ---
 
 ## Kontext

@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: tatsächliche (finale) Kosten des 1. Bauabschnitts der Radleitroute 2. Pressemitteilung vom 11.07.2025 nennt nur die zu diesem Zeitpunkt „gegenwärtig” geschätzten Kosten von rund 5,4 Mio. €, keine spätere Abrechnung gefunden."
 ---
 
 ## Kontext

@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: tatsächliche Kosten des Neubaus am Comenius-Gymnasium Düsseldorf. Gleiche Suchlage wie duesseldorf-2025-024 — keine Quelle gefunden."
 ---
 
 ## Kontext

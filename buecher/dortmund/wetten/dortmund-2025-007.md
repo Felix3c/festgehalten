@@ -13,10 +13,12 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2024-11-12
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 0
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.ruhrnachrichten.de/dortmund-nordost/neue-fabido-kita-scharnhorst-108-kinder-holzmodulbau-klimaschutz-jobs-w1196596-2002074400/
+vermerke:
+  - am: 2026-08-28
+    text: "Aufgelöst durch Claude für den Halter; Beleg: Ruhr Nachrichten (22.05.2026) berichtet, dass die Fabido-Kita Buschei in Scharnhorst (108 Plätze, Holzmodulbau) erst zum 01.06.2026 eröffnet — ca. 182 Tage später als der angekündigte Stichtag 01.12.2025."
 ---
 
 ## Kontext

@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: Zahl der 2024 in Düsseldorf genehmigten Wohnungen. Destatis-Pressemitteilung (Feb. 2025) nennt nur einen bundesweiten Rückgang (-16,8 %), keine Düsseldorf-spezifische Zahl; auch RP Online und die Stadtseite selbst liefern keine 2024er-Jahreszahl für genehmigte Wohnungen."
 ---
 
 ## Kontext

@@ -13,10 +13,12 @@ prognosen:
     wert: 0.8
     hinterlegt_am: 2025-07-11
     art: voraussichtlich
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 1
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/offizieller-bauauftakt-fuer-die-radleitroute-2
+vermerke:
+  - am: 2026-08-28
+    text: "Aufgelöst durch Claude für den Halter; Beleg: Pressemitteilung der Stadt Düsseldorf (11.07.2025) zum Bauauftakt der Radleitroute 2 stellt fest: „Der Abschnitt Luegallee bis Luegplatz ist bereits fertiggestellt.” (offen war zu diesem Zeitpunkt nur noch der Rückbau des alten Seitenraum-Radwegs) — damit vor dem Stichtag 31.12.2025 erfüllt."
 ---
 
 ## Kontext

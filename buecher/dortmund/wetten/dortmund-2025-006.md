@@ -16,7 +16,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine belastbare Auflösungsquelle gefunden; gesucht: exaktes Eröffnungsdatum der Fabido-Kita Kleyer Weg. Ruhr Nachrichten (11.11.2025, https://www.ruhrnachrichten.de/dortmund-west/neue-fabido-kita-dortmund-kleyer-weg-modern-viele-freie-plaetze-w1103938-2001872099/) bestätigt nur, dass die Kita zu diesem Zeitpunkt bereits eröffnet war, nennt aber kein genaues Datum — damit nicht sicher belegbar, ob der Stichtag 1.10.2025 eingehalten wurde."
 ---
 
 ## Kontext

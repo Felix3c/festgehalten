@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: festgestellter Jahresabschluss 2025 der Stadt Dortmund mit Jahresfehlbetrag. Presseauswertung (u.a. Ruhr Nachrichten) findet nur Berichte zum neuen Kämmerer Thorsten Bunte, keinen festgestellten Jahresabschluss 2025 — Feststellung erfolgt bei Kommunen üblicherweise erst 1-2 Jahre nach Haushaltsjahresende."
 ---
 
 ## Kontext

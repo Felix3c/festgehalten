@@ -15,10 +15,12 @@ prognosen:
     wert: 12
     hinterlegt_am: 2025-07-11
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 12
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/offizieller-bauauftakt-fuer-die-radleitroute-2
+vermerke:
+  - am: 2026-08-28
+    text: "Aufgelöst durch Claude für den Halter; Beleg: Pressemitteilung der Stadt Düsseldorf (11.07.2025) zum offiziellen Bauauftakt nennt die Gesamtlänge der Radleitroute 2 (Heerdt–Gerresheim) mit rund 12 km."
 ---
 
 ## Kontext

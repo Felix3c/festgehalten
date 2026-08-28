@@ -16,7 +16,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine unabhängige Auflösungsquelle gefunden; gesucht: Bestätigung, dass das Freibad Benrath tatsächlich am 30.05.2025 geöffnet hat. Nur die Ankündigung selbst (ddorf-aktuell.de, 28.05.2025, bereits als quelle hinterlegt) auffindbar, keine nachträgliche Bestätigung oder Meldung einer Verschiebung."
 ---
 
 ## Kontext

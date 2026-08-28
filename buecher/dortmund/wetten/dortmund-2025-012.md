@@ -13,10 +13,12 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2024-12-21
     art: voraussichtlich
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 1
+aufgeloest_am: 2026-08-28
+beleg_ausgang: https://dashboard.adv.aero/fileadmin/documents/Statistiken/2025/12.2025_ADV-Monatsstatistik.pdf
+vermerke:
+  - am: 2026-08-28
+    text: "Aufgelöst durch Claude für den Halter; Beleg: ADV-Monatsstatistik Dezember 2025 (Arbeitsgemeinschaft Deutscher Verkehrsflughäfen) weist für den Flughafen Dortmund 3.242.429 Passagiere für 2025 aus — über dem Vorjahresniveau von rund 3,1 Mio."
 ---
 
 ## Kontext

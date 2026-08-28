@@ -18,7 +18,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-08-28
+    text: "keine Auflösungsquelle gefunden; gesucht: Bericht über die tatsächliche Stückzahl der von DSW21 beschafften Dieselbusse unter der ab 2026 geltenden EU-Flottenquote. Presseauswertung findet nur ältere Berichte (Streik, U41-Takt), keine Angaben zur tatsächlichen Beschaffungszahl — Beschaffung läuft über mehrere Jahre der Quotenperiode."
 ---
 
 ## Kontext
