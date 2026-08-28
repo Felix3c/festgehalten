@@ -145,6 +145,14 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
     nach_inst: dict[str, list[dict]] = {}
     for w in bewertet["wetten"]:
         nach_inst.setdefault(w["institution"], []).append(w)
+
+    slugs: dict[str, str] = {}
+    for inst in nach_inst:
+        s = slug(inst)
+        if s in slugs and slugs[s] != inst:
+            raise ValueError(f"Slug-Kollision: {inst!r} und {slugs[s]!r} ergeben beide {s!r}")
+        slugs[s] = inst
+
     for inst, ws in nach_inst.items():
         koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1)]
         schreib(f"institution/{slug(inst)}.html", _seite(inst, "\n".join(koerper), 1, build_zeit, titel))

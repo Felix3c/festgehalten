@@ -66,7 +66,7 @@ Sprachgebrauch der Stadt selbst (Mitteilung vom 29.08.2024: „bauliche Fertigst
 
 | Feld | Typ | Bedeutung |
 |---|---|---|
-| `id` | Text | eindeutig im Buch; Empfehlung `<institution-kurz>-<jahr>-<lfd>` |
+| `id` | Text | eindeutig im Buch; nur Kleinbuchstaben, Ziffern, Bindestrich; Empfehlung `<institution-kurz>-<jahr>-<lfd>` |
 | `institution` | Text | die Stelle, deren Aussage gemessen wird |
 | `gesagt_von` | Text | Person oder Organ, das die Aussage gemacht hat |
 | `gesagt_am` | Datum | wann die Aussage gemacht wurde (Datum der Quelle) |

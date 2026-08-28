@@ -130,6 +130,12 @@ def test_ja_nein_ausgang_nur_0_oder_1(gueltig):
     assert f and f[0].feld == "ausgang"
 
 
+def test_id_zeichensatz(gueltig):
+    _wette(gueltig)["id"] = "../../index"
+    f = pruefen.buch_pruefen(gueltig)
+    assert f and f[0].feld == "id"
+
+
 def test_unhashbare_werte_werfen_nicht(gueltig):
     w = _wette(gueltig)
     w["typ"] = ["ja_nein"]

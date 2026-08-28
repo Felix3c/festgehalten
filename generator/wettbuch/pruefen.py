@@ -1,10 +1,12 @@
 """Regeln aus FORMAT.md §1–2 prüfen. Wirft nicht, sammelt Fehler."""
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from datetime import date
 from numbers import Real
 
+ID_MUSTER = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 PFLICHT = [
     "id", "institution", "gesagt_von", "gesagt_am", "quelle", "zitat", "frage",
     "typ", "pruefung_am", "prognosen", "ausgang", "aufgeloest_am",
@@ -91,6 +93,8 @@ def _wette_pruefen(w: dict) -> list[Fehler]:
     typ = w["typ"]
     if not isinstance(typ, str) or typ not in TYPEN:
         f.append(Fehler(d, "typ", f"muss ja_nein oder punkt sein, ist {typ!r}"))
+    if not isinstance(w["id"], str) or not ID_MUSTER.match(w["id"]):
+        f.append(Fehler(d, "id", "nur Kleinbuchstaben, Ziffern und Bindestrich, z. B. koeln-2025-001"))
     for feld in ("gesagt_am", "pruefung_am"):
         if not _ist_datum(w[feld]):
             f.append(Fehler(d, feld, "muss ein Datum YYYY-MM-DD sein"))

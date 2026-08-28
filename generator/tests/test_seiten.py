@@ -3,6 +3,8 @@ import json
 from datetime import date
 from pathlib import Path
 
+import pytest
+
 from wettbuch import bewerten, lesen, seiten
 
 
@@ -56,3 +58,12 @@ def test_json_ist_maschinenlesbar(buch: Path, tmp_path: Path):
     assert "_text" not in daten["wetten"][0]
     assert daten["wetten"][0]["_bewertung"]["status"] == "offen"
     assert daten["tabelle"][0]["von"] in ("Computer", "Stadt Test")
+
+
+def test_slug_kollision_wirft(buch: Path, tmp_path: Path):
+    b = lesen.buch_lesen(buch)
+    bew = bewerten.buch_bewerten(b)
+    zweite = dict(bew["wetten"][0], id="test-2025-002", institution="Stadt-Test")
+    bew["wetten"].append(zweite)
+    with pytest.raises(ValueError, match="Slug-Kollision"):
+        seiten.seiten_schreiben(b["meta"], bew, tmp_path / "site", build_zeit="x")
