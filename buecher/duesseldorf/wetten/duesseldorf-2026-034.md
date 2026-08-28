@@ -13,6 +13,10 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2026-03-05
     art: voraussichtlich
+  - von: Computer
+    wert: 0.50
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Pressemitteilung vom 05.03.2026: neuer Kulturstandort „Die Brause" (ca. 100 m�
 
 ## Übersetzung
 „Eröffnung ist ... geplant" → Vorbehalt, `art: voraussichtlich`. Nur Monat genannt → Stichtag Monatsende 30.09.2026, `pruefung_am` der Folgetag.
+
+## Begründung Computer
+Eröffnung eines neuen Kulturorts: Bauabnahme und Genehmigungen verzögern oft. Hinterlegt am 28.08.2026, vor `pruefung_am`.

@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-08-06
     art: angekuendigt
+  - von: Computer
+    wert: 0.75
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Temporärer Kulturort als Vorlauf zur IGA 2027, laut Ankündigung bis Ende Dezem
 
 ## Übersetzung
 „geöffnet bis Ende Dezember 2026" ohne Vorbehaltswort → `angekuendigt`. Stichtag 31.12.2026, `pruefung_am` = spätester zulässiger Wert 01.01.2027.
+
+## Begründung Computer
+Laufende Ausstellung, Schließung vor Jahresende unwahrscheinlich. Hinterlegt am 28.08.2026, vor `pruefung_am`.

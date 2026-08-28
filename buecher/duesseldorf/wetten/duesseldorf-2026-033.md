@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-03-19
     art: angekuendigt
+  - von: Computer
+    wert: 0.92
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Drittes „Chefs in Town"-Kulinarik-Event, angekündigt am 19.03.2026 für 25.�
 
 ## Übersetzung
 Termin ohne Vorbehalt → `ja_nein`, Stichtag letzter Veranstaltungstag 27.09.2026, `pruefung_am` der Folgetag.
+
+## Begründung Computer
+angekündigte Veranstaltung/Sitzung mit festem Datum: fällt selten aus, wird selten verschoben. Hinterlegt am 28.08.2026, vor `pruefung_am`.

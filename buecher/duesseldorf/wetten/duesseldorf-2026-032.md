@@ -13,6 +13,10 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2026-08-19
     art: voraussichtlich
+  - von: Computer
+    wert: 0.55
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Pressemitteilung vom 19.08.2026 kündigt Baustart 31.08.2026 und Fertigstellung 
 
 ## Übersetzung
 „sollen bis voraussichtlich ... abgeschlossen sein" → Vorbehalt, `art: voraussichtlich`. Stichtag 27.11.2026, `pruefung_am` der Folgetag.
+
+## Begründung Computer
+Bau-/Sanierungstermin wenige Monate voraus: ~50-60 % pünktlich. Hinterlegt am 28.08.2026, vor `pruefung_am`.

@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-05-05
     art: angekuendigt
+  - von: Computer
+    wert: 0.45
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Fahrbahnsanierung im Zuge der ersten Fahrradzone Dortmunds in Schüren, angekün
 
 ## Übersetzung
 „wird das Tiefbauamt ... sanieren" ohne Vorbehaltswort → `angekuendigt`. „zweites Halbjahr 2026" → Stichtag 31.12.2026, `pruefung_am` = spätester zulässiger Wert 01.01.2027.
+
+## Begründung Computer
+Bau-/Sanierungstermin wenige Monate voraus: ~50-60 % pünktlich. Hinterlegt am 28.08.2026, vor `pruefung_am`.

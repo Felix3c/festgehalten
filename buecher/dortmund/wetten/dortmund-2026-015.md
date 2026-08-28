@@ -13,6 +13,10 @@ prognosen:
     wert: 0.80
     hinterlegt_am: 2026-01-13
     art: voraussichtlich
+  - von: Computer
+    wert: 0.50
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Nach Ratsbeschluss vom 12.02.2026 (5,5 Mio. €, 176 wegfallende Stellplätze) s
 
 ## Übersetzung
 „Wenn alles nach Plan verläuft, könnten ... beginnen" → deutlicher Vorbehalt, `art: voraussichtlich`. „Ende 2026" → Stichtag 31.12.2026, `pruefung_am` = spätester zulässiger Wert 01.01.2027.
+
+## Begründung Computer
+Baubeginn RS1-Abschnitte wurde mehrfach verschoben. Hinterlegt am 28.08.2026, vor `pruefung_am`.

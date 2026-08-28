@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-04-19
     art: angekuendigt
+  - von: Computer
+    wert: 0.85
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Nach dem Ratsbürgerentscheid vom 19.04.2026 (68,3 % Ja) kündigte die Stadt Dor
 
 ## Übersetzung
 Fester Termin ("außerordentliche Mitgliederversammlung am 26. September 2026") ohne Vorbehaltswort → `angekuendigt`. Stichtag 26.09.2026, `pruefung_am` der Folgetag.
+
+## Begründung Computer
+DOSB-Termin steht; Verschiebung möglich. Hinterlegt am 28.08.2026, vor `pruefung_am`.

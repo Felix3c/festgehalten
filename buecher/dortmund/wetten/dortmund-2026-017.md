@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-07-14
     art: angekuendigt
+  - von: Computer
+    wert: 0.55
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Nach Verzögerung durch Insolvenz des Generalunternehmers will DOKOM21 den gefö
 
 ## Übersetzung
 Zahl + Frist ohne Vorbehaltswort ("errichtet ... noch 90 Kilometer") → `angekuendigt`, als `ja_nein`-Schwellenfrage übersetzt. Stichtag 31.12.2026, `pruefung_am` = spätester zulässiger Wert 01.01.2027.
+
+## Begründung Computer
+Ausbauziele im Glasfaser werden oft knapp verfehlt. Hinterlegt am 28.08.2026, vor `pruefung_am`.

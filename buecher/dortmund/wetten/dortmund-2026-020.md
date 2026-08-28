@@ -13,6 +13,10 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2026-07-27
     art: angekuendigt
+  - von: Computer
+    wert: 0.90
+    hinterlegt_am: 2026-08-28
+    art: geschaetzt
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
@@ -24,3 +28,6 @@ Neues Festivalformat im Rahmen der Digitalen Woche Dortmund auf dem Gelände der
 
 ## Übersetzung
 Termin ohne Vorbehalt → `ja_nein`, Stichtag letzter Veranstaltungstag 21.09.2026, `pruefung_am` der Folgetag.
+
+## Begründung Computer
+angekündigte Veranstaltung/Sitzung mit festem Datum: fällt selten aus, wird selten verschoben. Hinterlegt am 28.08.2026, vor `pruefung_am`.
