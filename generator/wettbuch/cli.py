@@ -43,7 +43,7 @@ def main(argv: list[str] | None = None) -> int:
     build_zeit = datetime.now().strftime("%Y-%m-%d %H:%M")
     try:
         pfade = seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe, build_zeit)
-    except ValueError as e:
+    except seiten.SlugKollision as e:
         print(f"seiten: institution — {e}", file=sys.stderr)
         print("1 Fehler, nichts geschrieben.", file=sys.stderr)
         return 1

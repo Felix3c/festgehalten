@@ -61,6 +61,23 @@ def test_wette_punkt_naeher_dran():
     b = bewerten.wette_bewerten(_punkt())
     assert b["naeher_dran"] == "Computer"
     assert b["scores"]["Stadt Test"] == pytest.approx(15.2)
+    assert b["gleichstand"] is False
+
+
+def test_punkt_gleichstand_niemand_gewinnt():
+    w = _wette(typ="punkt", ausgang=100.0, einheit="Mio EUR", prognosen=[
+        {"von": "Alpha", "wert": 90.0, "art": "geschaetzt", "hinterlegt_am": date(2025, 1, 1)},
+        {"von": "Zeta", "wert": 110.0, "art": "geschaetzt", "hinterlegt_am": date(2025, 1, 1)},
+    ])
+    b = bewerten.wette_bewerten(w)
+    assert b["naeher_dran"] is None
+    assert b["gleichstand"] is True
+
+    t = bewerten.buch_bewerten({"meta": {}, "wetten": [w]})["tabelle"]
+    alpha = next(z for z in t if z["von"] == "Alpha")
+    zeta = next(z for z in t if z["von"] == "Zeta")
+    assert (alpha["punkt_n"], alpha["punkt_gewonnen"]) == (1, 0)
+    assert (zeta["punkt_n"], zeta["punkt_gewonnen"]) == (1, 0)
 
 
 def test_tabelle_rang_erst_ab_10():

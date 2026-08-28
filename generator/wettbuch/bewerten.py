@@ -26,6 +26,7 @@ def wette_bewerten(w: dict) -> dict:
     status = _status(w)
     scores: dict[str, float | None] = {p["von"]: None for p in w["prognosen"]}
     naeher: str | None = None
+    gleichstand = False
     if status == "aufgeloest":
         if w["typ"] == "ja_nein":
             for p in w["prognosen"]:
@@ -34,8 +35,13 @@ def wette_bewerten(w: dict) -> dict:
             for p in w["prognosen"]:
                 scores[p["von"]] = abstand(float(p["wert"]), float(w["ausgang"]))
             if len(w["prognosen"]) >= 2:
-                naeher = min(sorted(scores), key=lambda k: scores[k])
-    return {"status": status, "scores": scores, "naeher_dran": naeher}
+                minimum = min(scores.values())
+                fuehrende = [k for k in sorted(scores) if scores[k] == minimum]
+                if len(fuehrende) >= 2:
+                    gleichstand = True
+                else:
+                    naeher = fuehrende[0]
+    return {"status": status, "scores": scores, "naeher_dran": naeher, "gleichstand": gleichstand}
 
 
 def _neue_zeile(von: str) -> dict:
@@ -69,7 +75,7 @@ def buch_bewerten(buch: dict) -> dict:
             if w["typ"] == "ja_nein":
                 z["ja_nein_n"] += 1
                 z["_ja_nein_summe"] += s
-            elif b["naeher_dran"] is not None:
+            elif len(w["prognosen"]) >= 2:
                 z["punkt_n"] += 1
                 if b["naeher_dran"] == p["von"]:
                     z["punkt_gewonnen"] += 1

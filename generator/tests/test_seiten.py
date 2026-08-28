@@ -58,6 +58,21 @@ def test_json_ist_maschinenlesbar(buch: Path, tmp_path: Path):
     assert "_text" not in daten["wetten"][0]
     assert daten["wetten"][0]["_bewertung"]["status"] == "offen"
     assert daten["tabelle"][0]["von"] in ("Computer", "Stadt Test")
+    assert daten["seit"] == "2026-08-28"
+    assert daten["lizenz"] == "CC0"
+
+
+def test_tabellen_spalte_wetten_als_institution(buch: Path, tmp_path: Path):
+    html = (_gebaut(buch, tmp_path) / "index.html").read_text(encoding="utf-8")
+    assert "Wetten als Institution" in html
+
+
+def test_body_html_wird_escaped(buch: Path, tmp_path: Path):
+    p = buch / "wetten" / "test-2025-001.md"
+    p.write_text(p.read_text(encoding="utf-8") + "\n<script>alert(1)</script>\n", encoding="utf-8")
+    html = (_gebaut(buch, tmp_path) / "wette" / "test-2025-001.html").read_text(encoding="utf-8")
+    assert "<script" not in html
+    assert "&lt;script&gt;" in html
 
 
 def test_slug_kollision_wirft(buch: Path, tmp_path: Path):
@@ -66,4 +81,13 @@ def test_slug_kollision_wirft(buch: Path, tmp_path: Path):
     zweite = dict(bew["wetten"][0], id="test-2025-002", institution="Stadt-Test")
     bew["wetten"].append(zweite)
     with pytest.raises(ValueError, match="Slug-Kollision"):
+        seiten.seiten_schreiben(b["meta"], bew, tmp_path / "site", build_zeit="x")
+
+
+def test_slug_kollision_ist_eigene_exception(buch: Path, tmp_path: Path):
+    b = lesen.buch_lesen(buch)
+    bew = bewerten.buch_bewerten(b)
+    zweite = dict(bew["wetten"][0], id="test-2025-002", institution="Stadt-Test")
+    bew["wetten"].append(zweite)
+    with pytest.raises(seiten.SlugKollision):
         seiten.seiten_schreiben(b["meta"], bew, tmp_path / "site", build_zeit="x")

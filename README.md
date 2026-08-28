@@ -18,9 +18,14 @@ Halter-Disziplin, die kein Programm prüfen kann: Einträge nach dem Commit nich
 ändern (FORMAT.md §1.3.3), Teilerfüllung als Nein auflösen (§2.2), zurückgezogene
 Aussagen als neue Wette führen (§1.3.5). Git zeigt, ob man sich daran hält.
 
+Der Textteil einer Wette wird als Markdown gerendert; rohes HTML darin wird als Text
+angezeigt, nicht ausgeführt. Links mit javascript: sind Sache des Halters — Wette-
+Dateien nur von Leuten annehmen, denen man Schreibrechte gäbe.
+
 ## Entwickeln
 
     python -m pip install -e ".[test]"
     python -m pytest
+    python -m wettbuch bauen <ordner> site --pruefen  # nur prüfen, nichts schreiben
 
 Lizenz: Code MIT, Bücher CC0.

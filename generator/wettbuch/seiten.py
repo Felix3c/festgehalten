@@ -12,6 +12,10 @@ from pathlib import Path
 import markdown
 
 STIL = Path(__file__).with_name("stil.css")
+
+
+class SlugKollision(ValueError):
+    """Zwei Institutionen ergeben denselben Slug."""
 UMLAUTE = str.maketrans({"ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss", "Ä": "Ae", "Ö": "Oe", "Ü": "Ue"})
 
 
@@ -31,6 +35,10 @@ def zahl(x, stellen: int = 2) -> str:
 
 def _e(x) -> str:
     return html.escape(str(x), quote=True)
+
+
+def _markdown_sicher(text: str) -> str:
+    return markdown.markdown(text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
 def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: str) -> str:
@@ -59,7 +67,7 @@ def _status_text(w: dict) -> str:
 def _tabelle_html(tabelle: list[dict], rang_ab: int) -> str:
     z = ['<div class="tabelle-wrap"><table><thead><tr>',
          "<th>Rang</th><th>Wer</th><th class=zahl>Trefferquote (Brier)</th><th class=zahl>Ja/Nein aufgelöst</th>",
-         "<th class=zahl>Näher dran</th><th class=zahl>Rechenschaft (verfallen/strittig)</th><th class=zahl>Wetten</th>",
+         "<th class=zahl>Näher dran</th><th class=zahl>Rechenschaft (verfallen/strittig)</th><th class=zahl>Wetten als Institution</th>",
          "</tr></thead><tbody>"]
     for r in tabelle:
         rang = str(r["rang"]) if r["rang"] else f'<span class="mute">noch kein Rang (ab {rang_ab})</span>'
@@ -107,7 +115,7 @@ def _wette_html(w: dict) -> str:
         for v in w["vermerke"]:
             z.append(f"<li>{datum(v.get('am'))}: {_e(v.get('text', ''))}</li>")
         z.append("</ul>")
-    z.append(markdown.markdown(w.get("_text", "")))
+    z.append(_markdown_sicher(w.get("_text", "")))
     return "\n".join(z)
 
 
@@ -131,7 +139,7 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
     for inst in nach_inst:
         s = slug(inst)
         if s in slugs and slugs[s] != inst:
-            raise ValueError(f"Slug-Kollision: {inst!r} und {slugs[s]!r} ergeben beide {s!r}")
+            raise SlugKollision(f"Slug-Kollision: {inst!r} und {slugs[s]!r} ergeben beide {s!r}")
         slugs[s] = inst
 
     # Now safe to write files
@@ -150,7 +158,7 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
 
     koerper = [f"<h1>{_e(titel)}</h1>",
                f'<p class="mute">Halter: {_e(meta.get("halter", ""))} · seit {datum(meta.get("seit"))} · Format {_e(meta.get("format", ""))}</p>',
-               markdown.markdown(meta.get("_text", "")),
+               _markdown_sicher(meta.get("_text", "")),
                "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
                "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0)]
     schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel))
@@ -163,6 +171,8 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
         schreib(f"wette/{w['id']}.html", _seite(w["frage"], _wette_html(w), 1, build_zeit, titel))
 
     daten = {"format": "v1", "titel": titel, "halter": meta.get("halter"), "gebaut": build_zeit,
+             "seit": _json_faehig(meta.get("seit")), "kontakt": meta.get("kontakt"),
+             "lizenz": meta.get("lizenz"),
              "tabelle": bewertet["tabelle"], "wetten": _json_faehig(bewertet["wetten"])}
     schreib("wettbuch.json", json.dumps(daten, ensure_ascii=False, indent=2))
     return geschrieben

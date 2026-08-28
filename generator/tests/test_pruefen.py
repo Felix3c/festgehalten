@@ -136,6 +136,72 @@ def test_id_zeichensatz(gueltig):
     assert f and f[0].feld == "id"
 
 
+def test_von_doppelt_in_einer_wette(gueltig):
+    w = _wette(gueltig)
+    w["prognosen"][1]["von"] = "Stadt Test"
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "prognosen[1].von" for x in f)
+
+
+def test_institution_muss_text_sein(gueltig):
+    _wette(gueltig)["institution"] = ["Stadt Test"]
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "institution" and "Text" in x.text for x in f)
+
+
+def test_gesagt_von_muss_text_sein(gueltig):
+    _wette(gueltig)["gesagt_von"] = ["jemand"]
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "gesagt_von" and "Text" in x.text for x in f)
+
+
+def test_zitat_muss_text_sein(gueltig):
+    _wette(gueltig)["zitat"] = 123
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "zitat" and "Text" in x.text for x in f)
+
+
+def test_frage_muss_text_sein(gueltig):
+    _wette(gueltig)["frage"] = 123
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "frage" and "Text" in x.text for x in f)
+
+
+def test_prognose_von_muss_text_sein(gueltig):
+    _wette(gueltig)["prognosen"][1]["von"] = 42
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "prognosen[1].von" and "Text" in x.text for x in f)
+
+
+def test_vermerk_muss_mapping_sein(gueltig):
+    w = _wette(gueltig)
+    w["vermerke"] = ["nur text"]
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "vermerke[0]" and "Mapping" in x.text for x in f)
+
+
+def test_vermerk_am_und_text_werden_geprueft(gueltig):
+    w = _wette(gueltig)
+    w["vermerke"] = [{"am": "gestern", "text": 123}]
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "vermerke[0].am" for x in f)
+    assert any(x.feld == "vermerke[0].text" for x in f)
+
+
+def test_meta_titel_und_halter_muessen_text_sein(gueltig):
+    gueltig["meta"]["titel"] = 123
+    gueltig["meta"]["halter"] = 456
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.feld == "titel" for x in f)
+    assert any(x.feld == "halter" for x in f)
+
+
+def test_meta_seit_muss_datum_sein(gueltig):
+    gueltig["meta"]["seit"] = "2026-08-28"
+    f = pruefen.buch_pruefen(gueltig)
+    assert any(x.datei == "BUCH.md" and x.feld == "seit" and "Datum" in x.text for x in f)
+
+
 def test_unhashbare_werte_werfen_nicht(gueltig):
     w = _wette(gueltig)
     w["typ"] = ["ja_nein"]

@@ -52,6 +52,8 @@ def _prognosen_pruefen(d: str, typ: str, prognosen) -> list[Fehler]:
             f.append(Fehler(d, f"{pf}.{k}", "fehlt"))
         if fehlend:
             continue
+        if not isinstance(p["von"], str):
+            f.append(Fehler(d, f"{pf}.von", "muss Text sein"))
         if not isinstance(p["art"], str) or p["art"] not in ARTEN:
             f.append(Fehler(d, f"{pf}.art", f"muss angekuendigt, voraussichtlich oder geschaetzt sein, ist {p['art']!r}"))
         if not _ist_datum(p["hinterlegt_am"]):
@@ -64,6 +66,14 @@ def _prognosen_pruefen(d: str, typ: str, prognosen) -> list[Fehler]:
                 f.append(Fehler(d, f"{pf}.wert", "muss bei ja_nein zwischen 0 und 1 liegen"))
             elif p["art"] in FESTE_WERTE and abs(p["wert"] - FESTE_WERTE[p["art"]]) > 1e-9:
                 f.append(Fehler(d, f"{pf}.wert", f"bei art {p['art']} muss wert {FESTE_WERTE[p['art']]} sein"))
+
+    von_gesehen: set[str] = set()
+    for i, p in enumerate(prognosen):
+        if isinstance(p, dict) and isinstance(p.get("von"), str):
+            if p["von"] in von_gesehen:
+                f.append(Fehler(d, f"prognosen[{i}].von", "von doppelt in dieser Wette"))
+            else:
+                von_gesehen.add(p["von"])
     return f
 
 
@@ -83,6 +93,22 @@ def _ausgang_pruefen(d: str, w: dict) -> list[Fehler]:
     return f
 
 
+def _vermerke_pruefen(d: str, vermerke) -> list[Fehler]:
+    f: list[Fehler] = []
+    if not isinstance(vermerke, list):
+        return [Fehler(d, "vermerke", "muss eine Liste sein")]
+    for i, v in enumerate(vermerke):
+        vf = f"vermerke[{i}]"
+        if not isinstance(v, dict):
+            f.append(Fehler(d, vf, "muss ein Mapping mit am und text sein"))
+            continue
+        if not _ist_datum(v.get("am")):
+            f.append(Fehler(d, f"{vf}.am", "muss ein Datum sein"))
+        if not isinstance(v.get("text"), str):
+            f.append(Fehler(d, f"{vf}.text", "muss Text sein"))
+    return f
+
+
 def _wette_pruefen(w: dict) -> list[Fehler]:
     d = w.get("_datei", "?")
     fehlend = [feld for feld in PFLICHT if feld not in w]
@@ -95,6 +121,9 @@ def _wette_pruefen(w: dict) -> list[Fehler]:
         f.append(Fehler(d, "typ", f"muss ja_nein oder punkt sein, ist {typ!r}"))
     if not isinstance(w["id"], str) or not ID_MUSTER.match(w["id"]):
         f.append(Fehler(d, "id", "nur Kleinbuchstaben, Ziffern und Bindestrich, z. B. koeln-2025-001"))
+    for feld in ("institution", "gesagt_von", "zitat", "frage"):
+        if not isinstance(w[feld], str):
+            f.append(Fehler(d, feld, "muss Text sein"))
     for feld in ("gesagt_am", "pruefung_am"):
         if not _ist_datum(w[feld]):
             f.append(Fehler(d, feld, "muss ein Datum YYYY-MM-DD sein"))
@@ -111,13 +140,17 @@ def _wette_pruefen(w: dict) -> list[Fehler]:
     if (_ist_datum(w["aufgeloest_am"]) and _ist_datum(w["pruefung_am"])
             and w["aufgeloest_am"] < w["pruefung_am"]):
         f.append(Fehler(d, "aufgeloest_am", "liegt vor pruefung_am (FORMAT.md §2.5)"))
-    if not isinstance(w["vermerke"], list):
-        f.append(Fehler(d, "vermerke", "muss eine Liste sein"))
+    f.extend(_vermerke_pruefen(d, w["vermerke"]))
     return f
 
 
 def _meta_pruefen(meta: dict) -> list[Fehler]:
     f = [Fehler("BUCH.md", k, "Pflichtfeld fehlt") for k in META_PFLICHT if k not in meta]
+    for feld in ("titel", "halter"):
+        if feld in meta and not isinstance(meta[feld], str):
+            f.append(Fehler("BUCH.md", feld, "muss Text sein"))
+    if "seit" in meta and not _ist_datum(meta["seit"]):
+        f.append(Fehler("BUCH.md", "seit", "muss ein Datum YYYY-MM-DD sein, nicht in Anführungszeichen"))
     if "format" in meta and meta["format"] != "v1":
         f.append(Fehler("BUCH.md", "format", f"dieser Generator kennt nur v1, Buch sagt {meta['format']!r}"))
     return f

@@ -149,6 +149,8 @@ eintritt: 1,00.
 derselben Wette: „näher dran" gewinnt. Ist `toleranz` gesetzt, entsteht zusätzlich die
 Ja/Nein-Nebenfrage „Institution innerhalb ±toleranz?", für die Schätzende eine
 Wahrscheinlichkeit hinterlegen können — damit auch hier ein Brier-Wert entsteht.
+Bei gleichem Abstand gewinnt niemand; die Wette zählt für alle Beteiligten als
+gewertet.
 
 ### 3.3 Je Prognostizierendem (Institution, Computer, Halter, …)
 
@@ -219,6 +221,10 @@ Format ist die Vereinbarung, nicht der Code.
 - Keine Identitätsprüfung der Schätzenden. Wer im Buch steht, steht drin, weil der
   Halter ihn eingetragen hat.
 - Keine automatische Auflösung. Jeder Ausgang wird von Hand belegt.
+- Die Nebenfrage aus §3.2 („Institution innerhalb ±toleranz?") wird nicht automatisch
+  berechnet; `toleranz` wird gelesen und angezeigt, mehr nicht.
+- Kein „zählt nicht"-Kennzeichen für Prognosen, die nach dem Ereignis hinterlegt
+  wurden; das steht nur im Vermerk.
 
 ## 7. Versionierung
 
