@@ -18,3 +18,6 @@ Stadt, nach denselben Regeln.
 
 Dieses Buch ist noch dünn — wer Behauptungen der Stadt Dortmund mit Zahl, Datum und
 Quelle kennt, kann sie beisteuern.
+
+Der Halter nimmt von der gemessenen Stelle kein Geld außer einem veröffentlichten Festpreis
+für selbst hinterlegte Einträge (festgehalten-Format v1, §8.4). Bisher: keins.

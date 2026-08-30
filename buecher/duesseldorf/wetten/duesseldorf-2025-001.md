@@ -15,10 +15,12 @@ prognosen:
     wert: -261.8
     hinterlegt_am: 2024-09-19
     art: angekuendigt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: -273.5
+aufgeloest_am: 2026-08-30
+beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansicht/pld/staedtischer-jahresabschluss-des-haushaltsjahres-2025-weist-verlust-aus
+vermerke:
+  - am: 2026-08-30
+    text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Pressedienst Stadt Düsseldorf 27.04.2026 „Der vorläufige Jahresabschluss … für das Jahr 2025 weist ein Defizit in Höhe von 273,5 Millionen Euro aus”; Entwurf Jahresabschluss 2025 (duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschluesse/entwurf_jahresabschluss_2025_bf.pdf, Ergebnisrechnung S. 9) −273.475.525,67 EUR. Differenz −11,7 Mio EUR (−4,5 %), innerhalb ±10 %. Hinweis: Entwurf/vorläufig, Feststellung durch den Rat noch nicht auffindbar; laut Übersetzung dieser Wette ist der Entwurf die Prüfgrundlage."
 ---
 
 ## Kontext

@@ -23,6 +23,8 @@ vermerke:
     text: "keine Auflösungsquelle gefunden; gesucht: Bericht über die tatsächlichen Kosten der DSW21-Dieselbus-Beschaffung. Gleiche Suchlage wie dortmund-2025-013 — keine aktuellen Zahlen auffindbar."
   - am: 2026-08-28
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Kosten DSW21-Dieselbusbeschaffung. Gleiche Suchlage wie dortmund-2025-013 — keine Zahlen gefunden."
+  - am: 2026-08-30
+    text: "3. Lauf 30.08.2026: gesucht: Kosten Dieselbus-Beschaffung DSW21 (wie -013, zusätzlich Geschäftsbericht 2025), nichts Belastbares — 55 Mio EUR war eine Vergleichsrechnung, keine Beschaffungssumme publiziert."
 ---
 
 ## Kontext

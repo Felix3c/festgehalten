@@ -15,3 +15,6 @@ ohne beides bleiben draußen. Fehler melden: Kontakt oben.
 Der „Computer" in diesem Buch ist ein Sprachmodell (Claude, Anthropic) mit Zugriff
 auf öffentliche Quellen, keine Spezialsoftware. Es steht in derselben Liste wie die
 Stadt, nach denselben Regeln.
+
+Der Halter nimmt von der gemessenen Stelle kein Geld außer einem veröffentlichten Festpreis
+für selbst hinterlegte Einträge (festgehalten-Format v1, §8.4). Bisher: keins.

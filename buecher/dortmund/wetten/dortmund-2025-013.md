@@ -23,6 +23,8 @@ vermerke:
     text: "keine Auflösungsquelle gefunden; gesucht: Bericht über die tatsächliche Stückzahl der von DSW21 beschafften Dieselbusse unter der ab 2026 geltenden EU-Flottenquote. Presseauswertung findet nur ältere Berichte (Streik, U41-Takt), keine Angaben zur tatsächlichen Beschaffungszahl — Beschaffung läuft über mehrere Jahre der Quotenperiode."
   - am: 2026-08-28
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Stückzahl DSW21-Dieselbusbeschaffung. Radio 91.2 (03.08.2026, 'Weniger Geld für neue E-Busse der DSW21') und DSW21-Geschäftsbericht 2025 (22.04.2026) nennen nur die Zahl bereits fahrender E-Busse (30), keine Diesel-Beschaffungszahl."
+  - am: 2026-08-30
+    text: "3. Lauf 30.08.2026: gesucht: Stückzahl Dieselbus-Beschaffung DSW21 (DSW21-Stellungnahme wirindortmund Okt. 2024, t-online 18.10.2024, radio912.de 03.08.2026, DSW21-Bilanz 2025), nichts Belastbares — 155 war der Bestand, DSW21 nennt nur „durchschnittlich rund 12 Busse pro Jahr, davon vier Diesel” als Plan."
 ---
 
 ## Kontext
