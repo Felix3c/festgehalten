@@ -50,7 +50,7 @@ def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: st
         f'<link rel="stylesheet" href="{wurzel}stil.css"></head>\n<body>\n'
         f'<p class="mute"><a href="{wurzel}index.html">{_e(buch_titel)}</a></p>\n'
         f"{koerper}\n"
-        f'<footer>Wettbuch-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a></footer>\n'
+        f'<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a></footer>\n'
         "</body></html>\n"
     )
 
@@ -214,7 +214,7 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) ->
              "<title>Wettbuch</title>\n"
              '<link rel="stylesheet" href="stil.css"></head>\n<body>\n'
              f"{koerper}\n"
-             f"<footer>Wettbuch-Format v1 · gebaut {_e(build_zeit)}</footer>\n"
+             f"<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)}</footer>\n"
              "</body></html>\n")
     schreib("index.html", seite)
 

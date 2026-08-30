@@ -1,8 +1,8 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 29.08.2026, 02:15 (Generator gebaut, fünf Bücher angelegt, Seite live, 28 Wetten mit Beleg aufgelöst)
-**Führendes Dokument:** FORMAT.md (Format v1) · ~/GUARD.md (Verfassungsentwurf, nicht beschlossen)
-**Phase:** v1 live, Verfassung offen
+**Stand:** 30.08.2026 (Verfassung §8 beschlossen und in FORMAT.md; Format heißt jetzt festgehalten-Format v1)
+**Führendes Dokument:** FORMAT.md (festgehalten-Format v1 inkl. §8 Verfassung) · ~/GUARD.md (Ebenen-Karte)
+**Phase:** v1 live, Verfassung beschlossen, nicht committet
 
 ## Wo wir stehen
 
@@ -11,17 +11,17 @@
 - Bücher: Köln 79 Wetten (davon 3 per `ersetzt_durch` ersetzt), Essen 39, Bonn 36, Düsseldorf 35, Dortmund 20 = 209. 28 mit Beleg aufgelöst (zwei Agentenläufe, Protokoll in `recherche/AUFLOESUNG-2026-08-28.md`), 38 vergangene ohne Quelle offen, 41 lösen sich bis 31.12.2026.
 - Erstes Ergebnis: Stadt Köln Brier-Schnitt 0,58 über aufgelöste Ja/Nein-Ankündigungen — noch kein Rang (9 von 10).
 - Computer-Prognosen: nur für Wetten mit Prüfdatum nach 28.08.2026 (Basisraten, keine Einzelrecherche; steht in jeder Begründung). Retro-datierte Köln 001/002/004 durch 077–079 ersetzt.
-- Entschieden 28.08.: Format statt Plattform; Markdown+YAML pro Wette; Beleg-Pflicht; Teilerfüllung = Nein; Rang ab 10; Gleichstand bei Punkt = niemand gewinnt; Textteil wird escaped; Name „festgehalten", Format heißt technisch noch „Wettbuch-Format v1" (Umbenennung geplant, vermutlich „festgehalten-Format v1").
+- Entschieden 28.08.: Format statt Plattform; Markdown+YAML pro Wette; Beleg-Pflicht; Teilerfüllung = Nein; Rang ab 10; Gleichstand bei Punkt = niemand gewinnt; Textteil wird escaped; Name „festgehalten", Format hieß bis 29.08. „Wettbuch-Format v1", seit 30.08. „festgehalten-Format v1".
 - Privates Wettbuch (Felix gegen Computer) liegt NICHT hier, sondern in ~/kybernokratie/WETTBUCH.md; aus der Historie dieses Repos per filter-repo entfernt (Backup ~/wettbuch-vor-filter.bundle).
 
 ## Nächster konkreter Schritt
 
-FORMAT.md §8 „Hüter und Änderungen" schreiben — erst wenn Felix die sieben Punkte in ~/GUARD.md (Ebene 3, Verfassungsentwurf) beschlossen hat. Bis dahin nichts am Format ändern.
+FORMAT.md (§8 + Umbenennung + optionales Feld `herkunft`) gegenlesen und committen/pushen — ab dann ist die Verfassung öffentlich. Danach README/Übersicht auf „festgehalten-Format" umstellen und `herkunft` im Generator anzeigen (lesen, nicht rechnen).
 
 ## Wartet auf Felix
 
-- Verfassung des Stempels beschließen (7 Punkte in ~/GUARD.md): Hüter, Änderungsregel, Geldregel, Abzweigen, Ersetzbarkeit, Halter/Anerkennung, viele Halter.
-- Umbenennung „Wettbuch-Format" → „festgehalten-Format"? (Entscheidung, dann Spec + README + Übersicht anpassen)
+- Nachfolger als Hüter hinterlegen (§8.1, Frist 31.12.2026).
+- Rechtsform konkret: gemeinnütziger Träger (Verein/gGmbH) für festgehalten, Firma für Doorway (§8.4) — Beratung/Notar.
 - Zwei Mails freigeben (Ratsfraktion Köln, KStA) — Entwürfe folgen nach dem Review.
 - Die 38 offenen vergangenen Wetten: selbst auflösen, dritten Lauf oder bis `verfall_am` liegen lassen.
 

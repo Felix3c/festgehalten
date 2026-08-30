@@ -1,6 +1,6 @@
-# Wettbuch-Format v1 — Spezifikation
+# festgehalten-Format v1 — Spezifikation
 
-Stand 28.08.2026 (Entwurf, beschlossen von Felix Lind mit Claude). Dieses Dokument
+Stand 30.08.2026 (§0–7 vom 28.08.; §8 beschlossen 29./30.08.; bis 29.08. „Wettbuch-Format" genannt). Dieses Dokument
 beschreibt, wie ein Wettbuch auf der Platte aussieht, wie Einträge aufgelöst und
 bewertet werden und was der Generator daraus macht. Wer diese Regeln einhält, führt
 ein Wettbuch — ohne Erlaubnis, ohne Plattform, ohne den Autor zu fragen.
@@ -84,7 +84,7 @@ Sprachgebrauch der Stadt selbst (Mitteilung vom 29.08.2024: „bauliche Fertigst
 Optionale Felder: `einheit` (bei `punkt`, z. B. `Mio EUR`), `toleranz` (bei `punkt`,
 z. B. `0.10` = ±10 % für die Nebenfrage „innerhalb Korridor"), `verfall_am` (Datum,
 ab dem eine unaufgelöste Wette als verfallen gilt; Standard: `pruefung_am` + 2 Jahre),
-`ersetzt_durch` (id), `tags`.
+`ersetzt_durch` (id), `tags`, `herkunft` (`zitiert` | `hinterlegt`, Standard `zitiert`; siehe §8.4).
 
 ### 1.2 Prognosen
 
@@ -233,4 +233,99 @@ eine lokale Liste.
 ## 7. Versionierung
 
 Dieses Dokument ist v1. Änderungen, die bestehende Einträge ungültig machen, ergeben
-v2. Ein Buch nennt in `BUCH.md`, welcher Version es folgt.
+v2. Ein Buch nennt in `BUCH.md`, welcher Version es folgt. Wer ändern darf und wie,
+steht in §8.
+
+## 8. Verfassung — wer das Format ändern darf
+
+Beschlossen von Felix Lind mit Claude, 29./30.08.2026. Wer das Format definiert,
+entscheidet, was „belegt" heißt: was als Behauptung zählt (§1), was als Beleg zählt
+(§2), wie gezählt wird (§3). Wer eines davon ändert, ändert, wer oben steht. Diese
+Macht ist da; hier steht, wen sie bindet.
+
+**Präambel.** Ein Buch, das alle führt, ist Macht, nicht Geltung. Bücher vor Ort
+wählen anders, wissen mehr, können sich widersprechen — und die Divergenz zeigt, wo
+das Urteil weich ist. Ein Buch bindet nur, wenn es nicht als Fremdurteil abweisbar
+ist. Deshalb sorgt dieses Format dafür, dass jede Stadt, jeder Verband, jeder Verein
+ein Buch haben *kann*; es sorgt nicht dafür, dass einer alle führt.
+
+### 8.1 Begriffe
+
+- **Gemessener**: wer im Namen anderer öffentlich Zukunft behauptet — Institution,
+  Gremium, Amt, Vorstand (auch Vereine). Gezählt wird die Rolle, nicht die Person.
+- **Halter**: wer ein Buch führt (Ordner, Auswahl, Übersetzung, Belege, Hosting, Name
+  in `BUCH.md`). Halter wird man durch Einhalten von §0–7; niemand entscheidet darüber.
+- **Anerkannter Halter**: ein Halter, dessen Buch fünf Dinge von außen prüfbar erfüllt:
+  (1) jede Quelle enthält das wörtliche Zitat; (2) jeder Beleg trägt den Ausgang;
+  (3) die Auswahlregel steht in `BUCH.md`; (4) öffentliche Git-Historie; (5) Erklärung
+  in `BUCH.md`: „Geld vom Gemessenen nur für Eintritt, ausgewiesen" (8.4). Anerkennung
+  ist Form, nicht Trefferquote. Nur anerkannte Bücher tragen den Namen „festgehalten"
+  und stehen in der Übersicht; nur anerkannte Halter stimmen (8.3, 8.6).
+- **Hüter**: Felix Lind. Hält Name, Referenz-Implementierung und dieses Dokument.
+  Ein Nachfolger wird vorab hinterlegt, nicht erst bei Ausfall — heute offen, Frist
+  31.12.2026.
+- **Unabhängig**: nicht der Hüter, nicht vom Hüter bezahlt.
+
+### 8.2 Was sich nicht ändert
+
+Nie rückwirkend: Ein Buch, das v1 nennt, bleibt v1; alte Einträge werden nicht
+umgerechnet. Eine gewonnene Wette gibt kein Recht, Regeln zu ändern.
+
+### 8.3 Änderungen
+
+1. Vorschlagen darf nur ein anerkannter Halter mit mindestens 10 belegt aufgelösten
+   Wetten im eigenen Buch.
+2. Die Begründung muss selbst eine prüfbare Behauptung sein (was soll nach der
+   Änderung anders sein, woran erkennt man es).
+3. 30 Tage Einspruch, öffentlich.
+4. Befangen ist, wessen eigener Rang als Gemessener in einem anerkannten Buch sich
+   durch die Änderung um mindestens einen Platz verbessern würde — nachgerechnet auf
+   dem bestehenden Buch, vor der Abstimmung veröffentlicht. Befangene stimmen nicht mit.
+5. Bis vier anerkannte unabhängige Halter: der Hüter entscheidet. Ab fünf: Mehrheit
+   der anerkannten Halter *und* der Hüter (Veto). Stimme bei Gleichstand: Hüter.
+6. Jede Änderung ist datiert, begründet und im Git dieses Dokuments nachlesbar.
+
+### 8.4 Geld
+
+- Der Stempel ist kostenlos. Die Arbeit kostet.
+- Zwei Häuser: Format, Name, Referenz-Implementierung, anerkannte Bücher und die
+  Hüterschaft gehören einem gemeinnützigen Träger. Dienste um das Format (Doorway:
+  hinterlegte Einträge, Leser-Zugänge) sind rechtlich getrennt und lizenzieren nur;
+  Name und Format wandern nicht mit.
+- Einnahmen des gemeinnützigen Hauses: Leser (Stiftungen, Rechnungshöfe, GPA,
+  Fördergeber, Banken und Ratings, Medien, Fraktionen), Halter (Audit, Hosting — nur
+  zu veröffentlichtem Festpreis), Paper und Vorträge, Stiftungsgeld für die Hüterschaft.
+- Geld vom Gemessenen ist erlaubt **nur für den Eintritt**: Ein Eintrag trägt
+  `herkunft: zitiert` (Halter hat ihn aus öffentlicher Rede geholt; Standard) oder
+  `herkunft: hinterlegt` (der Gemessene hat ihn selbst eingereicht, ggf. bezahlt, zu
+  veröffentlichtem Festpreis). Beide werden gleich gezählt. Geld kauft nie den
+  Austritt, die Übersetzung oder das Urteil. Kein anerkanntes Buch darf mehr als ein
+  Drittel seiner Einnahmen von Gemessenen haben.
+- Verboten bleibt jede andere Zahlung des Gemessenen an einen Halter (Sponsoring,
+  Auftrag, Stelle in einer gemessenen Verwaltung).
+
+### 8.5 Abzweigen und Bleiben
+
+- Jeder darf das Format abzweigen. Den Namen „festgehalten" trägt nur, was das Format
+  unverändert einhält (8.1, fünf Prüfpunkte) — der Inhalt ist frei.
+- Gemessene können nicht gehen: Wer öffentlich gesprochen hat, steht drin. Einträge sind
+  Zitate öffentlicher Äußerungen mit Quelle; ein Gemessener kann Korrektur eines
+  falschen Zitats verlangen, nicht Löschung.
+
+### 8.6 Der Hüter
+
+- Bleibt. Verliert ab fünf anerkannten unabhängigen Haltern die Alleinentscheidung
+  (8.3.5), behält Name, Referenz-Implementierung, Stimme bei Gleichstand, Veto.
+- Ersetzbar nur bei Ausfall — 90 Tage keine Antwort; die Referenz-Implementierung baut
+  nicht und wird nicht repariert; Geld vom Gemessenen außerhalb 8.4 — durch zwei
+  Drittel der anerkannten Halter. Dann übernimmt der hinterlegte Nachfolger.
+- Führt Bücher, solange niemand anderes eins führt. Darf nicht verhindern, dass andere
+  eins führen, und zeigt ein anerkanntes Gegenbuch zu einem eigenen in der Übersicht
+  gleichrangig.
+
+### 8.7 Anerkennung und Entzug
+
+Anerkennung prüft heute der Hüter; ab fünf anerkannten Haltern prüfen die Halter
+einander, nie das eigene Buch. Entzug nur begründet, öffentlich, mit Einträgen als
+Beleg. Böswilligkeit wird nicht durch Torwächter gefangen, sondern durch
+Nachprüfbarkeit — und durch Gegenbücher („Köln über Köln" neben „Köln gegen Köln").
