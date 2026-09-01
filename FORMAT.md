@@ -238,7 +238,7 @@ steht in §8.
 
 ## 8. Verfassung — wer das Format ändern darf
 
-Beschlossen von Felix Lind mit Claude, 29./30.08.2026. Wer das Format definiert,
+Beschlossen von Felix Lind mit Claude, 29.–31.08.2026. Wer das Format definiert,
 entscheidet, was „belegt" heißt: was als Behauptung zählt (§1), was als Beleg zählt
 (§2), wie gezählt wird (§3). Wer eines davon ändert, ändert, wer oben steht. Diese
 Macht ist da; hier steht, wen sie bindet.
@@ -253,6 +253,8 @@ ein Buch haben *kann*; es sorgt nicht dafür, dass einer alle führt.
 
 - **Gemessener**: wer im Namen anderer öffentlich Zukunft behauptet — Institution,
   Gremium, Amt, Vorstand (auch Vereine). Gezählt wird die Rolle, nicht die Person.
+  Gegen seinen Willen gemessen wird nur, wer im Namen anderer spricht; freiwillig kann
+  sich jeder messen lassen, auch eine Einzelperson (`herkunft: hinterlegt`).
 - **Halter**: wer ein Buch führt (Ordner, Auswahl, Übersetzung, Belege, Hosting, Name
   in `BUCH.md`). Halter wird man durch Einhalten von §0–7; niemand entscheidet darüber.
 - **Anerkannter Halter**: ein Halter, dessen Buch fünf Dinge von außen prüfbar erfüllt:
@@ -273,8 +275,10 @@ umgerechnet. Eine gewonnene Wette gibt kein Recht, Regeln zu ändern.
 
 ### 8.3 Änderungen
 
-1. Vorschlagen darf nur ein anerkannter Halter mit mindestens 10 belegt aufgelösten
-   Wetten im eigenen Buch.
+1. Vorschlagen darf nur ein anerkannter Halter, dessen Buch seit mindestens einem Jahr
+   öffentlich geführt wird und mindestens 10 belegt aufgelöste Wetten enthält, die vor
+   ihrem Prüfdatum eingetragen waren. (Rückwirkend aufgelöste Wetten zählen hier nicht:
+   Eintragen nach dem Termin ist Fleiß, keine Bindung.)
 2. Die Begründung muss selbst eine prüfbare Behauptung sein (was soll nach der
    Änderung anders sein, woran erkennt man es).
 3. 30 Tage Einspruch, öffentlich.
@@ -301,8 +305,11 @@ umgerechnet. Eine gewonnene Wette gibt kein Recht, Regeln zu ändern.
   veröffentlichtem Festpreis). Beide werden gleich gezählt. Geld kauft nie den
   Austritt, die Übersetzung oder das Urteil. Kein anerkanntes Buch darf mehr als ein
   Drittel seiner Einnahmen von Gemessenen haben.
-- Verboten bleibt jede andere Zahlung des Gemessenen an einen Halter (Sponsoring,
-  Auftrag, Stelle in einer gemessenen Verwaltung).
+- Ein Auftrag des Gemessenen, eigene Behauptungen hinterlegen zu lassen, ist erlaubt —
+  zum veröffentlichten Festpreis je Eintrag, ohne Bedingungen. Verboten sind Zahlungen
+  des Gemessenen, die an Auswahl, Übersetzung, Urteil oder Darstellung geknüpft sind
+  oder zitierte Einträge verdrängen (Sponsoring, Exklusivität, Stelle in einer
+  gemessenen Verwaltung).
 
 ### 8.5 Abzweigen und Bleiben
 
