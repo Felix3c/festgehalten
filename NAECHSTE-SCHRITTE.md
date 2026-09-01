@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 30.08.2026 abends (Verfassung §8 in FORMAT.md; Auflösungslauf 30.08.: 25 aufgelöst, 53 gesamt; Köln 15 Ja/Nein aufgelöst, Brier 0,58, erster Rang; alles committet, NICHT gepusht)
+**Stand:** 30.08.2026 abends (Verfassung §8 in FORMAT.md; Auflösungslauf 30.08.: 25 aufgelöst, 53 gesamt; Köln 15 Ja/Nein aufgelöst, Brier 0,58, erster Rang; gepusht 01.09. bis 9be7842)
 **Führendes Dokument:** FORMAT.md (festgehalten-Format v1 inkl. §8 Verfassung) · ~/GUARD.md (Ebenen-Karte)
 **Phase:** v1 live, Verfassung beschlossen, nicht committet
 
@@ -16,7 +16,7 @@
 
 ## Nächster konkreter Schritt
 
-`git push` — Commits b41ac77 (Verfassung §8, Umbenennung), 1d83bdd (Auflösungslauf, §8.4-Erklärung in BUCH.md). Ab dann ist die Verfassung öffentlich und Köln steht mit Rang auf der Seite. Vorher FORMAT.md §8 einmal selbst lesen. Danach README/Übersicht auf „festgehalten-Format" umstellen und `herkunft` im Generator anzeigen (lesen, nicht rechnen).
+Die 24 offenen fälligen Wetten: Jahresabschlüsse Köln/Essen/Dortmund erst nach Feststellung auflösen; Rest bei nächstem Lauf. Anleitung „Ein Buch in einer Stunde" (Kachel 2.2). Generator: `herkunft` anzeigen. Danach README/Übersicht auf „festgehalten-Format" umstellen und `herkunft` im Generator anzeigen (lesen, nicht rechnen).
 
 ## Wartet auf Felix
 
