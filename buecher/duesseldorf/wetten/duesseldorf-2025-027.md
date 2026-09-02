@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-09-02
+    text: "4. Lauf 02.09.2026: keine Kostenfeststellung oder Endabrechnung auffindbar; gesucht: duesseldorf.de Pressedienst (Richtfest 26.09.2025: „rund 106,5 Millionen Euro” Planzahl; „Düsseldorf macht Schule!” 22.07.2026: nur Summe 160 Mio für drei Projekte; Radleitroute 31.08.2026), WDR 10.07.2026 („für 106 Millionen Euro”), WZ 22.07.2026 (Paywall), RP (blockiert), Wikipedia mit RP-Teilkosten (Sporthalle 27, Mensa 8,5, MINT 6,5 Mio, keine Gesamtsumme), RIS nicht erreichbar. Teilbefund: Planstand 106,5 Mio EUR (Ratsbeschluss 12/2022) bis zum Bezug unverändert, keine Hinweise auf Nachfinanzierung, aber keine Ist-Zahl; Abrechnung erfahrungsgemäß 1–2 Jahre nach Bezug in einer Ausschussvorlage."
 ---
 
 ## Kontext

@@ -17,10 +17,12 @@ prognosen:
     wert: 0.50
     hinterlegt_am: 2026-08-28
     art: geschaetzt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 1
+aufgeloest_am: 2026-09-02
+beleg_ausgang: https://luisen-gymnasium.de/
+vermerke:
+  - am: 2026-09-02
+    text: "Aufgelöst durch Claude für den Halter (4. Lauf 02.09.2026); Beleg: Website des Luisen-Gymnasiums (Stand 02.09.2026): „Unsere neue Adresse lautet: Völklinger Str. 122-124, 40221 Düsseldorf” und „Das Sekretariat des Luisen-Gymnasiums ist ab Montag, 24.8.2026, wieder besetzt.” Stützend: Pressedienst Stadt Düsseldorf 31.08.2026 nennt den Neubau „neuen Schulstandort an der Völklinger Straße”; WDR 10.07.2026: „Die Bauarbeiten sind im Zeitplan, die neue Schule ist bereit für den Einzug.” Vorbehalt: Stichtag 31.08. lag einen Tag vor Ferienende, erster Unterrichtstag im Neubau ist der 02.09.2026; ein Nachbericht über den ersten Schultag lag am Auflösungstag noch nicht vor; offizielle Einweihung erst Oktober 2026. Wer den Bezug bestreitet: §2.4."
 ---
 
 ## Kontext
