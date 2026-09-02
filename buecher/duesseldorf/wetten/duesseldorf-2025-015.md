@@ -10,6 +10,7 @@ typ: punkt
 einheit: Mio EUR
 toleranz: 0.1
 pruefung_am: 2027-06-01
+verfall_am: 2030-06-01
 prognosen:
   - von: Stadt Düsseldorf
     wert: 34.2

@@ -10,6 +10,7 @@ typ: punkt
 einheit: Mio EUR
 toleranz: 0.10
 pruefung_am: 2026-05-28
+verfall_am: 2029-05-28
 prognosen:
   - von: Stadt Dortmund
     wert: 335

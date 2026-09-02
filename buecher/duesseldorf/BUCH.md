@@ -18,3 +18,9 @@ Stadt, nach denselben Regeln.
 
 Der Halter nimmt von der gemessenen Stelle kein Geld außer einem veröffentlichten Festpreis
 für selbst hinterlegte Einträge (festgehalten-Format v1, §8.4). Bisher: keins.
+
+Verfall: Eine offene Wette verfällt zwei Jahre nach ihrem Prüfdatum (Format §1.1, §2.3).
+Wetten, die einen vom Rat festgestellten Jahresabschluss brauchen, verfallen erst nach drei
+Jahren, weil Städte ihre Abschlüsse oft Jahre später feststellen; bei ihnen steht `verfall_am`
+ausdrücklich in der Datei. Verfallene Wetten zählen nicht in die Trefferquote, aber in die
+Rechenschaft. (Halter-Regel, 02.09.2026.)
