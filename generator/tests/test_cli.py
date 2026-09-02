@@ -57,3 +57,34 @@ def test_lesefehler_format(tmp_path: Path, capsys):
     err = capsys.readouterr().err
     assert "BUCH.md: kopf — " in err
     assert "1 Fehler, nichts geschrieben." in err
+
+
+def test_neu_legt_gueltiges_buch_an(tmp_path: Path, capsys):
+    ziel = tmp_path / "meinbuch"
+    rc = cli.main(["neu", str(ziel)])
+    assert rc == 0
+    assert (ziel / "BUCH.md").exists()
+    assert (ziel / ".github" / "workflows" / "pages.yml").exists()
+    beispiele = list((ziel / "wetten").glob("*.md"))
+    assert len(beispiele) == 1
+    assert "OK:" in capsys.readouterr().out
+    # Das Gerüst baut ohne Änderung durch.
+    rc = cli.main(["bauen", str(ziel), str(tmp_path / "site")])
+    assert rc == 0
+    assert (tmp_path / "site" / "index.html").exists()
+
+
+def test_neu_ueberschreibt_nichts(tmp_path: Path, capsys):
+    ziel = tmp_path / "meinbuch"
+    ziel.mkdir()
+    (ziel / "BUCH.md").write_text("eigenes", encoding="utf-8")
+    rc = cli.main(["neu", str(ziel)])
+    assert rc == 1
+    assert (ziel / "BUCH.md").read_text(encoding="utf-8") == "eigenes"
+    assert "nicht leer" in capsys.readouterr().err
+
+
+def test_neu_per_python_m(tmp_path: Path):
+    r = subprocess.run([sys.executable, "-m", "wettbuch", "neu", str(tmp_path / "b")],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr

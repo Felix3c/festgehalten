@@ -1,17 +1,34 @@
-"""Einstieg: python -m wettbuch bauen <buch> <ausgabe> [--pruefen]
-              python -m wettbuch alle <buecher-ordner> <ausgabe> [--pruefen]"""
+"""Einstieg (als Befehl `festgehalten` oder `python -m wettbuch`):
+    festgehalten neu   <buch-ordner> [--stadt "Name"]
+    festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]
+    festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen]"""
 from __future__ import annotations
 
 import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import bewerten, lesen, pruefen, seiten
+from . import bewerten, lesen, neu, pruefen, seiten
 
 HILFE = (
-    "Aufruf: python -m wettbuch bauen <buch-ordner> <ausgabe-ordner> [--pruefen]\n"
-    "        python -m wettbuch alle <buecher-ordner> <ausgabe-ordner> [--pruefen]"
+    "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
+    "        festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]\n"
+    "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen]\n"
+    "(python -m wettbuch … geht ebenso)"
 )
+
+
+def _neu(ziel: Path, stadt: str | None) -> int:
+    try:
+        pfade = neu.buch_anlegen(ziel, stadt)
+    except FileExistsError as e:
+        print(str(e), file=sys.stderr)
+        return 1
+    for p in pfade:
+        print(f"  {p.relative_to(ziel)}")
+    print(f"OK: Gerüst in {ziel}. Jetzt BUCH.md und die Beispielwette ausfüllen, dann:")
+    print(f"    festgehalten bauen {ziel} site")
+    return 0
 
 
 def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
@@ -138,6 +155,18 @@ def main(argv: list[str] | None = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     nur_pruefen = "--pruefen" in argv
     argv = [a for a in argv if a != "--pruefen"]
+
+    if argv and argv[0] == "neu":
+        stadt = None
+        if "--stadt" in argv:
+            i = argv.index("--stadt")
+            stadt = argv[i + 1] if i + 1 < len(argv) else None
+            del argv[i:i + 2]
+        if len(argv) != 2:
+            print(HILFE, file=sys.stderr)
+            return 2
+        return _neu(Path(argv[1]), stadt)
+
     if len(argv) != 3 or argv[0] not in ("bauen", "alle"):
         print(HILFE, file=sys.stderr)
         return 2

@@ -4,18 +4,22 @@ Institutionen beim Wort genommen: was sie angekündigt haben, was eingetreten is
 
 - **Format:** [FORMAT.md](FORMAT.md) — wer diese Regeln einhält, führt ein Wettbuch.
 - **Methode:** [METHODE.md](METHODE.md) — wie die Computer-Prognosen entstehen (Referenzklassen, Tabelle, Nachmachen in fünf Schritten).
-- **Generator:** `python -m wettbuch bauen <buch> <ausgabe>` — macht aus einem Ordner
-  eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`. Mit
-  `python -m wettbuch alle <buecher-ordner> <ausgabe>` baut er jedes Unterverzeichnis
+- **Anleitung:** [ANLEITUNG.md](ANLEITUNG.md) — ein Buch in einer Stunde, von der Installation bis zur öffentlichen Seite.
+- **Generator:** `festgehalten bauen <buch> <ausgabe>` — macht aus einem Ordner
+  eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`. `festgehalten neu <ordner>`
+  legt ein Gerüst an; `festgehalten alle <buecher-ordner> <ausgabe>` baut jedes Unterverzeichnis
   mit `BUCH.md` und schreibt zusätzlich eine Übersichtsseite über alle Bücher.
 - **Erstes Buch:** [buecher/koeln](buecher/koeln) — „Köln gegen Köln".
 
 ## Selbst ein Buch führen
 
-1. Ordner anlegen, `BUCH.md` nach FORMAT.md §4.
-2. Eine Datei pro Wette nach FORMAT.md §1 in einen Unterordner `wetten/`.
-3. `python -m pip install -e .` und `python -m wettbuch bauen <ordner> site`.
-4. `site/` irgendwo hinlegen. Fertig. Niemanden fragen.
+1. `python -m pip install "festgehalten @ git+https://github.com/Felix3c/festgehalten"`
+2. `festgehalten neu meinbuch --stadt "Stadt Musterstadt"` — legt `BUCH.md` (FORMAT.md §4),
+   eine Beispielwette (§1) und einen Pages-Workflow an.
+3. Ausfüllen, dann `festgehalten bauen meinbuch site`.
+4. `site/` irgendwo hinlegen, oder pushen und GitHub Pages machen lassen. Fertig. Niemanden fragen.
+
+Schritt für Schritt mit Zeitplan: [ANLEITUNG.md](ANLEITUNG.md).
 
 Halter-Disziplin, die kein Programm prüfen kann: Einträge nach dem Commit nicht mehr
 ändern (FORMAT.md §1.3.3), Teilerfüllung als Nein auflösen (§2.2), zurückgezogene
@@ -29,6 +33,8 @@ Dateien nur von Leuten annehmen, denen man Schreibrechte gäbe.
 
     python -m pip install -e ".[test]"
     python -m pytest
-    python -m wettbuch bauen <ordner> site --pruefen  # nur prüfen, nichts schreiben
+    festgehalten bauen <ordner> site --pruefen  # nur prüfen, nichts schreiben
+
+`python -m wettbuch` ist dasselbe wie `festgehalten` (der Modulname ist älter als der Name des Formats).
 
 Lizenz: Code MIT, Bücher CC0.

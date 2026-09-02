@@ -1,9 +1,18 @@
 [project]
-name = "wettbuch"
-version = "0.1.0"
-description = "Referenz-Implementierung des Wettbuch-Formats v1"
+name = "festgehalten"
+version = "0.2.0"
+description = "Referenz-Implementierung des festgehalten-Formats v1: aus einem Ordner mit Wetten eine statische Seite mit Rangliste"
+readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = ["pyyaml>=6.0", "markdown>=3.5"]
+
+[project.urls]
+Homepage = "https://felix3c.github.io/festgehalten/"
+Repository = "https://github.com/Felix3c/festgehalten"
+
+[project.scripts]
+festgehalten = "wettbuch.cli:main"
 
 [project.optional-dependencies]
 test = ["pytest>=8.0"]
