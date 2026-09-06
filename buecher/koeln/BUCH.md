@@ -1,5 +1,6 @@
 ---
 titel: Köln gegen Köln
+institution: Stadt Köln
 halter: Felix Lind
 kontakt: https://belegbar.eu
 seit: 2026-08-28

@@ -1,5 +1,6 @@
 ---
 titel: Bonn gegen Bonn
+institution: Stadt Bonn
 halter: Felix Lind
 kontakt: https://belegbar.eu
 seit: 2026-08-28
