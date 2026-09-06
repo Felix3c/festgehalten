@@ -2,6 +2,7 @@
 titel: Hinterlegt
 halter: Felix Lind
 kontakt: https://belegbar.eu
+einreichung: hinterlegt@belegbar.eu
 seit: 2026-09-05
 lizenz: CC0
 format: v1
