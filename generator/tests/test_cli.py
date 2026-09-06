@@ -1,6 +1,7 @@
 from pathlib import Path
 import subprocess
 import sys
+import types
 
 from wettbuch import cli
 
@@ -88,3 +89,31 @@ def test_neu_per_python_m(tmp_path: Path):
     r = subprocess.run([sys.executable, "-m", "wettbuch", "neu", str(tmp_path / "b")],
                        capture_output=True, text=True)
     assert r.returncode == 0, r.stderr
+
+
+def test_zweig_faellt_bei_git_fehler_auf_main_zurueck(tmp_path: Path, monkeypatch):
+    def kaputt(*args, **kwargs):
+        raise OSError("git nicht gefunden")
+
+    monkeypatch.setattr(subprocess, "run", kaputt)
+    assert cli._zweig(tmp_path) == "main"
+
+
+def test_zweig_nutzt_origin_head_bei_detached_head(tmp_path: Path, monkeypatch):
+    def fake_run(args, **kwargs):
+        if "origin/HEAD" in args:
+            return types.SimpleNamespace(stdout="origin/master\n")
+        return types.SimpleNamespace(stdout="HEAD\n")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    assert cli._zweig(tmp_path) == "master"
+
+
+def test_zweig_liest_aktuellen_branch(tmp_path: Path, monkeypatch):
+    def fake_run(args, **kwargs):
+        if "origin/HEAD" in args:
+            raise AssertionError("origin/HEAD sollte hier nicht gebraucht werden")
+        return types.SimpleNamespace(stdout="hinterlegt-sammelbuch\n")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    assert cli._zweig(tmp_path) == "hinterlegt-sammelbuch"

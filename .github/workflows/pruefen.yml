@@ -12,4 +12,4 @@ jobs:
         with: { python-version: "3.12" }
       - run: python -m pip install -e ".[test]"
       - run: python -m pytest -q
-      - run: python -m wettbuch alle buecher site --pruefen
+      - run: python -m wettbuch alle buecher site

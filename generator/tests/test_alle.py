@@ -227,3 +227,12 @@ def test_alle_lehnt_zwei_sammelbuecher_ab(buecher_ordner: Path, tmp_path: Path, 
     rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site")])
     assert rc == 1
     assert "sammelbuch" in capsys.readouterr().err
+
+
+def test_alle_lehnt_zwei_sammelbuecher_auch_bei_pruefen_ab(buecher_ordner: Path, tmp_path: Path, capsys):
+    for name in ("erstes", "zweites"):
+        p = buecher_ordner / name / "BUCH.md"
+        p.write_text(p.read_text(encoding="utf-8").replace("format: v1", "format: v1\nsammelbuch: true"), encoding="utf-8")
+    rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site"), "--pruefen"])
+    assert rc == 1
+    assert "sammelbuch" in capsys.readouterr().err
