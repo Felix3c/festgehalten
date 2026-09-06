@@ -222,3 +222,9 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) ->
               "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
     schreib("alle.json", json.dumps(daten, ensure_ascii=False, indent=2))
     return geschrieben
+
+
+def buecher_schreiben(buecher: list[dict], ausgabe: Path) -> None:
+    """Buchliste für Werkzeuge, die Einträge einreichen (Doorway, Spec Teil 3 §5.2)."""
+    ausgabe.mkdir(parents=True, exist_ok=True)
+    (ausgabe / "buecher.json").write_text(json.dumps(buecher, ensure_ascii=False, indent=2), encoding="utf-8")

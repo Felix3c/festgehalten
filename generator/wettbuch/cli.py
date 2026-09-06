@@ -1,9 +1,10 @@
 """Einstieg (als Befehl `festgehalten` oder `python -m wettbuch`):
     festgehalten neu   <buch-ordner> [--stadt "Name"]
     festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]
-    festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen]"""
+    festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name]"""
 from __future__ import annotations
 
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -13,7 +14,7 @@ from . import bewerten, lesen, neu, pruefen, seiten
 HILFE = (
     "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
     "        festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]\n"
-    "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen]\n"
+    "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name]\n"
     "(python -m wettbuch … geht ebenso)"
 )
 
@@ -84,7 +85,31 @@ def _slug_kollision(bewertet: dict) -> str | None:
     return None
 
 
-def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
+def _zweig() -> str:
+    try:
+        r = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True, check=True)
+        z = r.stdout.strip()
+        return z if z and z != "HEAD" else "main"
+    except (OSError, subprocess.CalledProcessError):
+        return "main"
+
+
+def _bucheintrag(name: str, meta: dict, repo: str | None, zweig: str) -> dict:
+    return {
+        "ordner": name,
+        "titel": str(meta.get("titel", name)),
+        "institution": meta.get("institution"),
+        "halter": meta.get("halter"),
+        "kontakt": meta.get("kontakt"),
+        "einreichung": meta.get("einreichung"),
+        "repo": repo,
+        "zweig": zweig,
+        "pfad": f"buecher/{name}/wetten",
+        "sammelbuch": bool(meta.get("sammelbuch", False)),
+    }
+
+
+def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | None) -> int:
     unterordner = _unterbuecher(buecher_ordner)
     if not unterordner:
         print(f"{buecher_ordner}: keine Unterordner mit BUCH.md gefunden", file=sys.stderr)
@@ -114,6 +139,10 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
             continue
 
         gute.append((name, buch, bewertet))
+
+    sammel = [name for name, buch, _ in gute if buch["meta"].get("sammelbuch") is True]
+    if len(sammel) > 1:
+        fehler_gesamt.append(f"{', '.join(sammel)}: sammelbuch — höchstens ein Buch darf sammelbuch: true tragen")
 
     if fehler_gesamt:
         for z in fehler_gesamt:
@@ -147,6 +176,8 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
         })
 
     seiten.uebersicht_schreiben(uebersicht, ausgabe, build_zeit)
+    zweig = _zweig()
+    seiten.buecher_schreiben([_bucheintrag(name, buch["meta"], repo, zweig) for name, buch, _ in gute], ausgabe)
     print(f"OK: {len(gute)} {buch_wort}, {gesamt_wetten} Wette{plural}, nach {ausgabe}")
     return 0
 
@@ -155,6 +186,12 @@ def main(argv: list[str] | None = None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     nur_pruefen = "--pruefen" in argv
     argv = [a for a in argv if a != "--pruefen"]
+
+    repo = None
+    if "--repo" in argv:
+        i = argv.index("--repo")
+        repo = argv[i + 1] if i + 1 < len(argv) else None
+        del argv[i:i + 2]
 
     if argv and argv[0] == "neu":
         stadt = None
@@ -174,4 +211,4 @@ def main(argv: list[str] | None = None) -> int:
     ordner, ausgabe = Path(argv[1]), Path(argv[2])
     if argv[0] == "bauen":
         return _bauen(ordner, ausgabe, nur_pruefen)
-    return _alle(ordner, ausgabe, nur_pruefen)
+    return _alle(ordner, ausgabe, nur_pruefen, repo)
