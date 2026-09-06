@@ -178,3 +178,21 @@ def test_alle_ohne_unterbuecher_klare_meldung(tmp_path: Path, capsys):
     err = capsys.readouterr().err
     assert str(leer) in err
     assert "BUCH.md" in err
+
+
+from conftest import BUCH_OK
+
+
+def test_alle_baut_buch_ohne_eintraege(tmp_path: Path):
+    buecher = tmp_path / "buecher"
+    leer = buecher / "leer"
+    (leer / "wetten").mkdir(parents=True)
+    (leer / "BUCH.md").write_text(BUCH_OK, encoding="utf-8")
+    ausgabe = tmp_path / "site"
+
+    rc = cli.main(["alle", str(buecher), str(ausgabe)])
+
+    assert rc == 0
+    assert (ausgabe / "leer" / "index.html").exists()
+    daten = json.loads((ausgabe / "alle.json").read_text(encoding="utf-8"))
+    assert daten[0]["wetten"] == 0 and daten[0]["offen"] == 0
