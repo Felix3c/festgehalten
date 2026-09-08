@@ -211,3 +211,26 @@ def test_unhashbare_werte_werfen_nicht(gueltig):
     assert any(x.feld == "typ" for x in f)
     assert any(x.feld == "ausgang" for x in f)
     assert any(x.feld == "prognosen[1].art" for x in f)
+
+
+META_OK = {"titel": "T", "halter": "H", "seit": date(2026, 8, 28), "format": "v1"}
+
+
+def test_meta_neue_felder_gueltig():
+    meta = dict(META_OK, institution="Stadt Test", einreichung="buch@example.org", sammelbuch=True)
+    assert pruefen._meta_pruefen(meta) == []
+
+
+def test_meta_einreichung_muss_mailadresse_sein():
+    f = pruefen._meta_pruefen(dict(META_OK, einreichung="https://example.org"))
+    assert [x.feld for x in f] == ["einreichung"]
+
+
+def test_meta_sammelbuch_muss_bool_sein():
+    f = pruefen._meta_pruefen(dict(META_OK, sammelbuch="ja"))
+    assert [x.feld for x in f] == ["sammelbuch"]
+
+
+def test_meta_institution_muss_text_sein():
+    f = pruefen._meta_pruefen(dict(META_OK, institution=42))
+    assert [x.feld for x in f] == ["institution"]

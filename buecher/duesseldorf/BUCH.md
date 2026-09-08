@@ -1,5 +1,6 @@
 ---
 titel: Düsseldorf gegen Düsseldorf
+institution: Stadt Düsseldorf
 halter: Felix Lind
 kontakt: https://belegbar.eu
 seit: 2026-08-28

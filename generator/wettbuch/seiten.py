@@ -55,6 +55,11 @@ def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: st
     )
 
 
+def _herkunft(w: dict) -> str:
+    """FORMAT.md §1.1: `herkunft` ist optional, Standard `zitiert`."""
+    return str(w.get("herkunft") or "zitiert")
+
+
 def _status_text(w: dict) -> str:
     s = w["_bewertung"]["status"]
     if s != "aufgeloest":
@@ -84,11 +89,12 @@ def _tabelle_html(tabelle: list[dict], rang_ab: int) -> str:
 def _wettenliste_html(wetten: list[dict], tiefe: int) -> str:
     p = "../" * tiefe
     z = ['<div class="tabelle-wrap"><table><thead><tr><th>Wette</th><th>Institution</th>'
-         '<th>gesagt am</th><th>Prüfung ab</th><th>Ausgang</th></tr></thead><tbody>']
+         '<th>gesagt am</th><th>Prüfung ab</th><th>Herkunft</th><th>Ausgang</th></tr></thead><tbody>']
     for w in wetten:
         z.append(f'<tr><td><a href="{p}wette/{_e(w["id"])}.html">{_e(w["frage"])}</a></td>'
                  f'<td><a href="{p}institution/{slug(w["institution"])}.html">{_e(w["institution"])}</a></td>'
-                 f'<td>{datum(w["gesagt_am"])}</td><td>{datum(w["pruefung_am"])}</td><td>{_status_text(w)}</td></tr>')
+                 f'<td>{datum(w["gesagt_am"])}</td><td>{datum(w["pruefung_am"])}</td>'
+                 f'<td>{_e(_herkunft(w))}</td><td>{_status_text(w)}</td></tr>')
     z.append("</tbody></table></div>")
     return "\n".join(z)
 
@@ -99,7 +105,8 @@ def _wette_html(w: dict) -> str:
          f'<p><strong>{_e(w["institution"])}</strong> · {_e(w["gesagt_von"])} · gesagt am {datum(w["gesagt_am"])} · '
          f'<a href="{_e(w["quelle"])}">Quelle</a></p>',
          f"<blockquote>{_e(w['zitat'])}</blockquote>",
-         f"<p>Typ: {_e(w['typ'])} · Prüfung ab {datum(w['pruefung_am'])} · Status: {_status_text(w)}</p>",
+         f"<p>Typ: {_e(w['typ'])} · Prüfung ab {datum(w['pruefung_am'])} · Herkunft: {_e(_herkunft(w))} · "
+         f"Status: {_status_text(w)}</p>",
          "<table><thead><tr><th>Wer</th><th class=zahl>Prognose</th><th>Art</th><th>hinterlegt am</th>"
          "<th class=zahl>Score</th></tr></thead><tbody>"]
     for p in w["prognosen"]:
@@ -222,3 +229,9 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) ->
               "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
     schreib("alle.json", json.dumps(daten, ensure_ascii=False, indent=2))
     return geschrieben
+
+
+def buecher_schreiben(buecher: list[dict], ausgabe: Path) -> None:
+    """Buchliste für Werkzeuge, die Einträge einreichen (Doorway, Spec Teil 3 §5.2)."""
+    ausgabe.mkdir(parents=True, exist_ok=True)
+    (ausgabe / "buecher.json").write_text(json.dumps(buecher, ensure_ascii=False, indent=2), encoding="utf-8")

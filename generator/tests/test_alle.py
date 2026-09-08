@@ -4,6 +4,7 @@ import json
 
 import pytest
 
+from conftest import BUCH_OK
 from wettbuch import cli
 
 # Muster wie im buch-Fixture aus conftest.py, für zwei unterschiedliche Bücher.
@@ -178,3 +179,60 @@ def test_alle_ohne_unterbuecher_klare_meldung(tmp_path: Path, capsys):
     err = capsys.readouterr().err
     assert str(leer) in err
     assert "BUCH.md" in err
+
+
+def test_alle_baut_buch_ohne_eintraege(tmp_path: Path):
+    buecher = tmp_path / "buecher"
+    leer = buecher / "leer"
+    (leer / "wetten").mkdir(parents=True)
+    (leer / "BUCH.md").write_text(BUCH_OK, encoding="utf-8")
+    ausgabe = tmp_path / "site"
+
+    rc = cli.main(["alle", str(buecher), str(ausgabe)])
+
+    assert rc == 0
+    assert (ausgabe / "leer" / "index.html").exists()
+    daten = json.loads((ausgabe / "alle.json").read_text(encoding="utf-8"))
+    assert daten[0]["wetten"] == 0 and daten[0]["offen"] == 0
+
+
+def test_alle_schreibt_buecher_json(buecher_ordner: Path, tmp_path: Path):
+    ausgabe = tmp_path / "site"
+    buch_md = buecher_ordner / "erstes" / "BUCH.md"
+    buch_md.write_text(buch_md.read_text(encoding="utf-8").replace(
+        "format: v1", "format: v1\ninstitution: Stadt Erstes\neinreichung: buch@example.org\nsammelbuch: true"),
+        encoding="utf-8")
+
+    rc = cli.main(["alle", str(buecher_ordner), str(ausgabe), "--repo", "beispiel/repo"])
+    assert rc == 0
+
+    buecher = json.loads((ausgabe / "buecher.json").read_text(encoding="utf-8"))
+    nach_ordner = {b["ordner"]: b for b in buecher}
+    erstes = nach_ordner["erstes"]
+    assert erstes["institution"] == "Stadt Erstes"
+    assert erstes["einreichung"] == "buch@example.org"
+    assert erstes["sammelbuch"] is True
+    assert erstes["repo"] == "beispiel/repo"
+    assert erstes["pfad"] == "buecher/erstes/wetten"
+    assert isinstance(erstes["zweig"], str) and erstes["zweig"]
+    zweites = nach_ordner["zweites"]
+    assert zweites["institution"] is None
+    assert zweites["sammelbuch"] is False
+
+
+def test_alle_lehnt_zwei_sammelbuecher_ab(buecher_ordner: Path, tmp_path: Path, capsys):
+    for name in ("erstes", "zweites"):
+        p = buecher_ordner / name / "BUCH.md"
+        p.write_text(p.read_text(encoding="utf-8").replace("format: v1", "format: v1\nsammelbuch: true"), encoding="utf-8")
+    rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site")])
+    assert rc == 1
+    assert "sammelbuch" in capsys.readouterr().err
+
+
+def test_alle_lehnt_zwei_sammelbuecher_auch_bei_pruefen_ab(buecher_ordner: Path, tmp_path: Path, capsys):
+    for name in ("erstes", "zweites"):
+        p = buecher_ordner / name / "BUCH.md"
+        p.write_text(p.read_text(encoding="utf-8").replace("format: v1", "format: v1\nsammelbuch: true"), encoding="utf-8")
+    rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site"), "--pruefen"])
+    assert rc == 1
+    assert "sammelbuch" in capsys.readouterr().err

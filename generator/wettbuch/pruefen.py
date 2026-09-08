@@ -7,6 +7,7 @@ from datetime import date
 from numbers import Real
 
 ID_MUSTER = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+MAIL_MUSTER = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 PFLICHT = [
     "id", "institution", "gesagt_von", "gesagt_am", "quelle", "zitat", "frage",
     "typ", "pruefung_am", "prognosen", "ausgang", "aufgeloest_am",
@@ -153,6 +154,12 @@ def _meta_pruefen(meta: dict) -> list[Fehler]:
         f.append(Fehler("BUCH.md", "seit", "muss ein Datum YYYY-MM-DD sein, nicht in Anführungszeichen"))
     if "format" in meta and meta["format"] != "v1":
         f.append(Fehler("BUCH.md", "format", f"dieser Generator kennt nur v1, Buch sagt {meta['format']!r}"))
+    if "institution" in meta and not isinstance(meta["institution"], str):
+        f.append(Fehler("BUCH.md", "institution", "muss Text sein"))
+    if "einreichung" in meta and not (isinstance(meta["einreichung"], str) and MAIL_MUSTER.match(meta["einreichung"])):
+        f.append(Fehler("BUCH.md", "einreichung", "muss eine Mailadresse sein"))
+    if "sammelbuch" in meta and not isinstance(meta["sammelbuch"], bool):
+        f.append(Fehler("BUCH.md", "sammelbuch", "muss true oder false sein"))
     return f
 
 

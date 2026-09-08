@@ -1,5 +1,6 @@
 ---
 titel: Dortmund gegen Dortmund
+institution: Stadt Dortmund
 halter: Felix Lind
 kontakt: https://belegbar.eu
 seit: 2026-08-28

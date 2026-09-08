@@ -20,7 +20,13 @@
 
 ## Nächster konkreter Schritt
 
-Generator: Feld `herkunft` (`zitiert` | `hinterlegt`) auf der Wetten-Seite und in der Buch-Tabelle anzeigen — lesen, nicht rechnen (in `generator/wettbuch/seiten.py` kommt `herkunft` bisher nicht vor). Test dazu in `generator/tests/`. Danach bauen, Tests, commit.
+Erledigt 08.09.: Generator zeigt `herkunft` (Standard `zitiert`, FORMAT.md §1.1) als Spalte
+in der Wettenliste (Buch- und Institutionsseite) und in der Statuszeile der Wetten-Seite;
+drei Tests in `generator/tests/test_seiten.py`, 83 Tests grün, `alle` baut 6 Bücher / 209 Wetten.
+
+Offen: Zweig `hinterlegt-sammelbuch` (Sammelbuch Hinterlegt, `institution` in Stadtbüchern,
+PR-Prüfung, `herkunft`-Anzeige) liegt vor master und ist nicht gemergt. Merge in master ist
+der nächste Schritt, sobald Felix ihn freigibt; danach deployt Pages.
 
 ## Wartet auf Felix
 
