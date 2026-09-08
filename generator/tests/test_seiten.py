@@ -91,3 +91,29 @@ def test_slug_kollision_ist_eigene_exception(buch: Path, tmp_path: Path):
     bew["wetten"].append(zweite)
     with pytest.raises(seiten.SlugKollision):
         seiten.seiten_schreiben(b["meta"], bew, tmp_path / "site", build_zeit="x")
+
+
+def test_wettenseite_zeigt_herkunft_standard_zitiert(buch: Path, tmp_path: Path):
+    html = (_gebaut(buch, tmp_path) / "wette" / "test-2025-001.html").read_text(encoding="utf-8")
+    assert "Herkunft: zitiert" in html
+
+
+def test_wettenseite_zeigt_herkunft_hinterlegt(buch: Path, tmp_path: Path):
+    p = buch / "wetten" / "test-2025-001.md"
+    p.write_text(p.read_text(encoding="utf-8").replace("typ: ja_nein", "typ: ja_nein\nherkunft: hinterlegt"),
+                 encoding="utf-8")
+    html = (_gebaut(buch, tmp_path) / "wette" / "test-2025-001.html").read_text(encoding="utf-8")
+    assert "Herkunft: hinterlegt" in html
+    assert "Herkunft: zitiert" not in html
+
+
+def test_wettenliste_hat_spalte_herkunft(buch: Path, tmp_path: Path):
+    p = buch / "wetten" / "test-2025-001.md"
+    p.write_text(p.read_text(encoding="utf-8").replace("typ: ja_nein", "typ: ja_nein\nherkunft: hinterlegt"),
+                 encoding="utf-8")
+    aus = _gebaut(buch, tmp_path)
+    index = (aus / "index.html").read_text(encoding="utf-8")
+    inst = (aus / "institution" / "stadt-test.html").read_text(encoding="utf-8")
+    assert "<th>Herkunft</th>" in index
+    assert "<td>hinterlegt</td>" in index
+    assert "<td>hinterlegt</td>" in inst
