@@ -10,6 +10,7 @@ Institutionen beim Wort genommen: was sie angekündigt haben, was eingetreten is
   legt ein Gerüst an; `festgehalten alle <buecher-ordner> <ausgabe>` baut jedes Unterverzeichnis
   mit `BUCH.md` und schreibt zusätzlich eine Übersichtsseite über alle Bücher.
 - **Erstes Buch:** [buecher/koeln](buecher/koeln) — „Köln gegen Köln".
+- **Warum das Ganze:** Felix Lind (2026), *Kybernokratie: Demokratie mit Gedächtnis. Ein offenes Format, um öffentliche Stellen an ihren eigenen Prognosen zu messen, und die Regel, die daraus folgt.* Preprint, DOI [10.5281/zenodo.22685528](https://doi.org/10.5281/zenodo.22685528), Quelltext und Prüfsummen: [Kybernokratie-Paper](https://github.com/Felix3c/Kybernokratie-Paper). Das Paper begründet das Format und leitet daraus die Erwartungsklausel ab.
 
 ## Selbst ein Buch führen
 
