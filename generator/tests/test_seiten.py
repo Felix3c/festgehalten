@@ -117,3 +117,32 @@ def test_wettenliste_hat_spalte_herkunft(buch: Path, tmp_path: Path):
     assert "<th>Herkunft</th>" in index
     assert "<td>hinterlegt</td>" in index
     assert "<td>hinterlegt</td>" in inst
+
+
+def test_index_zeigt_lizenz(buch: Path, tmp_path: Path):
+    html = (_gebaut(buch, tmp_path) / "index.html").read_text(encoding="utf-8")
+    assert "Lizenz CC0" in html
+
+
+def test_ersetzte_wette_heisst_ersetzt_nicht_offen(buch: Path, tmp_path: Path):
+    alt = (buch / "wetten" / "test-2025-001.md")
+    text = alt.read_text(encoding="utf-8").replace("ausgang: null", "ersetzt_durch: test-2025-002\nausgang: null")
+    alt.write_text(text, encoding="utf-8")
+    neu = text.replace("test-2025-001", "test-2025-002").replace("ersetzt_durch: test-2025-002\n", "")
+    (buch / "wetten" / "test-2025-002.md").write_text(neu, encoding="utf-8")
+    aus = _gebaut(buch, tmp_path)
+    liste = (aus / "index.html").read_text(encoding="utf-8")
+    assert "ersetzt durch test-2025-002" in liste
+    seite = (aus / "wette" / "test-2025-001.html").read_text(encoding="utf-8")
+    assert 'href="test-2025-002.html"' in seite
+    daten = json.loads((aus / "wettbuch.json").read_text(encoding="utf-8"))
+    status = {w["id"]: w["_bewertung"]["status"] for w in daten["wetten"]}
+    assert status == {"test-2025-001": "ersetzt", "test-2025-002": "offen"}
+
+
+def test_offene_wette_mit_vermerk_zeigt_letzte_suche(buch: Path, tmp_path: Path):
+    f = buch / "wetten" / "test-2025-001.md"
+    f.write_text(f.read_text(encoding="utf-8").replace(
+        "vermerke: []", 'vermerke:\n  - am: 2026-08-30\n    text: "3. Lauf: nichts gefunden"'), encoding="utf-8")
+    html = (_gebaut(buch, tmp_path) / "index.html").read_text(encoding="utf-8")
+    assert "Beleg gesucht, zuletzt 30.08.2026" in html
