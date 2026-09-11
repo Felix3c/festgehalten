@@ -1,8 +1,8 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 11.09.2026 abends (alle acht Weitsicht-Zahlen und Wette 9 im GUARD-Tab abgefragt und aufgedeckt; Köln-Fall misst auf GitHub Actions; Zweig `weitsicht` steht auf 9ac6722 mit master gemergt, die acht Buch-Einträge und sechs Köln-Entwürfe sind weiter uncommittet)
+**Stand:** 11.09.2026 nachts (Weitsicht-Buch mit allen sechzehn Zahlen committet, in master gemergt und öffentlich)
 **Führendes Dokument:** FORMAT.md (festgehalten-Format v1 inkl. §8 Verfassung) · ~/GUARD.md (Ebenen-Karte, Beschluss 08.09. „Partei oder Siegel, nie beides") · ~/weitsicht/STAND.md (Herkunft des neuen Buches)
-**Phase:** v1 live; zwei Zweige vor master: `hinterlegt-sammelbuch` (bis cec32e9) und darauf `weitsicht` (Buch-Einträge uncommittet)
+**Phase:** v1 live, 6 Bücher öffentlich. master = `1d714bc`, keine ungemergten Zweige mehr.
 
 ## Wo wir stehen
 
@@ -28,11 +28,40 @@
 - Rechtsform: gUG nicht jetzt; Satzungsentwurf im Kybernokratie-Tab. Privates Wettbuch in ~/kybernokratie/WETTBUCH.md.
 - Heute geklärt: Zwei Sitzungen haben zeitweise parallel in `buecher/weitsicht/wetten/` geschrieben (der GUARD-Tab setzte das abgestürzte Weltansicht-Gespräch fort). Abgesprochen: Dieser Tab führt `~/wettbuch` allein. 003 bis 006 stammen aus dem GUARD-Tab, 001, 002, 007, 008 aus diesem.
 
+## Was am 11.09. nachts passiert ist (aus dem GUARD-Tab, auf Felix' Ansage)
+
+Die acht Weitsicht-Einträge tragen jetzt zwei Prognosen: Weitsicht (Felix Lind) mit seiner Zahl
+und Computer mit seiner, beide `hinterlegt_am: 2026-09-11`. Der Platzhalter 0,50 und der Vermerk
+vom 08.09. sind ersetzt. Je Eintrag steht ein Vermerk mit dem Klartext
+`weitsicht-2026-00X | Computer: 0,XX | Salz: weitsicht-2026-09-11-897b` und dem SHA-256, so dass
+die Versiegelung von außen nachrechenbar ist. Bei 005 und 006 zusätzlich der Korrektur-Vermerk
+(0,32 auf 0,36 bzw. 0,52 auf 0,45), bei 005 Felix' Satz zu den sinkenden Kinderzahlen im Osten.
+
+| Wette | Weitsicht | Computer |
+|---|---|---|
+| 001 Digitalcheck | 0,71 | 0,55 |
+| 002 Abschlagsquote | 0,87 | 0,40 |
+| 003 ohne Schulabschluss | 0,52 | 0,30 |
+| 004 Seiteneinsteiger | 0,78 | 0,50 |
+| 005 Kita-Spanne | 0,36 | 0,70 |
+| 006 Asylverfahren | 0,45 | 0,30 |
+| 007 NRW-Wahl Jüngste | 0,62 | 0,60 |
+| 008 BA ohne Dauer | 0,82 | 0,75 |
+
+Gemessen: `bauen buecher/weitsicht --pruefen` „OK: 8 Wetten, keine Fehler", `pytest generator -q`
+88 grün. Commit `1d714bc` auf `weitsicht`, gepusht, per Fast-Forward in master gemergt, master
+gepusht. Pages gebaut, https://felix3c.github.io/festgehalten/weitsicht/ antwortet 200 mit allen
+acht Einträgen. Beide Zweige sind damit in master; `weitsicht` und `hinterlegt-sammelbuch` können
+gelöscht werden.
+
 ## Nächster konkreter Schritt
 
-Die sechzehn Zahlen eintragen. Alle liegen in ~/NAECHSTE-SCHRITTE.md (Abschnitt „Die acht Weitsicht-Zahlen"), Abfrage am 11.09. im GUARD-Tab, Hashes geprüft. Je Eintrag in `buecher/weitsicht/wetten/weitsicht-2026-00X.md`: Prognose `von: Weitsicht, wert: <Felix' Zahl>` statt 0,50; Computer-Zahl mit Klartext `weitsicht-2026-00X | Computer: 0,XX | Salz: weitsicht-2026-09-11-897b` und SHA-256 in den Vermerk; den Platzhalter-Vermerk vom 08.09. streichen; bei 005 den Vermerk Felix aufnehmen („Die Spanne schließt sich durch sinkende Kinderzahlen im Osten von selbst, nicht weil sich am Problem etwas tut"). Dann `python -m wettbuch bauen buecher/weitsicht <tmp> --pruefen` und `python -m pytest generator -q`, dann ein Commit auf `weitsicht`. Vorher `git pull`, weil GitHub Actions seit 11.09. selbst auf master committet (messwerte.csv).
+**Frei wählbar.** Naheliegend: die sechs Köln-Monatsentwürfe `koeln-2026-077` bis `-082`
+committen (sie liegen ungetrackt im Arbeitsbaum, ebenso `recherche/KOELN-FALL-KANDIDATEN-2026-09.md`).
+Vorher `git pull` — die Actions committen Messwerte selbst auf master.
 
 ## Wartet auf Felix
+
 
 - Köln-Fall: **läuft seit 11.09. auf GitHub Actions** (eingerichtet im GUARD-Tab auf Ansage Felix, Commit ba1f58f auf master, Build grün): `.github/workflows/koeln-wartezeit.yml` ruft Mo+Mi 08:00 UTC und Mo 11:30 UTC `recherche/koeln-wartezeit/messen.py` auf und committet `messwerte.csv` auf master („data: Köln Wartezeit …", [skip ci]). Kein privater Rechner nötig; die drei Windows-Aufgaben auf Felix' Laptop sind deaktiviert (Rückfallebene, siehe README im Ordner). master ist in weitsicht gemergt (26d8715). **Vor jeder lokalen Änderung an messwerte.csv: git pull.** Testlauf per workflow_dispatch am 11.09. 20:02 erfolgreich (Run 34631050255, Commit 0fe9846, 9 Zeilen, Wayback gesetzt). Erster gültiger Messwert Mo 14.09., erster gezählter Monat Oktober. Kontrolle Mo 14.09. abends: zwei „data:"-Commits auf master.
 - Wette 9 (privat): Felix 0,87 / Computer 0,55, aufgedeckt 11.09. Weitsicht-Buch: alle acht Felix-Zahlen und Computer-Zahlen liegen in ~/NAECHSTE-SCHRITTE.md (Abschnitt Abfrage), **hier eintragen** (Platzhalter 0,50 und Vermerke vom 08.09. in `buecher/weitsicht/wetten/*.md` ersetzen, Vermerk Felix zu 005 aufnehmen).
