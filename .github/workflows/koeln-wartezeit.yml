@@ -1,0 +1,32 @@
+name: Köln-Fall — Wartezeit Kundenzentren messen
+# Belegt koeln-2026-077 bis -082 und Wette 9 (privat). Läuft nur auf master.
+# Terminfreie Zeiten der Stadt: Mo 7:30–15:00, Mi 7:30–12:00. Cron ist UTC:
+# 08:00 UTC = 10:00 MESZ / 09:00 MEZ; 11:30 UTC = 13:30 MESZ / 12:30 MEZ.
+# GitHub startet Zeitpläne oft mit Verzögerung, deshalb Reserve vor Schließung.
+on:
+  schedule:
+    - cron: "0 8 * * 1,3"
+    - cron: "30 11 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: koeln-wartezeit
+env:
+  TZ: Europe/Berlin
+jobs:
+  messen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Feed abrufen, Wayback anstoßen, CSV ergänzen
+        run: python recherche/koeln-wartezeit/messen.py
+      - name: Messwerte committen
+        run: |
+          git config user.name "koeln-wartezeit (GitHub Actions)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recherche/koeln-wartezeit/messwerte.csv
+          if git diff --cached --quiet; then echo "keine neuen Zeilen"; exit 0; fi
+          git commit -m "data: Köln Wartezeit Kundenzentren, Abruf $(date +%Y-%m-%dT%H:%M%z) [skip ci]"
+          git push
