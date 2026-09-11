@@ -62,6 +62,13 @@ def _herkunft(w: dict) -> str:
 
 def _status_text(w: dict) -> str:
     s = w["_bewertung"]["status"]
+    if s == "ersetzt":
+        return f'<span class="status mute">ersetzt durch {_e(w.get("ersetzt_durch", ""))}</span>'
+    if s == "offen":
+        gesucht = w["_bewertung"].get("zuletzt_gesucht")
+        if gesucht:
+            return f'<span class="status">offen</span> <span class="mute">· Beleg gesucht, zuletzt {datum(gesucht)}</span>'
+        return '<span class="status">offen</span>'
     if s != "aufgeloest":
         return f'<span class="status">{_e(s)}</span>'
     if w["typ"] == "ja_nein":
@@ -114,6 +121,9 @@ def _wette_html(w: dict) -> str:
         z.append(f"<tr><td>{_e(p['von'])}</td><td class=zahl>{zahl(p['wert'])}</td><td>{_e(p['art'])}</td>"
                  f"<td>{datum(p['hinterlegt_am'])}</td><td class=zahl>{zahl(s)}</td></tr>")
     z.append("</tbody></table>")
+    if b["status"] == "ersetzt":
+        e = _e(w["ersetzt_durch"])
+        z.append(f'<p>Dieser Eintrag wurde ersetzt durch <a href="{e}.html">{e}</a> und wird nicht mehr aufgelöst (FORMAT.md §1.3.3).</p>')
     if b["status"] == "aufgeloest":
         naeher = f' · näher dran: <strong>{_e(b["naeher_dran"])}</strong>' if b["naeher_dran"] else ""
         z.append(f'<p>Aufgelöst am {datum(w["aufgeloest_am"])} · <a href="{_e(w["beleg_ausgang"])}">Beleg</a>{naeher}</p>')
@@ -163,8 +173,9 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
 
     schreib("stil.css", STIL.read_text(encoding="utf-8"))
 
+    lizenz = f' · Lizenz {_e(meta["lizenz"])}' if meta.get("lizenz") else ""
     koerper = [f"<h1>{_e(titel)}</h1>",
-               f'<p class="mute">Halter: {_e(meta.get("halter", ""))} · seit {datum(meta.get("seit"))} · Format {_e(meta.get("format", ""))}</p>',
+               f'<p class="mute">Halter: {_e(meta.get("halter", ""))} · seit {datum(meta.get("seit"))} · Format {_e(meta.get("format", ""))}{lizenz}</p>',
                _markdown_sicher(meta.get("_text", "")),
                "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
                "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0)]

@@ -16,7 +16,9 @@ def abstand(wert: float, ausgang: float) -> float:
 def _status(w: dict) -> str:
     a = w.get("ausgang")
     if a is None:
-        return "offen"
+        # FORMAT.md §1.3.3: ein ersetzter Eintrag bleibt stehen, wird aber nicht mehr
+        # aufgelöst. Er ist deshalb nicht "offen", sondern "ersetzt".
+        return "ersetzt" if w.get("ersetzt_durch") else "offen"
     if a in NICHT_AUFGELOEST:
         return a
     return "aufgeloest"
@@ -41,7 +43,19 @@ def wette_bewerten(w: dict) -> dict:
                     gleichstand = True
                 else:
                     naeher = fuehrende[0]
-    return {"status": status, "scores": scores, "naeher_dran": naeher, "gleichstand": gleichstand}
+    return {"status": status, "scores": scores, "naeher_dran": naeher, "gleichstand": gleichstand,
+            "zuletzt_gesucht": zuletzt_gesucht(w)}
+
+
+def zuletzt_gesucht(w: dict):
+    """Datum des jüngsten Vermerks einer offenen Wette, sonst None.
+
+    Eine offene Wette mit Vermerken ist eine, bei der der Halter schon nach dem Beleg
+    gesucht hat. Das Datum kommt aus der Datei, nicht von "heute" (FORMAT.md §5.5)."""
+    if w.get("ausgang") is not None or w.get("ersetzt_durch"):
+        return None
+    daten = [v.get("am") for v in (w.get("vermerke") or []) if v.get("am")]
+    return max(daten) if daten else None
 
 
 def _neue_zeile(von: str) -> dict:

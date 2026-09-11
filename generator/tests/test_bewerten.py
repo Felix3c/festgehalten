@@ -122,3 +122,22 @@ def test_buch_bewerten_haengt_bewertung_an_wetten():
     r = bewerten.buch_bewerten({"meta": {}, "wetten": [_wette(ausgang=1)]})
     assert r["wetten"][0]["_bewertung"]["status"] == "aufgeloest"
     assert r["rang_ab"] == 10
+
+
+def test_wette_ersetzt_ist_nicht_offen():
+    w = {"typ": "ja_nein", "ausgang": None, "ersetzt_durch": "test-2025-009",
+         "prognosen": [{"von": "Stadt Test", "wert": 1.0}],
+         "vermerke": [{"am": "2026-08-28", "text": "ersetzt"}]}
+    b = bewerten.wette_bewerten(w)
+    assert b["status"] == "ersetzt"
+    assert b["zuletzt_gesucht"] is None
+
+
+def test_offene_wette_merkt_sich_letzte_suche():
+    w = {"typ": "ja_nein", "ausgang": None,
+         "prognosen": [{"von": "Stadt Test", "wert": 1.0}],
+         "vermerke": [{"am": "2026-08-28", "text": "1. Lauf"}, {"am": "2026-08-30", "text": "3. Lauf"}]}
+    b = bewerten.wette_bewerten(w)
+    assert b["status"] == "offen"
+    assert str(b["zuletzt_gesucht"]) == "2026-08-30"
+    assert bewerten.wette_bewerten({**w, "vermerke": []})["zuletzt_gesucht"] is None
