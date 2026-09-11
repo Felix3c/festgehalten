@@ -1,8 +1,8 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.09.2026 abends (Zweig `weitsicht`: alle acht Einträge des Weitsicht-Buches geschrieben, Bau und Tests grün, nichts committet)
+**Stand:** 11.09.2026 abends (alle acht Weitsicht-Zahlen und Wette 9 im GUARD-Tab abgefragt und aufgedeckt; Köln-Fall misst auf GitHub Actions; Zweig `weitsicht` steht auf 9ac6722 mit master gemergt, die acht Buch-Einträge und sechs Köln-Entwürfe sind weiter uncommittet)
 **Führendes Dokument:** FORMAT.md (festgehalten-Format v1 inkl. §8 Verfassung) · ~/GUARD.md (Ebenen-Karte, Beschluss 08.09. „Partei oder Siegel, nie beides") · ~/weitsicht/STAND.md (Herkunft des neuen Buches)
-**Phase:** v1 live; zwei Zweige vor master: `hinterlegt-sammelbuch` (bis cec32e9) und darauf `weitsicht` (uncommittet)
+**Phase:** v1 live; zwei Zweige vor master: `hinterlegt-sammelbuch` (bis cec32e9) und darauf `weitsicht` (Buch-Einträge uncommittet)
 
 ## Wo wir stehen
 
@@ -30,12 +30,10 @@
 
 ## Nächster konkreter Schritt
 
-Felix die acht Fragen vorlegen (Liste oben oder die Dateien selbst), seine acht Zahlen entgegennehmen und je Eintrag den Platzhalter ersetzen: Prognose `von: Weitsicht, wert: <seine Zahl>` und den Vermerk streichen. Danach die Computer-Zahlen versiegelt hinterlegen (Verfahren wie Wette 9: SHA-256 über „id | Computer: 0,XX | Salz", Klartext ins Gedächtnis, Hash in den Vermerk), dabei die Reihenfolge einhalten: erst Felix' Zahl, dann Siegel. Dann `python -m wettbuch bauen buecher/weitsicht <tmp> --pruefen` und `python -m pytest generator -q`, dann ein Commit auf `weitsicht`.
+Die sechzehn Zahlen eintragen. Alle liegen in ~/NAECHSTE-SCHRITTE.md (Abschnitt „Die acht Weitsicht-Zahlen"), Abfrage am 11.09. im GUARD-Tab, Hashes geprüft. Je Eintrag in `buecher/weitsicht/wetten/weitsicht-2026-00X.md`: Prognose `von: Weitsicht, wert: <Felix' Zahl>` statt 0,50; Computer-Zahl mit Klartext `weitsicht-2026-00X | Computer: 0,XX | Salz: weitsicht-2026-09-11-897b` und SHA-256 in den Vermerk; den Platzhalter-Vermerk vom 08.09. streichen; bei 005 den Vermerk Felix aufnehmen („Die Spanne schließt sich durch sinkende Kinderzahlen im Osten von selbst, nicht weil sich am Problem etwas tut"). Dann `python -m wettbuch bauen buecher/weitsicht <tmp> --pruefen` und `python -m pytest generator -q`, dann ein Commit auf `weitsicht`. Vorher `git pull`, weil GitHub Actions seit 11.09. selbst auf master committet (messwerte.csv).
 
 ## Wartet auf Felix
 
-- Acht Zahlen für die Weitsicht-Einträge (Fragen zuerst lesen; nichts davon ist committet, jede Frage ist noch änderbar).
-- Wette 9: eigene Zahl nennen (~/kybernokratie/WETTBUCH.md), danach deckt der Computer auf.
 - Köln-Fall: **läuft seit 11.09. auf GitHub Actions** (eingerichtet im GUARD-Tab auf Ansage Felix, Commit ba1f58f auf master, Build grün): `.github/workflows/koeln-wartezeit.yml` ruft Mo+Mi 08:00 UTC und Mo 11:30 UTC `recherche/koeln-wartezeit/messen.py` auf und committet `messwerte.csv` auf master („data: Köln Wartezeit …", [skip ci]). Kein privater Rechner nötig; die drei Windows-Aufgaben auf Felix' Laptop sind deaktiviert (Rückfallebene, siehe README im Ordner). master ist in weitsicht gemergt (26d8715). **Vor jeder lokalen Änderung an messwerte.csv: git pull.** Testlauf per workflow_dispatch am 11.09. 20:02 erfolgreich (Run 34631050255, Commit 0fe9846, 9 Zeilen, Wayback gesetzt). Erster gültiger Messwert Mo 14.09., erster gezählter Monat Oktober. Kontrolle Mo 14.09. abends: zwei „data:"-Commits auf master.
 - Wette 9 (privat): Felix 0,87 / Computer 0,55, aufgedeckt 11.09. Weitsicht-Buch: alle acht Felix-Zahlen und Computer-Zahlen liegen in ~/NAECHSTE-SCHRITTE.md (Abschnitt Abfrage), **hier eintragen** (Platzhalter 0,50 und Vermerke vom 08.09. in `buecher/weitsicht/wetten/*.md` ersetzen, Vermerk Felix zu 005 aufnehmen).
 - Merge-Reihenfolge freigeben: erst `hinterlegt-sammelbuch` in master, dann `weitsicht`. Beides deployt Pages; das Weitsicht-Buch wird damit öffentlich.
