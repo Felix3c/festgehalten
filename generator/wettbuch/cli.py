@@ -1,7 +1,7 @@
 """Einstieg (als Befehl `festgehalten` oder `python -m wettbuch`):
     festgehalten neu   <buch-ordner> [--stadt "Name"]
     festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]
-    festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name]"""
+    festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name] [--url https://…/]"""
 from __future__ import annotations
 
 import subprocess
@@ -9,12 +9,12 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import bewerten, lesen, neu, pruefen, seiten
+from . import bewerten, feed, lesen, neu, pruefen, seiten
 
 HILFE = (
     "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
     "        festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]\n"
-    "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name]\n"
+    "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name] [--url https://…/]\n"
     "(python -m wettbuch … geht ebenso)"
 )
 
@@ -32,7 +32,7 @@ def _neu(ziel: Path, stadt: str | None) -> int:
     return 0
 
 
-def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
+def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool, url: str | None = None) -> int:
     try:
         buch = lesen.buch_lesen(buch_ordner)
     except lesen.LeseFehler as e:
@@ -56,7 +56,7 @@ def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool) -> int:
     bewertet = bewerten.buch_bewerten(buch)
     build_zeit = datetime.now().strftime("%Y-%m-%d %H:%M")
     try:
-        pfade = seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe, build_zeit)
+        pfade = seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe, build_zeit, url=url)
     except seiten.SlugKollision as e:
         print(f"seiten: institution — {e}", file=sys.stderr)
         print("1 Fehler, nichts geschrieben.", file=sys.stderr)
@@ -125,7 +125,8 @@ def _bucheintrag(name: str, meta: dict, repo: str | None, zweig: str) -> dict:
     }
 
 
-def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | None) -> int:
+def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | None,
+          url: str | None = None) -> int:
     unterordner = _unterbuecher(buecher_ordner)
     if not unterordner:
         print(f"{buecher_ordner}: keine Unterordner mit BUCH.md gefunden", file=sys.stderr)
@@ -176,9 +177,12 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
 
     build_zeit = datetime.now().strftime("%Y-%m-%d %H:%M")
     uebersicht: list[dict] = []
+    feed_eintraege: list[dict] = []
     for name, buch, bewertet in gute:
-        seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe / name, build_zeit)
+        seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe / name, build_zeit,
+                                url=f"{url}{name}/" if url else None)
         wetten = bewertet["wetten"]
+        feed_eintraege += feed.eintraege_aus(wetten, praefix=f"{name}/")
         aufgeloest = sum(1 for w in wetten if w["_bewertung"]["status"] == "aufgeloest")
         offen = sum(1 for w in wetten if w["_bewertung"]["status"] == "offen")
         institutionen = sorted({w["institution"] for w in wetten})
@@ -191,7 +195,7 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
             "offen": offen,
         })
 
-    seiten.uebersicht_schreiben(uebersicht, ausgabe, build_zeit)
+    seiten.uebersicht_schreiben(uebersicht, ausgabe, build_zeit, feed_eintraege=feed_eintraege, url=url)
     zweig = _zweig(buecher_ordner)
     seiten.buecher_schreiben([_bucheintrag(name, buch["meta"], repo, zweig) for name, buch, _ in gute], ausgabe)
     print(f"OK: {len(gute)} {buch_wort}, {gesamt_wetten} Wette{plural}, nach {ausgabe}")
@@ -208,6 +212,14 @@ def main(argv: list[str] | None = None) -> int:
         i = argv.index("--repo")
         repo = argv[i + 1] if i + 1 < len(argv) else None
         del argv[i:i + 2]
+
+    url = None
+    if "--url" in argv:
+        i = argv.index("--url")
+        url = argv[i + 1] if i + 1 < len(argv) else None
+        del argv[i:i + 2]
+        if url and not url.endswith("/"):
+            url += "/"
 
     if argv and argv[0] == "neu":
         stadt = None
@@ -226,5 +238,5 @@ def main(argv: list[str] | None = None) -> int:
 
     ordner, ausgabe = Path(argv[1]), Path(argv[2])
     if argv[0] == "bauen":
-        return _bauen(ordner, ausgabe, nur_pruefen)
-    return _alle(ordner, ausgabe, nur_pruefen, repo)
+        return _bauen(ordner, ausgabe, nur_pruefen, url)
+    return _alle(ordner, ausgabe, nur_pruefen, repo, url)

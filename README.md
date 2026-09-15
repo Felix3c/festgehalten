@@ -9,6 +9,9 @@ Institutionen beim Wort genommen: was sie angekündigt haben, was eingetreten is
   eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`. `festgehalten neu <ordner>`
   legt ein Gerüst an; `festgehalten alle <buecher-ordner> <ausgabe>` baut jedes Unterverzeichnis
   mit `BUCH.md` und schreibt zusätzlich eine Übersichtsseite über alle Bücher.
+- **Abonnieren:** jedes Buch hat einen Atom-Feed `feed.xml` mit den zuletzt aufgelösten Wetten
+  (Ausgang, Zitat, Beleg), die Übersicht einen Sammelfeed über alle Bücher. Kein Konto, kein
+  Betreiber: `festgehalten alle … --url https://…/` setzt die absoluten Links.
 - **Erstes Buch:** [buecher/koeln](buecher/koeln) — „Köln gegen Köln".
 - **Warum das Ganze:** Felix Lind (2026), *Kybernokratie: Demokratie mit Gedächtnis. Ein offenes Format, um öffentliche Stellen an ihren eigenen Prognosen zu messen, und die Regel, die daraus folgt.* Preprint, DOI [10.5281/zenodo.22685528](https://doi.org/10.5281/zenodo.22685528), Quelltext und Prüfsummen: [Kybernokratie-Paper](https://github.com/Felix3c/Kybernokratie-Paper). Das Paper begründet das Format und leitet daraus die Erwartungsklausel ab.
 

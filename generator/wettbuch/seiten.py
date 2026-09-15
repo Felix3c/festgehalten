@@ -11,6 +11,9 @@ from pathlib import Path
 
 import markdown
 
+from . import feed
+FEED_MAX = feed.FEED_MAX
+
 STIL = Path(__file__).with_name("stil.css")
 
 
@@ -47,7 +50,8 @@ def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: st
         '<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"<title>{_e(titel)} · {_e(buch_titel)}</title>\n"
-        f'<link rel="stylesheet" href="{wurzel}stil.css"></head>\n<body>\n'
+        f'<link rel="stylesheet" href="{wurzel}stil.css">\n'
+        f'<link rel="alternate" type="application/atom+xml" href="{wurzel}feed.xml" title="neu aufgelöst"></head>\n<body>\n'
         f'<p class="mute"><a href="{wurzel}index.html">{_e(buch_titel)}</a></p>\n'
         f"{koerper}\n"
         f'<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a></footer>\n'
@@ -146,7 +150,8 @@ def _json_faehig(x):
     return x
 
 
-def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str) -> list[Path]:
+def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str,
+                     url: str | None = None) -> list[Path]:
     # Build nach_inst and check for slug collisions before any filesystem writes
     nach_inst: dict[str, list[dict]] = {}
     for w in bewertet["wetten"]:
@@ -178,8 +183,11 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str)
                f'<p class="mute">Halter: {_e(meta.get("halter", ""))} · seit {datum(meta.get("seit"))} · Format {_e(meta.get("format", ""))}{lizenz}</p>',
                _markdown_sicher(meta.get("_text", "")),
                "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
-               "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0)]
+               "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0),
+               '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> (Atom)</p>']
     schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel))
+    schreib("feed.xml", feed.feed_xml(f"{titel} · neu aufgelöst", feed.eintraege_aus(bewertet["wetten"]),
+                                     build_zeit, url))
 
     for inst, ws in nach_inst.items():
         koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1)]
@@ -203,7 +211,8 @@ def _uebersicht_zeile_html(b: dict) -> str:
             f"<td class=zahl>{b['aufgeloest']}</td><td class=zahl>{b['offen']}</td></tr>")
 
 
-def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) -> list[Path]:
+def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str,
+                         feed_eintraege: list[dict] | None = None, url: str | None = None) -> list[Path]:
     """Übersichtsseite über mehrere Bücher (FORMAT.md §5). Kein Verzeichnis im Sinne von §6,
     nur eine lokale Liste über das, was `alle` gerade gebaut hat."""
     sortiert = sorted(buecher, key=lambda b: b["ordner"])
@@ -230,11 +239,14 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str) ->
     seite = ('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
              '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
              "<title>Wettbuch</title>\n"
-             '<link rel="stylesheet" href="stil.css"></head>\n<body>\n'
+             '<link rel="stylesheet" href="stil.css">\n'
+             '<link rel="alternate" type="application/atom+xml" href="feed.xml" title="neu aufgelöst"></head>\n<body>\n'
              f"{koerper}\n"
+             '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> über alle Bücher (Atom)</p>\n'
              f"<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)}</footer>\n"
              "</body></html>\n")
     schreib("index.html", seite)
+    schreib("feed.xml", feed.feed_xml("festgehalten · neu aufgelöst", feed_eintraege or [], build_zeit, url))
 
     daten = [{"ordner": b["ordner"], "titel": b["titel"], "wetten": b["wetten"],
               "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
