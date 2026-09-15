@@ -66,3 +66,13 @@ nächste Publikumsfrage stellen.
   am 15.09. gegen die Live-Seite gültig. Versand Felix.
 - Offen danach: Doorway-Property, `MESSUNG.md` für festgehalten anlegen, nach 28.09. Opern-Auflösung
   an Redaktionen und beide Fraktionen.
+
+## Stand 15.09.2026, 18:10 MESZ
+
+- Zweig `feed` von Felix per Fast-Forward in master übernommen (0dcd0d0), Pages gelaufen: Köln-Feed live mit
+  24 Einträgen, Bestätigungsdatei antwortet 200.
+- Search Console: Inhaberschaft für https://felix3c.github.io/festgehalten/ **bestätigt** (HTML-Datei).
+- **Gesendet 18:06 MESZ, beide von Felix:** Nachfassen Meifert (KStA) und FDP/KSG-Fraktion (CC Schöppen),
+  beide mit dem Festakt 24.09. als Aufhänger (Wette koeln-2025-003, Buch 0,70, Auflösung 25.09.).
+- Nächste Termine: 25.09. Festakt-Wette auflösen und in den Feed bringen; danach Opern-Wette 28.09.;
+  Antworten von KStA und FDP im Postfach prüfen. Offen: Doorway-Property, MESSUNG.md für festgehalten.
