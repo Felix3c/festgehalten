@@ -49,3 +49,20 @@ LinkedIn-Posting, eigener Newsletter, belegbar-Verbreitung vor dem 14.10., Hacke
 Bis 15.10.: eine Antwort von Fraktion oder Redaktion, oder ein Zitat des Buchs. Search-Console-Klicks
 für festgehalten > 0 aus einer Quelle, die nicht Felix ist. Sonst: dieser Plan hat nicht getragen,
 nächste Publikumsfrage stellen.
+
+## Stand 15.09.2026 abends (Claude, Home-Tab)
+
+- **Feed gebaut:** Zweig `feed` (e666b96 + e1205f2), 94 Tests grün, Probebau aller Bücher: Köln-Feed 24
+  Einträge, Sammelfeed 50. **Nicht gemergt** (Berechtigungsfilter). Felix: `git merge --ff-only feed`
+  auf master und pushen, oder PR über github.com/Felix3c/festgehalten/compare/master...feed.
+- **Search Console festgehalten:** Property `https://felix3c.github.io/festgehalten/` angelegt (Felix' Konto),
+  Bestätigungsdatei `google5df4d68519dcb210.html` liegt im Repo, Workflow kopiert sie nach `site/`.
+  Nach Merge und Pages-Lauf in der Search Console auf BESTÄTIGEN klicken (Tab ist offen), dann
+  Sitemap gibt es keine; Startseite über „URL-Prüfung“ anstoßen. **Doorway-Property noch nicht angelegt.**
+- **Fraktion:** FDP/KSG gewählt (Begründung und Adressen in
+  `~/kybernokratie/mails/2026-09-15-fdp-fraktion-koeln.md`). Gmail-Entwurf liegt im Postfach.
+  **Erst senden, wenn der Feed live ist** (die Mail verlinkt koeln/feed.xml).
+- **Meifert-Nachfassen:** Gmail-Entwurf liegt im Postfach (an ksta-koeln@kstamedien.de), Zahlen 79/24/10
+  am 15.09. gegen die Live-Seite gültig. Versand Felix.
+- Offen danach: Doorway-Property, `MESSUNG.md` für festgehalten anlegen, nach 28.09. Opern-Auflösung
+  an Redaktionen und beide Fraktionen.
