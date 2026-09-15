@@ -45,15 +45,16 @@ Die Messung läuft **nicht auf einem privaten Rechner**, sondern als Workflow
 
 | Zeitplan (UTC) | Sommerzeit | Winterzeit |
 |---|---|---|
-| Montag und Mittwoch 08:00 | 10:00 | 09:00 |
-| Montag 11:30 | 13:30 | 12:30 |
+| Montag und Mittwoch 08:07 | 10:07 | 09:07 |
+| Montag 11:37 | 13:37 | 12:37 |
 
 Der Workflow ruft `messen.py` auf und committet `messwerte.csv` direkt auf master
 (Commit-Autor „koeln-wartezeit (GitHub Actions)", Betreff „data: Köln Wartezeit …").
 Jeder Messwert hat damit zwei Fremdbelege: den Wayback-Snapshot des Feeds und den
 GitHub-Commit mit Zeitstempel. Zeitpläne laufen nur auf dem Standardzweig; GitHub
 startet sie manchmal mit Verzögerung, deshalb liegt der Nachmittagsabruf mit Reserve
-vor 15:00. Manuell auslösen: Reiter „Actions", Workflow wählen, „Run workflow".
+vor 15:00. Krumme Minuten mit Absicht: Am Mo 14.09.2026 sind beide Läufe zur vollen bzw. halben
+Stunde nie gestartet (GitHub lässt Zeitpläne unter Last ausfallen). Manuell auslösen: Reiter „Actions", Workflow wählen, „Run workflow".
 
 Kontrolle nach jedem Montag: unter
 https://github.com/Felix3c/festgehalten/commits/master zwei neue „data:"-Commits
@@ -69,6 +70,12 @@ Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`, `-mo-1400`,
 `-mi-1000`), die `messen.cmd` in diesem Ordner aufrufen (Log `messen.log`,
 gitignored). Nur einschalten, wenn GitHub Actions ausfällt, und dann die CSV von Hand
 committen; beides gleichzeitig erzeugt doppelte Zeilen.
+
+Wächter (seit 15.09.2026): `.github/workflows/koeln-waechter.yml` läuft nach jedem Messlauf
+(Mo+Mi 09:13 UTC, Mo 12:43 UTC) und ruft `waechter.py` auf. Das Skript zählt die
+Abrufzeitpunkte von heute in `messwerte.csv`; fehlt einer, stößt der Workflow den Messlauf per
+workflow_dispatch nach und scheitert laut, sodass GitHub eine Mail schickt. Fällt GitHubs
+Zeitplan ganz aus, fällt auch der Wächter aus — dann greift nur die Rückfallebene oben.
 
 ## Wie der Monatswert in die Wette kommt
 

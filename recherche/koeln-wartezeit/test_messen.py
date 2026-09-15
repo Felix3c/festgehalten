@@ -257,3 +257,47 @@ def test_main_mit_bekanntem_monat_gibt_exit_code_0(tmp_path, capsys):
     assert exit_code == 0
     assert "2026-10" in out
     assert "2026-11" not in out
+
+
+# --- waechter.py ---------------------------------------------------------
+
+WAECHTER_CSV = (
+    "abgerufen_am,kundenzentrum,wartezeit_minuten,feed_timestamp,wayback_url\n"
+    "2026-09-11T20:02:38+02:00,Kundenzentrum Nippes,0,2026-09-11 11:25:03,\n"
+    "2026-09-11T20:02:38+02:00,Kundenzentrum Porz,0,2026-09-10 14:55:08,\n"
+    "2026-09-14T10:07:00+02:00,Kundenzentrum Nippes,12,2026-09-14 10:05:00,\n"
+    "2026-09-14T13:37:00+02:00,Kundenzentrum Nippes,8,2026-09-14 13:35:00,\n"
+)
+
+
+def test_waechter_zaehlt_abrufzeitpunkte_je_tag(tmp_path):
+    import waechter
+
+    csv_datei = tmp_path / "messwerte.csv"
+    csv_datei.write_text(WAECHTER_CSV, encoding="utf-8")
+
+    # Ein Messlauf = ein Zeitpunkt, egal wie viele Kundenzentren-Zeilen
+    assert waechter.abrufe_am(csv_datei, "2026-09-11") == ["2026-09-11T20:02:38+02:00"]
+    assert len(waechter.abrufe_am(csv_datei, "2026-09-14")) == 2
+    assert waechter.abrufe_am(csv_datei, "2026-09-15") == []
+
+
+def test_waechter_exit_code_haengt_an_erwarteter_zahl(tmp_path, monkeypatch):
+    import sys
+
+    import waechter
+
+    csv_datei = tmp_path / "messwerte.csv"
+    csv_datei.write_text(WAECHTER_CSV, encoding="utf-8")
+    monkeypatch.setattr(waechter, "CSV_PATH", csv_datei)
+
+    monkeypatch.setenv("WAECHTER_DATUM", "2026-09-14")
+    monkeypatch.setattr(sys, "argv", ["waechter.py", "--erwartet", "2"])
+    assert waechter.main() == 0
+
+    monkeypatch.setattr(sys, "argv", ["waechter.py", "--erwartet", "3"])
+    assert waechter.main() == 1
+
+    monkeypatch.setenv("WAECHTER_DATUM", "2026-09-15")
+    monkeypatch.setattr(sys, "argv", ["waechter.py"])
+    assert waechter.main() == 1

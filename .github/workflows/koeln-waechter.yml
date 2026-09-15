@@ -1,0 +1,59 @@
+name: Köln-Fall — Wächter (lief die Messung?)
+# Ersetzt den Kontrollgang von Hand: prüft, ob messwerte.csv einen Abruf von heute hat.
+# Läuft nach den Messläufen aus koeln-wartezeit.yml (Mo/Mi 08:07 UTC, Mo 11:37 UTC), aber noch
+# vor Schließung der Kundenzentren (Mo 15:00, Mi 12:00 Ortszeit), damit Nachholen etwas bringt:
+#   09:13 UTC Mo+Mi = 11:13 MESZ / 10:13 MEZ → mindestens 1 Abruf heute
+#   12:43 UTC Mo    = 14:43 MESZ / 13:43 MEZ → mindestens 2 Abrufe heute
+# Fehlt ein Abruf: Messlauf per workflow_dispatch nachstoßen (falls nicht schon einer läuft)
+# und laut scheitern — GitHub mailt bei fehlgeschlagenen Zeitplan-Läufen.
+# Krumme Minuten mit Absicht, wie beim Messlauf.
+# Grenze: Fällt GitHubs Zeitplan ganz aus, fällt auch der Wächter aus. Dafür gibt es die
+# Rückfallebene (Windows-Aufgaben, siehe ~/REIHENFOLGE.txt).
+on:
+  schedule:
+    - cron: "13 9 * * 1,3"
+    - cron: "43 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      erwartet:
+        description: "Mindestzahl Abrufe heute (leer = automatisch)"
+        default: ""
+permissions:
+  contents: read
+  actions: write
+env:
+  TZ: Europe/Berlin
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Erwartete Abrufe bestimmen
+        id: soll
+        run: |
+          if [ -n "${{ inputs.erwartet }}" ]; then n="${{ inputs.erwartet }}"
+          elif [ "$(date +%u)" = 1 ] && [ "$(date +%H)" -ge 13 ]; then n=2
+          else n=1; fi
+          echo "Erwartet: $n Abruf(e) heute ($(date '+%a %H:%M %Z'))"
+          echo "n=$n" >> "$GITHUB_OUTPUT"
+      - name: Messwerte von heute zählen
+        id: check
+        continue-on-error: true
+        run: python recherche/koeln-wartezeit/waechter.py --erwartet "${{ steps.soll.outputs.n }}"
+      - name: Fehlende Messung nachstoßen und laut scheitern
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          laufend=$(gh run list --workflow koeln-wartezeit.yml --status in_progress --json databaseId --jq length)
+          wartend=$(gh run list --workflow koeln-wartezeit.yml --status queued --json databaseId --jq length)
+          if [ "$laufend" = 0 ] && [ "$wartend" = 0 ]; then
+            gh workflow run koeln-wartezeit.yml --ref master
+            echo "Messlauf per workflow_dispatch angestoßen." | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Messlauf läuft oder wartet bereits — nichts angestoßen." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "::error::Messung für heute fehlte in messwerte.csv. Nachgestoßen; Rückfallebene prüfen (REIHENFOLGE.txt)."
+          exit 1
