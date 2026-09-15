@@ -75,4 +75,5 @@ nächste Publikumsfrage stellen.
 - **Gesendet 18:06 MESZ, beide von Felix:** Nachfassen Meifert (KStA) und FDP/KSG-Fraktion (CC Schöppen),
   beide mit dem Festakt 24.09. als Aufhänger (Wette koeln-2025-003, Buch 0,70, Auflösung 25.09.).
 - Nächste Termine: 25.09. Festakt-Wette auflösen und in den Feed bringen; danach Opern-Wette 28.09.;
-  Antworten von KStA und FDP im Postfach prüfen. Offen: Doorway-Property, MESSUNG.md für festgehalten.
+  Antworten von KStA und FDP im Postfach prüfen. Doorway-Property 18:45 ebenfalls bestätigt (Datei in ~/doorway/site/, Commit 927d362).
+  Offen: MESSUNG.md für festgehalten und Doorway.
