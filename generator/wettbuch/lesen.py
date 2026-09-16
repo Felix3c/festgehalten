@@ -57,3 +57,24 @@ def buch_lesen(ordner: Path) -> dict:
         wetten.append(wette_lesen(pfad))
     wetten.sort(key=lambda w: str(w.get("id", "")))
     return {"meta": meta, "wetten": wetten, "ordner": ordner}
+
+
+def zusatzseite_lesen(pfad: Path) -> dict:
+    """Eine freie Seite (Impressum, Datenschutz …): YAML-Kopf mit `titel`, optional `reihe`
+    (Sortierung in der Fußzeile), darunter Markdown. `name` ist der Dateiname ohne .md."""
+    kopf, text = _kopf_und_text(pfad)
+    titel = kopf.get("titel")
+    if not isinstance(titel, str) or not titel.strip():
+        raise LeseFehler(pfad.name, "titel fehlt")
+    reihe = kopf.get("reihe", 0)
+    if isinstance(reihe, bool) or not isinstance(reihe, (int, float)):
+        raise LeseFehler(pfad.name, "reihe — keine Zahl")
+    return {"name": pfad.stem, "titel": titel.strip(), "reihe": reihe, "_text": text}
+
+
+def zusatzseiten_lesen(ordner: Path) -> list[dict]:
+    """Alle *.md eines Ordners als freie Seiten, sortiert nach `reihe`, dann Dateiname."""
+    if not ordner.is_dir():
+        raise LeseFehler(ordner.name, f"kein Ordner: {ordner}")
+    gelesen = [zusatzseite_lesen(p) for p in sorted(ordner.glob("*.md"))]
+    return sorted(gelesen, key=lambda z: (z["reihe"], z["name"]))

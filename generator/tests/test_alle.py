@@ -236,3 +236,53 @@ def test_alle_lehnt_zwei_sammelbuecher_auch_bei_pruefen_ab(buecher_ordner: Path,
     rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site"), "--pruefen"])
     assert rc == 1
     assert "sammelbuch" in capsys.readouterr().err
+
+
+IMPRESSUM = """---
+titel: Impressum
+reihe: 1
+---
+
+Felix Muster, Musterstraße 1.
+"""
+
+DATENSCHUTZ = """---
+titel: Datenschutz
+reihe: 2
+---
+
+Keine Cookies.
+"""
+
+
+@pytest.fixture
+def seiten_ordner(tmp_path: Path) -> Path:
+    ordner = tmp_path / "rechtliches"
+    ordner.mkdir()
+    (ordner / "impressum.md").write_text(IMPRESSUM, encoding="utf-8")
+    (ordner / "datenschutz.md").write_text(DATENSCHUTZ, encoding="utf-8")
+    return ordner
+
+
+def test_alle_mit_seiten_baut_impressum_und_datenschutz(buecher_ordner: Path, seiten_ordner: Path, tmp_path: Path):
+    ausgabe = tmp_path / "site"
+    rc = cli.main(["alle", str(buecher_ordner), str(ausgabe), "--seiten", str(seiten_ordner)])
+    assert rc == 0
+    impressum = (ausgabe / "impressum" / "index.html").read_text(encoding="utf-8")
+    datenschutz = (ausgabe / "datenschutz" / "index.html").read_text(encoding="utf-8")
+    assert "<h1>Impressum</h1>" in impressum and "Felix Muster" in impressum
+    assert "<h1>Datenschutz</h1>" in datenschutz and "Keine Cookies." in datenschutz
+    # Reihenfolge nach `reihe`, nicht alphabetisch; auf jeder Ebene korrekt relativ verlinkt
+    fuss = '<a href="{p}impressum/">Impressum</a> · <a href="{p}datenschutz/">Datenschutz</a></footer>'
+    assert fuss.format(p="") in (ausgabe / "index.html").read_text(encoding="utf-8")
+    assert fuss.format(p="../") in impressum
+    assert fuss.format(p="../") in (ausgabe / "erstes" / "index.html").read_text(encoding="utf-8")
+    assert fuss.format(p="../../") in (ausgabe / "erstes" / "wette" / "a-2025-001.html").read_text(encoding="utf-8")
+    assert fuss.format(p="../../") in (ausgabe / "erstes" / "institution" / "stadt-a.html").read_text(encoding="utf-8")
+
+
+def test_alle_mit_seiten_lehnt_seite_ohne_titel_ab(buecher_ordner: Path, seiten_ordner: Path, tmp_path: Path, capsys):
+    (seiten_ordner / "kaputt.md").write_text("---\nreihe: 3\n---\n\nText.\n", encoding="utf-8")
+    rc = cli.main(["alle", str(buecher_ordner), str(tmp_path / "site"), "--seiten", str(seiten_ordner), "--pruefen"])
+    assert rc == 1
+    assert "rechtliches/kaputt.md: kopf — titel fehlt" in capsys.readouterr().err

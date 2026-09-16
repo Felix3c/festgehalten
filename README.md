@@ -9,6 +9,8 @@ Institutionen beim Wort genommen: was sie angekündigt haben, was eingetreten is
   eine statische Seite mit Rangliste. Nur `pyyaml` und `markdown`. `festgehalten neu <ordner>`
   legt ein Gerüst an; `festgehalten alle <buecher-ordner> <ausgabe>` baut jedes Unterverzeichnis
   mit `BUCH.md` und schreibt zusätzlich eine Übersichtsseite über alle Bücher.
+  `--seiten <ordner>` rendert freie Markdown-Seiten (hier `rechtliches/`: Impressum, Datenschutz)
+  neben die Übersicht und verlinkt sie in jeder Fußzeile.
 - **Abonnieren:** jedes Buch hat einen Atom-Feed `feed.xml` mit den zuletzt aufgelösten Wetten
   (Ausgang, Zitat, Beleg), die Übersicht einen Sammelfeed über alle Bücher. Kein Konto, kein
   Betreiber: `festgehalten alle … --url https://…/` setzt die absoluten Links.

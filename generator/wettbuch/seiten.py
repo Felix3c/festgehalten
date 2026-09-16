@@ -44,7 +44,16 @@ def _markdown_sicher(text: str) -> str:
     return markdown.markdown(text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
 
 
-def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: str) -> str:
+FussLinks = list[tuple[str, str]]
+
+
+def _fuss(wurzel: str, fuss_links: FussLinks | None) -> str:
+    """Zusätzliche Fußzeilen-Links (z. B. Impressum · Datenschutz). `href` ist relativ zu `wurzel`."""
+    return "".join(f' · <a href="{_e(wurzel + href)}">{_e(text)}</a>' for text, href in (fuss_links or []))
+
+
+def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: str,
+           fuss_links: FussLinks | None = None) -> str:
     wurzel = "../" * tiefe
     return (
         '<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
@@ -54,7 +63,8 @@ def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: st
         f'<link rel="alternate" type="application/atom+xml" href="{wurzel}feed.xml" title="neu aufgelöst"></head>\n<body>\n'
         f'<p class="mute"><a href="{wurzel}index.html">{_e(buch_titel)}</a></p>\n'
         f"{koerper}\n"
-        f'<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a></footer>\n'
+        f'<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a>'
+        f"{_fuss(wurzel, fuss_links)}</footer>\n"
         "</body></html>\n"
     )
 
@@ -151,7 +161,8 @@ def _json_faehig(x):
 
 
 def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str,
-                     url: str | None = None) -> list[Path]:
+                     url: str | None = None, fuss_links: FussLinks | None = None) -> list[Path]:
+    """`fuss_links`: (Text, href) je Link in der Fußzeile jeder Seite, href relativ zum Buch-Ordner."""
     # Build nach_inst and check for slug collisions before any filesystem writes
     nach_inst: dict[str, list[dict]] = {}
     for w in bewertet["wetten"]:
@@ -185,16 +196,16 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str,
                "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
                "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0),
                '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> (Atom)</p>']
-    schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel))
+    schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel, fuss_links))
     schreib("feed.xml", feed.feed_xml(f"{titel} · neu aufgelöst", feed.eintraege_aus(bewertet["wetten"]),
                                      build_zeit, url))
 
     for inst, ws in nach_inst.items():
         koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1)]
-        schreib(f"institution/{slug(inst)}.html", _seite(inst, "\n".join(koerper), 1, build_zeit, titel))
+        schreib(f"institution/{slug(inst)}.html", _seite(inst, "\n".join(koerper), 1, build_zeit, titel, fuss_links))
 
     for w in bewertet["wetten"]:
-        schreib(f"wette/{w['id']}.html", _seite(w["frage"], _wette_html(w), 1, build_zeit, titel))
+        schreib(f"wette/{w['id']}.html", _seite(w["frage"], _wette_html(w), 1, build_zeit, titel, fuss_links))
 
     daten = {"format": "v1", "titel": titel, "halter": meta.get("halter"), "gebaut": build_zeit,
              "seit": _json_faehig(meta.get("seit")), "kontakt": meta.get("kontakt"),
@@ -211,8 +222,26 @@ def _uebersicht_zeile_html(b: dict) -> str:
             f"<td class=zahl>{b['aufgeloest']}</td><td class=zahl>{b['offen']}</td></tr>")
 
 
+def _wurzelseite(titel: str, koerper: str, tiefe: int, build_zeit: str,
+                 fuss_links: FussLinks | None = None, mit_feed: bool = True) -> str:
+    """Seite auf Ebene der Übersicht (kein Buch): die Übersicht selbst und Zusatzseiten wie Impressum."""
+    wurzel = "../" * tiefe
+    feed_link = (f'<link rel="alternate" type="application/atom+xml" href="{wurzel}feed.xml" title="neu aufgelöst">'
+                 if mit_feed else "")
+    zurueck = f'<p class="mute"><a href="{wurzel}index.html">festgehalten</a></p>\n' if tiefe else ""
+    return ('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f"<title>{_e(titel)}</title>\n"
+            f'<link rel="stylesheet" href="{wurzel}stil.css">\n'
+            f"{feed_link}</head>\n<body>\n"
+            f"{zurueck}{koerper}\n"
+            f"<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)}{_fuss(wurzel, fuss_links)}</footer>\n"
+            "</body></html>\n")
+
+
 def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str,
-                         feed_eintraege: list[dict] | None = None, url: str | None = None) -> list[Path]:
+                         feed_eintraege: list[dict] | None = None, url: str | None = None,
+                         fuss_links: FussLinks | None = None) -> list[Path]:
     """Übersichtsseite über mehrere Bücher (FORMAT.md §5). Kein Verzeichnis im Sinne von §6,
     nur eine lokale Liste über das, was `alle` gerade gebaut hat."""
     sortiert = sorted(buecher, key=lambda b: b["ordner"])
@@ -235,22 +264,30 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str,
                + "</tbody></table></div>")
     koerper = ("<h1>festgehalten</h1>"
                "<p>Institutionen an ihren eigenen Prognosen messen. Jedes Buch ist ein Ordner; "
-               "das Format ist offen — FORMAT.md.</p>" + tabelle)
-    seite = ('<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
-             '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-             "<title>Wettbuch</title>\n"
-             '<link rel="stylesheet" href="stil.css">\n'
-             '<link rel="alternate" type="application/atom+xml" href="feed.xml" title="neu aufgelöst"></head>\n<body>\n'
-             f"{koerper}\n"
-             '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> über alle Bücher (Atom)</p>\n'
-             f"<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)}</footer>\n"
-             "</body></html>\n")
-    schreib("index.html", seite)
+               "das Format ist offen — FORMAT.md.</p>" + tabelle + "\n"
+               '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> über alle Bücher (Atom)</p>')
+    schreib("index.html", _wurzelseite("Wettbuch", koerper, 0, build_zeit, fuss_links))
     schreib("feed.xml", feed.feed_xml("festgehalten · neu aufgelöst", feed_eintraege or [], build_zeit, url))
 
     daten = [{"ordner": b["ordner"], "titel": b["titel"], "wetten": b["wetten"],
               "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
     schreib("alle.json", json.dumps(daten, ensure_ascii=False, indent=2))
+    return geschrieben
+
+
+def zusatzseiten_schreiben(zusatz: list[dict], ausgabe: Path, build_zeit: str,
+                           fuss_links: FussLinks | None = None) -> list[Path]:
+    """Freie Seiten neben der Übersicht (Impressum, Datenschutz …): je `<name>/index.html`.
+    Jede braucht `name`, `titel` und `_text` (Markdown, wird wie Wettentext escaped)."""
+    geschrieben: list[Path] = []
+    for z in zusatz:
+        ordner = ausgabe / z["name"]
+        ordner.mkdir(parents=True, exist_ok=True)
+        koerper = f"<h1>{_e(z['titel'])}</h1>\n" + _markdown_sicher(z.get("_text", ""))
+        pfad = ordner / "index.html"
+        pfad.write_text(_wurzelseite(str(z["titel"]), koerper, 1, build_zeit, fuss_links, mit_feed=False),
+                        encoding="utf-8")
+        geschrieben.append(pfad)
     return geschrieben
 
 

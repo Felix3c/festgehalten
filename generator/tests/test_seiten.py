@@ -146,3 +146,32 @@ def test_offene_wette_mit_vermerk_zeigt_letzte_suche(buch: Path, tmp_path: Path)
         "vermerke: []", 'vermerke:\n  - am: 2026-08-30\n    text: "3. Lauf: nichts gefunden"'), encoding="utf-8")
     html = (_gebaut(buch, tmp_path) / "index.html").read_text(encoding="utf-8")
     assert "Beleg gesucht, zuletzt 30.08.2026" in html
+
+
+def test_fusszeile_ohne_zusatzlinks_bleibt_wie_bisher(buch: Path, tmp_path: Path):
+    html = (_gebaut(buch, tmp_path) / "index.html").read_text(encoding="utf-8")
+    assert "Impressum" not in html
+
+
+def test_fusszeile_mit_zusatzlinks_relativ_zur_tiefe(buch: Path, tmp_path: Path):
+    b = lesen.buch_lesen(buch)
+    bew = bewerten.buch_bewerten(b)
+    aus = tmp_path / "site"
+    links = [("Impressum", "../impressum/"), ("Datenschutz", "../datenschutz/")]
+    seiten.seiten_schreiben(b["meta"], bew, aus, build_zeit="x", fuss_links=links)
+    index = (aus / "index.html").read_text(encoding="utf-8")
+    wette = (aus / "wette" / "test-2025-001.html").read_text(encoding="utf-8")
+    assert '<a href="../impressum/">Impressum</a> · <a href="../datenschutz/">Datenschutz</a></footer>' in index
+    assert '<a href="../../impressum/">Impressum</a> · <a href="../../datenschutz/">Datenschutz</a></footer>' in wette
+
+
+def test_zusatzseiten_schreiben_rendert_markdown_escaped(tmp_path: Path):
+    zusatz = [{"name": "impressum", "titel": "Impressum", "_text": "## Angaben\n\nFelix <b>Lind</b>"}]
+    pfade = seiten.zusatzseiten_schreiben(zusatz, tmp_path, "x", fuss_links=[("Impressum", "impressum/")])
+    assert pfade == [tmp_path / "impressum" / "index.html"]
+    html = pfade[0].read_text(encoding="utf-8")
+    assert "<h1>Impressum</h1>" in html and "<h2>Angaben</h2>" in html
+    assert "&lt;b&gt;Lind&lt;/b&gt;" in html and "<b>" not in html
+    assert 'href="../stil.css"' in html and 'href="../index.html"' in html
+    assert '<a href="../impressum/">Impressum</a></footer>' in html
+    assert "feed.xml" not in html
