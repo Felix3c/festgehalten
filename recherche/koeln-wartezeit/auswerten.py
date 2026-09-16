@@ -2,12 +2,18 @@
 """Wertet messwerte.csv aus: Mittelwert und Maximum je Kalendermonat, je
 Kundenzentrum und über alle Zentren, plus Zahl der Messtage im Monat.
 
+Gezählt werden nur Abrufe im Messfenster (Mo 7:30–15:00, Mi 7:30–12:00
+Ortszeit, siehe fenster.py), wie es der Wettentext koeln-2026-077 ff.
+verlangt. Abrufe außerhalb (Funktionstests, verspätete Zeitplan-Läufe)
+werden je Monat gezählt und ausgewiesen, aber nicht gemittelt.
+
 Nur Standardbibliothek.
 
 Aufruf:
     python auswerten.py                 # alle Monate
     python auswerten.py --monat 2026-10 # nur Oktober 2026
     python auswerten.py --csv pfad.csv  # andere CSV-Datei
+    python auswerten.py --alle          # auch Abrufe außerhalb des Messfensters
 """
 from __future__ import annotations
 
@@ -15,6 +21,8 @@ import argparse
 import csv
 import sys
 from pathlib import Path
+
+import fenster
 
 CSV_PATH = Path(__file__).resolve().parent / "messwerte.csv"
 
@@ -38,12 +46,25 @@ def _tag_von(abgerufen_am: str) -> str:
     return abgerufen_am[:10]
 
 
-def compute_monthly_stats(rows: list[dict], monat: str | None = None) -> dict:
+def _im_messfenster(abgerufen_am: str) -> bool:
+    """False bei Abrufen außerhalb der terminfreien Zeiten oder unlesbarem Zeitstempel."""
+    try:
+        return fenster.im_messfenster(fenster.parse_abgerufen_am(abgerufen_am))
+    except ValueError:
+        return False
+
+
+def compute_monthly_stats(
+    rows: list[dict], monat: str | None = None, alle: bool = False
+) -> dict:
     """Gruppiert Messwerte je Monat und Kundenzentrum.
 
     Rückgabe: {monat: {"zentren": {name: {"werte": [...], "n": int}},
                         "gesamt": {"werte": [...], "n": int},
-                        "messtage": int}}
+                        "messtage": int,
+                        "ausgeschlossen": int}}
+    Abrufe außerhalb des Messfensters werden nur gezählt ("ausgeschlossen"),
+    nicht gemittelt, es sei denn alle=True.
     Nicht-numerische wartezeit_minuten-Werte werden aus den Mittelwert-/
     Maximum-Berechnungen ausgeschlossen, zählen aber als Messtag.
     """
@@ -53,8 +74,11 @@ def compute_monthly_stats(rows: list[dict], monat: str | None = None) -> dict:
         if monat and m != monat:
             continue
         eintrag = ergebnis.setdefault(
-            m, {"zentren": {}, "gesamt": {"werte": []}, "tage": set()}
+            m, {"zentren": {}, "gesamt": {"werte": []}, "tage": set(), "ausgeschlossen": 0}
         )
+        if not alle and not _im_messfenster(row["abgerufen_am"]):
+            eintrag["ausgeschlossen"] += 1
+            continue
         eintrag["tage"].add(_tag_von(row["abgerufen_am"]))
         zentrum = row["kundenzentrum"]
         z = eintrag["zentren"].setdefault(zentrum, {"werte": []})
@@ -78,7 +102,10 @@ def format_table(stats: dict) -> str:
     zeilen = []
     for monat in sorted(stats):
         eintrag = stats[monat]
-        zeilen.append(f"# {monat} (Messtage: {eintrag['messtage']})")
+        kopf = f"# {monat} (Messtage: {eintrag['messtage']}"
+        if eintrag.get("ausgeschlossen"):
+            kopf += f", außerhalb des Messfensters nicht gezählt: {eintrag['ausgeschlossen']} Zeilen"
+        zeilen.append(kopf + ")")
         zeilen.append(f"{'Kundenzentrum':<28} {'Mittelwert':>10} {'Maximum':>10} {'n':>4}")
         for zentrum in sorted(eintrag["zentren"]):
             werte = eintrag["zentren"][zentrum]["werte"]
@@ -111,6 +138,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--csv", type=Path, default=CSV_PATH, help="Pfad zu messwerte.csv"
     )
+    parser.add_argument(
+        "--alle", action="store_true", help="auch Abrufe außerhalb des Messfensters mitteln"
+    )
     args = parser.parse_args(argv)
 
     rows = read_rows(args.csv)
@@ -118,9 +148,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"Keine Messwerte in {args.csv} gefunden.", file=sys.stderr)
         return 1
 
-    stats = compute_monthly_stats(rows, monat=args.monat)
+    stats = compute_monthly_stats(rows, monat=args.monat, alle=args.alle)
     if args.monat and args.monat not in stats:
         print(f"Kein Messwert für Monat {args.monat} in {args.csv}.", file=sys.stderr)
+        return 1
+    if args.monat and not stats[args.monat]["gesamt"]["werte"]:
+        print(
+            f"Monat {args.monat}: kein Abruf im Messfenster "
+            f"({stats[args.monat]['ausgeschlossen']} Zeilen außerhalb; --alle zeigt sie).",
+            file=sys.stderr,
+        )
         return 1
 
     print(format_table(stats), end="")

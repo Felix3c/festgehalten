@@ -15,8 +15,11 @@ Quelle: `KOELN-FALL-KANDIDATEN-2026-09.md` (Kandidat 1), Abschnitt 4.
 ## Aufruf
 
 ```bash
-# Messwert abrufen und an messwerte.csv anhängen
+# Messwert abrufen und an messwerte.csv anhängen (nur im Messfenster, je Slot einmal)
 python recherche/koeln-wartezeit/messen.py
+
+# Funktionstest: immer messen, auch außerhalb des Fensters
+python recherche/koeln-wartezeit/messen.py --erzwingen
 
 # Monatsreihe auswerten (alle Monate)
 python recherche/koeln-wartezeit/auswerten.py
@@ -25,8 +28,10 @@ python recherche/koeln-wartezeit/auswerten.py
 python recherche/koeln-wartezeit/auswerten.py --monat 2026-10
 ```
 
-`messen.py` braucht keine Argumente, keine Zugangsdaten, keine Abhängigkeit
-außer der Python-Standardbibliothek (3.11+). Es ruft
+`messen.py` braucht keine Zugangsdaten und keine Abhängigkeit außer der
+Python-Standardbibliothek (3.11+). Ohne `--erzwingen` misst es nur im Messfenster
+(Mo 7:30–15:00, Mi 7:30–12:00 Ortszeit) und je Slot (vormittag/nachmittag) nur
+einmal am Tag, sonst endet es mit Exit 0 und „keine Messung". Es ruft
 `http://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php` ab,
 schreibt eine Zeile je Kundenzentrum an `messwerte.csv` und löst danach eine
 Wayback-Archivierung des Feeds aus (`https://web.archive.org/save/<feed-url>`).
@@ -41,48 +46,68 @@ Donnerstag und Freitag liefert der Feed „nur mit Terminvereinbarung" / 0 Minut
 das zählt nicht als Vergleichswert.
 
 Die Messung läuft **nicht auf einem privaten Rechner**, sondern als Workflow
-`.github/workflows/koeln-wartezeit.yml` auf GitHub, drei Abrufe je Woche:
+`.github/workflows/koeln-wartezeit.yml` auf GitHub. Ziel sind drei Abrufe je Woche,
+je einer pro **Slot**: Montag vormittag, Montag nachmittag, Mittwoch vormittag.
 
-| Zeitplan (UTC) | Sommerzeit | Winterzeit |
-|---|---|---|
-| Montag und Mittwoch 08:07 | 10:07 | 09:07 |
-| Montag 11:37 | 13:37 | 12:37 |
+**GitHubs Zeitplan ist unzuverlässig.** Mo 14.09.2026: beide Läufe nie gestartet.
+Mi 16.09.2026: der Lauf kam 5 h 20 min zu spät (15:27 MESZ, nach Schließung), der
+Wächter gar nicht. Seit 16.09. deshalb zwei Schichten:
 
-Der Workflow ruft `messen.py` auf und committet `messwerte.csv` direkt auf master
-(Commit-Autor „koeln-wartezeit (GitHub Actions)", Betreff „data: Köln Wartezeit …").
-Jeder Messwert hat damit zwei Fremdbelege: den Wayback-Snapshot des Feeds und den
-GitHub-Commit mit Zeitstempel. Zeitpläne laufen nur auf dem Standardzweig; GitHub
-startet sie manchmal mit Verzögerung, deshalb liegt der Nachmittagsabruf mit Reserve
-vor 15:00. Krumme Minuten mit Absicht: Am Mo 14.09.2026 sind beide Läufe zur vollen bzw. halben
-Stunde nie gestartet (GitHub lässt Zeitpläne unter Last ausfallen). Manuell auslösen: Reiter „Actions", Workflow wählen, „Run workflow".
+1. **Viele Startversuche.** Der Workflow hat neun Cron-Einträge, über das ganze
+   Fenster verteilt (Vormittag Mo+Mi: 06:37, 07:11, 07:43, 08:19, 08:51, 09:27 UTC;
+   Montag nachmittag: 11:17, 11:47, 12:13 UTC). Die Minuten sind so gewählt, dass
+   jeder Versuch in Sommer- und Winterzeit im Fenster liegt.
+2. **Das Skript entscheidet selbst.** `messen.py` misst nur, wenn die Ortszeit im
+   Messfenster liegt (Mo 7:30–15:00, Mi 7:30–12:00, `fenster.py`) und
+   `messwerte.csv` für heute im selben Slot noch keinen Abruf hat. Der Slot richtet
+   sich nach dem geplanten Cron-Eintrag (`KOELN_CRON`), nicht nach der Startzeit. Regel:
+   ein Vormittagslauf schreibt nur als erster Abruf des Tages, ein Nachmittagslauf nur
+   als zweiter und frühestens 60 Minuten nach dem letzten. Sonst beendet es
+   sich mit Exit 0 und „keine Messung". Verspätete oder doppelte Starts erzeugen
+   also keine Zeile. Für Funktionstests gibt es `--erzwingen` (im Actions-Dialog
+   „Run workflow" als Häkchen).
+
+Der Workflow committet `messwerte.csv` direkt auf master (Commit-Autor
+„koeln-wartezeit (GitHub Actions)", Betreff „data: Köln Wartezeit …"). Jeder Messwert
+hat damit zwei Fremdbelege: den Wayback-Snapshot des Feeds und den GitHub-Commit mit
+Zeitstempel. Zeitpläne laufen nur auf dem Standardzweig. Manuell auslösen: Reiter
+„Actions", Workflow wählen, „Run workflow".
 
 Kontrolle nach jedem Montag: unter
 https://github.com/Felix3c/festgehalten/commits/master zwei neue „data:"-Commits
-(Mittwoch einer), je 9 neue Zeilen in `messwerte.csv`. Bleibt ein Lauf aus, steht
-der Fehler im Actions-Protokoll. Vor jeder lokalen Änderung an `messwerte.csv`
-erst `git pull`, sonst kollidiert die Datei mit den Actions-Commits.
+(Mittwoch einer), je 9 neue Zeilen in `messwerte.csv`. Läufe, die mit „keine Messung"
+enden, sind normal und erzeugen keinen Commit. Vor jeder lokalen Änderung an
+`messwerte.csv` erst `git pull`, sonst kollidiert die Datei mit den Actions-Commits.
 
 Erster gezählter Monat: Oktober 2026 (`koeln-2026-077`); September ist Probelauf.
-Die Zeile vom 08.09. (Dienstag, außerhalb der Öffnungszeit) ist ein Funktionstest.
+Alle September-Zeilen liegen außerhalb des Messfensters (08.09. Dienstag, 11.09.
+Freitag abends, 16.09. Mittwoch 15:27 nach Schließung) und sind Funktionstests bzw.
+der verspätete Lauf. `auswerten.py` zählt Abrufe außerhalb des Messfensters nicht mit,
+weist sie aber je Monat aus (`--alle` zeigt sie trotzdem).
 
 Rückfallebene, abgeschaltet: Auf dem Rechner des Halters liegen drei deaktivierte
 Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`, `-mo-1400`,
 `-mi-1000`), die `messen.cmd` in diesem Ordner aufrufen (Log `messen.log`,
-gitignored). Nur einschalten, wenn GitHub Actions ausfällt, und dann die CSV von Hand
-committen; beides gleichzeitig erzeugt doppelte Zeilen.
+gitignored). Sie taugen nur, wenn der Rechner zu den Zeiten läuft, und die CSV muss
+von Hand committet werden. **Nicht parallel zu Actions einschalten:** `messen.cmd`
+macht kein `git pull`, der Slot-Schutz sieht die Actions-Zeilen also nicht und schreibt
+eine zweite Vormittagszeile. Nur einschalten, wenn Actions ausfällt, und dann den
+Actions-Zeitplan entfernen.
 
-Wächter (seit 15.09.2026): `.github/workflows/koeln-waechter.yml` läuft nach jedem Messlauf
-(Mo+Mi 09:13 UTC, Mo 12:43 UTC) und ruft `waechter.py` auf. Das Skript zählt die
-Abrufzeitpunkte von heute in `messwerte.csv`; fehlt einer, stößt der Workflow den Messlauf per
-workflow_dispatch nach und scheitert laut, sodass GitHub eine Mail schickt. Fällt GitHubs
-Zeitplan ganz aus, fällt auch der Wächter aus — dann greift nur die Rückfallebene oben.
+Wächter (seit 15.09.2026): `.github/workflows/koeln-waechter.yml` läuft nach den
+Messläufen (Mo+Mi 09:13 UTC, Mo 12:43 UTC) und ruft `waechter.py` auf. Das Skript zählt
+die Abrufzeitpunkte von heute in `messwerte.csv`; fehlt einer, stößt der Workflow den
+Messlauf per workflow_dispatch nach und scheitert laut, sodass GitHub eine Mail
+schickt. Fällt GitHubs Zeitplan ganz aus, fällt auch der Wächter aus; dann bleibt die
+Kontrolle von Hand nach jedem Montag.
 
 ## Wie der Monatswert in die Wette kommt
 
 1. `python recherche/koeln-wartezeit/auswerten.py --monat <JJJJ-MM>` nach
    Monatsende laufen lassen.
 2. Die Zeile „GESAMT (alle Zentren)" liefert Mittelwert und Maximum über alle
-   Abrufe des Monats.
+   Abrufe des Monats im Messfenster (Abrufe außerhalb weist der Kopf aus, sie
+   zählen nicht).
 3. Dieser Mittelwert ist der Beleg für `ausgang` der jeweiligen Monatswette
    (`koeln-2026-0NN`): `1`, wenn Mittelwert ≤ 20,0 Min., sonst `0`.
 4. `beleg_ausgang` verweist auf den Commit-Hash bzw. -Pfad von

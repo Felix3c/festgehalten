@@ -1,7 +1,9 @@
 name: Köln-Fall — Wächter (lief die Messung?)
 # Ersetzt den Kontrollgang von Hand: prüft, ob messwerte.csv einen Abruf von heute hat.
-# Läuft nach den Messläufen aus koeln-wartezeit.yml (Mo/Mi 08:07 UTC, Mo 11:37 UTC), aber noch
-# vor Schließung der Kundenzentren (Mo 15:00, Mi 12:00 Ortszeit), damit Nachholen etwas bringt:
+# Läuft nach den ersten Startversuchen aus koeln-wartezeit.yml (seit 16.09.2026 neun Cron-Einträge,
+# Vormittag ab 06:37 UTC, Mo-Nachmittag ab 11:17 UTC), aber noch vor Schließung der Kundenzentren
+# (Mo 15:00, Mi 12:00 Ortszeit), damit Nachholen etwas bringt. Der nachgestoßene Messlauf misst
+# nur im Messfenster und je Slot einmal (messen.py), doppelte Zeilen sind ausgeschlossen:
 #   09:13 UTC Mo+Mi = 11:13 MESZ / 10:13 MEZ → mindestens 1 Abruf heute
 #   12:43 UTC Mo    = 14:43 MESZ / 13:43 MEZ → mindestens 2 Abrufe heute
 # Fehlt ein Abruf: Messlauf per workflow_dispatch nachstoßen (falls nicht schon einer läuft)

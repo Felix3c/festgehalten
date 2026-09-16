@@ -301,3 +301,200 @@ def test_waechter_exit_code_haengt_an_erwarteter_zahl(tmp_path, monkeypatch):
     monkeypatch.setenv("WAECHTER_DATUM", "2026-09-15")
     monkeypatch.setattr(sys, "argv", ["waechter.py"])
     assert waechter.main() == 1
+
+
+# --- Messfenster und Slot-Schutz (seit 16.09.2026) -----------------------
+# Hintergrund: GitHub startete den Zeitplan am Mi 16.09. erst um 15:27 MESZ,
+# also nach Schließung der Kundenzentren (Mi 7:30–12:00). Die Wetten
+# koeln-2026-077 ff. zählen nur Abrufe in den terminfreien Zeiten.
+
+from datetime import datetime, timezone
+
+import fenster
+
+
+def _dt(text: str) -> datetime:
+    return datetime.fromisoformat(text)
+
+
+def test_im_messfenster_montag_und_mittwoch():
+    assert fenster.im_messfenster(_dt("2026-10-05T10:07:00+02:00"))  # Mo Vormittag
+    assert fenster.im_messfenster(_dt("2026-10-05T13:37:00+02:00"))  # Mo Nachmittag
+    assert fenster.im_messfenster(_dt("2026-10-07T11:59:00+02:00"))  # Mi kurz vor Schluss
+    assert not fenster.im_messfenster(_dt("2026-10-05T15:00:00+02:00"))  # Mo Schluss
+    assert not fenster.im_messfenster(_dt("2026-10-05T07:29:00+02:00"))  # Mo vor Öffnung
+    assert not fenster.im_messfenster(_dt("2026-09-16T15:27:49+02:00"))  # der Fall vom 16.09.
+    assert not fenster.im_messfenster(_dt("2026-10-06T10:00:00+02:00"))  # Dienstag
+
+
+def test_im_messfenster_rechnet_in_ortszeit():
+    # 13:27 UTC am Mi 16.09. ist 15:27 MESZ: außerhalb
+    assert not fenster.im_messfenster(datetime(2026, 9, 16, 13, 27, tzinfo=timezone.utc))
+    # 06:35 UTC am Mi 04.11. ist 07:35 MEZ: innerhalb
+    assert fenster.im_messfenster(datetime(2026, 11, 4, 6, 35, tzinfo=timezone.utc))
+
+
+def test_slot_vormittag_nachmittag_oder_keiner():
+    assert fenster.slot(_dt("2026-10-05T10:07:00+02:00")) == "vormittag"
+    assert fenster.slot(_dt("2026-10-05T13:37:00+02:00")) == "nachmittag"
+    assert fenster.slot(_dt("2026-10-07T10:07:00+02:00")) == "vormittag"
+    assert fenster.slot(_dt("2026-10-07T15:27:00+02:00")) is None
+
+
+def test_schon_gemessen_erkennt_gleichen_slot(tmp_path):
+    csv_path = tmp_path / "messwerte.csv"
+    csv_path.write_text(
+        "abgerufen_am,kundenzentrum,wartezeit_minuten,feed_timestamp,wayback_url\n"
+        "2026-10-05T10:07:00+02:00,Kundenzentrum Nippes,12,t,\n"
+        "2026-10-05T10:07:00+02:00,Kundenzentrum Porz,8,t,\n",
+        encoding="utf-8",
+    )
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T10:40:00+02:00")) == "2026-10-05T10:07:00+02:00"
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T13:37:00+02:00")) is None
+    # Nachmittag: zweiter Abruf erst 60 Minuten nach dem letzten
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T12:30:00+02:00"), "nachmittag") is None
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T11:00:00+02:00"), "nachmittag") == "2026-10-05T10:07:00+02:00"
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-07T10:07:00+02:00")) is None
+    assert messen.schon_gemessen(tmp_path / "fehlt.csv", _dt("2026-10-05T10:40:00+02:00")) is None
+
+
+def _feed_stub(monkeypatch, aufrufe: list):
+    def fetch_feed(*args, **kwargs):
+        aufrufe.append(1)
+        return json.dumps(BEISPIEL_FEED).encode("utf-8")
+
+    monkeypatch.setattr(messen, "fetch_feed", fetch_feed)
+    monkeypatch.setattr(messen, "trigger_wayback", lambda *a, **k: None)
+
+
+def test_main_ausserhalb_des_fensters_misst_nicht(tmp_path, monkeypatch, capsys):
+    csv_path = tmp_path / "messwerte.csv"
+    monkeypatch.setattr(messen, "CSV_PATH", csv_path)
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-09-16T15:27:49+02:00"))
+    aufrufe: list = []
+    _feed_stub(monkeypatch, aufrufe)
+
+    assert messen.main([]) == 0
+    assert aufrufe == []
+    assert not csv_path.exists()
+    assert "Messfenster" in capsys.readouterr().out
+
+
+def test_main_erzwingen_misst_auch_ausserhalb(tmp_path, monkeypatch):
+    csv_path = tmp_path / "messwerte.csv"
+    monkeypatch.setattr(messen, "CSV_PATH", csv_path)
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-09-16T15:27:49+02:00"))
+    _feed_stub(monkeypatch, [])
+
+    assert messen.main(["--erzwingen"]) == 0
+    with csv_path.open(encoding="utf-8") as f:
+        assert len(list(csv.reader(f))) == 4  # Header + 3 Kundenzentren
+
+
+def test_main_zweiter_lauf_im_selben_slot_schreibt_nichts(tmp_path, monkeypatch, capsys):
+    csv_path = tmp_path / "messwerte.csv"
+    monkeypatch.setattr(messen, "CSV_PATH", csv_path)
+    _feed_stub(monkeypatch, [])
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T10:07:00+02:00"))
+    assert messen.main([]) == 0
+
+    aufrufe: list = []
+    _feed_stub(monkeypatch, aufrufe)
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T10:51:00+02:00"))
+    assert messen.main([]) == 0
+    assert aufrufe == []
+    assert "bereits gemessen" in capsys.readouterr().out
+    with csv_path.open(encoding="utf-8") as f:
+        assert len(list(csv.reader(f))) == 4
+
+    # Nachmittag ist ein eigener Slot
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T13:37:00+02:00"))
+    assert messen.main([]) == 0
+    with csv_path.open(encoding="utf-8") as f:
+        assert len(list(csv.reader(f))) == 7
+
+
+def test_compute_monthly_stats_ignoriert_abrufe_ausserhalb_des_fensters(tmp_path):
+    csv_path = tmp_path / "messwerte.csv"
+    csv_path.write_text(
+        "abgerufen_am,kundenzentrum,wartezeit_minuten,feed_timestamp,wayback_url\n"
+        "2026-10-05T10:07:00+02:00,Kundenzentrum Nippes,10,t,\n"
+        "2026-10-06T10:07:00+02:00,Kundenzentrum Nippes,90,t,\n"   # Dienstag
+        "2026-10-07T15:27:00+02:00,Kundenzentrum Nippes,90,t,\n"   # Mi nach Schluss
+        "2026-10-07T10:07:00+02:00,Kundenzentrum Nippes,20,t,\n",
+        encoding="utf-8",
+    )
+    rows = auswerten.read_rows(csv_path)
+
+    stats = auswerten.compute_monthly_stats(rows)
+    assert stats["2026-10"]["gesamt"]["werte"] == [10.0, 20.0]
+    assert stats["2026-10"]["messtage"] == 2
+    assert stats["2026-10"]["ausgeschlossen"] == 2
+
+    alle = auswerten.compute_monthly_stats(rows, alle=True)
+    assert alle["2026-10"]["gesamt"]["werte"] == [10.0, 90.0, 90.0, 20.0]
+
+
+# --- nach Review 16.09.: Slot nach geplantem Lauf, kaputte Zeitstempel ----------
+
+def test_slot_aus_cron_vormittag_oder_nachmittag():
+    assert fenster.slot_aus_cron("37 6 * * 1,3") == "vormittag"
+    assert fenster.slot_aus_cron("27 9 * * 1,3") == "vormittag"
+    assert fenster.slot_aus_cron("17 11 * * 1") == "nachmittag"
+    assert fenster.slot_aus_cron("13 12 * * 1") == "nachmittag"
+    assert fenster.slot_aus_cron("") is None
+    assert fenster.slot_aus_cron("kaputt") is None
+
+
+def test_schon_gemessen_ueberlebt_zeitstempel_ohne_offset(tmp_path):
+    csv_path = tmp_path / "messwerte.csv"
+    csv_path.write_text(
+        "abgerufen_am,kundenzentrum,wartezeit_minuten,feed_timestamp,wayback_url\n"
+        "2026-10-05T10:07:00,Kundenzentrum Nippes,12,t,\n"
+        "kaputt,Kundenzentrum Porz,8,t,\n"
+        "2026-10-05T10:09:00+02:00,Kundenzentrum Porz,8,t,\n",
+        encoding="utf-8",
+    )
+    # naive und kaputte Zeilen werden übersprungen, die gültige zählt
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T10:40:00+02:00")) == "2026-10-05T10:09:00+02:00"
+
+
+def test_verspaeteter_vormittagslauf_belegt_nicht_den_nachmittag(tmp_path, monkeypatch, capsys):
+    """Montag: der 09:27-UTC-Lauf startet erst 12:07 MESZ. Mit KOELN_CRON gilt er als
+    Vormittagslauf und belegt den Vormittags-Slot; der echte Nachmittagslauf um 13:17
+    schreibt danach seine eigene Zeile."""
+    csv_path = tmp_path / "messwerte.csv"
+    monkeypatch.setattr(messen, "CSV_PATH", csv_path)
+    _feed_stub(monkeypatch, [])
+
+    monkeypatch.setenv("KOELN_CRON", "27 9 * * 1,3")
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T12:07:00+02:00"))
+    assert messen.main([]) == 0
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T10:00:00+02:00"), "vormittag")
+    assert messen.schon_gemessen(csv_path, _dt("2026-10-05T13:17:00+02:00"), "nachmittag") is None
+
+    # ein zweiter, noch spaeterer Vormittagslauf schreibt nichts
+    aufrufe: list = []
+    _feed_stub(monkeypatch, aufrufe)
+    monkeypatch.setenv("KOELN_CRON", "51 8 * * 1,3")
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T12:30:00+02:00"))
+    assert messen.main([]) == 0
+    assert aufrufe == []
+
+    monkeypatch.setenv("KOELN_CRON", "17 11 * * 1")
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T13:17:00+02:00"))
+    assert messen.main([]) == 0
+    with csv_path.open(encoding="utf-8") as f:
+        assert len(list(csv.reader(f))) == 7  # Header + 2 Abrufe x 3 Zentren
+
+
+def test_main_monat_ohne_abrufe_im_fenster_gibt_exit_code_1(tmp_path, capsys):
+    csv_path = tmp_path / "messwerte.csv"
+    csv_path.write_text(
+        "abgerufen_am,kundenzentrum,wartezeit_minuten,feed_timestamp,wayback_url\n"
+        "2026-09-16T15:27:49+02:00,Kundenzentrum Nippes,58,t,\n",
+        encoding="utf-8",
+    )
+    assert auswerten.main(["--csv", str(csv_path), "--monat", "2026-09"]) == 1
+    assert "Messfenster" in capsys.readouterr().err
+    assert auswerten.main(["--csv", str(csv_path), "--monat", "2026-09", "--alle"]) == 0

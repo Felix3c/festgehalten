@@ -12,7 +12,14 @@ kundenzentren-koeln-wartezeiten), geprüft per echtem Abruf am 08.09.2026:
 Nur Standardbibliothek. Kein Secret, keine Abhängigkeit.
 
 Aufruf:
-    python messen.py
+    python messen.py              # misst nur im Messfenster, je Slot einmal
+    python messen.py --erzwingen  # misst immer (Funktionstest)
+
+Messfenster und Slot (seit 16.09.2026, siehe fenster.py): Außerhalb der
+terminfreien Zeiten (Mo 7:30–15:00, Mi 7:30–12:00 Ortszeit) oder wenn
+messwerte.csv für heute im selben Slot (vormittag/nachmittag) schon einen
+Abruf hat, endet das Skript mit Exit-Code 0 und schreibt nichts. So kann der
+Zeitplan mehrfach starten, ohne doppelte oder wertlose Zeilen zu erzeugen.
 
 Exit-Code 0 bei Erfolg, ungleich 0 mit Meldung auf stderr, wenn der Feed
 nicht abrufbar oder nicht auswertbar ist. Ein Fehler bei der
@@ -21,13 +28,17 @@ dann leer.
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
+import os
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+
+import fenster
 
 FEED_URL = "http://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php"
 WAYBACK_SAVE_URL = "https://web.archive.org/save/" + FEED_URL
@@ -132,8 +143,87 @@ def append_csv(csv_path: Path, rows: list[list]) -> None:
         writer.writerows(rows)
 
 
-def main() -> int:
-    abgerufen_am = datetime.now().astimezone().isoformat(timespec="seconds")
+def _jetzt() -> datetime:
+    """Aktueller Zeitpunkt mit Zeitzone; eigene Funktion, damit Tests sie ersetzen können."""
+    return datetime.now().astimezone()
+
+
+# Ein Vormittagslauf darf nur der erste Abruf des Tages sein, ein Nachmittagslauf
+# höchstens der zweite und frühestens 60 Minuten nach dem letzten. Die Zeile selbst
+# trägt keinen Slot; die Zählregel kommt ohne aus und heilt auch den Fall, dass ein
+# verspäteter Vormittagslauf erst nach 12:00 gemessen hat.
+MAX_ABRUFE_JE_TAG = {"vormittag": 1, "nachmittag": 2}
+MINDESTABSTAND = timedelta(minutes=60)
+
+
+def abrufe_heute(csv_path: Path, jetzt: datetime) -> list[datetime]:
+    """Alle verschiedenen Abrufzeitpunkte von heute (Ortszeit), sortiert.
+
+    Zeilen mit unlesbarem oder zeitzonenlosem Zeitstempel werden übersprungen,
+    nie zum Absturz.
+    """
+    if not csv_path.exists():
+        return []
+    heute = fenster.ortszeit(jetzt).date()
+    gefunden: set[datetime] = set()
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            try:
+                zeitpunkt = fenster.ortszeit(fenster.parse_abgerufen_am(row["abgerufen_am"]))
+            except (KeyError, TypeError, ValueError):
+                continue
+            if zeitpunkt.date() == heute:
+                gefunden.add(zeitpunkt)
+    return sorted(gefunden)
+
+
+def schon_gemessen(csv_path: Path, jetzt: datetime, ziel_slot: str | None = None) -> str | None:
+    """Liefert den letzten Abruf von heute, wenn dieser Lauf nichts mehr schreiben darf, sonst None.
+
+    ziel_slot fehlt: Slot aus der Uhrzeit `jetzt` (Vormittag vor 12:00, sonst Nachmittag).
+    """
+    ziel_slot = ziel_slot or fenster.slot(jetzt) or "nachmittag"
+    abrufe = abrufe_heute(csv_path, jetzt)
+    if not abrufe:
+        return None
+    letzter = abrufe[-1]
+    if len(abrufe) >= MAX_ABRUFE_JE_TAG[ziel_slot]:
+        return letzter.isoformat(timespec="seconds")
+    if fenster.ortszeit(jetzt) - letzter < MINDESTABSTAND:
+        return letzter.isoformat(timespec="seconds")
+    return None
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument(
+        "--erzwingen",
+        action="store_true",
+        help="auch außerhalb des Messfensters und bei schon vorhandenem Abruf messen (Funktionstest)",
+    )
+    args = parser.parse_args(argv)
+
+    jetzt = _jetzt()
+    abgerufen_am = jetzt.isoformat(timespec="seconds")
+    lokal = fenster.ortszeit(jetzt).strftime("%a %d.%m.%Y %H:%M %Z")
+
+    if not args.erzwingen:
+        if not fenster.im_messfenster(jetzt):
+            print(
+                f"Außerhalb des Messfensters ({lokal}; Mo 7:30–15:00, Mi 7:30–12:00 Ortszeit): "
+                "keine Messung, keine Zeile."
+            )
+            return 0
+        # Slot nach dem GEPLANTEN Lauf (Umgebungsvariable KOELN_CRON = github.event.schedule),
+        # sonst nach der Uhrzeit. Ein verspäteter Vormittagslauf frisst so nicht den Nachmittag.
+        ziel_slot = fenster.slot_aus_cron(os.environ.get("KOELN_CRON", "")) or fenster.slot(jetzt)
+        vorhanden = schon_gemessen(CSV_PATH, jetzt, ziel_slot)
+        if vorhanden:
+            print(
+                f"Heute bereits gemessen ({vorhanden}), dieser Lauf gilt als '{ziel_slot}': "
+                "keine weitere Zeile."
+            )
+            return 0
 
     try:
         rohdaten = fetch_feed()
