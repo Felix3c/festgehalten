@@ -39,7 +39,8 @@ kann sie beisteuern.
 
 Der Halter nimmt von den gemessenen Stellen kein Geld, mit einer Ausnahme: einem
 veröffentlichten Festpreis für selbst hinterlegte Einträge (festgehalten-Format v1,
-§8.4). Bisher: keins.
+§8.4). Bisher: keins. Offenlegung: Das Buch liegt auf GitHub, das zu Microsoft gehört;
+Microsoft ist an OpenAI beteiligt.
 
 Verfall: Eine offene Wette verfällt zwei Jahre nach ihrem Prüfdatum (Format §1.1, §2.3).
 Verfallene Wetten zählen nicht in die Trefferquote, aber in die Rechenschaft.
