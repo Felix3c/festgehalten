@@ -120,21 +120,30 @@ def trigger_wayback(
         return None
 
 
-def feed_veraltet(records: list[dict], jetzt: datetime) -> str | None:
-    """Neuester feed_timestamp, wenn KEIN Kundenzentrum heute (Ortszeit) aktualisiert wurde, sonst None.
+def frische_records(records: list[dict], jetzt: datetime) -> list[dict]:
+    """Nur Zentren, deren feed_timestamp von heute ist und nicht in der Zukunft liegt (Ortszeit).
 
     Befund 03.10.2026: Der Feed stand seit Mi 16.09.2026 07:45 still (alle Zentren
     „geöffnet" mit denselben Minuten, Wayback 16.09./20.09./03.10. gleich). Solche
     Werte sind keine Messung. Unlesbare Zeitstempel zählen als veraltet.
     """
-    heute = fenster.ortszeit(jetzt).date()
-    stempel = sorted(r["feed_timestamp"] for r in records)
-    for text in stempel:
+    lokal = fenster.ortszeit(jetzt).replace(tzinfo=None)
+    frisch = []
+    for r in records:
         try:
-            if datetime.strptime(text, "%Y-%m-%d %H:%M:%S").date() == heute:
-                return None
+            stempel = datetime.strptime(r["feed_timestamp"], "%Y-%m-%d %H:%M:%S")
         except ValueError:
             continue
+        if stempel.date() == lokal.date() and stempel <= lokal + timedelta(minutes=5):
+            frisch.append(r)
+    return frisch
+
+
+def feed_veraltet(records: list[dict], jetzt: datetime) -> str | None:
+    """Neuester feed_timestamp, wenn kein Zentrum frisch ist (frische_records), sonst None."""
+    if frische_records(records, jetzt):
+        return None
+    stempel = sorted(r["feed_timestamp"] for r in records)
     return stempel[-1] if stempel else ""
 
 
@@ -278,6 +287,8 @@ def main(argv: list[str] | None = None) -> int:
             file=sys.stderr,
         )
         return 1
+    if not args.erzwingen:
+        records = frische_records(records, jetzt)
 
     wayback_url = trigger_wayback()
 

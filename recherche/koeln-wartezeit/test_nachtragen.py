@@ -165,3 +165,21 @@ def test_feed_veraltet_unlesbarer_zeitstempel_gilt_als_veraltet():
 def test_feed_url_ist_https():
     # http:// liefert seit spätestens 03.10.2026 403 (vorher seit 20.09. 301 auf https)
     assert messen.FEED_URL.startswith("https://")
+
+
+def test_nur_frische_zentren_werden_geschrieben(tmp_path, monkeypatch):
+    # Review 03.10.: ein frisches Zentrum darf acht eingefrorene nicht mitziehen; Zukunft gilt nicht.
+    csv_path = tmp_path / "messwerte.csv"
+    monkeypatch.setattr(messen, "CSV_PATH", csv_path)
+    monkeypatch.setattr(messen, "_jetzt", lambda: _dt("2026-10-05T10:00:00+02:00"))
+    monkeypatch.setattr(messen, "trigger_wayback", lambda *a, **k: None)
+    monkeypatch.setattr(messen, "fetch_feed", lambda *a, **k: json.dumps({"items": [
+        {"title_anz": "Kundenzentrum Porz", "timestamp": "2026-10-05 09:55:00", "wartezeit_minuten": "9"},
+        {"title_anz": "Kundenzentrum Kalk", "timestamp": "2026-09-16 07:45:03", "wartezeit_minuten": "47"},
+        {"title_anz": "Kundenzentrum Nippes", "timestamp": "2026-10-05 23:00:00", "wartezeit_minuten": "1"},
+    ]}).encode("utf-8"))
+
+    assert messen.main([]) == 0
+
+    namen = [z[1] for z in _zeilen(csv_path)[1:]]
+    assert namen == ["Kundenzentrum Porz"]

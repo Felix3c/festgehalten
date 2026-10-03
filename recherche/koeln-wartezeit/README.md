@@ -101,6 +101,9 @@ python recherche/koeln-wartezeit/nachtragen.py --schreiben  # anhängen, dann co
 selben Tag den Slot (nach Uhrzeit, vor/nach 12:00) noch nicht hat und nur mit 60 Minuten
 Abstand zu jedem vorhandenen Abruf. Laptop-Zeilen haben keinen Actions-Commit als
 Zeitbeleg, nur die Wayback-Spalte.
+Bekannte Grenze: Actions ordnet den Slot nach dem geplanten Cron zu, `nachtragen.py` nach der
+Uhrzeit. Ein Actions-Vormittagslauf, der erst nach 12:00 misst, gilt hier als Nachmittag; dann
+kann ein Laptop-Vormittag dazukommen (zwei Vormittagswerte). Vor `--schreiben` die Probe lesen.
 
 Wächter (seit 15.09.2026): `.github/workflows/koeln-waechter.yml` läuft nach den
 Messläufen (Mo+Mi 09:13 UTC, Mo 12:43 UTC) und ruft `waechter.py` auf. Das Skript zählt
@@ -134,7 +137,8 @@ Kontrolle von Hand nach jedem Montag.
   (`5HSZ6PS2…`), am 03.10. ist der Inhalt unverändert:
   https://web.archive.org/web/20261003190545/https://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php
   Seitdem bricht `messen.py` ab (Exit 1, keine Zeile, Wayback-Beleg), wenn kein Kundenzentrum
-  heute einen `timestamp` hat (`feed_veraltet`). `--erzwingen` umgeht die Sperre.
+  heute einen `timestamp` hat (`feed_veraltet`); einzelne Zentren mit altem oder künftigem
+  `timestamp` fallen still heraus (`frische_records`). `--erzwingen` umgeht die Sperre.
 - **Der Feed kann veralten, ohne dass das auffällt.** Im selben Feed steht
   ein Eintrag „Kfz-Zulassungsstelle" mit `timestamp` vom 27.03.2022 — seit
   4,5 Jahren tot, aber weiterhin Teil der Antwort. `messen.py` schließt
