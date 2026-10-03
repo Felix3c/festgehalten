@@ -32,7 +32,7 @@ python recherche/koeln-wartezeit/auswerten.py --monat 2026-10
 Python-Standardbibliothek (3.11+). Ohne `--erzwingen` misst es nur im Messfenster
 (Mo 7:30–15:00, Mi 7:30–12:00 Ortszeit) und je Slot (vormittag/nachmittag) nur
 einmal am Tag, sonst endet es mit Exit 0 und „keine Messung". Es ruft
-`http://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php` ab,
+`https://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php` ab (bis 03.10.2026 `http://`, das seit 20.09. umleitet und jetzt 403 liefert),
 schreibt eine Zeile je Kundenzentrum an `messwerte.csv` und löst danach eine
 Wayback-Archivierung des Feeds aus (`https://web.archive.org/save/<feed-url>`).
 Schlägt die Archivierung fehl, bleibt `wayback_url` in der Zeile leer — das
@@ -85,14 +85,25 @@ Freitag abends, 16.09. Mittwoch 15:27 nach Schließung) und sind Funktionstests 
 der verspätete Lauf. `auswerten.py` zählt Abrufe außerhalb des Messfensters nicht mit,
 weist sie aber je Monat aus (`--alle` zeigt sie trotzdem).
 
-Rückfallebene, abgeschaltet: Auf dem Rechner des Halters liegen drei deaktivierte
-Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`, `-mo-1400`,
-`-mi-1000`), die `messen.cmd` in diesem Ordner aufrufen (Log `messen.log`,
-gitignored). Sie taugen nur, wenn der Rechner zu den Zeiten läuft, und die CSV muss
-von Hand committet werden. **Nicht parallel zu Actions einschalten:** `messen.cmd`
-macht kein `git pull`, der Slot-Schutz sieht die Actions-Zeilen also nicht und schreibt
-eine zweite Vormittagszeile. Nur einschalten, wenn Actions ausfällt, und dann den
-Actions-Zeitplan entfernen.
+Rückfallebene Laptop (abgeschaltet; umgebaut 03.10.2026): Auf dem Rechner des Halters
+liegen drei deaktivierte Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`,
+`-mo-1400`, `-mi-1000`, Anmeldemodus „nur interaktiv“), die `messen.cmd` aufrufen (Log
+`messen.log`). `messen.cmd` schreibt seit 03.10. **nicht mehr in `messwerte.csv`**, sondern mit
+`messen.py --csv` in `messwerte-laptop.csv` (gitignored). Darf deshalb parallel zu Actions
+laufen. Übernommen wird von Hand, nach `git pull`:
+
+```bash
+python recherche/koeln-wartezeit/nachtragen.py              # Probe: was würde übernommen
+python recherche/koeln-wartezeit/nachtragen.py --schreiben  # anhängen, dann committen
+```
+
+`nachtragen.py` übernimmt einen Laptop-Abruf nur im Messfenster, nur wenn `messwerte.csv` am
+selben Tag den Slot (nach Uhrzeit, vor/nach 12:00) noch nicht hat und nur mit 60 Minuten
+Abstand zu jedem vorhandenen Abruf. Laptop-Zeilen haben keinen Actions-Commit als
+Zeitbeleg, nur die Wayback-Spalte.
+Bekannte Grenze: Actions ordnet den Slot nach dem geplanten Cron zu, `nachtragen.py` nach der
+Uhrzeit. Ein Actions-Vormittagslauf, der erst nach 12:00 misst, gilt hier als Nachmittag; dann
+kann ein Laptop-Vormittag dazukommen (zwei Vormittagswerte). Vor `--schreiben` die Probe lesen.
 
 Wächter (seit 15.09.2026): `.github/workflows/koeln-waechter.yml` läuft nach den
 Messläufen (Mo+Mi 09:13 UTC, Mo 12:43 UTC) und ruft `waechter.py` auf. Das Skript zählt
@@ -120,6 +131,14 @@ Kontrolle von Hand nach jedem Montag.
   betrieben und befüllt; diese Reihe prüft, ob die Stadt ihr eigenes
   Planziel nach ihren eigenen Zahlen einhält — keine unabhängige Messung vor
   Ort.
+- **Der Feed ist veraltet: Befund 03.10.2026.** Seit Mi 16.09.2026 07:45 liefert der Feed
+  für alle neun Kundenzentren dieselben Werte (Status „geöffnet“, Chorweiler 71 … Innenstadt
+  6 Min.). Wayback-Snapshots 16.09. 13:27 UTC und 20.09. 08:47 UTC haben denselben Digest
+  (`5HSZ6PS2…`), am 03.10. ist der Inhalt unverändert:
+  https://web.archive.org/web/20261003190545/https://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php
+  Seitdem bricht `messen.py` ab (Exit 1, keine Zeile, Wayback-Beleg), wenn kein Kundenzentrum
+  heute einen `timestamp` hat (`feed_veraltet`); einzelne Zentren mit altem oder künftigem
+  `timestamp` fallen still heraus (`frische_records`). `--erzwingen` umgeht die Sperre.
 - **Der Feed kann veralten, ohne dass das auffällt.** Im selben Feed steht
   ein Eintrag „Kfz-Zulassungsstelle" mit `timestamp` vom 27.03.2022 — seit
   4,5 Jahren tot, aber weiterhin Teil der Antwort. `messen.py` schließt
