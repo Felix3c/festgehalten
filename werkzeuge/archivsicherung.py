@@ -88,7 +88,12 @@ def text_aus_antwort(antwort: requests.Response) -> tuple[str, bool]:
         from pypdf import PdfReader
         leser = PdfReader(io.BytesIO(antwort.content))
         return " ".join((s.extract_text() or "") for s in leser.pages), True
-    antwort.encoding = antwort.encoding or antwort.apparent_encoding
+    # Ohne charset im Kopf rät requests ISO-8859-1; dann wäre jedes Umlaut-Zitat „fehlt“.
+    if "charset" not in art.lower():
+        try:
+            return antwort.content.decode("utf-8"), False
+        except UnicodeDecodeError:
+            antwort.encoding = antwort.apparent_encoding
     return antwort.text, False
 
 

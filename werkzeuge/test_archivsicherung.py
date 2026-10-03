@@ -132,3 +132,11 @@ def test_speichern_scheitert_trotzdem_live_pruefen(monkeypatch):
     s = _Sitzung(seiten={WETTE["quelle"]: "anderer Text"})
     z = a.pruefen(s, WETTE, speichern=True)
     assert (z["status"], z["zitat_live"], s.gespeichert) == ("speichern_fehlgeschlagen", "nein", True)
+
+
+def test_utf8_ohne_charset_wird_richtig_gelesen():
+    antwort = _Antwort(text="")
+    antwort.content = "Neues Café: Konsolidierungsmaßnahmen".encode("utf-8")
+    antwort.encoding = "ISO-8859-1"
+    antwort.text = antwort.content.decode("latin-1")
+    assert a.text_aus_antwort(antwort) == ("Neues Café: Konsolidierungsmaßnahmen", False)
