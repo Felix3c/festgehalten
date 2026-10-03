@@ -17,10 +17,12 @@ prognosen:
     wert: 0.92
     hinterlegt_am: 2026-08-28
     art: geschaetzt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
-vermerke: []
+ausgang: 1
+aufgeloest_am: 2026-10-03
+beleg_ausgang: https://unternehmerschaft.wigadi.de/chefs-in-town-2026-duesseldorf-hat-aufgekocht-und-der-standort-hat-gewonnen/
+vermerke:
+  - am: 2026-10-03
+    text: "Aufgelöst durch Claude für den Halter; Beleg: Unternehmerschaft Düsseldorf und Umgebung e.V., „Chefs in Town 2026: Düsseldorf hat aufgekocht – und der Standort hat gewonnen“ (30.09.2026): „Vom 25. bis 27. September wurde sie zur großen gemeinsamen Küche. „Chefs in Town“ ging in die dritte Runde“ und „Die Bilanz der Veranstalter ist eindrucksvoll: mehr als 150 kulinarische Erlebnisse, über 120 Restaurants, Cafés, Bars und Hotels sowie rund 100 Spitzenköchinnen und -köche.“ Zweite Quelle: Ddorf-Aktuell, „Düsseldorf: „Chefs in Town“ macht Station bei fiftyfifty“ (27.09.2026): „Bereits zum dritten Mal findet das Event in Düsseldorf statt“. Keine nachträgliche Mitteilung der Stadt gefunden (Stand 03.10.2026). Termin gehalten. Aufgelöst fünf Tage nach pruefung_am. Archiv: https://web.archive.org/web/20261003114905/https://unternehmerschaft.wigadi.de/chefs-in-town-2026-duesseldorf-hat-aufgekocht-und-der-standort-hat-gewonnen/ und https://web.archive.org/web/20261003114841/https://www.ddorf-aktuell.de/2026/09/27/duesseldorf-chefs-in-town-macht-station-bei-fiftyfifty/"
 ---
 
 ## Kontext
