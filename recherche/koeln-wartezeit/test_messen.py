@@ -4,6 +4,7 @@ Aufruf: python -m pytest recherche/koeln-wartezeit -q
 """
 import csv
 import json
+import re
 from pathlib import Path
 
 import auswerten
@@ -444,6 +445,17 @@ def test_slot_aus_cron_vormittag_oder_nachmittag():
     assert fenster.slot_aus_cron("13 12 * * 1") == "nachmittag"
     assert fenster.slot_aus_cron("") is None
     assert fenster.slot_aus_cron("kaputt") is None
+
+
+def test_fruehe_vorlauf_crons_zaehlen_als_vormittag():
+    """Befund 03.10.: GitHub startet 5–7 h zu spät. Die frühen Versuche (00–04 UTC)
+    müssen den Vormittags-Slot belegen, nicht den Nachmittag."""
+    workflow = Path(__file__).resolve().parents[2] / ".github/workflows/koeln-wartezeit.yml"
+    crons = re.findall(r'cron:\s*"([^"]+)"', workflow.read_text(encoding="utf-8"))
+    frueh = [c for c in crons if int(c.split()[1]) < 5]
+    assert len(frueh) == 8
+    assert all(fenster.slot_aus_cron(c) == "vormittag" for c in frueh)
+    assert all(c.split()[4] == "1,3" for c in frueh)
 
 
 def test_schon_gemessen_ueberlebt_zeitstempel_ohne_offset(tmp_path):
