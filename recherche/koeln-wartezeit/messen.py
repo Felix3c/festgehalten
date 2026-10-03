@@ -3,7 +3,7 @@
 Kundenzentren und hängt einen Messwert je Zentrum an messwerte.csv an.
 
 Quelle (Open-Data-Feed, keine Anmeldung nötig):
-    http://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php
+    https://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php
 
 Felder laut Datensatzbeschreibung (offenedaten-koeln.de/dataset/
 kundenzentren-koeln-wartezeiten), geprüft per echtem Abruf am 08.09.2026:
@@ -40,7 +40,8 @@ from pathlib import Path
 
 import fenster
 
-FEED_URL = "http://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php"
+# https seit 03.10.2026: http:// leitete ab 20.09. per 301 um und liefert jetzt 403.
+FEED_URL = "https://www.stadt-koeln.de/externe-dienste/open-data/waiting-od.php"
 WAYBACK_SAVE_URL = "https://web.archive.org/save/" + FEED_URL
 CSV_PATH = Path(__file__).resolve().parent / "messwerte.csv"
 CSV_HEADER = [
@@ -117,6 +118,24 @@ def trigger_wayback(
     except Exception as exc:  # noqa: BLE001 - bewusst breit, siehe Docstring
         print(f"Warnung: Wayback-Archivierung fehlgeschlagen: {exc}", file=sys.stderr)
         return None
+
+
+def feed_veraltet(records: list[dict], jetzt: datetime) -> str | None:
+    """Neuester feed_timestamp, wenn KEIN Kundenzentrum heute (Ortszeit) aktualisiert wurde, sonst None.
+
+    Befund 03.10.2026: Der Feed stand seit Mi 16.09.2026 07:45 still (alle Zentren
+    „geöffnet" mit denselben Minuten, Wayback 16.09./20.09./03.10. gleich). Solche
+    Werte sind keine Messung. Unlesbare Zeitstempel zählen als veraltet.
+    """
+    heute = fenster.ortszeit(jetzt).date()
+    stempel = sorted(r["feed_timestamp"] for r in records)
+    for text in stempel:
+        try:
+            if datetime.strptime(text, "%Y-%m-%d %H:%M:%S").date() == heute:
+                return None
+        except ValueError:
+            continue
+    return stempel[-1] if stempel else ""
 
 
 def build_rows(records: list[dict], abgerufen_am: str, wayback_url: str | None) -> list[list]:
@@ -201,7 +220,12 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="auch außerhalb des Messfensters und bei schon vorhandenem Abruf messen (Funktionstest)",
     )
+    parser.add_argument(
+        "--csv",
+        help="Zieldatei statt messwerte.csv (Rückfallebene Laptop: messwerte-laptop.csv, siehe nachtragen.py)",
+    )
     args = parser.parse_args(argv)
+    csv_path = Path(args.csv) if args.csv else CSV_PATH
 
     jetzt = _jetzt()
     abgerufen_am = jetzt.isoformat(timespec="seconds")
@@ -217,7 +241,7 @@ def main(argv: list[str] | None = None) -> int:
         # Slot nach dem GEPLANTEN Lauf (Umgebungsvariable KOELN_CRON = github.event.schedule),
         # sonst nach der Uhrzeit. Ein verspäteter Vormittagslauf frisst so nicht den Nachmittag.
         ziel_slot = fenster.slot_aus_cron(os.environ.get("KOELN_CRON", "")) or fenster.slot(jetzt)
-        vorhanden = schon_gemessen(CSV_PATH, jetzt, ziel_slot)
+        vorhanden = schon_gemessen(csv_path, jetzt, ziel_slot)
         if vorhanden:
             print(
                 f"Heute bereits gemessen ({vorhanden}), dieser Lauf gilt als '{ziel_slot}': "
@@ -245,12 +269,22 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 1
 
+    veraltet = None if args.erzwingen else feed_veraltet(records, jetzt)
+    if veraltet is not None:
+        archiv = trigger_wayback()
+        print(
+            f"Fehler: Feed veraltet, kein Kundenzentrum heute aktualisiert (neuester timestamp "
+            f"{veraltet!r}, Abruf {lokal}). Keine Zeile. Beleg: {archiv or '(Archivierung fehlgeschlagen)'}",
+            file=sys.stderr,
+        )
+        return 1
+
     wayback_url = trigger_wayback()
 
     rows = build_rows(records, abgerufen_am, wayback_url)
-    append_csv(CSV_PATH, rows)
+    append_csv(csv_path, rows)
 
-    print(f"{len(rows)} Messwerte an {CSV_PATH} angehängt (abgerufen_am={abgerufen_am}).")
+    print(f"{len(rows)} Messwerte an {csv_path} angehängt (abgerufen_am={abgerufen_am}).")
     for r in rows:
         print(f"  {r[1]}: {r[2]} Min. (feed_timestamp={r[3]})")
     print(f"  wayback_url: {wayback_url or '(leer, Archivierung fehlgeschlagen)'}")

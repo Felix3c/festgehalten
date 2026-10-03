@@ -8,3 +8,4 @@ __pycache__/
 
 # Lokales Log der Aufgabenplanung (Koeln-Fall)
 recherche/koeln-wartezeit/messen.log
+recherche/koeln-wartezeit/messwerte-laptop.csv
