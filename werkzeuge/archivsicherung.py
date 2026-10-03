@@ -162,7 +162,7 @@ def pruefen(sitzung: requests.Session, wette: dict, speichern: bool) -> dict:
                 time.sleep(PAUSE_SPEICHERN)
                 if not neu:
                     zeile["status"] = zeile["status"] or "speichern_fehlgeschlagen"
-                    return zeile
+                    break
                 kandidaten = [neu]
             else:
                 break

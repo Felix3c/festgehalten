@@ -125,3 +125,10 @@ def test_kein_archiv_prueft_live_seite():
 
 def test_live_seite_weg_meldet_status():
     assert a.pruefen(_Sitzung(), WETTE, speichern=False)["zitat_live"] == "404"
+
+
+def test_speichern_scheitert_trotzdem_live_pruefen(monkeypatch):
+    monkeypatch.setattr(a, "PAUSE_SPEICHERN", 0)
+    s = _Sitzung(seiten={WETTE["quelle"]: "anderer Text"})
+    z = a.pruefen(s, WETTE, speichern=True)
+    assert (z["status"], z["zitat_live"], s.gespeichert) == ("speichern_fehlgeschlagen", "nein", True)
