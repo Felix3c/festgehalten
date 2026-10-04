@@ -140,3 +140,13 @@ def test_utf8_ohne_charset_wird_richtig_gelesen():
     antwort.encoding = "ISO-8859-1"
     antwort.text = antwort.content.decode("latin-1")
     assert a.text_aus_antwort(antwort) == ("Neues Café: Konsolidierungsmaßnahmen", False)
+
+
+def test_offene_wetten_nur_live_waehlt_live_woertliche_ohne_tragende_kopie():
+    wetten = [{"id": i} for i in ("a", "b", "c", "d")]
+    tabelle = {"a": {"status": "kein_archiv", "zitat_live": "ja"},
+               "b": {"status": "zitat_fehlt", "zitat_live": "nein"},
+               "c": {"status": "ok", "zitat_live": ""},
+               "d": {"status": "zitat_fehlt", "zitat_live": "ja"}}
+    assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=True)] == ["a", "d"]
+    assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=False)] == ["a", "b", "d"]

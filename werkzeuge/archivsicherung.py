@@ -8,7 +8,7 @@ Kopie, falls die Stadt die Seite ändert (gleiche Regel wie belegbar.eu, lib/arc
 Die Wettdateien bleiben unverändert (Kopf ist nach dem Commit eingefroren, §1.3 Regel 3).
 Ergebnis ist eine Tabelle: recherche/archiv-quellen.csv (id, quelle, archiv, status, fehlt, geprueft_am).
 
-Aufruf:  python werkzeuge/archivsicherung.py buecher [weitere Ordner …] [--speichern] [--max N]
+Aufruf:  python werkzeuge/archivsicherung.py buecher [weitere Ordner …] [--speichern] [--nur-live] [--max N]
 Ohne --speichern wird nur nach vorhandenen Kopien gesucht, nichts beim Archiv angestoßen.
 Läuft fortsetzbar: Zeilen mit Status ok/pdf_ok werden übersprungen.
 """
@@ -192,6 +192,14 @@ def live_pruefen(sitzung: requests.Session, wette: dict) -> str:
     return "nein" if zitat_in_text(wette["zitat"], text) else "ja"
 
 
+def offene_wetten(wetten: list[dict], tabelle: dict[str, dict], nur_live: bool) -> list[dict]:
+    """Noch nicht tragende Wetten; mit nur_live nur die, deren Zitat zuletzt live wörtlich stand."""
+    offen = [w for w in wetten if tabelle.get(w["id"], {}).get("status") not in FERTIG]
+    if nur_live:
+        offen = [w for w in offen if tabelle.get(w["id"], {}).get("zitat_live") == "ja"]
+    return offen
+
+
 def tabelle_lesen(pfad: Path) -> dict[str, dict]:
     if not pfad.exists():
         return {}
@@ -215,11 +223,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("ordner", nargs="+", type=Path)
     p.add_argument("--tabelle", type=Path, default=Path("recherche/archiv-quellen.csv"))
     p.add_argument("--speichern", action="store_true", help="fehlende Kopien bei Save Page Now anstoßen")
+    p.add_argument("--nur-live", action="store_true", help="nur Wetten mit zitat_live=ja aus der Tabelle")
     p.add_argument("--max", type=int, default=0, help="höchstens N Wetten bearbeiten (0 = alle)")
     a = p.parse_args(argv)
 
     tabelle = tabelle_lesen(a.tabelle)
-    offen = [w for w in wetten_sammeln(a.ordner) if tabelle.get(w["id"], {}).get("status") not in FERTIG]
+    offen = offene_wetten(wetten_sammeln(a.ordner), tabelle, a.nur_live)
     if a.max:
         offen = offen[: a.max]
     sitzung = requests.Session()
