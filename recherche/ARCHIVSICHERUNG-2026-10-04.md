@@ -61,13 +61,13 @@ Prognose oder Frage zu ändern; Generator-Prüfung danach um „Zitat wörtlich 
 
 Lauf `python werkzeuge/archivsicherung.py buecher <bund> <gatekeeper> <duisburg> --speichern --nur-live`
 (neue Option `--nur-live`, 16 Tests). Ergebnis: **alle 19 tragen jetzt** (18 Archivkopie mit wörtlichem Zitat,
-ki-2026-009 als PDF). Neuer Stand: **80 tragen** (76 ok + 4 pdf_ok), 166 nicht wörtlich, 27 ohne Archiv
-(Bonn-Bot-Prüfung u. a.); die 166 bleiben bis zur Antwort auf Frage 61 unverändert.
+ki-2026-009 als PDF). Neuer Stand: **80 tragen** (76 ok + 4 pdf_ok), **156 nicht wörtlich** (weder Archiv noch live, unverändert),
+37 nicht erreichbar (Bonn-Bot-Prüfung, eine 404); 80 + 156 + 37 = 273. Die 156 bleiben bis zur Antwort auf Frage 61 unverändert.
 
 Zwei Befunde fürs Werkzeug (noch nicht behoben, nur notiert):
 - Save Page Now meldete bei radioduisburg.de und microsoft.com zweimal einen Fehler, hatte die Kopie aber angelegt
   (zwei Minuten später per CDX da). Ein Prüflauf ohne `--speichern` nach dem Speicherlauf fängt das auf.
 - ki-2026-006 galt zuerst als `zitat_fehlt`, weil die jüngste Kopie auf eine andere Aleph-Alpha-Seite umgeleitet
   hatte (…/ilhan-scheer-zum-co-ceo-ernannt/). Nach frischer Kopie ok. Weitere `zitat_fehlt` könnten solche
-  Umleitungen sein; Gegenprobe 04.10.: bei keiner der 166 zeigt die gespeicherte Kopie-URL auf eine andere Seite
+  Umleitungen sein; Gegenprobe 04.10.: bei keiner der 166 Zeilen mit Status `zitat_fehlt` (156 + Bonn) zeigt die gespeicherte Kopie-URL auf eine andere Seite
   (die Umleitung bei ki-2026-006 stand sichtbar in der Spalte archiv). Eine Prüfung im Werkzeug selbst fehlt noch.
