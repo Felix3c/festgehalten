@@ -1,6 +1,6 @@
 # Dortmund: die sechs „kein Treffer“-Zitate nachgeprüft (04.10.2026)
 
-Dauerlauf, 04.10.2026 ~06:05–06:25. Grundlage: `recherche/wortlaut-vorschlaege.csv`, Bewertung `kein_treffer`,
+Dauerlauf, 04.10.2026 ~05:58–06:06. Grundlage: `recherche/wortlaut-vorschlaege.csv`, Bewertung `kein_treffer`,
 nur `dortmund-*` (6). Je Wette die Archivkopie aus der CSV (`id_`-Abruf mit `requests`) gelesen. Wettdateien unverändert.
 
 | Wette | Archivkopie | Ergebnis |
