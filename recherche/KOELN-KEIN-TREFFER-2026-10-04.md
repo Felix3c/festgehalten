@@ -35,13 +35,21 @@ nur `koeln-*` (6 von 50). Je Wette Archivkopie (`id_`-Abruf) und, wo nötig, Liv
   Archivkopie: Wayback-Speichern am 04.10. zweimal fehlgeschlagen (GET `/save/` → 520, POST → Job
   `spn2-2d8bfaf147e6bdd6535c95a8892b44e4113aa3f7` „job-failed“).
 - **Lokale Kopie** (Behelf, nicht öffentlich prüfbar): `recherche/belege/2026-10-04-stadt-koeln-kulturtermine-september-2026.html`,
-  83 597 Byte, SHA-256 `a7c61c3d6a14b29cd9d1d529bf9418e6edc97c8b32dfc97300aae472a43ac424`.
+  83 597 Byte, SHA-256 `c8534af3341c371484fb4e18b6a7d697d2a064f61aa6fcee947497c3c3e7df4b` (neu abgerufen 04.10.2026 07:45 MESZ,
+  `Last-Modified` unverändert 20.08. 16:33:25 GMT, alle vier Stellen oben wörtlich enthalten).
+- **Nachtrag 04.10. 07:45:** Die erste Kopie (05:31, SHA-256 `a7c61c3d…c424`) hat git beim Commit mit `core.autocrlf`
+  umgeschrieben (114 CR entfernt, Blob `910acad1…`); die Originalbytes waren nicht wiederherstellbar (gemischte
+  Zeilenenden). Neu abgerufen und mit `.gitattributes` `recherche/belege/** -text` (wie Zweig `buch-wuppertal`) byte-gleich
+  eingecheckt. Unterschied zur ersten Kopie nach Entfernen der CR: nur Cache-Zeitstempel (`?cache=`, `data-lastmodified`),
+  Text gleich.
+- **Archivkopie inzwischen vorhanden:** Wayback `20261004033133` enthält alle drei Stellen wörtlich (siehe
+  `DUESSELDORF-KEIN-TREFFER-2026-10-04.md`). Die lokale Kopie bleibt als zweiter Beleg.
 
 ## Vorschlag (Frage an Felix, nichts geändert)
 
 `gesagt_am` in koeln-2026-070, -071, -072 auf `2026-08-20` setzen (der spätestmögliche Tag, an dem die Stadt es sicher
 gesagt hat) und je Wette einen Satz „Abschnitt am 20.08.2026 nachgetragen; Wayback 19.08. ohne Abschnitt“ ergänzen.
-Wayback-Sicherung im nächsten Lauf erneut versuchen.
+Wayback-Sicherung erledigt (20261004033133).
 
 ## Nebenbefund Werkzeug
 
