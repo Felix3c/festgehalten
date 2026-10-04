@@ -24,7 +24,7 @@ vermerke:
   - am: 2026-10-05
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle am 05.10.2026 zweimal abgerufen, Zitat beide Male wörtlich."
   - am: 2026-10-05
-    text: "Archiv: Save Page Now am 05.10.2026 abgewiesen (HTTP 429, zu viele Anfragen), Archivkopie wird nachgezogen. Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-72440.html, SHA-256 e33b13185634582f96126c247ccf1e2eb448e86e7c04521cb7376283524dea28."
+    text: "Archiv: https://web.archive.org/web/20261004235242/https://www.gelsenkirchen.de/de/_meta/aktuelles/artikel/72440-machbarkeitsstudie-moderne-vierfeldsportanlage-in-gelsenkirchen-buer-geplant (Archivkopie vom 04.10.2026, Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-72440.html, SHA-256 e33b13185634582f96126c247ccf1e2eb448e86e7c04521cb7376283524dea28."
 ---
 
 ## Kontext

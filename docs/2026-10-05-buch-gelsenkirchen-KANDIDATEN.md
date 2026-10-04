@@ -26,6 +26,12 @@ hat eine geprüfte Archivkopie.** Ersatz: lokale Kopie des zweiten Abrufs
 je Quelle einmal `https://web.archive.org/save/<URL>` mit 30 s Abstand, Zitat in der `id_`-Kopie prüfen,
 Vermerk ersetzen.
 
+**Nachtrag 05.10.2026 (01:40–01:55):** Nachgezogen. 13 von 13 Quellen haben eine Wayback-Kopie, das Zitat
+steht in jeder wörtlich (14 von 14 Wetten, bei 71790 beide Zitate). 12 Kopien sind vom 04.10.2026 (UTC, also
+05.10. Ortszeit); für 71270 (IGA 2027) lieferte das Archiv die ältere Kopie vom 20.05.2026, sie trägt das Zitat
+ebenfalls. Vermerk in allen 14 Wetten ersetzt. Die Archivkopien sind nicht byte-gleich mit den lokalen Kopien
+geprüft (HTML-Seiten, nur der Zitat-Text ist verglichen).
+
 ## Angelegt
 
 | Wette | Meldung | Gesagt | Inhalt | Prüfung | Stadt | Computer |

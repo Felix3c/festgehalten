@@ -24,7 +24,7 @@ vermerke:
   - am: 2026-10-05
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle am 05.10.2026 zweimal abgerufen, Zitat beide Male wörtlich."
   - am: 2026-10-05
-    text: "Archiv: Save Page Now am 05.10.2026 abgewiesen (HTTP 429, zu viele Anfragen), Archivkopie wird nachgezogen. Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-72158.html, SHA-256 d5154321a20c0e1a98d128d0536832b7b9a9c27b61af1bd6fbe893b4d856f2ba."
+    text: "Archiv: https://web.archive.org/web/20261004235036/https://www.gelsenkirchen.de/de/_meta/aktuelles/artikel/72158-schule-auf-consol-zukunft-durch-bildung-auf-historischem-boden (Archivkopie vom 04.10.2026, Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-72158.html, SHA-256 d5154321a20c0e1a98d128d0536832b7b9a9c27b61af1bd6fbe893b4d856f2ba."
 ---
 
 ## Kontext

@@ -24,7 +24,7 @@ vermerke:
   - am: 2026-10-05
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle am 05.10.2026 zweimal abgerufen, Zitat beide Male wörtlich."
   - am: 2026-10-05
-    text: "Archiv: Save Page Now am 05.10.2026 abgewiesen (HTTP 429, zu viele Anfragen), Archivkopie wird nachgezogen. Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-71826.html, SHA-256 b04a7a165fee42d765972e9891b88e3688c5f3500c83b8ad182c7c747ca499e3."
+    text: "Archiv: https://web.archive.org/web/20261004234533/https://www.gelsenkirchen.de/de/_meta/aktuelles/artikel/71826-zugangsbruecke-am-schloss-horst-seit-freitag-fuer-fahrzeuge-gesperrt (Archivkopie vom 04.10.2026, Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-gelsenkirchen-artikel-71826.html, SHA-256 b04a7a165fee42d765972e9891b88e3688c5f3500c83b8ad182c7c747ca499e3."
 ---
 
 ## Kontext
