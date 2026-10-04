@@ -12,10 +12,10 @@ fehlen (`zahlen_fehlen`) und welche nirgends auf der Seite stehen (`zahl_nicht_a
 
 | Bewertung | Anzahl | Bedeutung |
 |---|---|---|
-| vorschlag | 88 | Deckung ≥ 0,6 und alle Zahlen in der Stelle |
+| vorschlag | 92 | Deckung ≥ 0,6 und alle Zahlen in der Stelle |
 | zahl_abweichend | 22 | Deckung ≥ 0,6, aber eine Zahl fehlt in der Stelle (meist Datumsschreibweise) |
-| kein_treffer | 49 | Deckung < 0,6 (oft steht die richtige Stelle trotzdem da, nur umgebaut) |
-| archiv_leer | 5 | Archivkopie ist eine Bot-Schutzseite ohne Inhalt (duesseldorf-2025-004 bis -008) |
+| kein_treffer | 50 | Deckung < 0,6 (oft steht die richtige Stelle trotzdem da, nur umgebaut) |
+| archiv_leer | 0 | (bis 04.10. 02:51 fünf: duesseldorf-2025-004 bis -008, siehe Nachtrag) |
 
 ## Befunde
 
@@ -44,4 +44,20 @@ deshalb einen Blick auf die Stelle; die Tabelle spart das Suchen, nicht das Prü
 
 Je Wette Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…« (Archiv: …)“ aus der Spalte `wortlaut`, von Hand
 nachgesehen; zuerst die 9 inhaltlichen Fälle oben, dann die 88 Vorschläge, dann kein_treffer von Hand.
-Düsseldorf 004–008: neue Archivkopie anstoßen oder Ratsdokument als Quelle.
+Düsseldorf 004–008: erledigt, siehe Nachtrag.
+
+## Nachtrag 04.10.2026 02:58: Düsseldorf 004–008 nachgesichert
+
+- Die Live-Seite (rat-verabschiedet-haushalt-2025-1) liefert mit Browser-Kennung den vollen Text (64.436 Byte,
+  SHA-256 `37ed9e5b…77ea54`); die Bot-Schutzseite kam nur bei der alten Kopie vom 20.07.2025.
+- Neue Wayback-Kopie https://web.archive.org/web/20261004005146/https://www.duesseldorf.de/aktuelles/news/detailansicht/newsdetail/rat-verabschiedet-haushalt-2025-1
+  (Rohkopie gzip, entpackt 64.436 Byte); „-214,5 Millionen Euro“, „972,6 Millionen Euro“, „459,1 Millionen Euro“ und
+  „davon 53,9 Millionen Euro für die Stadtbahnlinie U81“ stehen wörtlich darin. `archiv-quellen.csv` zeigt sie.
+- Inhaltlich decken die Quelle alle fünf Zahlen; die Zitate sind Umschreibungen (Formfehler wie bei Bonn):
+  - 004: »Während der Haushaltsplanentwurf für das Jahr 2025 noch einen Jahresfehlbetrag in Höhe von -261,8 Millionen
+    Euro vorgesehen hat, konnte dieser Fehlbetrag auf -214,5 Millionen Euro verbessert werden.«
+  - 005: »Im Jahr 2025 kratzt das Investitionsvolumen dabei mit 972,6 Millionen Euro an der Marke von 1 Milliarden Euro
+    und ist damit so hoch wie nie zuvor.« (Teil eines Zitats der Stadtkämmerin)
+  - 006/007/008: »Die Schwerpunkte liegen im Jahr 2025 beim Schulbau mit 459,1 Millionen Euro, dem ÖPNV mit 99 Millionen
+    Euro (davon 53,9 Millionen Euro für die Stadtbahnlinie U81) …« (006 vom Werkzeug als kein_treffer, Stelle von Hand bestätigt).
+- Zählung jetzt: 92 vorschlag, 22 zahl_abweichend, 50 kein_treffer, 0 archiv_leer.
