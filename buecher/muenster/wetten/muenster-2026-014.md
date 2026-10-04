@@ -25,8 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 04.10.2026."
   - am: 2026-10-04
     text: "Quelle ist die Schnittstelle des Presseportals der Stadt (Feld plain_article, Leerraum vereinheitlicht); Leseansicht derselben Mitteilung: https://www.stadt-muenster.de/aktuelles/pressemitteilungen#/item/1227865."
-  - am: 2026-10-04
-    text: "Archiv: am 04.10.2026 keine geprüfte Wayback-Kopie. Lokale Kopie der Quelle: recherche/belege/2026-10-04-muenster-item-1227865.json, SHA-256 23068f14e84a97d4ba57e6f0b7a23df8b70549f71c2132b5367f39cccad9b7b2."
+  - am: 2026-10-05
+    text: "Archiv: https://web.archive.org/web/20261004170313/https://pressemitteilungen.stadt-muenster.de/api/item/1227865 (Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft; Archivkopie byte-gleich mit der lokalen Kopie). Lokale Kopie der Quelle: recherche/belege/2026-10-04-muenster-item-1227865.json, SHA-256 23068f14e84a97d4ba57e6f0b7a23df8b70549f71c2132b5367f39cccad9b7b2."
 ---
 
 ## Kontext

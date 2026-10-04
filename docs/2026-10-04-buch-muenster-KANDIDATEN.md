@@ -32,7 +32,9 @@ Availability-Abfrage zeigte danach für **8 von 14** eine Kopie vom 04.10.2026; 
 wörtlich. Für 6 (Nummern 1211114, 1218090, 1219879, 1226457, 1227721, 1227865; Wetten 001, 003, 007, 009, 010,
 013, 014) war bei zwei Abfragen noch keine Kopie sichtbar (ungeklärt, ob nur die Anzeige nachhängt). Für alle
 14 liegt die Rohantwort als lokale Kopie in `recherche/belege/2026-10-04-muenster-item-<Nummer>.json`, SHA-256
-im Vermerk. **Nächster Schritt:** die 6 erneut abfragen und den Vermerk ergänzen.
+im Vermerk. **Nachtrag 05.10.2026:** Die 6 erneut abgefragt: alle haben eine Kopie vom 04.10.2026
+(17:03–17:12 UTC), jede byte-gleich mit der lokalen Kopie (SHA-256 stimmt), Zitat in jeder wörtlich (bei 003
+und 014 beide Teile). Vermerk in den 7 Wetten ersetzt. Es hing also nur die Anzeige nach. Stand: 14 von 14.
 
 ## Die 15 Wetten
 
