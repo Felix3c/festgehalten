@@ -280,12 +280,18 @@ Kultur/Bauten/Grün (K02, K05, K07), Energie (K03).
 ## Archivbefund (04.10.2026)
 
 Prüfung mit `werkzeuge/archivsicherung.py` (Stand Zweig `archiv-sicherung`, ohne `--speichern`, Tabelle
-nur lokal, nicht committet): **11 von 12 Zitaten stehen wörtlich in einer Wayback-Kopie** (Status `ok`).
+nur lokal, nicht committet): **11 von 12 Zitaten stehen wörtlich in einer Wayback-Kopie** (Status `ok`);
+seit dem Nachtrag unten **12 von 12**.
 Kopien vom 04.10.2026 (01:33–01:44 UTC) für 001–006, 008, 009, 011, 012; für 007 der Schnappschuss
 vom 13.05.2026. Ohne Kopie: **bochum-2026-010** (Dreifachsporthalle): Save Page Now antwortete mit
 HTTP 520, danach Zeitüberschreitung. Das Zitat steht live wörtlich (zweimal geprüft) und bleibt daher
 drin; ein erneuter Sicherungsversuch steht aus. Ebenfalls ohne Kopie (520): die nicht angelegten
 Kandidaten K13 (BOGESTRA) und K14 (Bockholtteich).
+
+**Nachtrag 04.10.2026 04:30:** bochum-2026-010 trägt jetzt. Kopie
+`https://web.archive.org/web/20261004021426/https://www.bochum.de/Pressemeldungen/22-Juni-2026/Baubeginn-fuer-neue-Dreifachsporthalle-an-der-Markstrasse`
+(HTTP 200, 46 619 Byte laut CDX); alle drei Teile des Zitats stehen darin wörtlich (Abruf `id_`, gzip entpackt,
+Tags entfernt, Leerraum normalisiert). Damit 12 von 12.
 
 ---
 
