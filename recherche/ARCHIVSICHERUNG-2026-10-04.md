@@ -69,4 +69,5 @@ Zwei Befunde fürs Werkzeug (noch nicht behoben, nur notiert):
   (zwei Minuten später per CDX da). Ein Prüflauf ohne `--speichern` nach dem Speicherlauf fängt das auf.
 - ki-2026-006 galt zuerst als `zitat_fehlt`, weil die jüngste Kopie auf eine andere Aleph-Alpha-Seite umgeleitet
   hatte (…/ilhan-scheer-zum-co-ceo-ernannt/). Nach frischer Kopie ok. Weitere `zitat_fehlt` könnten solche
-  Umleitungen sein; Prüfung „Ziel-URL der Kopie = Quelle“ fehlt im Werkzeug.
+  Umleitungen sein; Gegenprobe 04.10.: bei keiner der 166 zeigt die gespeicherte Kopie-URL auf eine andere Seite
+  (die Umleitung bei ki-2026-006 stand sichtbar in der Spalte archiv). Eine Prüfung im Werkzeug selbst fehlt noch.
