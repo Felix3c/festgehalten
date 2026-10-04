@@ -1,6 +1,6 @@
 # Buch „Bielefeld gegen Bielefeld" — Kandidaten, Stufe 1, recherchiert am 04.10.2026
 
-Status: **noch keine Wette angelegt, kein BUCH.md.** Zweig `buch-bielefeld` (Arbeitsverzeichnis
+Status: **Stufe 2 erledigt am 05.10.2026: `buecher/bielefeld/BUCH.md` und zwölf Wetten liegen auf diesem Zweig (siehe Abschnitt „Stufe 2“ am Ende).** Stand 04.10.: noch keine Wette angelegt, kein BUCH.md. Zweig `buch-bielefeld` (Arbeitsverzeichnis
 `~/wettbuch-bielefeld`, auf master `f641a19` vorgespult), nicht gemergt, nicht gepusht. Recherche: Claude,
 Sonntag 04.10.2026, 18:23–18:38, im Dauerlauf (Auftrag Guard weiterbauen, Felix 03.10.2026).
 
@@ -249,3 +249,31 @@ sie tragen ein Buch eher als Baustellen.
    dann Frage an Felix (Merge und Push).
 
 Ziel wie bei Bochum und Wuppertal: 10–15 Wetten, davon höchstens ein Drittel Baustellen.
+
+## Stufe 2, Montag 05.10.2026 (Dauerlauf, kurz nach Mitternacht)
+
+bielefeld.de antwortete wieder. 29 Abrufe, je sechs Sekunden Abstand, keine 503.
+
+- **C abgerufen:** alle 17 Seiten, Kopien `recherche/belege/2026-10-05-bielefeld-node-<Nummer>.html`.
+  Terminsatz mit offenem Ende in fünf davon: 34367 (Klosterplatz Ende 2027), 34713 (Amerkamp: Anhandgabe
+  Herbst 2026, zweiter Bauabschnitt 2027), 35531 (16 Erweiterungsbauten: Vilsendorf Sommer 2027, Rest 2028),
+  36621 (Ehlentruper Weg, spätes Frühjahr 2028), 37317 (Infostand 13.10.2026).
+  Nicht aufgenommen: 34886 (Begegnungshaus „Sommer 2026“) und 34367 („Pläne im Frühjahr 2026“), beide Termine
+  sind schon vorbei, der Computer könnte nicht mehr vor dem Prüfdatum hinterlegen; 36886 (Senner Straße,
+  „Anfang 2029“) und 35518 (Am Mühlenberg, Ende Oktober) wären die fünfte und sechste Baustelle;
+  34847 („etwa zwei Jahre“) ohne Datum; 35886, 35335, 36943, 37015, 37043, 35697 schon eingetreten oder ohne
+  Termin; 36860 „Information nicht mehr verfügbar“.
+- **Zweiter Abruf:** die sieben Seiten aus A und 37381 (aus B) sowie die fünf verwendeten C-Seiten; jedes
+  verwendete Zitat steht wörtlich in beiden Abrufen. Die Seiten vom 04.10. und 05.10. sind nicht byte-gleich
+  (die Randspalte „Pressedienst“ wechselt täglich), der Artikeltext ist gleich.
+- **Archiv:** Save Page Now je Quelle einmal; neun von zehn angenommen, Zitat in der Archivkopie (`id_`-Variante,
+  gzip) wörtlich geprüft. node 34713 zweimal HTTP 520, dort bleibt die lokale Kopie mit Prüfsumme.
+- **Weitere Quelle (Schritt 4):** Stadtwerke Bielefeld, Pressemitteilung 19.06.2026 „Der Motor der
+  Transformation“ (Klärschlamm-Monoverbrennungsanlage, Inbetriebnahme ab Mitte 2027). Ratsinformationssystem
+  und Haushalt 2027 nicht angesehen: ungeklärt, für eine spätere Ergänzung des Buchs.
+- **Buch:** zwölf Wetten `bielefeld-2026-001` bis `-012`, davon vier Baustellen (002, 003, 006, 011) und eine
+  Eichwette (001). Aus A nicht verwendet: 37364, 37353, 37305 („Jahreswechsel 2027“ ist mehrdeutig), 37208.
+  `festgehalten bauen buecher/bielefeld … --pruefen`: 12 Wetten, keine Fehler; `alle`: 15 Bücher, 315 Wetten;
+  99 Tests grün.
+- **Nächste Fristen:** 001 am 14.10.2026 (Infostand 13.10.), 002 am 18.11.2026, 003 und 004 am 01.12.2026.
+- **Offen:** Merge nach master und Push sind Felix' Entscheidung.
