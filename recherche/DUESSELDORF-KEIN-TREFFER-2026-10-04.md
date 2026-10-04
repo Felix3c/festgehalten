@@ -1,6 +1,6 @@
 # Düsseldorf: die acht „kein Treffer“-Zitate nachgeprüft (04.10.2026)
 
-Dauerlauf, 04.10.2026 ~05:50–06:05. Grundlage: `recherche/wortlaut-vorschlaege.csv`, Bewertung `kein_treffer`,
+Dauerlauf, 04.10.2026 ~05:40–05:51. Grundlage: `recherche/wortlaut-vorschlaege.csv`, Bewertung `kein_treffer`,
 nur `duesseldorf-*` (8). Je Wette die Archivkopie aus der CSV (`id_`-Abruf mit `requests`) gelesen. Wettdateien unverändert.
 
 | Wette | Archivkopie | Ergebnis |
@@ -40,7 +40,7 @@ Bei -021 einen Vermerk zur Strecke (Hansaallee statt Areal Böhler) ergänzen.
 
 ## Nebenbefund Köln 070–072
 
-Wayback-Speichern am 04.10. ~06:00 gelungen: Kopie **20261004033133** (HTTP 200), alle drei Stellen („Eröffnungsfest am
+Wayback-Speichern am 04.10. ~05:45 gelungen: Kopie **20261004033133** (HTTP 200), alle drei Stellen („Eröffnungsfest am
 19. und 20. September 2026“, „am 25. September mit der Uraufführung“, „Am 27. September folgt“) wörtlich enthalten.
 Damit trägt für koeln-2026-070/-071/-072 jetzt eine öffentliche Archivkopie. Die `gesagt_am`-Frage (18.08. vs. 20.08.,
 Frage 73) bleibt.
