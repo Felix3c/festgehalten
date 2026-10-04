@@ -2,7 +2,7 @@
 
 Status: **noch keine Wette angelegt, kein BUCH.md.** Zweig `buch-bielefeld` (Arbeitsverzeichnis
 `~/wettbuch-bielefeld`, auf master `f641a19` vorgespult), nicht gemergt, nicht gepusht. Recherche: Claude,
-Sonntag 04.10.2026, 18:25–18:50, im Dauerlauf (Auftrag Guard weiterbauen, Felix 03.10.2026).
+Sonntag 04.10.2026, 18:23–18:38, im Dauerlauf (Auftrag Guard weiterbauen, Felix 03.10.2026).
 
 **Auswahlregel:** größte NRW-Stadt ohne Buch nach Einwohnerzahl (IT.NRW, A123 2025 21, Zahlen übernommen aus
 `buecher/wuppertal/BUCH.md`, hier nicht neu abgerufen): Wuppertal 357 900 (Buch seit 04.10.), **Bielefeld 330 825**.
@@ -12,7 +12,7 @@ dieses Buch unerheblich; für das danach: ungeklärt, in der IT.NRW-Tabelle nach
 ## Warum das Buch heute nicht fertig wurde
 
 bielefeld.de hat den Rechner nach rund 65 Abrufen in zehn Minuten ausgesperrt (erst HTTP 503, dann keine
-Verbindung mehr, Stand 18:50). Die Wayback Machine antwortet auf Save Page Now mit HTTP 429 (zu viele Anfragen
+Verbindung mehr, Stand 18:38). Die Wayback Machine antwortet auf Save Page Now mit HTTP 429 (zu viele Anfragen
 heute). Damit fehlen die zwei Dinge, die jedes Buch bisher hatte: der **zweite, frische Abruf** jedes Zitats
 und die **Archivkopie**. Ohne beides lege ich keine Wetten an.
 
@@ -26,7 +26,7 @@ bei der ersten 503 aufhören. Erst prüfen, ob die Sperre weg ist (`curl -m 25 h
 
 - Listenansicht `https://www.bielefeld.de/pressemeldungen` Seiten 0–14 vollständig: **728 Mitteilungen**
   (Titel, Datum, Anriss), zurück bis Januar 2026. Die Seite ist ein Drupal, jede Mitteilung `/node/<Nummer>`.
-- Volltext der **49 jüngsten** Mitteilungen (24.09.–02.10.2026), einmal abgerufen 18:25–18:34.
+- Volltext der **49 jüngsten** Mitteilungen (24.09.–02.10.2026), einmal abgerufen 18:23–18:33.
 - Darin **24 Mitteilungen mit Terminsatz**. Kopie je Seite in `recherche/belege/2026-10-04-bielefeld-node-<Nummer>.html`,
   byte-gleich zum Abruf (`.gitattributes` `recherche/belege/** -text`), SHA-256 unten.
 - Die Zitate unten hat ein Skript aus dem Seitentext geschnitten (Tags entfernt, Leerraum vereinheitlicht),
