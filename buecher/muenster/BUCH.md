@@ -16,8 +16,9 @@ Fehler melden: Kontakt oben.
 
 Warum Münster: Die Bücher kommen nach einer Regel ohne Ermessen dazu, die einwohnerstärkste Stadt
 Nordrhein-Westfalens ohne Buch zuerst. Nach dieser Regel wäre Bielefeld vor Münster dran. Das Buch
-Bielefeld ist begonnen, aber nicht fertig: bielefeld.de und der Archiv-Dienst haben am 04.10.2026
-die Abrufe gesperrt, bevor die Zitate ein zweites Mal geprüft waren. Münster ist die nächste Stadt
+Bielefeld war am 04.10.2026 begonnen, aber nicht fertig: bielefeld.de und der Archiv-Dienst hatten
+die Abrufe gesperrt, bevor die Zitate ein zweites Mal geprüft waren; seit dem 05.10.2026 ist es
+fertig. Münster ist die nächste Stadt
 in der Reihe (Bonn hat schon ein Buch). Quelle: IT.NRW, Statistische Berichte „Bevölkerung der
 Gemeinden Nordrhein-Westfalens am 30. Juni 2025“ (Artikel-Nr. A123 2025 21, erschienen November
 2025): Wuppertal 357 900, Bielefeld 330 825, Bonn 323 245, Münster 307 979 Einwohner. Abgerufen am
