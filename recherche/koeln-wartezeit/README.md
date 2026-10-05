@@ -39,7 +39,7 @@ Schlägt die Archivierung fehl, bleibt `wayback_url` in der Zeile leer — das
 Skript bricht deswegen nicht ab. Schlägt der Feed-Abruf selbst fehl, beendet
 sich das Skript mit Exit-Code 1 und einer Meldung auf stderr.
 
-### Zweite Quelle: die Anzeige der Bürger-Seite (seit 05.10.2026, nur Beweissicherung)
+### Zweite Quelle: die Anzeige der Bürger-Seite (seit 05.10.2026 Messquelle der Wetten)
 
 ```bash
 python recherche/koeln-wartezeit/messen.py --quelle anzeige
@@ -61,8 +61,21 @@ Zeile. Die Wayback-Spalte ist hier schwächer als beim Feed: Save Page Now leite
 wenige Minuten ältere Aufnahme um, die einen anderen Stand zeigen kann, und am 05.10.2026 war
 die Aufnahme nicht abspielbar (404).
 
-**Nicht entschieden:** Die Wetten koeln-2026-077 bis -082 nennen den Open-Data-Feed.
-`auswerten.py` liest die Anzeige-Datei nicht; kein Zeitplan ruft `--quelle anzeige` auf.
+**Entschieden am 05.10.2026 (Halter):** Solange der Open-Data-Feed eingefroren ist, werden die
+Wetten koeln-2026-077 bis -082 an dieser Datei gemessen. Frage und Kopf der Wetten nennen weiter
+den Feed und bleiben unverändert; jede der sechs Wetten trägt dazu einen Vermerk vom 05.10.2026.
+Ausgewertet wird mit
+
+```bash
+python recherche/koeln-wartezeit/auswerten.py --quelle anzeige --monat 2026-10
+```
+
+Gezählt werden nur Abrufe im Messfenster **mit Rohkopie** (`beleg_sha256` gefüllt). Zeilen ohne
+Beleg weist der Kopf aus, sie zählen nicht. Das trifft den ersten Abruf vom Mo 05.10.2026 08:12
+(neun Zeilen): Er lief, bevor die Rohkopie eingebaut war. Zeitplan: die drei Aufgaben der
+Windows-Aufgabenplanung auf dem Rechner des Halters (siehe unten), seit 05.10.2026 wieder
+eingeschaltet. Der Actions-Workflow misst weiter nur den Feed. Kommt der Feed zurück, ist neu zu
+entscheiden, welche Quelle zählt; beide Dateien bleiben getrennt.
 **Ungeklärt:** ob Feed und Anzeige dieselbe Messung zeigen, was `status` bedeutet (bisher nur
 `1` gesehen) und wie die Datei aussieht, wenn ein Kundenzentrum geschlossen ist.
 
@@ -112,12 +125,16 @@ Freitag abends, 16.09. Mittwoch 15:27 nach Schließung) und sind Funktionstests 
 der verspätete Lauf. `auswerten.py` zählt Abrufe außerhalb des Messfensters nicht mit,
 weist sie aber je Monat aus (`--alle` zeigt sie trotzdem).
 
-Rückfallebene Laptop (abgeschaltet; umgebaut 03.10.2026): Auf dem Rechner des Halters
-liegen drei deaktivierte Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`,
+Laptop (seit 05.10.2026 wieder eingeschaltet, für die Anzeige die einzige Messung): Auf dem
+Rechner des Halters liegen drei Aufgaben der Windows-Aufgabenplanung (`koeln-wartezeit-mo-1000`,
 `-mo-1400`, `-mi-1000`, Anmeldemodus „nur interaktiv“), die `messen.cmd` aufrufen (Log
 `messen.log`). `messen.cmd` schreibt seit 03.10. **nicht mehr in `messwerte.csv`**, sondern mit
 `messen.py --csv` in `messwerte-laptop.csv` (gitignored). Darf deshalb parallel zu Actions
-laufen. Übernommen wird von Hand, nach `git pull`:
+laufen. Seit 05.10.2026 ruft `messen.cmd` danach `messen.py --quelle anzeige` auf; das schreibt
+direkt in `messwerte-anzeige.csv` und `belege-anzeige/` (beide versioniert, nach jedem Messtag
+von Hand committen; ohne Actions-Commit als Zeitbeleg, die Rohkopie mit SHA-256 trägt). Läuft der
+Rechner im Messfenster nicht, fehlt der Abruf. Für den Feed wird von Hand übernommen, nach
+`git pull`:
 
 ```bash
 python recherche/koeln-wartezeit/nachtragen.py              # Probe: was würde übernommen
@@ -142,7 +159,7 @@ Kontrolle von Hand nach jedem Montag.
 ## Wie der Monatswert in die Wette kommt
 
 1. `python recherche/koeln-wartezeit/auswerten.py --monat <JJJJ-MM>` nach
-   Monatsende laufen lassen.
+   Monatsende laufen lassen; seit 05.10.2026 mit `--quelle anzeige` (Vermerk in den Wetten).
 2. Die Zeile „GESAMT (alle Zentren)" liefert Mittelwert und Maximum über alle
    Abrufe des Monats im Messfenster (Abrufe außerhalb weist der Kopf aus, sie
    zählen nicht).
