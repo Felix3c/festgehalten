@@ -22,6 +22,12 @@ Open-Data-Feed seit 16.09.2026 eingefroren ist. Mit --quelle anzeige zählen
 nur Zeilen, deren beleg_sha256 zu einer Rohkopie in belege-anzeige/ passt
 (Hash aus dem Dateiinhalt nachgerechnet); Zeilen ohne Beleg werden je Monat
 ausgewiesen, aber nicht gemittelt.
+
+Zwei Messstellen: Neben messwerte-anzeige.csv (Laptop) wird, wenn vorhanden,
+messwerte-anzeige-github.csv (GitHub-Workflow) mitgelesen. Je Slot (Tag und
+Vormittag/Nachmittag) zählt nur der früheste Abruf mit Beleg, gleich aus
+welcher Datei; spätere Abrufe im selben Slot werden ausgewiesen, aber nicht
+gemittelt. So bleibt es bei höchstens drei gezählten Abrufen je Woche.
 """
 from __future__ import annotations
 
@@ -35,6 +41,7 @@ import fenster
 
 CSV_PATH = Path(__file__).resolve().parent / "messwerte.csv"
 ANZEIGE_CSV_PATH = Path(__file__).resolve().parent / "messwerte-anzeige.csv"
+ANZEIGE_GITHUB_NAME = "messwerte-anzeige-github.csv"
 ANZEIGE_QUELLE = "anzeige"
 BELEG_SPALTE = "beleg_sha256"
 BELEG_ORDNER = "belege-anzeige"
@@ -74,8 +81,38 @@ def _im_messfenster(abgerufen_am: str) -> bool:
         return False
 
 
+def _slot_schluessel(abgerufen_am: str) -> tuple | None:
+    """(Tag in Ortszeit, Slot) eines Abrufs; None bei unlesbarem Zeitstempel oder
+    außerhalb des Messfensters (dort gibt es keinen Slot, also auch nichts zusammenzulegen)."""
+    try:
+        zeitpunkt = fenster.parse_abgerufen_am(abgerufen_am)
+    except ValueError:
+        return None
+    slot = fenster.slot(zeitpunkt)
+    if slot is None:
+        return None
+    return (fenster.ortszeit(zeitpunkt).date(), slot)
+
+
+def frueheste_je_slot(rows: list[dict]) -> dict:
+    """Je Slot der früheste Abrufzeitpunkt unter den übergebenen (schon gefilterten) Zeilen."""
+    fruehester: dict = {}
+    for row in rows:
+        schluessel = _slot_schluessel(row["abgerufen_am"])
+        if schluessel is None:
+            continue
+        zeitpunkt = fenster.parse_abgerufen_am(row["abgerufen_am"])
+        if schluessel not in fruehester or zeitpunkt < fruehester[schluessel]:
+            fruehester[schluessel] = zeitpunkt
+    return fruehester
+
+
 def compute_monthly_stats(
-    rows: list[dict], monat: str | None = None, alle: bool = False, belege: set[str] | None = None
+    rows: list[dict],
+    monat: str | None = None,
+    alle: bool = False,
+    belege: set[str] | None = None,
+    je_slot: bool = False,
 ) -> dict:
     """Gruppiert Messwerte je Monat und Kundenzentrum.
 
@@ -92,6 +129,19 @@ def compute_monthly_stats(
     Nicht-numerische wartezeit_minuten-Werte werden aus den Mittelwert-/
     Maximum-Berechnungen ausgeschlossen, zählen aber als Messtag.
     """
+    def _draussen(row: dict) -> bool:
+        return not alle and not _im_messfenster(row["abgerufen_am"])
+
+    def _ohne_beleg(row: dict) -> bool:
+        return belege is not None and (row.get(BELEG_SPALTE) or "").strip() not in belege
+
+    # Zwei Messstellen: je Slot zählt nur der früheste Abruf, der beide Filter besteht.
+    fruehester = (
+        frueheste_je_slot([r for r in rows if not _draussen(r) and not _ohne_beleg(r)])
+        if je_slot
+        else None
+    )
+
     ergebnis: dict = {}
     for row in rows:
         m = _monat_von(row["abgerufen_am"])
@@ -99,14 +149,28 @@ def compute_monthly_stats(
             continue
         eintrag = ergebnis.setdefault(
             m,
-            {"zentren": {}, "gesamt": {"werte": []}, "tage": set(), "ausgeschlossen": 0, "ohne_beleg": 0},
+            {
+                "zentren": {},
+                "gesamt": {"werte": []},
+                "tage": set(),
+                "ausgeschlossen": 0,
+                "ohne_beleg": 0,
+                "doppelt": 0,
+            },
         )
-        if not alle and not _im_messfenster(row["abgerufen_am"]):
+        if _draussen(row):
             eintrag["ausgeschlossen"] += 1
             continue
-        if belege is not None and (row.get(BELEG_SPALTE) or "").strip() not in belege:
+        if _ohne_beleg(row):
             eintrag["ohne_beleg"] += 1
             continue
+        if fruehester is not None:
+            schluessel = _slot_schluessel(row["abgerufen_am"])
+            if schluessel is not None and (
+                fenster.parse_abgerufen_am(row["abgerufen_am"]) != fruehester[schluessel]
+            ):
+                eintrag["doppelt"] += 1
+                continue
         eintrag["tage"].add(_tag_von(row["abgerufen_am"]))
         zentrum = row["kundenzentrum"]
         z = eintrag["zentren"].setdefault(zentrum, {"werte": []})
@@ -135,6 +199,8 @@ def format_table(stats: dict) -> str:
             kopf += f", außerhalb des Messfensters nicht gezählt: {eintrag['ausgeschlossen']} Zeilen"
         if eintrag.get("ohne_beleg"):
             kopf += f", ohne Beleg nicht gezählt: {eintrag['ohne_beleg']} Zeilen"
+        if eintrag.get("doppelt"):
+            kopf += f", im selben Slot später gemessen, nicht gezählt: {eintrag['doppelt']} Zeilen"
         zeilen.append(kopf + ")")
         zeilen.append(f"{'Kundenzentrum':<28} {'Mittelwert':>10} {'Maximum':>10} {'n':>4}")
         for zentrum in sorted(eintrag["zentren"]):
@@ -172,7 +238,8 @@ def main(argv: list[str] | None = None) -> int:
         "--quelle",
         choices=["feed", ANZEIGE_QUELLE],
         default="feed",
-        help="feed = messwerte.csv (Standard); anzeige = messwerte-anzeige.csv, nur Zeilen mit Beleg",
+        help="feed = messwerte.csv (Standard); anzeige = messwerte-anzeige.csv und, wenn vorhanden, "
+        "messwerte-anzeige-github.csv; nur Zeilen mit Beleg, je Slot der früheste Abruf",
     )
     parser.add_argument(
         "--alle", action="store_true", help="auch Abrufe außerhalb des Messfensters mitteln"
@@ -181,12 +248,19 @@ def main(argv: list[str] | None = None) -> int:
     ist_anzeige = args.quelle == ANZEIGE_QUELLE
     if args.csv is None:
         args.csv = ANZEIGE_CSV_PATH if ist_anzeige else CSV_PATH
+        dateien = [args.csv]
+        if ist_anzeige:
+            # zweite Messstelle (GitHub-Workflow), liegt neben der Laptop-Datei
+            dateien.append(args.csv.with_name(ANZEIGE_GITHUB_NAME))
+    else:
+        dateien = [args.csv]
 
-    rows = read_rows(args.csv)
+    gelesen = [(datei, read_rows(datei)) for datei in dateien]
+    rows = [row for _, teil in gelesen for row in teil]
     if not rows:
         print(f"Keine Messwerte in {args.csv} gefunden.", file=sys.stderr)
         return 1
-    if ist_anzeige and BELEG_SPALTE not in rows[0]:
+    if ist_anzeige and any(BELEG_SPALTE not in row for row in rows):
         print(
             f"Fehler: {args.csv} ist keine Anzeige-Datei (Spalte {BELEG_SPALTE} fehlt).",
             file=sys.stderr,
@@ -194,7 +268,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     belege = beleg_hashes(args.csv.parent / BELEG_ORDNER) if ist_anzeige else None
-    stats = compute_monthly_stats(rows, monat=args.monat, alle=args.alle, belege=belege)
+    stats = compute_monthly_stats(
+        rows, monat=args.monat, alle=args.alle, belege=belege, je_slot=ist_anzeige
+    )
     if args.monat and args.monat not in stats:
         print(f"Kein Messwert für Monat {args.monat} in {args.csv}.", file=sys.stderr)
         return 1
@@ -208,7 +284,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     if ist_anzeige:
-        print(f"Quelle: {ANZEIGE_QUELLE} ({args.csv.name}), nur Zeilen mit Beleg")
+        namen = ", ".join(datei.name for datei, teil in gelesen if teil)
+        print(f"Quelle: {ANZEIGE_QUELLE} ({namen}), nur Zeilen mit Beleg, je Slot der früheste Abruf")
     print(format_table(stats), end="")
     return 0
 

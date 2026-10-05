@@ -69,11 +69,27 @@ jobs:
         with: { python-version: "3.12" }
       - name: Feed abrufen, Wayback anstoßen, CSV ergänzen (nur im Messfenster, je Slot einmal)
         run: python recherche/koeln-wartezeit/messen.py ${{ inputs.erzwingen == true && '--erzwingen' || '' }}
+      # Seit 05.10.2026 werden die Wetten an der Anzeige gemessen (Vermerk in koeln-2026-077 ff.).
+      # GitHub ist die zweite Messstelle neben dem Laptop und schreibt in eine EIGENE Datei,
+      # damit sich die beiden nie in derselben CSV begegnen (kein Merge-Konflikt). Die Rohkopie
+      # liegt wie beim Laptop in belege-anzeige/ (Dateiname mit Zeit und Hash, kollidiert nicht).
+      # auswerten.py --quelle anzeige liest beide Dateien; je Slot zählt der früheste Abruf mit Beleg.
+      # Läuft auch, wenn der Feed-Schritt davor scheitert (der Feed ist seit 16.09. eingefroren).
+      # Ungeklärt bis zum ersten Lauf: ob stadt-koeln.de Abrufe von GitHub-Adressen durchlässt.
+      - name: Anzeige der Bürger-Seite messen (eigene Datei, Rohkopie nach belege-anzeige/)
+        if: ${{ !cancelled() }}
+        run: python recherche/koeln-wartezeit/messen.py --quelle anzeige --csv recherche/koeln-wartezeit/messwerte-anzeige-github.csv ${{ inputs.erzwingen == true && '--erzwingen' || '' }}
       - name: Messwerte committen
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "koeln-wartezeit (GitHub Actions)"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add recherche/koeln-wartezeit/messwerte.csv
+          for pfad in recherche/koeln-wartezeit/messwerte-anzeige-github.csv recherche/koeln-wartezeit/belege-anzeige; do
+            if [ -e "$pfad" ]; then git add "$pfad"; fi
+          done
           if git diff --cached --quiet; then echo "keine neuen Zeilen"; exit 0; fi
           git commit -m "data: Köln Wartezeit Kundenzentren, Abruf $(date +%Y-%m-%dT%H:%M%z) [skip ci]"
+          # Hat in der Zwischenzeit jemand gepusht (Laptop-Messwerte, Halter), erst darauf aufsetzen.
+          git pull --rebase --quiet
           git push

@@ -77,6 +77,20 @@ Beleg weist der Kopf aus, sie zählen nicht. Das trifft den ersten Abruf vom Mo 
 Windows-Aufgabenplanung auf dem Rechner des Halters (siehe unten), seit 05.10.2026 wieder
 eingeschaltet. Der Actions-Workflow misst weiter nur den Feed. Kommt der Feed zurück, ist neu zu
 entscheiden, welche Quelle zählt; beide Dateien bleiben getrennt.
+Zwei Messstellen (vorbereitet 05.10.2026, wirksam erst nach dem Push des Halters): Neben dem
+Laptop misst der GitHub-Workflow `koeln-wartezeit.yml` die Anzeige, mit demselben Messfenster und
+denselben Slots, in eine eigene Datei `messwerte-anzeige-github.csv`; die Rohkopie liegt ebenfalls
+in `belege-anzeige/`, und jeder Messwert kommt als Commit von GitHub (Zeitbeleg, unabhängig vom
+Laptop). `auswerten.py --quelle anzeige` liest beide Dateien. Regel ohne Ermessen: Je Slot (Tag,
+Vormittag oder Nachmittag) zählt nur der früheste Abruf mit Beleg, gleich von welcher Messstelle;
+spätere Abrufe im selben Slot stehen in der Kopfzeile der Auswertung, werden aber nicht gemittelt.
+Es bleibt bei höchstens drei gezählten Abrufen je Woche. `.gitattributes` nimmt `belege-anzeige/`
+von der Zeilenenden-Umwandlung aus, sonst passte der nachgerechnete SHA-256 auf einem
+Windows-Rechner nicht mehr zur Rohkopie, die GitHub eingecheckt hat. Der Wächter
+(`koeln-waechter.yml`) prüft seitdem `messwerte-anzeige-github.csv`. Ungeklärt bis zum ersten Lauf:
+ob stadt-koeln.de Abrufe von GitHub-Adressen durchlässt; scheitert der Abruf, schreibt der Lauf
+keine Zeile, und es zählt wie bisher allein der Laptop.
+
 **Ungeklärt:** ob Feed und Anzeige dieselbe Messung zeigen, was `status` bedeutet (bisher nur
 `1` gesehen) und wie die Datei aussieht, wenn ein Kundenzentrum geschlossen ist.
 
