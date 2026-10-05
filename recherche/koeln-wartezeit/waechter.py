@@ -7,7 +7,11 @@ sie schreibt). Ein Messlauf erzeugt genau einen Abrufzeitpunkt für alle
 Kundenzentren. Weniger Abrufe als erwartet → Exit 1, damit der Workflow laut
 scheitert und GitHub eine Mail schickt.
 
-Aufruf:  python waechter.py [--erwartet N]     (Standard: 1)
+Seit der Messung an der Anzeige (05.10.2026) prüft der Workflow mit --csv die
+Datei der GitHub-Messstelle (messwerte-anzeige-github.csv); der eingefrorene
+Feed schreibt keine Zeilen mehr nach messwerte.csv.
+
+Aufruf:  python waechter.py [--erwartet N] [--csv DATEI]   (Standard: 1, messwerte.csv)
 Test:    WAECHTER_DATUM=2026-09-11 python waechter.py
 """
 from __future__ import annotations
@@ -30,23 +34,27 @@ def abrufe_am(csv_path: Path, datum: str) -> list[str]:
         return sorted({r["abgerufen_am"] for r in csv.DictReader(f) if r["abgerufen_am"].startswith(datum)})
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--erwartet", type=int, default=1, help="Mindestzahl Abrufe heute")
-    args = parser.parse_args()
+    parser.add_argument(
+        "--csv", type=Path, default=CSV_PATH, help="zu prüfende Datei (Standard: messwerte.csv)"
+    )
+    args = parser.parse_args(argv)
+    csv_path = args.csv
 
     datum = os.environ.get("WAECHTER_DATUM") or datetime.now(ZEITZONE).strftime("%Y-%m-%d")
-    if not CSV_PATH.exists():
-        print(f"FEHLT: {CSV_PATH} existiert nicht.", file=sys.stderr)
+    if not csv_path.exists():
+        print(f"FEHLT: {csv_path} existiert nicht.", file=sys.stderr)
         return 1
 
-    abrufe = abrufe_am(CSV_PATH, datum)
-    print(f"{datum}: {len(abrufe)} Abruf(e) in messwerte.csv, erwartet mindestens {args.erwartet}."
+    abrufe = abrufe_am(csv_path, datum)
+    print(f"{datum}: {len(abrufe)} Abruf(e) in {csv_path.name}, erwartet mindestens {args.erwartet}."
           + (" Zeitpunkte: " + ", ".join(abrufe) if abrufe else ""))
     if len(abrufe) >= args.erwartet:
         print("Messung lief.")
         return 0
-    print(f"FEHLT: Messung für {datum} nicht (vollständig) in messwerte.csv.", file=sys.stderr)
+    print(f"FEHLT: Messung für {datum} nicht (vollständig) in {csv_path.name}.", file=sys.stderr)
     return 1
 
 

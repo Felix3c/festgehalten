@@ -164,3 +164,130 @@ def test_beleg_hashes_rechnet_aus_dem_inhalt_nicht_aus_dem_namen(tmp_path):
     assert SHA in hashes
     assert "b" * 64 not in hashes
     assert auswerten.beleg_hashes(tmp_path / "gibt-es-nicht") == set()
+
+
+# --- Zwei Messstellen (Laptop und GitHub): je Slot zählt der früheste Abruf mit Beleg ---
+
+MO_VORMITTAG_SPAETER = "2026-10-05T10:40:00+02:00"  # derselbe Slot, zweite Messstelle
+MO_NACHMITTAG = "2026-10-05T14:00:00+02:00"
+
+
+def test_je_slot_zaehlt_nur_der_frueheste_abruf_mit_beleg(tmp_path):
+    # Arrange: Laptop 10:00 und GitHub 10:40 im selben Slot, beide mit Beleg
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            (MO_VORMITTAG_SPAETER, "Kundenzentrum Kalk", 80, SHA),
+            (MO_VORMITTAG, "Kundenzentrum Kalk", 20, SHA),
+        ],
+    )
+
+    # Act
+    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), belege={SHA}, je_slot=True)
+
+    # Assert
+    okt = stats["2026-10"]
+    assert okt["gesamt"]["werte"] == [20.0]
+    assert okt["doppelt"] == 1
+
+
+def test_frueher_abruf_ohne_beleg_sperrt_den_slot_nicht(tmp_path):
+    # Arrange
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            (MO_VORMITTAG, "Kundenzentrum Kalk", 20, ""),
+            (MO_VORMITTAG_SPAETER, "Kundenzentrum Kalk", 80, SHA),
+        ],
+    )
+
+    # Act
+    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), belege={SHA}, je_slot=True)
+
+    # Assert
+    okt = stats["2026-10"]
+    assert okt["gesamt"]["werte"] == [80.0]
+    assert okt["ohne_beleg"] == 1
+    assert okt["doppelt"] == 0
+
+
+def test_vormittag_und_nachmittag_sind_zwei_slots(tmp_path):
+    # Arrange
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            (MO_VORMITTAG, "Kundenzentrum Kalk", 20, SHA),
+            (MO_NACHMITTAG, "Kundenzentrum Kalk", 40, SHA),
+        ],
+    )
+
+    # Act
+    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), belege={SHA}, je_slot=True)
+
+    # Assert
+    assert stats["2026-10"]["gesamt"]["werte"] == [20.0, 40.0]
+    assert stats["2026-10"]["doppelt"] == 0
+
+
+def test_gleicher_zeitpunkt_mit_anderem_offset_ist_derselbe_abruf(tmp_path):
+    # Arrange: 08:00 UTC ist 10:00 MESZ; beide Schreibweisen meinen denselben Abruf
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            (MO_VORMITTAG, "Kundenzentrum Kalk", 20, SHA),
+            ("2026-10-05T08:00:00+00:00", "Kundenzentrum Nippes", 30, SHA),
+        ],
+    )
+
+    # Act
+    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), belege={SHA}, je_slot=True)
+
+    # Assert
+    assert sorted(stats["2026-10"]["gesamt"]["werte"]) == [20.0, 30.0]
+    assert stats["2026-10"]["doppelt"] == 0
+
+
+def test_main_quelle_anzeige_nimmt_die_github_datei_dazu(tmp_path, monkeypatch, capsys):
+    # Arrange: Laptop hat nur Montag, GitHub Montag (später) und Mittwoch
+    laptop = tmp_path / "messwerte-anzeige.csv"
+    github = tmp_path / "messwerte-anzeige-github.csv"
+    _schreibe_anzeige_csv(laptop, [(MO_VORMITTAG, "Kundenzentrum Kalk", 20, SHA)])
+    _schreibe_anzeige_csv(
+        github,
+        [
+            (MO_VORMITTAG_SPAETER, "Kundenzentrum Kalk", 80, SHA),
+            (MI_VORMITTAG, "Kundenzentrum Kalk", 30, SHA),
+        ],
+    )
+    _lege_rohkopie(tmp_path)
+    monkeypatch.setattr(auswerten, "ANZEIGE_CSV_PATH", laptop)
+
+    # Act
+    exit_code = auswerten.main(["--quelle", "anzeige", "--monat", "2026-10"])
+    out = capsys.readouterr().out
+
+    # Assert
+    assert exit_code == 0
+    assert "messwerte-anzeige-github.csv" in out
+    assert "Messtage: 2" in out
+    assert "80.0" not in out
+    assert "im selben Slot später gemessen, nicht gezählt: 1 Zeilen" in out
+
+
+def test_main_quelle_anzeige_laeuft_auch_nur_mit_der_github_datei(tmp_path, monkeypatch, capsys):
+    # Arrange
+    github = tmp_path / "messwerte-anzeige-github.csv"
+    _schreibe_anzeige_csv(github, [(MI_VORMITTAG, "Kundenzentrum Kalk", 30, SHA)])
+    _lege_rohkopie(tmp_path)
+    monkeypatch.setattr(auswerten, "ANZEIGE_CSV_PATH", tmp_path / "messwerte-anzeige.csv")
+
+    # Act
+    exit_code = auswerten.main(["--quelle", "anzeige", "--monat", "2026-10"])
+
+    # Assert
+    assert exit_code == 0
+    assert "30.0" in capsys.readouterr().out
