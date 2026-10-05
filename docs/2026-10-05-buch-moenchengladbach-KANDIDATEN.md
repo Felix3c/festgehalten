@@ -6,7 +6,7 @@ Status: **11 Wetten angelegt** (`buecher/moenchengladbach/wetten/moenchengladbac
 
 **Auswahlregel:** größte NRW-Stadt ohne Buch nach Einwohnerzahl. IT.NRW, Statistische Berichte „Bevölkerung
 der Gemeinden Nordrhein-Westfalens am 30. Juni 2025" (A123 2025 21): Münster 307 979 (Zweig `buch-muenster`),
-Gelsenkirchen 267 733 (Zweig `buch-gelsenkirchen`), **Mönchengladbach 266 840**, Aachen 263 948. Beim nächsten
+Gelsenkirchen 267 733 (Zweig `buch-gelsenkirchen`), **Mönchengladbach 266 840**, Aachen 262 211. Beim nächsten
 Buch nach dieser Regel ist Aachen dran.
 
 **Methode:** Der Newsroom `https://www.moenchengladbach.de/aktuell-aktiv/newsroom` hat keine blätterbare
