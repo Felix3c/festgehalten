@@ -37,11 +37,13 @@ Netzgesellschaft Niederrhein, Zoo und privaten Investoren (Surfpark) bleiben dra
 gebaut im Auftrag der Stadt. 010 (Bettensteuer) gibt einen Ratsbeschluss wieder, den die Stadt im
 Mitteilungstext berichtet.
 
-**Archivbefund:** 12 von 13 Quellen haben eine Wayback-Kopie, in der das Zitat wörtlich steht (am 05.10.2026
-geprüft): zehn Kopien vom 05.10.2026 (Save Page Now, acht davon byte-gleich mit der lokalen Kopie), dazu für
+**Archivbefund:** 13 von 13 Quellen haben eine Wayback-Kopie, in der das Zitat wörtlich steht (am 05.10.2026
+geprüft): elf Kopien vom 05.10.2026 (Save Page Now, acht davon byte-gleich mit der lokalen Kopie), dazu für
 006 eine Kopie vom 04.10.2026 und für 007 eine vom 06.05.2026 (die neue Sicherung meldete bei beiden HTTP 520).
-Für 011 (OGS-Bericht) gibt es keine Archivkopie: Die Sicherung antwortete zweimal mit HTTP 404, obwohl die Seite
-selbst erreichbar ist; nachziehen. Lokale Kopien des zweiten Abrufs: `recherche/belege/2026-10-05-krefeld-<Adresse>.html`,
+Für 011 (OGS-Bericht) kam die Kopie erst im dritten Anlauf (05.10.2026, 11:14 Uhr, Zeitstempel 20261005091417):
+Die ersten Sicherungen am frühen Morgen antworteten mit HTTP 404, eine dabei gemeldete Aufnahme (20261005040152)
+war nie abspielbar und steht nicht im Index. Die Kopie ist gleich lang wie die lokale (147.505 Bytes) und weicht
+in zwei Zeilen ab (eine zufällige Kennung der Seite, `js-view-dom-id`), deshalb nicht byte-gleich. Lokale Kopien des zweiten Abrufs: `recherche/belege/2026-10-05-krefeld-<Adresse>.html`,
 je rund 125 bis 200 KB (zusammen rund 2,0 MB), SHA-256 im Vermerk jeder Wette.
 
 ## Angelegt
