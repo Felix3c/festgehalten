@@ -17,7 +17,7 @@ Fehler melden: Kontakt oben.
 Warum Gelsenkirchen: Die Bücher kommen nach einer Regel ohne Ermessen dazu, die einwohnerstärkste
 Stadt Nordrhein-Westfalens ohne Buch zuerst. Quelle: IT.NRW, Statistische Berichte „Bevölkerung der
 Gemeinden Nordrhein-Westfalens am 30. Juni 2025“ (Artikel-Nr. A123 2025 21, erschienen November
-2025): Münster 307 979, Gelsenkirchen 267 733, Mönchengladbach 266 840, Aachen 263 948 Einwohner.
+2025): Münster 307 979, Gelsenkirchen 267 733, Mönchengladbach 266 840, Aachen 262 211 Einwohner.
 Abgerufen am 04.10.2026 unter
 https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/NWHeft_derivate_00022899/a123202521.pdf.
 
