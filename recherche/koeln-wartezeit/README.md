@@ -39,6 +39,33 @@ Schlägt die Archivierung fehl, bleibt `wayback_url` in der Zeile leer — das
 Skript bricht deswegen nicht ab. Schlägt der Feed-Abruf selbst fehl, beendet
 sich das Skript mit Exit-Code 1 und einer Meldung auf stderr.
 
+### Zweite Quelle: die Anzeige der Bürger-Seite (seit 05.10.2026, nur Beweissicherung)
+
+```bash
+python recherche/koeln-wartezeit/messen.py --quelle anzeige
+```
+
+Die Seite „Wartezeiten in unseren Kundenzentren“ lädt ihre Werte aus
+`https://www.stadt-koeln.de/interne-dienste/wartezeiten/wartezeiten.json`. Am Mo 05.10.2026
+war diese Datei frisch (Stände 07:50, 08:00, 08:10, also alle zehn Minuten), während der
+Open-Data-Feed weiter auf dem 16.09. stand. `--quelle anzeige` misst diese Datei mit demselben
+Messfenster und denselben Slots und schreibt nach `messwerte-anzeige.csv` (Spalten
+`abgerufen_am, kundenzentrum, wartezeit_minuten, stand_iso, status, quelle, wayback_url,
+beleg_sha256`), nie nach `messwerte.csv`: Das Skript verweigert jede Zieldatei ohne „anzeige“
+im Namen oder mit fremder Kopfzeile. Eine Zeile gibt es nur, wenn `stand_iso` von heute ist.
+Gezählt wird nur der Bereich `meldeangelegenheiten` (neun Kundenzentren, auf die Schreibweise
+des Feeds abgebildet), nicht die Führerscheinstellen.
+
+Beleg: Jeder Abruf wird unverändert nach `belege-anzeige/` gelegt, der SHA-256 steht in der
+Zeile. Die Wayback-Spalte ist hier schwächer als beim Feed: Save Page Now leitet oft auf eine
+wenige Minuten ältere Aufnahme um, die einen anderen Stand zeigen kann, und am 05.10.2026 war
+die Aufnahme nicht abspielbar (404).
+
+**Nicht entschieden:** Die Wetten koeln-2026-077 bis -082 nennen den Open-Data-Feed.
+`auswerten.py` liest die Anzeige-Datei nicht; kein Zeitplan ruft `--quelle anzeige` auf.
+**Ungeklärt:** ob Feed und Anzeige dieselbe Messung zeigen, was `status` bedeutet (bisher nur
+`1` gesehen) und wie die Datei aussieht, wenn ein Kundenzentrum geschlossen ist.
+
 ## Stichtage und automatische Messung (GitHub Actions, seit 11.09.2026)
 
 Terminfreie Zeiten laut Stadt: Montag 7:30–15:00, Mittwoch 7:30–12:00. Dienstag,
