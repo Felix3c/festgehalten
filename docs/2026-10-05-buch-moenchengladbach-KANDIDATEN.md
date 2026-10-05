@@ -30,7 +30,7 @@ Vorhaben der Stadt; einzige Ausnahme ist 009 (Bauherrin ist die städtische Entw
 Aussage steht im Mitteilungstext der Stadt).
 
 **Archivbefund:** 11 von 11 Quellen haben eine Wayback-Kopie vom 05.10.2026 (Save Page Now, 30 s Abstand; bei
-Quelle 11 erst im zweiten Anlauf nach HTTP 520), das Zitat steht in jeder Archivkopie wörtlich. Die Kopie von
+Quelle 11 meldete die Sicherung zweimal HTTP 520, die Kopie von 01:20 UTC lag danach vor), das Zitat steht in jeder Archivkopie wörtlich. Die Kopie von
 Quelle 1 ist byte-gleich mit der lokalen Kopie (SHA-256), die übrigen zehn nicht (dynamische Seitenteile).
 Lokale Kopien des zweiten Abrufs: `recherche/belege/2026-10-05-moenchengladbach-<Kurzname>.html`, je rund
 870 KB (zusammen rund 9,6 MB, weil die Stadt Menü und Stile in jede Seite einbettet), SHA-256 im Vermerk jeder Wette.
