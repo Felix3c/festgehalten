@@ -6,11 +6,13 @@ Anzeige-Datei gemessen. Gezählt werden dort nur Zeilen mit Rohkopie (beleg_sha2
 Aufruf: python -m pytest recherche/koeln-wartezeit -q
 """
 import csv
+import hashlib
 
 import auswerten
 import messen
 
-SHA = "a" * 64
+ROHKOPIE = b'{"stand_iso": "2026-10-07T10:00:03+02:00"}'
+SHA = hashlib.sha256(ROHKOPIE).hexdigest()
 MO_VORMITTAG = "2026-10-05T10:00:00+02:00"  # Montag im Messfenster
 MI_VORMITTAG = "2026-10-07T10:00:00+02:00"  # Mittwoch im Messfenster
 
@@ -22,6 +24,13 @@ def _schreibe_anzeige_csv(csv_path, zeilen):
         writer.writerow(messen.ANZEIGE_HEADER)
         for abgerufen_am, zentrum, minuten, sha in zeilen:
             writer.writerow([abgerufen_am, zentrum, minuten, abgerufen_am, 1, "anzeige", "", sha])
+
+
+def _lege_rohkopie(tmp_path):
+    ordner = tmp_path / auswerten.BELEG_ORDNER
+    ordner.mkdir()
+    (ordner / "wartezeiten-20261007-100000-abcdef12.json").write_bytes(ROHKOPIE)
+    return ordner
 
 
 def test_zeile_ohne_beleg_wird_nicht_gemittelt_aber_ausgewiesen(tmp_path):
@@ -37,7 +46,7 @@ def test_zeile_ohne_beleg_wird_nicht_gemittelt_aber_ausgewiesen(tmp_path):
     rows = auswerten.read_rows(csv_path)
 
     # Act
-    stats = auswerten.compute_monthly_stats(rows, nur_belegt=True)
+    stats = auswerten.compute_monthly_stats(rows, belege={SHA})
 
     # Assert
     okt = stats["2026-10"]
@@ -67,7 +76,7 @@ def test_format_table_nennt_zeilen_ohne_beleg(tmp_path):
         csv_path,
         [(MO_VORMITTAG, "Kundenzentrum Kalk", 90, ""), (MI_VORMITTAG, "Kundenzentrum Kalk", 30, SHA)],
     )
-    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), nur_belegt=True)
+    stats = auswerten.compute_monthly_stats(auswerten.read_rows(csv_path), belege={SHA})
 
     # Act
     text = auswerten.format_table(stats)
@@ -83,6 +92,7 @@ def test_main_quelle_anzeige_liest_die_anzeige_datei(tmp_path, monkeypatch, caps
         csv_path,
         [(MO_VORMITTAG, "Kundenzentrum Kalk", 90, ""), (MI_VORMITTAG, "Kundenzentrum Kalk", 30, SHA)],
     )
+    _lege_rohkopie(tmp_path)
     monkeypatch.setattr(auswerten, "ANZEIGE_CSV_PATH", csv_path)
 
     # Act
@@ -126,3 +136,31 @@ def test_main_quelle_anzeige_verweigert_feed_datei(tmp_path, capsys):
     # Assert
     assert exit_code == 1
     assert "keine Anzeige-Datei" in err
+
+
+def test_hash_in_der_spalte_ohne_rohkopie_zaehlt_nicht(tmp_path, monkeypatch, capsys):
+    # Arrange: Spalte gefüllt, aber keine Datei im Belegordner
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(csv_path, [(MI_VORMITTAG, "Kundenzentrum Kalk", 30, SHA)])
+    monkeypatch.setattr(auswerten, "ANZEIGE_CSV_PATH", csv_path)
+
+    # Act
+    exit_code = auswerten.main(["--quelle", "anzeige", "--monat", "2026-10"])
+
+    # Assert
+    assert exit_code == 1
+    assert "1 Zeilen ohne Beleg" in capsys.readouterr().err
+
+
+def test_beleg_hashes_rechnet_aus_dem_inhalt_nicht_aus_dem_namen(tmp_path):
+    # Arrange
+    ordner = _lege_rohkopie(tmp_path)
+    (ordner / f"wartezeiten-20261007-110000-{'b' * 8}.json").write_bytes(b"anderer Inhalt")
+
+    # Act
+    hashes = auswerten.beleg_hashes(ordner)
+
+    # Assert
+    assert SHA in hashes
+    assert "b" * 64 not in hashes
+    assert auswerten.beleg_hashes(tmp_path / "gibt-es-nicht") == set()

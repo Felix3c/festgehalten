@@ -19,13 +19,15 @@ Aufruf:
 Seit 05.10.2026 werden die Wetten an der Anzeige der Bürger-Seite gemessen
 (messwerte-anzeige.csv, Vermerk in jeder der sechs Wetten), weil der
 Open-Data-Feed seit 16.09.2026 eingefroren ist. Mit --quelle anzeige zählen
-nur Zeilen mit Rohkopie (Spalte beleg_sha256); Zeilen ohne Beleg werden je
-Monat ausgewiesen, aber nicht gemittelt.
+nur Zeilen, deren beleg_sha256 zu einer Rohkopie in belege-anzeige/ passt
+(Hash aus dem Dateiinhalt nachgerechnet); Zeilen ohne Beleg werden je Monat
+ausgewiesen, aber nicht gemittelt.
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import sys
 from pathlib import Path
 
@@ -35,6 +37,7 @@ CSV_PATH = Path(__file__).resolve().parent / "messwerte.csv"
 ANZEIGE_CSV_PATH = Path(__file__).resolve().parent / "messwerte-anzeige.csv"
 ANZEIGE_QUELLE = "anzeige"
 BELEG_SPALTE = "beleg_sha256"
+BELEG_ORDNER = "belege-anzeige"
 
 
 def read_rows(csv_path: Path) -> list[dict]:
@@ -44,6 +47,13 @@ def read_rows(csv_path: Path) -> list[dict]:
         return []
     with csv_path.open("r", newline="", encoding="utf-8") as f:
         return list(csv.DictReader(f))
+
+
+def beleg_hashes(ordner: Path) -> set[str]:
+    """SHA-256 jeder Rohkopie im Belegordner, aus dem Inhalt nachgerechnet (nicht aus dem Namen)."""
+    if not ordner.is_dir():
+        return set()
+    return {hashlib.sha256(p.read_bytes()).hexdigest() for p in ordner.glob("*.json")}
 
 
 def _monat_von(abgerufen_am: str) -> str:
@@ -65,7 +75,7 @@ def _im_messfenster(abgerufen_am: str) -> bool:
 
 
 def compute_monthly_stats(
-    rows: list[dict], monat: str | None = None, alle: bool = False, nur_belegt: bool = False
+    rows: list[dict], monat: str | None = None, alle: bool = False, belege: set[str] | None = None
 ) -> dict:
     """Gruppiert Messwerte je Monat und Kundenzentrum.
 
@@ -76,8 +86,9 @@ def compute_monthly_stats(
                         "ohne_beleg": int}}
     Abrufe außerhalb des Messfensters werden nur gezählt ("ausgeschlossen"),
     nicht gemittelt, es sei denn alle=True.
-    Mit nur_belegt=True (Anzeige-Datei) werden Zeilen ohne beleg_sha256 nur
-    gezählt ("ohne_beleg"), nicht gemittelt.
+    Mit belege (Anzeige-Datei: die Hashes der vorhandenen Rohkopien) werden
+    Zeilen, deren beleg_sha256 zu keiner Rohkopie passt, nur gezählt
+    ("ohne_beleg"), nicht gemittelt.
     Nicht-numerische wartezeit_minuten-Werte werden aus den Mittelwert-/
     Maximum-Berechnungen ausgeschlossen, zählen aber als Messtag.
     """
@@ -93,7 +104,7 @@ def compute_monthly_stats(
         if not alle and not _im_messfenster(row["abgerufen_am"]):
             eintrag["ausgeschlossen"] += 1
             continue
-        if nur_belegt and not (row.get(BELEG_SPALTE) or "").strip():
+        if belege is not None and (row.get(BELEG_SPALTE) or "").strip() not in belege:
             eintrag["ohne_beleg"] += 1
             continue
         eintrag["tage"].add(_tag_von(row["abgerufen_am"]))
@@ -182,7 +193,8 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 1
 
-    stats = compute_monthly_stats(rows, monat=args.monat, alle=args.alle, nur_belegt=ist_anzeige)
+    belege = beleg_hashes(args.csv.parent / BELEG_ORDNER) if ist_anzeige else None
+    stats = compute_monthly_stats(rows, monat=args.monat, alle=args.alle, belege=belege)
     if args.monat and args.monat not in stats:
         print(f"Kein Messwert für Monat {args.monat} in {args.csv}.", file=sys.stderr)
         return 1

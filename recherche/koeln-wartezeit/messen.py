@@ -16,12 +16,13 @@ Aufruf:
     python messen.py --erzwingen       # misst immer (Funktionstest)
     python messen.py --quelle anzeige  # zweite Quelle, eigene Datei (siehe unten)
 
-Zweite Quelle (seit 05.10.2026, nur Beweissicherung): Die Bürger-Seite
+Zweite Quelle (seit 05.10.2026 Messquelle der Wetten): Die Bürger-Seite
 „Wartezeiten in unseren Kundenzentren" lädt ihre Werte aus
     https://www.stadt-koeln.de/interne-dienste/wartezeiten/wartezeiten.json
 Mit --quelle anzeige wird diese Datei gemessen und nach messwerte-anzeige.csv
 geschrieben, nie nach messwerte.csv. Die Wetten koeln-2026-077 bis -082 nennen
-den Open-Data-Feed; ob die Anzeige als Messquelle zählt, ist nicht entschieden.
+den Open-Data-Feed; solange er eingefroren ist, zählt die Anzeige (Entscheidung
+des Halters vom 05.10.2026, Vermerk in jeder der sechs Wetten).
 
 Messfenster und Slot (seit 16.09.2026, siehe fenster.py): Außerhalb der
 terminfreien Zeiten (Mo 7:30–15:00, Mi 7:30–12:00 Ortszeit) oder wenn
@@ -433,7 +434,7 @@ def main(argv: list[str] | None = None) -> int:
         choices=["feed", ANZEIGE_QUELLE],
         default="feed",
         help="feed = Open-Data-Feed (Standard); anzeige = wartezeiten.json der Bürger-Seite, "
-        "schreibt nach messwerte-anzeige.csv (nur Beweissicherung)",
+        "schreibt nach messwerte-anzeige.csv",
     )
     args = parser.parse_args(argv)
     ist_anzeige = args.quelle == ANZEIGE_QUELLE

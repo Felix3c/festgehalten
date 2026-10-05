@@ -70,7 +70,8 @@ Ausgewertet wird mit
 python recherche/koeln-wartezeit/auswerten.py --quelle anzeige --monat 2026-10
 ```
 
-Gezählt werden nur Abrufe im Messfenster **mit Rohkopie** (`beleg_sha256` gefüllt). Zeilen ohne
+Gezählt werden nur Abrufe im Messfenster **mit Rohkopie**: `auswerten.py` rechnet den SHA-256
+jeder Datei in `belege-anzeige/` nach und zählt eine Zeile nur, wenn ihr `beleg_sha256` dazu passt. Zeilen ohne
 Beleg weist der Kopf aus, sie zählen nicht. Das trifft den ersten Abruf vom Mo 05.10.2026 08:12
 (neun Zeilen): Er lief, bevor die Rohkopie eingebaut war. Zeitplan: die drei Aufgaben der
 Windows-Aufgabenplanung auf dem Rechner des Halters (siehe unten), seit 05.10.2026 wieder
