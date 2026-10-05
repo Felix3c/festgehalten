@@ -82,12 +82,16 @@ def _im_messfenster(abgerufen_am: str) -> bool:
 
 
 def _slot_schluessel(abgerufen_am: str) -> tuple | None:
-    """(Tag in Ortszeit, Slot) eines Abrufs; None bei unlesbarem Zeitstempel."""
+    """(Tag in Ortszeit, Slot) eines Abrufs; None bei unlesbarem Zeitstempel oder
+    außerhalb des Messfensters (dort gibt es keinen Slot, also auch nichts zusammenzulegen)."""
     try:
         zeitpunkt = fenster.parse_abgerufen_am(abgerufen_am)
     except ValueError:
         return None
-    return (fenster.ortszeit(zeitpunkt).date(), fenster.slot(zeitpunkt))
+    slot = fenster.slot(zeitpunkt)
+    if slot is None:
+        return None
+    return (fenster.ortszeit(zeitpunkt).date(), slot)
 
 
 def frueheste_je_slot(rows: list[dict]) -> dict:

@@ -291,3 +291,25 @@ def test_main_quelle_anzeige_laeuft_auch_nur_mit_der_github_datei(tmp_path, monk
     # Assert
     assert exit_code == 0
     assert "30.0" in capsys.readouterr().out
+
+
+def test_mit_alle_werden_abrufe_ausserhalb_des_fensters_nicht_zusammengelegt(tmp_path):
+    # Arrange: Dienstag, drei Abrufe außerhalb des Messfensters (kein Slot)
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            ("2026-10-06T10:00:00+02:00", "Kundenzentrum Kalk", 10, SHA),
+            ("2026-10-06T16:00:00+02:00", "Kundenzentrum Kalk", 20, SHA),
+            ("2026-10-06T17:00:00+02:00", "Kundenzentrum Kalk", 30, SHA),
+        ],
+    )
+
+    # Act
+    stats = auswerten.compute_monthly_stats(
+        auswerten.read_rows(csv_path), alle=True, belege={SHA}, je_slot=True
+    )
+
+    # Assert
+    assert stats["2026-10"]["gesamt"]["werte"] == [10.0, 20.0, 30.0]
+    assert stats["2026-10"]["doppelt"] == 0
