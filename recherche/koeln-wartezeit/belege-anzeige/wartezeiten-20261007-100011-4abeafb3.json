@@ -1,0 +1,135 @@
+{
+    "stand": "10:00",
+    "stand_iso": "2026-10-07T10:00:04+02:00",
+    "status": 1,
+    "sondertext": "",
+    "bereiche": [
+        {
+            "id": "meldeangelegenheiten",
+            "titel": "Wartezeiten in den Kundenzentren",
+            "gruppen": [
+                {
+                    "id": "unter_30",
+                    "titel": "Unter 30 Minuten",
+                    "eintraege": [
+                        {
+                            "name": "Innenstadt",
+                            "url": "/service/adressen/00183/index.html",
+                            "wartezeit": 0
+                        },
+                        {
+                            "name": "Chorweiler",
+                            "url": "/service/adressen/00179/index.html",
+                            "wartezeit": 2
+                        },
+                        {
+                            "name": "Rodenkirchen",
+                            "url": "/service/adressen/00271/index.html",
+                            "wartezeit": 9
+                        },
+                        {
+                            "name": "Kalk",
+                            "url": "/service/adressen/00181/index.html",
+                            "wartezeit": 12
+                        },
+                        {
+                            "name": "Mülheim",
+                            "url": "/service/adressen/00268/index.html",
+                            "wartezeit": 21
+                        },
+                        {
+                            "name": "Nippes",
+                            "url": "/service/adressen/00269/index.html",
+                            "wartezeit": 22
+                        }
+                    ]
+                },
+                {
+                    "id": "unter_60",
+                    "titel": "Unter 1 Stunde",
+                    "eintraege": [
+                        {
+                            "name": "Porz",
+                            "url": "/service/adressen/00270/index.html",
+                            "wartezeit": 50
+                        },
+                        {
+                            "name": "Lindenthal",
+                            "url": "/service/adressen/00182/index.html",
+                            "wartezeit": 51
+                        }
+                    ]
+                },
+                {
+                    "id": "ueber_60",
+                    "titel": "Über 1 Stunde",
+                    "eintraege": [
+                        {
+                            "name": "Ehrenfeld",
+                            "url": "/service/adressen/00180/index.html",
+                            "wartezeit": 83
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fuehrerscheinwesen",
+            "titel": "Wartezeiten in den Führerscheinstellen",
+            "gruppen": [
+                {
+                    "id": "unter_30",
+                    "titel": "Unter 30 Minuten",
+                    "eintraege": [
+                        {
+                            "name": "Innenstadt",
+                            "url": "/service/adressen/00183/index.html",
+                            "wartezeit": 0
+                        },
+                        {
+                            "name": "Rodenkirchen",
+                            "url": "/service/adressen/00271/index.html",
+                            "wartezeit": 0
+                        },
+                        {
+                            "name": "Ehrenfeld",
+                            "url": "/service/adressen/00180/index.html",
+                            "wartezeit": 20
+                        }
+                    ]
+                },
+                {
+                    "id": "ueber_60",
+                    "titel": "Über 1 Stunde",
+                    "eintraege": [
+                        {
+                            "name": "Lindenthal",
+                            "url": "/service/adressen/00182/index.html",
+                            "wartezeit": 77
+                        },
+                        {
+                            "name": "Porz",
+                            "url": "/service/adressen/00270/index.html",
+                            "wartezeit": 152
+                        },
+                        {
+                            "name": "Nippes",
+                            "url": "/service/adressen/00269/index.html",
+                            "wartezeit": 197
+                        },
+                        {
+                            "name": "Mülheim",
+                            "url": "/service/adressen/00268/index.html",
+                            "wartezeit": 220
+                        },
+                        {
+                            "name": "Kalk",
+                            "url": "/service/adressen/00181/index.html",
+                            "wartezeit": 270
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
