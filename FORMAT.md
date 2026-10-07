@@ -188,6 +188,11 @@ format: v1
 
 Darunter frei: Worum es geht, wie ausgewählt wird, wie man Fehler meldet.
 
+Optional `sprache: de` oder `sprache: en` (Standard `de`): Sprache der Seite um das Buch herum
+(Beschriftungen, Datum, Dezimalzeichen, Feed). Feldnamen und feste Werte in den Dateien
+(`angekuendigt`, `ja_nein` …) bleiben deutsch, weil sie Teil von v1 sind; nur die Anzeige wechselt.
+Zahlen in den Dateien ohne Tausendertrennzeichen schreiben (`1000`, nicht `1,000`).
+
 Der Halter verpflichtet sich zu nichts außer den Regeln in diesem Dokument. Er wählt
 die Behauptungen aus; deshalb steht sein Name dran, und deshalb darf jede Institution
 ihr eigenes Buch führen, das dieselben Regeln nutzt.
