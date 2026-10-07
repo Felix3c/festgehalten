@@ -20,9 +20,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 - Fr 09.10.: bonn-2026-034, wuppertal-2026-001
 - So 11.10.: wuppertal-2026-002
-- Mo 12.10.: muenster-2026-001; Köln-Messung 10:00 und 14:00
+- Mo 12.10.: muenster-2026-001; Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen offen (Frage 184)
 - Mi 14.10.: bielefeld-2026-001, hamm-2026-001
-- Do 15.10.: essen-2026-035 bis -038 (Rat 14.10.)
+- Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025)
 
 ## Offene Punkte
 
@@ -32,7 +32,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
   nach Entscheidung; veröffentlicht wird erst nach Freigabe.
 - Zweige `archiv-sicherung` und `wortlaut-vorschlag` sind nicht gemergt (Archivkopien, Wortlaut-Vorschläge).
 - Sieben IFG-Anfragen (`recherche/IFG-2026-09.md`) nicht gesendet; Nachfolge als Hüter bis 31.12.2026 offen.
-- Ungeklärt: Innenstadt Köln zeigte am 07.10. zweimal 0 Min.
+- Ungeklärt (geprüft 08.10.): Innenstadt Köln zeigte am 07.10. zweimal 0 Min.; die Datei trennt „niemand wartet“ nicht von „kein Wert“, die Stadt meldet für Innenstadt Kasse geschlossen 07.–08.10. Oktobermittel 18,1 Min. mit, 19,2 ohne die 0. Vermerk `recherche/koeln-wartezeit/VERMERK-INNENSTADT-0-MIN-2026-10-07.md`.
 
 ## Wartet auf Felix
 
