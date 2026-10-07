@@ -11,7 +11,7 @@ from pathlib import Path
 
 import markdown
 
-from . import feed
+from . import feed, sprache
 FEED_MAX = feed.FEED_MAX
 
 STIL = Path(__file__).with_name("stil.css")
@@ -28,12 +28,12 @@ def slug(text: str) -> str:
     return t or "x"
 
 
-def datum(d) -> str:
-    return d.strftime("%d.%m.%Y") if isinstance(d, date) else "–"
+def datum(d, sp: str = sprache.STANDARD) -> str:
+    return sprache.datum(d, sp)
 
 
-def zahl(x, stellen: int = 2) -> str:
-    return "–" if x is None else f"{x:.{stellen}f}".replace(".", ",")
+def zahl(x, stellen: int = 2, sp: str = sprache.STANDARD) -> str:
+    return sprache.zahl(x, stellen, sp)
 
 
 def _e(x) -> str:
@@ -52,18 +52,24 @@ def _fuss(wurzel: str, fuss_links: FussLinks | None) -> str:
     return "".join(f' · <a href="{_e(wurzel + href)}">{_e(text)}</a>' for text, href in (fuss_links or []))
 
 
+def _texte(sp: str) -> dict[str, str]:
+    """Alle Anzeigetexte einer Sprache, schon für HTML escaped."""
+    return {k: _e(v) for k, v in sprache.TEXTE[sp].items()}
+
+
 def _seite(titel: str, koerper: str, tiefe: int, build_zeit: str, buch_titel: str,
-           fuss_links: FussLinks | None = None) -> str:
+           fuss_links: FussLinks | None = None, sp: str = sprache.STANDARD) -> str:
     wurzel = "../" * tiefe
+    t = _texte(sp)
     return (
-        '<!doctype html>\n<html lang="de"><head><meta charset="utf-8">\n'
+        f'<!doctype html>\n<html lang="{sp}"><head><meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f"<title>{_e(titel)} · {_e(buch_titel)}</title>\n"
         f'<link rel="stylesheet" href="{wurzel}stil.css">\n'
-        f'<link rel="alternate" type="application/atom+xml" href="{wurzel}feed.xml" title="neu aufgelöst"></head>\n<body>\n'
+        f'<link rel="alternate" type="application/atom+xml" href="{wurzel}feed.xml" title="{t["feed_titel"]}"></head>\n<body>\n'
         f'<p class="mute"><a href="{wurzel}index.html">{_e(buch_titel)}</a></p>\n'
         f"{koerper}\n"
-        f'<footer>festgehalten-Format v1 · gebaut {_e(build_zeit)} · <a href="{wurzel}wettbuch.json">wettbuch.json</a>'
+        f'<footer>{_e(sprache.t(sp, "fuss_format", zeit=build_zeit))} · <a href="{wurzel}wettbuch.json">wettbuch.json</a>'
         f"{_fuss(wurzel, fuss_links)}</footer>\n"
         "</body></html>\n"
     )
@@ -74,77 +80,92 @@ def _herkunft(w: dict) -> str:
     return str(w.get("herkunft") or "zitiert")
 
 
-def _status_text(w: dict) -> str:
+def _status_text(w: dict, sp: str = sprache.STANDARD) -> str:
+    t = _texte(sp)
     s = w["_bewertung"]["status"]
     if s == "ersetzt":
-        return f'<span class="status mute">ersetzt durch {_e(w.get("ersetzt_durch", ""))}</span>'
+        return f'<span class="status mute">{t["ersetzt_durch"]} {_e(w.get("ersetzt_durch", ""))}</span>'
     if s == "offen":
         gesucht = w["_bewertung"].get("zuletzt_gesucht")
         if gesucht:
-            return f'<span class="status">offen</span> <span class="mute">· Beleg gesucht, zuletzt {datum(gesucht)}</span>'
-        return '<span class="status">offen</span>'
+            hinweis = _e(sprache.t(sp, "beleg_gesucht", datum=datum(gesucht, sp)))
+            return f'<span class="status">{t["offen"]}</span> <span class="mute">· {hinweis}</span>'
+        return f'<span class="status">{t["offen"]}</span>'
     if s != "aufgeloest":
-        return f'<span class="status">{_e(s)}</span>'
+        return f'<span class="status">{_e(sprache.wert(s, sp))}</span>'
     if w["typ"] == "ja_nein":
-        return '<span class="status ja">ja</span>' if w["ausgang"] == 1 else '<span class="status nein">nein</span>'
-    return f'<span class="status">{zahl(w["ausgang"])} {_e(w.get("einheit", ""))}</span>'
+        if w["ausgang"] == 1:
+            return f'<span class="status ja">{t["ja"]}</span>'
+        return f'<span class="status nein">{t["nein"]}</span>'
+    return f'<span class="status">{zahl(w["ausgang"], 2, sp)} {_e(w.get("einheit", ""))}</span>'
 
 
-def _tabelle_html(tabelle: list[dict], rang_ab: int) -> str:
+def _tabelle_html(tabelle: list[dict], rang_ab: int, sp: str = sprache.STANDARD) -> str:
+    t = _texte(sp)
     z = ['<div class="tabelle-wrap"><table><thead><tr>',
-         "<th>Rang</th><th>Wer</th><th class=zahl>Trefferquote (Brier)</th><th class=zahl>Ja/Nein aufgelöst</th>",
-         "<th class=zahl>Näher dran</th><th class=zahl>Rechenschaft (verfallen/strittig)</th><th class=zahl>Wetten als Institution</th>",
+         f"<th>{t['rang']}</th><th>{t['wer']}</th><th class=zahl>{t['trefferquote']}</th>"
+         f"<th class=zahl>{t['ja_nein_aufgeloest']}</th>",
+         f"<th class=zahl>{t['naeher_dran_spalte']}</th><th class=zahl>{t['rechenschaft']}</th>"
+         f"<th class=zahl>{t['wetten_als_institution']}</th>",
          "</tr></thead><tbody>"]
     for r in tabelle:
-        rang = str(r["rang"]) if r["rang"] else f'<span class="mute">noch kein Rang (ab {rang_ab})</span>'
+        rang = (str(r["rang"]) if r["rang"]
+                else f'<span class="mute">{_e(sprache.t(sp, "kein_rang", n=rang_ab))}</span>')
         wer = _e(r["von"])
         if r["ist_institution"]:
             wer = f'<a href="institution/{slug(r["von"])}.html">{wer}</a>'
-        z.append(f"<tr><td>{rang}</td><td>{wer}</td><td class=zahl>{zahl(r['ja_nein_schnitt'])}</td>"
-                 f"<td class=zahl>{r['ja_nein_n']}</td><td class=zahl>{r['punkt_gewonnen']} von {r['punkt_n']}</td>"
+        naeher = _e(sprache.t(sp, "von_n", a=r["punkt_gewonnen"], b=r["punkt_n"]))
+        z.append(f"<tr><td>{rang}</td><td>{wer}</td><td class=zahl>{zahl(r['ja_nein_schnitt'], 2, sp)}</td>"
+                 f"<td class=zahl>{r['ja_nein_n']}</td><td class=zahl>{naeher}</td>"
                  f"<td class=zahl>{r['rechenschaft_verfallen']}</td><td class=zahl>{r['wetten_gesamt']}</td></tr>")
     z.append("</tbody></table></div>")
     return "\n".join(z)
 
 
-def _wettenliste_html(wetten: list[dict], tiefe: int) -> str:
+def _wettenliste_html(wetten: list[dict], tiefe: int, sp: str = sprache.STANDARD) -> str:
     p = "../" * tiefe
-    z = ['<div class="tabelle-wrap"><table><thead><tr><th>Wette</th><th>Institution</th>'
-         '<th>gesagt am</th><th>Prüfung ab</th><th>Herkunft</th><th>Ausgang</th></tr></thead><tbody>']
+    t = _texte(sp)
+    z = [f'<div class="tabelle-wrap"><table><thead><tr><th>{t["wette"]}</th><th>{t["institution"]}</th>'
+         f'<th>{t["gesagt_am"]}</th><th>{t["pruefung_ab"]}</th><th>{t["herkunft"]}</th>'
+         f'<th>{t["ausgang"]}</th></tr></thead><tbody>']
     for w in wetten:
         z.append(f'<tr><td><a href="{p}wette/{_e(w["id"])}.html">{_e(w["frage"])}</a></td>'
                  f'<td><a href="{p}institution/{slug(w["institution"])}.html">{_e(w["institution"])}</a></td>'
-                 f'<td>{datum(w["gesagt_am"])}</td><td>{datum(w["pruefung_am"])}</td>'
-                 f'<td>{_e(_herkunft(w))}</td><td>{_status_text(w)}</td></tr>')
+                 f'<td>{datum(w["gesagt_am"], sp)}</td><td>{datum(w["pruefung_am"], sp)}</td>'
+                 f'<td>{_e(sprache.wert(_herkunft(w), sp))}</td><td>{_status_text(w, sp)}</td></tr>')
     z.append("</tbody></table></div>")
     return "\n".join(z)
 
 
-def _wette_html(w: dict) -> str:
+def _wette_html(w: dict, sp: str = sprache.STANDARD) -> str:
     b = w["_bewertung"]
+    t = _texte(sp)
     z = [f"<h1>{_e(w['frage'])}</h1>",
-         f'<p><strong>{_e(w["institution"])}</strong> · {_e(w["gesagt_von"])} · gesagt am {datum(w["gesagt_am"])} · '
-         f'<a href="{_e(w["quelle"])}">Quelle</a></p>',
+         f'<p><strong>{_e(w["institution"])}</strong> · {_e(w["gesagt_von"])} · {t["gesagt_am"]} '
+         f'{datum(w["gesagt_am"], sp)} · <a href="{_e(w["quelle"])}">{t["quelle"]}</a></p>',
          f"<blockquote>{_e(w['zitat'])}</blockquote>",
-         f"<p>Typ: {_e(w['typ'])} · Prüfung ab {datum(w['pruefung_am'])} · Herkunft: {_e(_herkunft(w))} · "
-         f"Status: {_status_text(w)}</p>",
-         "<table><thead><tr><th>Wer</th><th class=zahl>Prognose</th><th>Art</th><th>hinterlegt am</th>"
-         "<th class=zahl>Score</th></tr></thead><tbody>"]
+         f"<p>{t['typ']}: {_e(sprache.wert(w['typ'], sp))} · {t['pruefung_ab']} {datum(w['pruefung_am'], sp)} · "
+         f"{t['herkunft']}: {_e(sprache.wert(_herkunft(w), sp))} · {t['status']}: {_status_text(w, sp)}</p>",
+         f"<table><thead><tr><th>{t['wer']}</th><th class=zahl>{t['prognose']}</th><th>{t['art']}</th>"
+         f"<th>{t['hinterlegt_am']}</th><th class=zahl>{t['score']}</th></tr></thead><tbody>"]
     for p in w["prognosen"]:
         s = b["scores"].get(p["von"])
-        z.append(f"<tr><td>{_e(p['von'])}</td><td class=zahl>{zahl(p['wert'])}</td><td>{_e(p['art'])}</td>"
-                 f"<td>{datum(p['hinterlegt_am'])}</td><td class=zahl>{zahl(s)}</td></tr>")
+        z.append(f"<tr><td>{_e(p['von'])}</td><td class=zahl>{zahl(p['wert'], 2, sp)}</td>"
+                 f"<td>{_e(sprache.wert(p['art'], sp))}</td>"
+                 f"<td>{datum(p['hinterlegt_am'], sp)}</td><td class=zahl>{zahl(s, 2, sp)}</td></tr>")
     z.append("</tbody></table>")
     if b["status"] == "ersetzt":
         e = _e(w["ersetzt_durch"])
-        z.append(f'<p>Dieser Eintrag wurde ersetzt durch <a href="{e}.html">{e}</a> und wird nicht mehr aufgelöst (FORMAT.md §1.3.3).</p>')
+        link = f'<a href="{e}.html">{e}</a>'
+        z.append(f"<p>{t['ersetzt_satz'].replace('{link}', link)}</p>")
     if b["status"] == "aufgeloest":
-        naeher = f' · näher dran: <strong>{_e(b["naeher_dran"])}</strong>' if b["naeher_dran"] else ""
-        z.append(f'<p>Aufgelöst am {datum(w["aufgeloest_am"])} · <a href="{_e(w["beleg_ausgang"])}">Beleg</a>{naeher}</p>')
+        naeher = f' · {t["naeher_dran"]}: <strong>{_e(b["naeher_dran"])}</strong>' if b["naeher_dran"] else ""
+        z.append(f'<p>{t["aufgeloest_am"]} {datum(w["aufgeloest_am"], sp)} · '
+                 f'<a href="{_e(w["beleg_ausgang"])}">{t["beleg"]}</a>{naeher}</p>')
     if w.get("vermerke"):
-        z.append("<h2>Vermerke</h2><ul>")
+        z.append(f"<h2>{t['vermerke']}</h2><ul>")
         for v in w["vermerke"]:
-            z.append(f"<li>{datum(v.get('am'))}: {_e(v.get('text', ''))}</li>")
+            z.append(f"<li>{datum(v.get('am'), sp)}: {_e(v.get('text', ''))}</li>")
         z.append("</ul>")
     z.append(_markdown_sicher(w.get("_text", "")))
     return "\n".join(z)
@@ -189,23 +210,29 @@ def seiten_schreiben(meta: dict, bewertet: dict, ausgabe: Path, build_zeit: str,
 
     schreib("stil.css", STIL.read_text(encoding="utf-8"))
 
-    lizenz = f' · Lizenz {_e(meta["lizenz"])}' if meta.get("lizenz") else ""
+    sp = sprache.von_meta(meta)
+    t = _texte(sp)
+    lizenz = f' · {t["lizenz"]} {_e(meta["lizenz"])}' if meta.get("lizenz") else ""
     koerper = [f"<h1>{_e(titel)}</h1>",
-               f'<p class="mute">Halter: {_e(meta.get("halter", ""))} · seit {datum(meta.get("seit"))} · Format {_e(meta.get("format", ""))}{lizenz}</p>',
+               f'<p class="mute">{t["halter"]}: {_e(meta.get("halter", ""))} · {t["seit"]} {datum(meta.get("seit"), sp)} · '
+               f'{t["format"]} {_e(meta.get("format", ""))}{lizenz}</p>',
                _markdown_sicher(meta.get("_text", "")),
-               "<h2>Rangliste</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"]),
-               "<h2>Alle Wetten</h2>", _wettenliste_html(bewertet["wetten"], 0),
-               '<p class="mute">Abonnieren: <a href="feed.xml">Feed „neu aufgelöst“</a> (Atom)</p>']
-    schreib("index.html", _seite("Rangliste", "\n".join(koerper), 0, build_zeit, titel, fuss_links))
-    schreib("feed.xml", feed.feed_xml(f"{titel} · neu aufgelöst", feed.eintraege_aus(bewertet["wetten"]),
-                                     build_zeit, url))
+               f"<h2>{t['rangliste']}</h2>", _tabelle_html(bewertet["tabelle"], bewertet["rang_ab"], sp),
+               f"<h2>{t['alle_wetten']}</h2>", _wettenliste_html(bewertet["wetten"], 0, sp),
+               f'<p class="mute">{sprache.t(sp, "abonnieren")}</p>']
+    schreib("index.html", _seite(sprache.t(sp, "rangliste"), "\n".join(koerper), 0, build_zeit, titel,
+                                 fuss_links, sp))
+    schreib("feed.xml", feed.feed_xml(f"{titel} · {sprache.t(sp, 'feed_titel')}",
+                                     feed.eintraege_aus(bewertet["wetten"], sp=sp), build_zeit, url))
 
     for inst, ws in nach_inst.items():
-        koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1)]
-        schreib(f"institution/{slug(inst)}.html", _seite(inst, "\n".join(koerper), 1, build_zeit, titel, fuss_links))
+        koerper = [f"<h1>{_e(inst)}</h1>", _wettenliste_html(ws, 1, sp)]
+        schreib(f"institution/{slug(inst)}.html",
+                _seite(inst, "\n".join(koerper), 1, build_zeit, titel, fuss_links, sp))
 
     for w in bewertet["wetten"]:
-        schreib(f"wette/{w['id']}.html", _seite(w["frage"], _wette_html(w), 1, build_zeit, titel, fuss_links))
+        schreib(f"wette/{w['id']}.html",
+                _seite(w["frage"], _wette_html(w, sp), 1, build_zeit, titel, fuss_links, sp))
 
     daten = {"format": "v1", "titel": titel, "halter": meta.get("halter"), "gebaut": build_zeit,
              "seit": _json_faehig(meta.get("seit")), "kontakt": meta.get("kontakt"),

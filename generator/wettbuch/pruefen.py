@@ -8,6 +8,8 @@ from datetime import date
 from numbers import Real
 from pathlib import Path
 
+from . import sprache
+
 ID_MUSTER = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 MAIL_MUSTER = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 PFLICHT = [
@@ -162,6 +164,8 @@ def _meta_pruefen(meta: dict) -> list[Fehler]:
         f.append(Fehler("BUCH.md", "einreichung", "muss eine Mailadresse sein"))
     if "sammelbuch" in meta and not isinstance(meta["sammelbuch"], bool):
         f.append(Fehler("BUCH.md", "sammelbuch", "muss true oder false sein"))
+    if "sprache" in meta and meta["sprache"] not in sprache.SPRACHEN:
+        f.append(Fehler("BUCH.md", "sprache", f"muss eine von {', '.join(sprache.SPRACHEN)} sein"))
     return f
 
 
