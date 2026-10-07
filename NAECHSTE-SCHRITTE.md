@@ -27,8 +27,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 ## Offene Punkte
 
 - Bonn: Ratsinformationssystem hinter einer Bot-Sperre; bonn-2026-035/-036 nur im eigenen Browser prüfbar.
-- Großstädte statt weiterer NRW-Städte: zuerst London. Vorher Aufwand der englischen Ausgabe und Rechtslage prüfen,
-  dann eigener Zweig; veröffentlicht wird erst nach Freigabe.
+- Großstädte statt weiterer NRW-Städte: zuerst London. Aufwand und Rechtslage geprüft 07.10.
+  (`recherche/LONDON-AUFWAND-2026-10-07.md`): Sprach-Schalter nötig, Rohkopien nur lokal. Eigener Zweig erst
+  nach Entscheidung; veröffentlicht wird erst nach Freigabe.
 - Zweige `archiv-sicherung` und `wortlaut-vorschlag` sind nicht gemergt (Archivkopien, Wortlaut-Vorschläge).
 - Sieben IFG-Anfragen (`recherche/IFG-2026-09.md`) nicht gesendet; Nachfolge als Hüter bis 31.12.2026 offen.
 - Ungeklärt: Innenstadt Köln zeigte am 07.10. zweimal 0 Min.
