@@ -21,7 +21,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - Fr 09.10.: bonn-2026-034, wuppertal-2026-001
 - So 11.10.: wuppertal-2026-002
 - Mo 12.10.: muenster-2026-001; Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen offen (Frage 184)
-- Mi 14.10.: bielefeld-2026-001, hamm-2026-001
+- Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.)
 - Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025)
 
 ## Offene Punkte
