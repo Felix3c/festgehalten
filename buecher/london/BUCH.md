@@ -29,7 +29,7 @@ name only dates in the next few days or none at all. Where the Mayor speaks in a
 The Mayor's own press releases were added on 8 October 2026, from the list at
 https://www.london.gov.uk/media-centre/mayors-press-releases. On 7 October 2026 it showed
 101 releases from 7 January to 7 October 2026. The keeper read the titles of all 101 and
-the full text of 32; six bets (london-2026-013 to -018) come from six of them. One of them
+the full text of 32; seven bets (london-2026-013 to -019) come from seven of them. One of them
 is a release of the Old Oak and Park Royal Development Corporation, the Mayor's development
 corporation, published on london.gov.uk; it is counted under the Mayor.
 
