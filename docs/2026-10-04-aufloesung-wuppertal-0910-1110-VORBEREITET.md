@@ -72,3 +72,14 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
 - Liste „Aktuelle Meldungen“ um 16:48 erneut abgerufen (HTTP 200, SHA-256 10211fb0…): weiter nur die Ankündigung
   „Kinderspielplatz Werther Hof: Märchenwald für die Barmer City“, kein Treffer für „Brunnen“ oder „Alte Freiheit“.
   ISG Poststraße (meldungen.php): kein Treffer für „Brunnen“. Nächster Blick Fr 09.10. (001) und So 11.10. (002).
+
+## Prüftag Fr 09.10.2026 00:20 (Dauerlauf, Tagesprüfung), wuppertal-2026-001
+
+- Liste „Aktuelle Meldungen“ (HTTP 200) und Oktober-Archiv (HTTP 200): oben steht weiter nur die Ankündigung vom 01.10.,
+  keine Nachmeldung zur Eröffnung, keine Absage.
+- Presse: talzeit (Artikel 413340867, `datePublished` 08.10. 03:00 UTC, `dateModified` 07.10. 11:48) schreibt „Seit heute
+  (8. Oktober) können Kinder anfangen, zu spielen“. Der Text ist vor dem Termin geschrieben, also eine Ankündigung, kein
+  Bericht über die Eröffnung (SHA-256 a096cde7…e634). Wuppertaler Rundschau 02.10.: nur Ankündigung. Projektseite der
+  Stadt („Im Bau / KSP Werther Hof“): „Die Eröffnung findet am 8.10.2026 von 15:30 bis 17:30 h statt“, ebenfalls Ankündigung.
+- **Nicht aufgelöst.** Nach der Regel oben reicht eine Ankündigung nicht. Weiter prüfen bis ~15.10.; danach Frage an Felix
+  (Vorschlag NEIN mangels Beleg, mit Vermerk).
