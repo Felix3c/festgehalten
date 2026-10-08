@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.10.2026 10:20 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 08.10.2026 20:10 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -26,6 +26,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - So 01.11.: essen-2026-039, wuppertal-2026-003, wuppertal-2026-004; Mo 02.11.: bonn-2026-033 (hängt an Frage 197);
   Sa 07.11.: bochum-2026-002; So 08.11.: koeln-2026-076 (Zitat ist Zusammenfassung wie bei 197). Vorlage mit Abruf
   08.10.: `docs/2026-10-08-aufloesung-0111-0811-VORBEREITET.md`, alle Quellen unverändert, keine Absage gefunden.
+- Dazu seit 08.10. 20:10 (Bücher seit dem Morgen auf master): So 01.11. aachen-2026-001, gelsenkirchen-2026-001
+  (Baustellenkarte: bis voraussichtlich 30.10., hält), gelsenkirchen-2026-002 (Richtung NEIN, Karte 30.11.),
+  krefeld-2026-001; Sa 07.11. muenster-2026-002 bis -004; Mo 09.11. muenster-2026-005. Vorlage
+  `docs/2026-10-08-aufloesung-0111-0911-nachtrag-VORBEREITET.md`, alle acht Zitate wörtlich, keine Absage gefunden.
 
 ## Offene Punkte
 
@@ -48,3 +52,5 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 - Push von master (lokal voraus: Köln-Messung 07.10., diese Kurzfassung und seit 08.10. die nachgetragene Archivkopie für muelheim-2026-001).
 - IFG-Anfragen, Hüter-Nachfolge, gemergte Zweige `weitsicht` und `hinterlegt-sammelbuch` löschen.
+
+- 08.10.2026 18:59 (Dauerlauf H18): Fachfragen an Matthieß (Göttingen), U. Krüger (Leipzig), Birch (Laval) gesendet. Sprachregel für Mails: „418 Einträge“ (nicht Ankündigungen), Prognose „zu den meisten Einträgen“ (331 von 418 laut öffentlichem Stand 05.10.).
