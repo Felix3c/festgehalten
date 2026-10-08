@@ -36,5 +36,5 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wartet auf Felix
 
-- Push von master (lokal voraus: Köln-Messung 07.10. und diese Kurzfassung).
+- Push von master (lokal voraus: Köln-Messung 07.10., diese Kurzfassung und seit 08.10. die nachgetragene Archivkopie für muelheim-2026-001).
 - IFG-Anfragen, Hüter-Nachfolge, gemergte Zweige `weitsicht` und `hinterlegt-sammelbuch` löschen.
