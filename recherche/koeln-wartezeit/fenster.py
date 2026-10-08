@@ -14,7 +14,7 @@ Nur Standardbibliothek.
 """
 from __future__ import annotations
 
-from datetime import datetime, time
+from datetime import date, datetime, time
 from zoneinfo import ZoneInfo
 
 ZEITZONE = ZoneInfo("Europe/Berlin")
@@ -24,6 +24,17 @@ FENSTER = {
     MITTWOCH: (time(7, 30), time(12, 0)),
 }
 MITTAG = time(12, 0)
+
+# Schließtage, die die Stadt selbst ankündigt (Frage 184 a). Abrufe an diesen Tagen bleiben als
+# Beleg in der Datei, werden aber nicht gemittelt: eine geschlossene Stelle hat keine Wartezeit.
+# Nur eintragen, was die Stadt vorher schreibt, mit Quelle; nie nachträglich wegen einer Zahl.
+RUHETAGE = {
+    date(2026, 10, 12): (
+        "Personalversammlung, alle Kundenzentren geschlossen; Hinweis auf jeder Zentrumsseite, "
+        "https://web.archive.org/web/20261007231945/"
+        "https://www.stadt-koeln.de/service/adressen/00183/index.html (abgerufen 08.10.2026)"
+    ),
+}
 
 
 def ortszeit(zeitpunkt: datetime) -> datetime:
@@ -41,6 +52,11 @@ def im_messfenster(zeitpunkt: datetime) -> bool:
         return False
     beginn, ende = grenzen
     return beginn <= lokal.time() < ende
+
+
+def ruhetag(zeitpunkt: datetime) -> str | None:
+    """Quelle des angekündigten Schließtags oder None (regulärer Tag)."""
+    return RUHETAGE.get(ortszeit(zeitpunkt).date())
 
 
 def slot(zeitpunkt: datetime) -> str | None:
