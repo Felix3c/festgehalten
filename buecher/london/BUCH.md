@@ -9,9 +9,9 @@ format: v1
 sprache: en
 ---
 
-Transport for London keeps saying what will happen and when: openings, start dates,
-completion dates, decisions. This book writes it down, waits, and checks. It only quotes
-what TfL itself said in its own press releases. A statement goes in if it has a date or a
+Transport for London and the Mayor of London keep saying what will happen and when:
+openings, start dates, completion dates, decisions. This book writes it down, waits, and
+checks. It only quotes what TfL and the Mayor said in their own press releases. A statement goes in if it has a date or a
 number; intentions without either stay out. Each bet asks only whether the date or number
 in the quote was met, never whether anyone meant it.
 
@@ -24,9 +24,14 @@ https://tfl.gov.uk/info-for/media/press-releases/2026/january (and the following
 On 7 October 2026 the lists for January to September 2026 showed 105 releases; the October
 list was still empty. The keeper read the titles of all 105 and the full text of 26 that
 looked as if they named a later date; twelve bets come from eleven of them. Many releases
-name only dates in the next few days or none at all. The Mayor's own press releases
-(london.gov.uk) were not read in full for this first edition: the list could not be paged
-by script. Where the Mayor speaks in a TfL release, the release is the source.
+name only dates in the next few days or none at all. Where the Mayor speaks in a TfL release, the release is the source.
+
+The Mayor's own press releases were added on 8 October 2026, from the list at
+https://www.london.gov.uk/media-centre/mayors-press-releases. On 7 October 2026 it showed
+101 releases from 7 January to 7 October 2026. The keeper read the titles of all 101 and
+the full text of 32; six bets (london-2026-013 to -018) come from six of them. One of them
+is a release of the Old Oak and Park Royal Development Corporation, the Mayor's development
+corporation, published on london.gov.uk; it is counted under the Mayor.
 
 Speakers in this book are Transport for London as an institution or the Mayor of London in
 office. Names of officials are not used. Bets are about dates and numbers in the quote, never
