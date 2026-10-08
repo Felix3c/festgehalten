@@ -30,6 +30,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - Großstädte statt weiterer NRW-Städte: zuerst London. Aufwand und Rechtslage geprüft 07.10.
   (`recherche/LONDON-AUFWAND-2026-10-07.md`): Sprach-Schalter nötig, Rohkopien nur lokal. Eigener Zweig erst
   nach Entscheidung; veröffentlicht wird erst nach Freigabe.
+- London, Oxford Street (geprüft 08.10.): Primärquelle gefunden, TfL „Oxford Street area works“ nennt Mo 26.10.2026
+  als Start (Wayback 20261008040024). Kandidat T-OX in `~/wettbuch-notizen/london-gla/KANDIDATEN-GLA-2026-10-08.md`;
+  nur ehrlich, wenn er vor So 25.10. öffentlich steht (Frage 196).
 - Zweige `archiv-sicherung` und `wortlaut-vorschlag` sind nicht gemergt (Archivkopien, Wortlaut-Vorschläge).
 - Sieben IFG-Anfragen (`recherche/IFG-2026-09.md`) nicht gesendet; Nachfolge als Hüter bis 31.12.2026 offen.
 - Ungeklärt (geprüft 08.10.): Innenstadt Köln zeigte am 07.10. zweimal 0 Min.; die Datei trennt „niemand wartet“ nicht von „kein Wert“, die Stadt meldet für Innenstadt Kasse geschlossen 07.–08.10. Oktobermittel 18,1 Min. mit, 19,2 ohne die 0. Vermerk `recherche/koeln-wartezeit/VERMERK-INNENSTADT-0-MIN-2026-10-07.md`.
