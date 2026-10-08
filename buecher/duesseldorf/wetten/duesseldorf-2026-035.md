@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-08
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »2026 findet er vom 19. November bis zum 30. Dezember statt.« (Quelle am 08.10.2026 abgerufen, SHA-256 beginnt fed45ff689bc7ff1; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Inhaltlich gedeckt; das Zitat hatte „vom … zum“ weggelassen."
 ---
 
 ## Kontext
