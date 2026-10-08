@@ -150,3 +150,21 @@ def test_offene_wetten_nur_live_waehlt_live_woertliche_ohne_tragende_kopie():
                "d": {"status": "zitat_fehlt", "zitat_live": "ja"}}
     assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=True)] == ["a", "d"]
     assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=False)] == ["a", "b", "d"]
+
+
+def test_fehler_ueberschreibt_vorhandenen_befund_nicht():
+    alt = {"id": "x-1", "status": "zitat_fehlt", "fehlt": "wort"}
+    neu = {"id": "x-1", "status": "fehler", "fehlt": "ValueError"}
+    assert a.zusammenfuehren(alt, neu) == alt
+
+
+def test_fehler_ohne_vorhandenen_befund_wird_eingetragen():
+    neu = {"id": "x-1", "status": "fehler", "fehlt": "ValueError"}
+    assert a.zusammenfuehren(None, neu) == neu
+    assert a.zusammenfuehren({"id": "x-1", "status": "fehler"}, neu) == neu
+
+
+def test_neuer_befund_ersetzt_alten():
+    alt = {"id": "x-1", "status": "zitat_fehlt"}
+    neu = {"id": "x-1", "status": "ok"}
+    assert a.zusammenfuehren(alt, neu) == neu

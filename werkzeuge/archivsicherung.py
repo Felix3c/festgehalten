@@ -192,6 +192,13 @@ def live_pruefen(sitzung: requests.Session, wette: dict) -> str:
     return "nein" if zitat_in_text(wette["zitat"], text) else "ja"
 
 
+def zusammenfuehren(alt: dict | None, neu: dict) -> dict:
+    """Ein Abruffehler (z. B. Drosselung durch das Archiv) löscht keinen früheren Befund."""
+    if neu["status"] == "fehler" and alt and alt.get("status") not in (None, "", "fehler"):
+        return alt
+    return neu
+
+
 def offene_wetten(wetten: list[dict], tabelle: dict[str, dict], nur_live: bool) -> list[dict]:
     """Noch nicht tragende Wetten; mit nur_live nur die, deren Zitat zuletzt live wörtlich stand."""
     offen = [w for w in wetten if tabelle.get(w["id"], {}).get("status") not in FERTIG]
@@ -234,7 +241,7 @@ def main(argv: list[str] | None = None) -> int:
     sitzung = requests.Session()
     sitzung.headers["User-Agent"] = UA
     for nr, wette in enumerate(offen, 1):
-        zeile = pruefen(sitzung, wette, a.speichern)
+        zeile = zusammenfuehren(tabelle.get(wette["id"]), pruefen(sitzung, wette, a.speichern))
         tabelle[wette["id"]] = zeile
         tabelle_schreiben(a.tabelle, tabelle)
         print(f"{nr}/{len(offen)} {zeile['id']}: {zeile['status']}", flush=True)
