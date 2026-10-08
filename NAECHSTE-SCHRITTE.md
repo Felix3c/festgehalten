@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 07.10.2026 13:50 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 08.10.2026 10:20 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -36,6 +36,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - London, Oxford Street (geprüft 08.10.): Primärquelle gefunden, TfL „Oxford Street area works“ nennt Mo 26.10.2026
   als Start (Wayback 20261008040024). Kandidat T-OX in `~/wettbuch-notizen/london-gla/KANDIDATEN-GLA-2026-10-08.md`;
   nur ehrlich, wenn er vor So 25.10. öffentlich steht (Frage 196).
+- gelsenkirchen-2026-002 (Gasleitung Kurt-Schumacher-Straße, Prüftag 01.11.): Die Baustellenkarte der Stadt nennt
+  seit 04.10. „bis voraussichtlich 30.11.2026“ (Hinweis einer Lokalredaktion 08.10.). Vermerk mit Archivkopie
+  20261008080928 und lokaler Kopie eingetragen (`7593025`, lokal); Prognosen unverändert, ob die Richtung Buer bis
+  31.10. fertig ist, bleibt ungeklärt.
 - Zweige `archiv-sicherung` und `wortlaut-vorschlag` sind nicht gemergt (Archivkopien, Wortlaut-Vorschläge).
 - Sieben IFG-Anfragen (`recherche/IFG-2026-09.md`) nicht gesendet; Nachfolge als Hüter bis 31.12.2026 offen.
 - Ungeklärt (geprüft 08.10.): Innenstadt Köln zeigte am 07.10. zweimal 0 Min.; die Datei trennt „niemand wartet“ nicht von „kein Wert“, die Stadt meldet für Innenstadt Kasse geschlossen 07.–08.10. Oktobermittel 18,1 Min. mit, 19,2 ohne die 0. Vermerk `recherche/koeln-wartezeit/VERMERK-INNENSTADT-0-MIN-2026-10-07.md`.
