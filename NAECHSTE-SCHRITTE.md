@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.10.2026 20:45 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 08.10.2026 21:35 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -33,7 +33,16 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
   krefeld-2026-001; Sa 07.11. muenster-2026-002 bis -004; Mo 09.11. muenster-2026-005. Vorlage
   `docs/2026-10-08-aufloesung-0111-0911-nachtrag-VORBEREITET.md`, alle acht Zitate wörtlich, keine Absage gefunden.
 
+- Dazu seit 08.10. 21:30: 17.11. wuppertal-2026-005, 18.11. bielefeld-2026-002, 19.11. bonn-2026-031, 20.11.
+  duesseldorf-2026-035 und koeln-2026-075, 24.11. koeln-2026-074, 28.11. duesseldorf-2026-032. Vorlage
+  `docs/2026-10-08-aufloesung-1711-2811-VORBEREITET.md`, alle sieben Quellen unverändert abrufbar.
+
 ## Offene Punkte
+
+- Wörtliche Zitate (Beschluss 04.10.): Zweig `wortlaut-vermerke` (lokal) enthält die Vorarbeit vom 04.10., eine
+  Warnung im Generator (`--zitate recherche/archiv-quellen.csv`, 8 neue Tests, 107 grün) und die ersten Vermerke
+  (sieben Wetten, darunter bonn-2026-031 ohne die mehrdeutige 12-Uhr-Bedingung). Stand 08.10.: 161 Wetten ohne
+  Vermerk; die seit 04.10. neuen Wetten werden gerade nachgeprüft. Mergen erst, wenn alle Vermerke stehen.
 
 - Bonn: Ratsinformationssystem hinter einer Bot-Sperre; bonn-2026-035/-036 nur im eigenen Browser prüfbar. bonn.de-Pressemitteilungen am 08.10. im Chrome-Werkzeug geprüft: keine Folge-Meldung zu 035, zu 036 nur der Ratsbeschluss 24.09. (Hauptausschuss nicht erwähnt); beide weiter ungeklärt.
 - Großstädte statt weiterer NRW-Städte: zuerst London. Aufwand und Rechtslage geprüft 07.10.
