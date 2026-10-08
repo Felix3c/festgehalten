@@ -56,3 +56,13 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   HTTP 520 (dritter Versuch). Richtung unverändert: Termin steht; aufgelöst wird erst am 09.10. mit Beleg der
   Eröffnung (Ankündigung reicht nicht).
 - wuppertal-2026-002: in Liste und Oktober-Archiv kein Treffer für „Brunnen“ oder „Alte Freiheit“. Prüftag 11.10.
+
+## Nachtrag 08.10.2026 16:35 (Dauerlauf, Ereignistag nachmittags)
+
+- wuppertal-2026-001: Liste „Aktuelle Meldungen“ um 16:29 abgerufen (HTTP 200, SHA-256 5207cdfb…): oben steht weiter nur
+  die Ankündigung „Kinderspielplatz Werther Hof: Märchenwald für die Barmer City“, keine Nachmeldung, keine Absage.
+  Websuche „Spielplatz Werther Hof Wuppertal eröffnet Märchenwald“ (16:30): Wuppertaler Rundschau
+  (`wuppertaler-rundschau.de/…/ein-maerchenwald-mitten-in-der-barmer-city_aid-155818477`) und talzeit.de
+  (`article413340867`) geben nur die Ankündigung wieder; ein Bericht über die stattgefundene Eröffnung ist noch nicht zu
+  finden (Eröffnung lief 15:30–17:30). Am 09.10. dieselben drei Stellen plus WZ und Social Media der Stadt; ohne Bericht
+  bleibt es bei der Regel oben (bis ~15.10. warten, dann Frage an Felix).

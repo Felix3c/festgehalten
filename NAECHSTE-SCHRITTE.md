@@ -18,7 +18,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Nächste Prüftage
 
-- Fr 09.10.: bonn-2026-034, wuppertal-2026-001
+- Fr 09.10.: bonn-2026-034, wuppertal-2026-001 (Vorprüfung 08.10. 16:30: Bonn keine neue Meldung, Richtung JA; Wuppertal noch kein Bericht über die Eröffnung, nur Ankündigungen)
 - So 11.10.: wuppertal-2026-002
 - Mo 12.10.: muenster-2026-001; Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen offen (Frage 184)
 - Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.)
