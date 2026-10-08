@@ -66,3 +66,9 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   (`article413340867`) geben nur die Ankündigung wieder; ein Bericht über die stattgefundene Eröffnung ist noch nicht zu
   finden (Eröffnung lief 15:30–17:30). Am 09.10. dieselben drei Stellen plus WZ und Social Media der Stadt; ohne Bericht
   bleibt es bei der Regel oben (bis ~15.10. warten, dann Frage an Felix).
+
+## Nachtrag 08.10.2026 16:48 (Dauerlauf, nach Ende des Eröffnungsfensters 15:30–17:30 noch nicht prüfbar)
+
+- Liste „Aktuelle Meldungen“ um 16:48 erneut abgerufen (HTTP 200, SHA-256 10211fb0…): weiter nur die Ankündigung
+  „Kinderspielplatz Werther Hof: Märchenwald für die Barmer City“, kein Treffer für „Brunnen“ oder „Alte Freiheit“.
+  ISG Poststraße (meldungen.php): kein Treffer für „Brunnen“. Nächster Blick Fr 09.10. (001) und So 11.10. (002).
