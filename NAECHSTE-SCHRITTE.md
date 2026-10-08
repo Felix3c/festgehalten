@@ -23,10 +23,13 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - Mo 12.10.: muenster-2026-001; Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen offen (Frage 184)
 - Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.)
 - Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025); alle vier Vorlagen 035–038 stehen auf der Tagesordnung (TOP 6, 19, 20, 25; zu 19/20 Änderungsanträge), geprüft 08.10.
+- So 01.11.: essen-2026-039, wuppertal-2026-003, wuppertal-2026-004; Mo 02.11.: bonn-2026-033 (hängt an Frage 197);
+  Sa 07.11.: bochum-2026-002; So 08.11.: koeln-2026-076 (Zitat ist Zusammenfassung wie bei 197). Vorlage mit Abruf
+  08.10.: `docs/2026-10-08-aufloesung-0111-0811-VORBEREITET.md`, alle Quellen unverändert, keine Absage gefunden.
 
 ## Offene Punkte
 
-- Bonn: Ratsinformationssystem hinter einer Bot-Sperre; bonn-2026-035/-036 nur im eigenen Browser prüfbar.
+- Bonn: Ratsinformationssystem hinter einer Bot-Sperre; bonn-2026-035/-036 nur im eigenen Browser prüfbar. bonn.de-Pressemitteilungen am 08.10. im Chrome-Werkzeug geprüft: keine Folge-Meldung zu 035, zu 036 nur der Ratsbeschluss 24.09. (Hauptausschuss nicht erwähnt); beide weiter ungeklärt.
 - Großstädte statt weiterer NRW-Städte: zuerst London. Aufwand und Rechtslage geprüft 07.10.
   (`recherche/LONDON-AUFWAND-2026-10-07.md`): Sprach-Schalter nötig, Rohkopien nur lokal. Eigener Zweig erst
   nach Entscheidung; veröffentlicht wird erst nach Freigabe.
