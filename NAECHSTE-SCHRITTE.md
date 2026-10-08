@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.10.2026 21:35 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 08.10.2026 21:00 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -33,7 +33,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
   krefeld-2026-001; Sa 07.11. muenster-2026-002 bis -004; Mo 09.11. muenster-2026-005. Vorlage
   `docs/2026-10-08-aufloesung-0111-0911-nachtrag-VORBEREITET.md`, alle acht Zitate wörtlich, keine Absage gefunden.
 
-- Dazu seit 08.10. 21:30: 17.11. wuppertal-2026-005, 18.11. bielefeld-2026-002, 19.11. bonn-2026-031, 20.11.
+- Dazu seit 08.10. 20:55: 17.11. wuppertal-2026-005, 18.11. bielefeld-2026-002, 19.11. bonn-2026-031, 20.11.
   duesseldorf-2026-035 und koeln-2026-075, 24.11. koeln-2026-074, 28.11. duesseldorf-2026-032. Vorlage
   `docs/2026-10-08-aufloesung-1711-2811-VORBEREITET.md`, alle sieben Quellen unverändert abrufbar.
 
