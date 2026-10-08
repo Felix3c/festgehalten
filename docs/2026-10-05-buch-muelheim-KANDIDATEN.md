@@ -48,7 +48,9 @@ fünf Aufnahmen vom 05.10.2026; für die Sporthallen-Meldung, 008 und 009, eine 
 keine (die Seiten enthalten wechselnde Teile). **Nicht archiviert: 001 (Brücke Saarner Straße).** Save Page
 Now antwortete zweimal mit HTTP 404, nannte danach die Aufnahme `20261005102106`, die sich am selben Tag
 nicht abspielen ließ (404); die Stadt selbst antwortet für die Adresse mit 200. Ursache ungeklärt. Für 001
-trägt nur die lokale Kopie mit SHA-256. Lokale Kopien: `recherche/belege/2026-10-05-muelheim-<Kurzname>.html`.
+trägt nur die lokale Kopie mit SHA-256. **Nachtrag 08.10.2026:** Die Aufnahme `20261005102106` ist jetzt
+abspielbar (HTTP 200), das Zitat steht wörtlich darin, die Kopie ist byte-gleich mit der lokalen Kopie.
+Damit 9 von 9; Vermerk vom 08.10. in 001. Lokale Kopien: `recherche/belege/2026-10-05-muelheim-<Kurzname>.html`.
 
 ## Angelegt
 
