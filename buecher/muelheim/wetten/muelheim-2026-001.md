@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle am 05.10.2026 zweimal abgerufen (Seite der Meldung, zwei getrennte Abrufe am selben Mittag), Zitat beide Male wörtlich."
   - am: 2026-10-05
     text: "Archiv: Save Page Now am 05.10.2026 ohne geprüfte Kopie (HTTP 404; Save Page Now nannte danach die Aufnahme 20261005102106, sie ließ sich am selben Tag nicht abspielen). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-muelheim-bruecke-saarner-strasse.html, SHA-256 47b9479a64120c48fb2ced628ae626227efed832d1af31f474e33f9363671d2c."
+  - am: 2026-10-08
+    text: "Archiv nachgetragen: https://web.archive.org/web/20261005102106/https://cms.muelheim-ruhr.de/rathaus/aktuelles/aktuelle-meldungen/bruecke-saarner-strasse-neuer-belag-fuer-fahrbahn-und-gehwege (Archivkopie vom 05.10.2026, am 08.10.2026 abspielbar, HTTP 200; Zitat am 08.10.2026 wörtlich in der Archivkopie geprüft, Kopie byte-gleich mit der lokalen Kopie, SHA-256 wie oben)."
 ---
 
 ## Kontext
