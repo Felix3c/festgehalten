@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.10.2026 20:10 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 08.10.2026 20:45 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -10,8 +10,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 ## Wo wir stehen
 
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
-- Prüfung 07.10.: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
-- 35 fällige offene Wetten, davon 28 Haushalts-Wetten, die auf festgestellte Jahresabschlüsse warten.
+- Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
+- 32 fällige offene Wetten (Stand 08.10.): 25 Zahl-Wetten, die meisten warten auf festgestellte
+  Jahresabschlüsse oder Schlussrechnungen (15 davon ausdrücklich auf einen Jahresabschluss), und 7 Ja/Nein-Wetten.
+  Die drei ersetzten Köln-Einträge (koeln-2025-001/-002/-004) zählen nicht mit; die frühere Zahl 35 enthielt sie.
 - Köln-Wartezeiten werden seit 05.10. an der Anzeige der Stadt gemessen (Windows-Aufgaben und GitHub als zweite
   Messstelle, je Slot zählt der früheste Abruf mit Rohkopie). Oktober bisher: 2 Messtage, Mittel 18,1 Min.,
   Maximum 68 Min. Der alte Feed ist seit 16.09. eingefroren.
