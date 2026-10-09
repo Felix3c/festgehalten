@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Zügigkeit der Joseph-Beuys-Gesamtschule wird zum Schuljahr 2027/28 von vier auf sechs Züge erhöht, sodass die Zahl der Gesamtschulplätze in Düsseldorf weiter gesteigert wird.« … »Die Gesamtkosten belaufen sich auf rund 93 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Das Zitat fasst zwei Sätze desselben Absatzes zusammen."
 ---
 
 ## Kontext
