@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »2026 sollen drei weitere Kitas an den Standorten Steinkühlerweg (Hörde), Oberbecker Straße (Scharnhorst) und Alte Ellinghauser Straße (Eving) mit insgesamt 368 Betreuungsplätzen eröffnet werden.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 20e8da6b2cc4c3e5; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle sagt „eröffnet werden“, nicht „geplant“."
 ---
 
 ## Kontext

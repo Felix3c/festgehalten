@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Bis Ende 2026 sollen alle Dortmunder Schulen dann über einen Breitbandanschluss verfügen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 6515312f5094c049; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext
