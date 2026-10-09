@@ -11,6 +11,8 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
 - Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
+- 09.10. 08:30: Startseite zeigt jetzt die Spalte „davon sonstige“ (ersetzt/verfallen/strittig), damit jede Zeile aufgeht
+  (Köln vorher 87 gesamt bei 29 + 55); lokal `2c61bfe`, 100 Tests grün, **nicht gepusht** (wartet auf „steht“).
 - 32 fällige offene Wetten (Stand 08.10.): 25 Zahl-Wetten, die meisten warten auf festgestellte
   Jahresabschlüsse oder Schlussrechnungen (15 davon ausdrücklich auf einen Jahresabschluss), und 7 Ja/Nein-Wetten.
   Die drei ersetzten Köln-Einträge (koeln-2025-001/-002/-004) zählen nicht mit; die frühere Zahl 35 enthielt sie.
