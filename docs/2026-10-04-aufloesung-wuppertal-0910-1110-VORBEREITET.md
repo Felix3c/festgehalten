@@ -83,3 +83,14 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   Stadt („Im Bau / KSP Werther Hof“): „Die Eröffnung findet am 8.10.2026 von 15:30 bis 17:30 h statt“, ebenfalls Ankündigung.
 - **Nicht aufgelöst.** Nach der Regel oben reicht eine Ankündigung nicht. Weiter prüfen bis ~15.10.; danach Frage an Felix
   (Vorschlag NEIN mangels Beleg, mit Vermerk).
+
+## Vorprüfung Fr 09.10.2026 12:25 (Dauerlauf, Guard Laufend), wuppertal-2026-002
+
+- Quelle (`…/august/brunnen-elberfeld.php`, HTTP 200, SHA-256 ced3be0f…3ed34): Satz „Die Fertigstellung des Brunnens ist
+  Anfang Oktober geplant.“ steht unverändert, Seitenfeld `changed` weiter 2026-08-07.
+- Liste „Aktuelle Meldungen“ und Oktober-Archiv (beide HTTP 200): 14 Oktober-Meldungen, keine zu „Brunnen“ oder
+  „Alte Freiheit“. ISG Poststraße (meldungen.php): heute keine Verbindung (Zeitüberschreitung), ungeklärt.
+- Websuche (zwei Suchen, 12:20): nichts nach August; neueste Treffer WZ/Rundschau/Radio Wuppertal/wuppertal-total vom
+  August mit „Anfang Oktober“. Rahmenterminplan Elberfeld (Stand 18.04.2026) unter der alten Adresse HTTP 404.
+- Richtung: kein Hinweis auf Fertigstellung, aber auch keine Verschiebung gemeldet. Am So 11.10. dieselben Stellen; ohne
+  öffentlichen Beleg „fertig/in Betrieb“ bis 10.10. gilt NEIN (Regel oben).
