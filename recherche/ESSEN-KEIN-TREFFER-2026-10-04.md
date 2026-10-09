@@ -33,7 +33,7 @@ Der Wortlaut steht auf der **Projektseite der Stadt**:
 
 - https://www.essen.de/leben/planen_bauen_und_wohnen/schulausbau/grundschule_moltkestrasse.de.html
   - live abgerufen 04.10.2026, SHA-256 `4b5954f93e0719620c5a21374873438d53bd9404247ae10e9aa8d42b2496d8c0`,
-    lokale Kopie `recherche/belege/2026-10-04-essen-grundschule-moltkestrasse-projektseite.html`
+    lokale Kopie nur auf Felix' Rechner, seit 09.10.2026 nicht mehr im Repo (Beleg: Wayback-Kopie + SHA-256) `recherche/belege/2026-10-04-essen-grundschule-moltkestrasse-projektseite.html`
   - Wayback: neu gespeichert **20261004041946**, ältere Kopie 20260308101315. Beide habe ich als `id_` abgerufen, und
     der Satz steht in beiden.
   - Wortlaut: „Spätestens zum Schuljahr 2027/2028 soll die Schule ihren Betrieb aufnehmen.“ Dazu der Abschnitt „Klage

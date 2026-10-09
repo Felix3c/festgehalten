@@ -26,7 +26,7 @@ späteren Meldung der Stadt:
 - **dortmund.de, „Jetzt anmelden: FABIDO eröffnet drei neue Kitas“**, `datePublished` **2025-07-07**,
   https://www.dortmund.de/newsroom/nachrichten-dortmund.de/jetzt-anmelden-fabido-eroeffnet-drei-neue-kitas.html
   - live abgerufen 04.10.2026, SHA-256 `d1c4a1fdad6c8f9da6767465bbd2232155bbbe6f58ed4630c5a21f565473a674`,
-    lokale Kopie `recherche/belege/2026-10-04-dortmund-fabido-drei-neue-kitas-2025-07-07.html`
+    lokale Kopie nur auf Felix' Rechner, seit 09.10.2026 nicht mehr im Repo (Beleg: Wayback-Kopie + SHA-256) `recherche/belege/2026-10-04-dortmund-fabido-drei-neue-kitas-2025-07-07.html`
   - Wayback neu gespeichert **20261004040434** (id_-Abruf HTTP 200, Stellen enthalten); ältere Kopie 20260511054905
   - Wortlaut: „Beide Kitas eröffnen zum 1. Oktober. In Scharnhorst eröffnet die Kita Buschei zum 1. Dezember.“ ·
     „Sie wird über zehn Gruppen und 200 Plätze verfügen. […] Die Betreuung startet zum 1. Oktober.“ ·

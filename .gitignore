@@ -9,3 +9,8 @@ __pycache__/
 # Lokales Log der Aufgabenplanung (Koeln-Fall)
 recherche/koeln-wartezeit/messen.log
 recherche/koeln-wartezeit/messwerte-laptop.csv
+
+# Rohkopien fremder Stadtseiten bleiben lokal (Beschluss Felix 09.10.2026, Frage 226 b): nur Wayback-Link + SHA-256 im Repo
+recherche/belege/2026-10-04-dortmund-fabido-drei-neue-kitas-2025-07-07.html
+recherche/belege/2026-10-04-essen-grundschule-moltkestrasse-projektseite.html
+recherche/belege/2026-10-04-stadt-koeln-kulturtermine-september-2026.html
