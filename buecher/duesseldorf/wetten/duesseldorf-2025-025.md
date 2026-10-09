@@ -25,6 +25,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Kosten Comenius-Neubau. duesseldorf.de-PM 'Düsseldorf macht Schule!' (17.07.2025, duesseldorf-macht-schule-17) nennt nur die geplanten 'rund 25 Millionen Euro', keine spätere Abrechnung; laut duesseldorf-2025-024 (2. Lauf) wurde der Neubau zudem erst nach dem 31.12.2025 bezogen, eine Endabrechnung liegt entsprechend noch nicht vor."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: Abrechnung/Fertigstellung Erweiterungsbau Comenius-Gymnasium (Pressedienst „Düsseldorf macht Schule”, Schul-Homepage, Entwurf Jahresabschluss 2025 Großprojekte), nichts Belastbares — nur Planzahl rund 25 Mio EUR und avisierte Gesamtfertigstellung Ende 2025."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Gesamtfertigstellung des Bauprojektes ist für Ende 2025 avisiert, die Kosten belaufen sich insgesamt auf rund 25 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle spricht von der Erweiterung des Comenius-Gymnasiums."
 ---
 
 ## Kontext

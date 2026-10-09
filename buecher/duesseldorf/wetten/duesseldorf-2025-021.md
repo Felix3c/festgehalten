@@ -25,6 +25,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Endkosten 1. Bauabschnitt Radleitroute 2. bund-duesseldorf.de (15.08.2025) und Facebook-Kanal Stadt Düsseldorf wiederholen nur die geschätzten 5,4 Mio. € (davon 3,8 Mio. € Fördermittel), keine spätere Abrechnung gefunden."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: Kostenfeststellung/Schlussrechnung 1. BA Radleitroute 2 (Projektseite duesseldorf.de/radverkehr, Entwurf Jahresabschluss 2025, Presse zu Hansaallee/Belsenplatz), nichts Belastbares — Abschnitt noch nicht abgeschlossen (Fertigstellung „in diesem Sommer” 2026 geplant), Jahresabschluss nennt nur 9,0 Mio EUR für alle Radleitrouten 2025."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die neue Radleitroute 2 wird auf rund 12 Kilometern von der westlichen Stadtgrenze zu Meerbusch in Heerdt bis zum Neusser Tor in Gerresheim verlaufen.« … »Die geschätzten Projektkosten für die Radleitroute 2 von der Hansaallee bis zum Luegplatz belaufen sich gegenwärtig auf rund 5,4 Millionen Euro.« … »Der Abschnitt Luegallee bis Luegplatz ist bereits fertiggestellt.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 710ac2ad2779174e; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle nennt die 5,4 Millionen für die Strecke Hansaallee bis Luegplatz, nicht ausdrücklich für den „1. Bauabschnitt“ (der laut Quelle an der Stadtgrenze zu Meerbusch beginnt). Der Satz zur Luegallee lautet heute „bereits fertiggestellt“; ob die Seite seit dem 11.07.2025 geändert wurde, ist ungeklärt."
 ---
 
 ## Kontext
