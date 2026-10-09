@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Diese soll gemeinsam mit dem Düsseldorfer Baulandmodell sicherstellen, dass ausreichend qualitätsvolle Wohnungen in allen Preissegmenten - mindestens 8.000 Wohneinheiten bis 2030 - geschaffen werden.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 78f3fba518590855; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). „Diese“ ist die Wohnungsbauoffensive Düsseldorf 2030."
 ---
 
 ## Kontext
