@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Für die Jahre 2025 bis 2028 sind Investitionsauszahlungen in Höhe von 1,482 Milliarden Euro geplant.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt cffd6c32be657b0a; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Der Satz ist ein Zitat von Stadtkämmerin Dorothée Schneider."
 ---
 
 ## Kontext
