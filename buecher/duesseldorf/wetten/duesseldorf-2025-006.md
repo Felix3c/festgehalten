@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschlu
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Entwurf Jahresabschluss 2025, Lagebericht S. 172: Investitionsauszahlungen „Schulträgeraufgaben zuzüglich Schulbau (395,5 Mio. Euro)”. Differenz −63,6 Mio EUR (−13,9 %), außerhalb ±10 %. Alternative Lesart nur Baumaßnahmen: 175,1 Mio EUR (S. 79) — siehe duesseldorf-2025-003. Entwurf/vorläufig."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Schwerpunkte liegen im Jahr 2025 beim Schulbau mit 459,1 Millionen Euro, dem ÖPNV mit 99 Millionen Euro (davon 53,9 Millionen Euro für die Stadtbahnlinie U81) sowie 27,1 Millionen Euro für Bauen und Wohnen …« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt a6eb5d367015aa5b; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext
