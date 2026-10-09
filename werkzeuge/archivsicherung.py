@@ -90,6 +90,12 @@ def text_aus_antwort(antwort: requests.Response) -> tuple[str, bool]:
         from pypdf import PdfReader
         leser = PdfReader(io.BytesIO(antwort.content))
         return " ".join((s.extract_text() or "") for s in leser.pages), True
+    if "wordprocessingml" in art or antwort.content[:2] == b"PK":
+        import zipfile
+        with zipfile.ZipFile(io.BytesIO(antwort.content)) as z:
+            xml = z.read("word/document.xml").decode("utf-8")
+        # Absatzende als Leerzeichen, sonst kleben Sätze zweier Absätze aneinander; Entities löst zitat_in_text auf.
+        return re.sub(r"<[^>]+>", "", xml.replace("</w:p>", " </w:p>")), False
     # Ohne charset im Kopf rät requests ISO-8859-1; dann wäre jedes Umlaut-Zitat „fehlt“.
     if "charset" not in art.lower():
         try:

@@ -153,6 +153,22 @@ def test_utf8_ohne_charset_wird_richtig_gelesen():
     assert a.text_aus_antwort(antwort) == ("Neues Café: Konsolidierungsmaßnahmen", False)
 
 
+def test_docx_wird_als_text_gelesen():
+    import io, zipfile
+    puffer = io.BytesIO()
+    with zipfile.ZipFile(puffer, "w") as z:
+        z.writestr("word/document.xml", '<w:document><w:body><w:p><w:r><w:t>we continue to expect</w:t></w:r>'
+                   '<w:r><w:t xml:space="preserve"> double-digit growth &amp; more.</w:t></w:r></w:p>'
+                   '<w:p><w:r><w:t>Next.</w:t></w:r></w:p></w:body></w:document>')
+    antwort = _Antwort(text="")
+    antwort.headers = {"content-type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"}
+    antwort.content = puffer.getvalue()
+    text, ist_pdf = a.text_aus_antwort(antwort)
+    assert not ist_pdf
+    assert a.zitat_in_text("we continue to expect double-digit growth & more.", text) == []
+    assert "more. Next." in " ".join(text.split())
+
+
 def test_offene_wetten_nur_live_waehlt_live_woertliche_ohne_tragende_kopie():
     wetten = [{"id": i} for i in ("a", "b", "c", "d")]
     tabelle = {"a": {"status": "kein_archiv", "zitat_live": "ja"},
