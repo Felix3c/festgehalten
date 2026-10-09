@@ -27,6 +27,17 @@ def test_auslassung_teilt_zitat_und_kurze_reste_fallen_weg():
     assert a.zitat_teile("Anfang 2027: Start der Taktverdichtung … auf 903 …") == ["anfang 2027 start der taktverdichtung"]
 
 
+def test_entities_und_abkuerzungs_tags_werden_aufgeloest():
+    html = ('September 2025 sollen die <abbr title="K&ouml;lner Verkehrs-Betriebe">KVB</abbr>-Linien 13 '
+            'und 18 auf der Br&uuml;cke wieder in Betrieb genommen werden.')
+    assert a.zitat_in_text("September 2025 sollen die KVB-Linien 13 und 18 auf der Brücke wieder in "
+                           "Betrieb genommen werden.", html) == []
+
+
+def test_weiches_trennzeichen_trennt_kein_wort():
+    assert a.norm_text("Entsorgungs&shy;wirtschaft und Stadt­kasse") == "entsorgungswirtschaft und stadtkasse"
+
+
 def test_umlaute_und_prozent_bleiben():
     assert a.norm_text("Grundsteuer-B: 11,0 % über Plan – Köln") == "grundsteuer b 11 0 % über plan köln"
 

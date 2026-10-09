@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import html
 import re
 import sys
 import time
@@ -35,7 +36,8 @@ PAUSE_SPEICHERN = 15  # Sekunden zwischen Save-Page-Now-Aufrufen (ohne Konto ged
 def norm_text(s: str) -> str:
     """Nur Buchstaben, Ziffern und %; Trennzeichen sind im Zitat Typografie, nicht Wortlaut."""
     s = re.sub(r"<[^>]+>", " ", str(s))
-    s = re.sub(r"&[#\w]+;", " ", s)
+    # Entities dekodieren statt löschen (sonst wird „Br&uuml;cke“ zu „br cke“); weiche Trennzeichen raus.
+    s = re.sub(r"[­​‌‍⁠]", "", html.unescape(s))
     s = re.sub(r"[^\w%]+|_", " ", s)
     return re.sub(r"\s+", " ", s).strip().lower()
 
