@@ -231,11 +231,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--tabelle", type=Path, default=Path("recherche/archiv-quellen.csv"))
     p.add_argument("--speichern", action="store_true", help="fehlende Kopien bei Save Page Now anstoßen")
     p.add_argument("--nur-live", action="store_true", help="nur Wetten mit zitat_live=ja aus der Tabelle")
+    p.add_argument("--nur-neue", action="store_true", help="nur Wetten ohne Befund in der Tabelle (oder mit Abruffehler)")
     p.add_argument("--max", type=int, default=0, help="höchstens N Wetten bearbeiten (0 = alle)")
     a = p.parse_args(argv)
 
     tabelle = tabelle_lesen(a.tabelle)
-    offen = offene_wetten(wetten_sammeln(a.ordner), tabelle, a.nur_live)
+    offen = offene_wetten(wetten_sammeln(a.ordner), tabelle, a.nur_live, a.nur_neue)
     if a.max:
         offen = offen[: a.max]
     sitzung = requests.Session()

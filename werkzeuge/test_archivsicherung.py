@@ -152,6 +152,14 @@ def test_offene_wetten_nur_live_waehlt_live_woertliche_ohne_tragende_kopie():
     assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=False)] == ["a", "b", "d"]
 
 
+def test_offene_wetten_nur_neue_waehlt_ungepruefte_und_fehler():
+    wetten = [{"id": i} for i in ("a", "b", "c", "d")]
+    tabelle = {"a": {"status": "zitat_fehlt", "zitat_live": "ja"},
+               "b": {"status": "fehler", "zitat_live": ""},
+               "c": {"status": "ok", "zitat_live": ""}}
+    assert [w["id"] for w in a.offene_wetten(wetten, tabelle, nur_live=False, nur_neue=True)] == ["b", "d"]
+
+
 def test_fehler_ueberschreibt_vorhandenen_befund_nicht():
     alt = {"id": "x-1", "status": "zitat_fehlt", "fehlt": "wort"}
     neu = {"id": "x-1", "status": "fehler", "fehlt": "ValueError"}
