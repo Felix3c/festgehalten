@@ -33,6 +33,14 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
   nicht gleich NEIN setzen, sondern bis ~21.10. warten (Nachbericht, Fotos der Bezirksbürgermeisterin, Ratsinformation
   der Bezirksvertretung Jöllenbeck). Danach Frage an Felix (Vorschlag: NEIN mangels Beleg, mit Vermerk; das war in der
   Begründung des Computers eingepreist).
+- **Nachtrag 09.10.2026 12:50 (Dauerlauf):** `node/37317` erneut abgerufen (HTTP 200). Der Meldungstext ist wortgleich mit
+  der lokalen Kopie vom 05.10.; anders ist nur die Seitenleiste mit den neuesten Pressemeldungen, darunter keine zu
+  Pfarrholz/Tiesloh. Die Projektseite `www.bielefeld.de/pfarrholz-tiesloh` (HTTP 200) nennt weiter „Dienstag, 13. Oktober
+  2026, von 17 bis etwa 18.30 Uhr“, Treffpunkt Am Pfarrholz nahe Weinbrennerstraße, und den Hinweis, eine Verschiebung
+  wegen starken Regens werde „kurzfristig hier auf der Webseite“ mitgeteilt; ein solcher Vermerk steht dort nicht.
+  Kopie neu: `recherche/belege/2026-10-09-bielefeld-pfarrholz-tiesloh.html`, SHA-256 8b66dbda…b408d. Damit ist am 14.10.
+  zuerst diese Seite gegen die Kopie zu halten (ein Verschiebungsvermerk wäre NEIN). Online-Beteiligung läuft laut Seite
+  bis So 18.10. Websuche „Am Pfarrholz Tiesloh Infostand Bielefeld“: keine Presse dazu. Prognosen bleiben unverändert.
 
 ## hamm-2026-001: Ratsbeschluss ISEK „Zukunftsplan Innenstadt 2040“ am 13.10.2026
 
