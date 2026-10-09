@@ -199,9 +199,13 @@ def zusammenfuehren(alt: dict | None, neu: dict) -> dict:
     return neu
 
 
-def offene_wetten(wetten: list[dict], tabelle: dict[str, dict], nur_live: bool) -> list[dict]:
-    """Noch nicht tragende Wetten; mit nur_live nur die, deren Zitat zuletzt live wörtlich stand."""
+def offene_wetten(wetten: list[dict], tabelle: dict[str, dict], nur_live: bool,
+                  nur_neue: bool = False) -> list[dict]:
+    """Noch nicht tragende Wetten; mit nur_live nur die, deren Zitat zuletzt live wörtlich stand;
+    mit nur_neue nur die, die noch keinen Befund haben (fehlen oder Abruffehler)."""
     offen = [w for w in wetten if tabelle.get(w["id"], {}).get("status") not in FERTIG]
+    if nur_neue:
+        offen = [w for w in offen if tabelle.get(w["id"], {}).get("status") in (None, "", "fehler")]
     if nur_live:
         offen = [w for w in offen if tabelle.get(w["id"], {}).get("zitat_live") == "ja"]
     return offen
