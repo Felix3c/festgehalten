@@ -23,7 +23,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Während der Haushaltsplan 2025 in der Mittelfristplanung für das Jahr 2026 noch einen Jahresfehlbetrag in Höhe von -324,3 Millionen Euro vorgesehen hat, wird sich dieser auf -357,8 Millionen Euro erhöhen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt e46ce17d5ea50c4e; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

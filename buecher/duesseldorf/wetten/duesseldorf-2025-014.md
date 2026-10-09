@@ -23,7 +23,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Schwerpunkte liegen im Jahr 2026 beim Schulbau mit 257,4 Millionen Euro, dem ÖPNV mit 57,3 Millionen Euro (davon 34,2 Millionen Euro für die Stadtbahnlinie U81) sowie 34,8 Millionen Euro für Bauen und Wohnen (…).« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt e46ce17d5ea50c4e; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Das Zitat fasst den Satz zusammen."
 ---
 
 ## Kontext
