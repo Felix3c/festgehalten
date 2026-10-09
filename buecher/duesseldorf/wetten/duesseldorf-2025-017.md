@@ -23,6 +23,8 @@ vermerke:
     text: "keine Auflösungsquelle gefunden; gesucht: Zahl der 2024 in Düsseldorf genehmigten Wohnungen. Destatis-Pressemitteilung (Feb. 2025) nennt nur einen bundesweiten Rückgang (-16,8 %), keine Düsseldorf-spezifische Zahl; auch RP Online und die Stadtseite selbst liefern keine 2024er-Jahreszahl für genehmigte Wohnungen."
   - am: 2026-08-28
     text: "Aufgelöst (2. Lauf) für den Halter; Beleg: duesseldorf.de-Pressemitteilung vom 08.09.2025 ('Seit 2024 Baugenehmigungen für 6000 Wohnungen erteilt'): 'So wurden 2024 ca. 3.000 Wohnungen genehmigt und im Jahr 2025 wurden bereits bis September Baugenehmigungen für ca. 3.000 Wohnungen erteilt.'"
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »In dem Zusammenhang sei erwähnt, dass die Stadt im Jahr 2024 auf rund 3.000 genehmigte Wohnungen kommen wird, die dafür Voraussetzung sind.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 87d62bbce59512f0; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

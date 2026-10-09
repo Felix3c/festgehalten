@@ -27,6 +27,8 @@ vermerke:
     text: "3. Lauf 30.08.2026: gesucht: Baumbilanz 2024/25 (Pressedienst 19.01.2026 zur AÖE-Sitzung, BUND „Vorläufige Baumbilanz 2024/25”, t-online 27.01.2026, Open Data), nichts Belastbares — Stadt nennt nur 1.907 Fällungen und „rund 1.500 Bäume jährlich” als Niveau; laut BUND wird die Bilanz 2024/25 den Gremien erst im Frühjahr 2026 mitgeteilt, Vorlage nur im RIS (nicht erreichbar)."
   - am: 2026-09-02
     text: "Aufgelöst durch Claude für den Halter (4. Lauf 02.09.2026); Beleg: Informationsvorlage AÖE/004/2026 „Baumbilanz 2025” des Garten-, Friedhofs- und Forstamts (Ausschuss AÖE 19.01.2026): „In der Pflanzsaison 2024/2025 konnten insgesamt 1.396 Nach- und Neupflanzungen von Anlagen- und Straßenbäumen auf Düsseldorfer Stadtgebiet realisiert werden. Die Prognose von jährlich 1.500 Neu- und Nachpflanzungen wird dadurch leicht, um 104 Bäume, unterschritten.” Differenz −104 (−6,9 %), innerhalb Toleranz. Vorbehalte: PDF als Kopie beim BUND Düsseldorf abgerufen (BUND-Meldung 12.01.2026 verlinkt sie als öffentliche Verwaltungsvorlage), ris.duesseldorf.de weiterhin per DNS nicht erreichbar; städtischer Zählzeitraum der Pflanzsaison ist 01.10.2024 bis 30.09.2025; Ddorf-Aktuell 14.04.2025 („rund 1.500 bis Ende März”) war eine gerundete Zwischenmeldung, durch die Vorlage überholt."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Bis ins kommende Frühjahr bringt die Stadt voraussichtlich 1.500 Bäume in die Erde. Darunter sind sowohl Nach- als auch Neupflanzungen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt d3a884d5b2731a50; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle zählt Nach- und Neupflanzungen zusammen."
 ---
 
 ## Kontext
