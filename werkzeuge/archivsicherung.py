@@ -21,6 +21,7 @@ import html
 import re
 import sys
 import time
+import unicodedata
 from datetime import date
 from pathlib import Path
 
@@ -38,6 +39,8 @@ def norm_text(s: str) -> str:
     s = re.sub(r"<[^>]+>", " ", str(s))
     # Entities dekodieren statt löschen (sonst wird „Br&uuml;cke“ zu „br cke“); weiche Trennzeichen raus.
     s = re.sub(r"[­​‌‍⁠]", "", html.unescape(s))
+    # Zerlegte Umlaute (u + U+0308) zusammensetzen, sonst wird „für“ zu „fu r“.
+    s = unicodedata.normalize("NFC", s)
     s = re.sub(r"[^\w%]+|_", " ", s)
     return re.sub(r"\s+", " ", s).strip().lower()
 

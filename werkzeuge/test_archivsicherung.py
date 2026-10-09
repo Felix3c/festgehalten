@@ -38,6 +38,11 @@ def test_weiches_trennzeichen_trennt_kein_wort():
     assert a.norm_text("Entsorgungs&shy;wirtschaft und Stadt­kasse") == "entsorgungswirtschaft und stadtkasse"
 
 
+def test_zerlegte_umlaute_gelten_als_wortgleich():
+    # aachen.de schreibt „für“ als u + U+0308 (NFD); ohne NFC wird daraus „fu r“.
+    assert a.zitat_in_text("bis Ende 2028 für die Menschen umgestaltet", "bis Ende 2028 für die Menschen umgestaltet.") == []
+
+
 def test_umlaute_und_prozent_bleiben():
     assert a.norm_text("Grundsteuer-B: 11,0 % über Plan – Köln") == "grundsteuer b 11 0 % über plan köln"
 
