@@ -33,7 +33,7 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
   nicht gleich NEIN setzen, sondern bis ~21.10. warten (Nachbericht, Fotos der Bezirksbürgermeisterin, Ratsinformation
   der Bezirksvertretung Jöllenbeck). Danach Frage an Felix (Vorschlag: NEIN mangels Beleg, mit Vermerk; das war in der
   Begründung des Computers eingepreist).
-- **Nachtrag 09.10.2026 12:50 (Dauerlauf):** `node/37317` erneut abgerufen (HTTP 200). Der Meldungstext ist wortgleich mit
+- **Nachtrag 09.10.2026 12:37 (Dauerlauf):** `node/37317` erneut abgerufen (HTTP 200). Der Meldungstext ist wortgleich mit
   der lokalen Kopie vom 05.10.; anders ist nur die Seitenleiste mit den neuesten Pressemeldungen, darunter keine zu
   Pfarrholz/Tiesloh. Die Projektseite `www.bielefeld.de/pfarrholz-tiesloh` (HTTP 200) nennt weiter „Dienstag, 13. Oktober
   2026, von 17 bis etwa 18.30 Uhr“, Treffpunkt Am Pfarrholz nahe Weinbrennerstraße, und den Hinweis, eine Verschiebung
