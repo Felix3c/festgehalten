@@ -62,6 +62,11 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
   (SHA-256 1776e40cdff775d6c7a39df42c56e198304953958cf8f8e2f4808775f354928d) und `2026-10-08-BV-183-26.pdf`
   (SHA-256 bbac3492982d0d6a2238d740ced656ccc4301d85809b8ed47ede0205c83d0e0d). Kein Wayback (Seiten-URL trägt ein
   Sitzungs-Token). Richtung: JA wahrscheinlich, gekippt nur durch Vertagung/Absetzung.
+- **Nachtrag 09.10.2026 13:11 (Dauerlauf): Vorberatung 07.10. hat empfohlen.** Vorgang BV-183/26 im Browser
+  (Chrome-Werkzeug, WAF lief ohne Zutun durch): Beratungsfolge „Mi, 07.10.2026 15:00 Uhr, ASWM, AKUN und BV Mitte:
+  Mehrheitlich empfohlen, 34 Ja-Stimme(n), 3 Gegenstimme(n), 2 Stimmenthaltung(en)“; Hauptausschuss 12.10. und Rat 13.10.
+  noch ohne Eintrag. Rohkopie `~/wettbuch-notizen/hamm-belege/2026-10-09-vorgang-BV-183-26.html`
+  (SHA-256 2b4caf350f0487344177cd589400465c8dac5d453bb2c22277efa5ad2f3052e3). Richtung JA bestärkt.
 - **Am Mi 14.10. zusätzlich:** im Vorgang BV-183/26 die Spalte „Beschluss“ für 13.10. ansehen (Chrome-Werkzeug);
   vorher am 12.10. abends, ob der Hauptausschuss vertagt hat.
 - **Am Mi 14.10. prüfen:** Meldung der Stadt (hamm.de/aktuelles), Westfälischer Anzeiger (wa.de), Beschlussauszug im
@@ -84,6 +89,9 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
     (SHA-256 f494f00f3e82c709ddc7ff2cc9dbcdf4528a46b8cab5142888b8ae7947f0eb69) und
     `recherche/belege/2026-10-08-essen-vorlage-1577-2026-2.pdf`
     (SHA-256 a4122d29c6c65410de451ffd097d6711a24c9982c4d852dcdfc6f036049c8f84). Unversioniert.
+- **Nachtrag 09.10.2026 13:05 (Dauerlauf):** OParl `meeting/33118` erneut abgerufen (HTTP 200): Sitzung weiter
+  Mi 14.10.2026 15:00, nicht abgesagt, `modified` unverändert 07.10. 14:17; TOP 7 „Bericht über die Prüfung des
+  Jahresabschlusses … zum 31.12.2025“ und TOP 8 „Verwendung des Jahresüberschusses 2025“ stehen, noch ohne Ergebnis.
 - **Am Do 15.10. prüfen:** Beschluss zu TOP 7 (Pressemeldung essen.de oder OParl-Beschlusstext der Sitzung). Nur wenn der Rat
   festgestellt hat, auflösen. Vertagt der Rat, bleibt die Wette offen (Verfall erst 31.12.2028).
 - **Offen: welche Zahl zählt (Frage 183 an Felix).** Die Wette fragt nach „dem Überschuss laut Jahresabschluss“. Zwei Zahlen
