@@ -219,7 +219,8 @@ def _uebersicht_zeile_html(b: dict) -> str:
     institutionen = ", ".join(_e(i) for i in b.get("institutionen", []))
     return (f'<tr><td><a href="{_e(b["ordner"])}/index.html">{_e(b["titel"])}</a></td>'
             f"<td>{institutionen}</td><td class=zahl>{b['wetten']}</td>"
-            f"<td class=zahl>{b['aufgeloest']}</td><td class=zahl>{b['offen']}</td></tr>")
+            f"<td class=zahl>{b['aufgeloest']}</td><td class=zahl>{b['offen']}</td>"
+            f"<td class=zahl>{b.get('sonstige', 0)}</td></tr>")
 
 
 def _wurzelseite(titel: str, koerper: str, tiefe: int, build_zeit: str,
@@ -259,9 +260,10 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str,
     tabelle = ('<div class="tabelle-wrap"><table><thead><tr>'
                "<th>Buch</th><th>Institution(en)</th><th class=zahl>Wetten gesamt</th>"
                "<th class=zahl>davon aufgelöst</th><th class=zahl>davon offen</th>"
-               "</tr></thead><tbody>"
+               "<th class=zahl>davon sonstige</th></tr></thead><tbody>"
                + "".join(_uebersicht_zeile_html(b) for b in sortiert)
-               + "</tbody></table></div>")
+               + "</tbody></table></div>"
+               '<p class="mute">Sonstige: ersetzte Einträge (FORMAT.md §1.3.3), verfallen oder strittig.</p>')
     koerper = ("<h1>festgehalten</h1>"
                "<p>Institutionen an ihren eigenen Prognosen messen. Jedes Buch ist ein Ordner; "
                "das Format ist offen — FORMAT.md.</p>" + tabelle + "\n"
@@ -270,7 +272,7 @@ def uebersicht_schreiben(buecher: list[dict], ausgabe: Path, build_zeit: str,
     schreib("feed.xml", feed.feed_xml("festgehalten · neu aufgelöst", feed_eintraege or [], build_zeit, url))
 
     daten = [{"ordner": b["ordner"], "titel": b["titel"], "wetten": b["wetten"],
-              "aufgeloest": b["aufgeloest"], "offen": b["offen"]} for b in sortiert]
+              "aufgeloest": b["aufgeloest"], "offen": b["offen"], "sonstige": b.get("sonstige", 0)} for b in sortiert]
     schreib("alle.json", json.dumps(daten, ensure_ascii=False, indent=2))
     return geschrieben
 

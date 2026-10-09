@@ -204,6 +204,8 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
             "wetten": len(wetten),
             "aufgeloest": aufgeloest,
             "offen": offen,
+            # ersetzt (FORMAT.md §1.3.3), verfallen, strittig: zählt in "wetten", sonst nirgends
+            "sonstige": len(wetten) - aufgeloest - offen,
         })
 
     seiten.uebersicht_schreiben(uebersicht, ausgabe, build_zeit, feed_eintraege=feed_eintraege, url=url,

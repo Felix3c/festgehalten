@@ -145,11 +145,31 @@ def test_alle_baut_mehrere_buecher_und_uebersicht(buecher_ordner: Path, tmp_path
     assert len(daten) == 2
     nach_ordner = {d["ordner"]: d for d in daten}
     assert nach_ordner["erstes"] == {
-        "ordner": "erstes", "titel": "Erstes Buch", "wetten": 2, "aufgeloest": 1, "offen": 1,
+        "ordner": "erstes", "titel": "Erstes Buch", "wetten": 2, "aufgeloest": 1, "offen": 1, "sonstige": 0,
     }
     assert nach_ordner["zweites"] == {
-        "ordner": "zweites", "titel": "Zweites Buch", "wetten": 1, "aufgeloest": 0, "offen": 1,
+        "ordner": "zweites", "titel": "Zweites Buch", "wetten": 1, "aufgeloest": 0, "offen": 1, "sonstige": 0,
     }
+
+
+def test_uebersicht_zeile_geht_auf_mit_ersetztem_eintrag(buecher_ordner: Path, tmp_path: Path):
+    # H22 (09.10.2026): Köln zeigte 87 gesamt, aber 29 aufgelöst + 55 offen = 84, weil drei
+    # ersetzte Einträge (FORMAT.md §1.3.3) in keiner der beiden Spalten zählten.
+    ersetzt = WETTE_A_OFFEN.replace("id: a-2025-001", "id: a-2025-003").replace(
+        "\naufgeloest_am: null", "\nersetzt_durch: a-2025-001\naufgeloest_am: null")
+    (buecher_ordner / "erstes" / "wetten" / "a-2025-003.md").write_text(ersetzt, encoding="utf-8")
+    ausgabe = tmp_path / "site"
+
+    assert cli.main(["alle", str(buecher_ordner), str(ausgabe)]) == 0
+
+    daten = {d["ordner"]: d for d in json.loads((ausgabe / "alle.json").read_text(encoding="utf-8"))}
+    erstes = daten["erstes"]
+    assert (erstes["wetten"], erstes["aufgeloest"], erstes["offen"], erstes["sonstige"]) == (3, 1, 1, 1)
+    for d in daten.values():
+        assert d["aufgeloest"] + d["offen"] + d["sonstige"] == d["wetten"]
+    uebersicht = (ausgabe / "index.html").read_text(encoding="utf-8")
+    assert "davon sonstige" in uebersicht
+    assert "ersetzt" in uebersicht
 
 
 def test_alle_bricht_bei_fehler_in_einem_buch_komplett_ab(buecher_ordner: Path, tmp_path: Path, capsys):
