@@ -21,6 +21,8 @@ vermerke:
     text: "keine unabhängige Auflösungsquelle gefunden; gesucht: Bestätigung, dass das Freibad Benrath tatsächlich am 30.05.2025 geöffnet hat. Nur die Ankündigung selbst (ddorf-aktuell.de, 28.05.2025, bereits als quelle hinterlegt) auffindbar, keine nachträgliche Bestätigung oder Meldung einer Verschiebung."
   - am: 2026-08-28
     text: "Aufgelöst (2. Lauf) für den Halter; Beleg: Antenne Düsseldorf (30.05.2025, 08:46 Uhr, unabhängig von der Stadt-Ankündigung): 'Das Freibad Benrath in Düsseldorf hat ab sofort wieder geöffnet.'"
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Am Freitag (30.5.) öffnet das Benrather Freibad seine Tore und die Saison für Freiluftschwimmer*innen beginnt.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt c765076b65b379a2; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansich
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Pressedienst Stadt Düsseldorf 27.04.2026: Defizit 273,5 Mio EUR, „übersteigt der Verlust die ursprüngliche Planung um 58,9 Millionen Euro”. Differenz −59,0 Mio EUR (−27,5 %), außerhalb ±10 %. Entwurf/vorläufig, nicht vom Rat festgestellt; laut Übersetzung dieser Wette Prüfgrundlage."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Während der Haushaltsplanentwurf für das Jahr 2025 noch einen Jahresfehlbetrag in Höhe von -261,8 Millionen Euro vorgesehen hat, konnte dieser Fehlbetrag auf -214,5 Millionen Euro verbessert werden.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 79e5f5d9f60cc3ae; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

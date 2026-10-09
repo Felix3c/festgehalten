@@ -1,10 +1,12 @@
 """Regeln aus FORMAT.md §1–2 prüfen. Wirft nicht, sammelt Fehler."""
 from __future__ import annotations
 
+import csv
 import re
 from dataclasses import dataclass
 from datetime import date
 from numbers import Real
+from pathlib import Path
 
 ID_MUSTER = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 MAIL_MUSTER = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -161,6 +163,30 @@ def _meta_pruefen(meta: dict) -> list[Fehler]:
     if "sammelbuch" in meta and not isinstance(meta["sammelbuch"], bool):
         f.append(Fehler("BUCH.md", "sammelbuch", "muss true oder false sein"))
     return f
+
+
+VERMERK_WORTLAUT = "Zitat nicht wörtlich"
+
+
+def nicht_woertlich_lesen(pfad: Path) -> set[str]:
+    """IDs mit Status zitat_fehlt aus der Prüfliste von werkzeuge/archivsicherung.py."""
+    with pfad.open(encoding="utf-8", newline="") as f:
+        return {z["id"] for z in csv.DictReader(f) if z.get("status") == "zitat_fehlt"}
+
+
+def zitat_warnungen(buch: dict, nicht_woertlich: set[str]) -> list[Fehler]:
+    """Warnt, wenn ein gelistetes Zitat noch keinen Wortlaut-Vermerk trägt (Frage 61, 04.10.2026).
+    Bricht nichts ab; FORMAT.md §1 verlangt das Zitat wörtlich, der Vermerk legt den Wortlaut offen."""
+    w: list[Fehler] = []
+    for wette in buch["wetten"]:
+        if str(wette.get("id")) not in nicht_woertlich:
+            continue
+        vermerke = wette.get("vermerke") or []
+        if any(isinstance(v, dict) and str(v.get("text", "")).startswith(VERMERK_WORTLAUT) for v in vermerke):
+            continue
+        w.append(Fehler(wette.get("_datei", "?"), "zitat",
+                        "nicht wörtlich in Quelle oder Archiv, Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…«“ fehlt"))
+    return w
 
 
 def buch_pruefen(buch: dict) -> list[Fehler]:

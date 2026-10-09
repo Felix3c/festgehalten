@@ -21,6 +21,8 @@ vermerke:
     text: "keine Auflösungsquelle gefunden; gesucht: Bestätigung der Fertigstellung des Neubaus am Comenius-Gymnasium Düsseldorf zum 31.12.2025. Presseauswertung findet nur ältere/unpassende Comenius-Treffer (Handyverbot, ISR International School an anderem Standort), keine aktuelle Fertigstellungsmeldung."
   - am: 2026-08-28
     text: "Aufgelöst (2. Lauf) für den Halter; Beleg: Antenne Düsseldorf (09.03.2026, 'ISR übernimmt altes Gymnasium'): 'Das Gebäude an der Comeniusstraße steht seit Ende letzten Jahres leer' — die alte Schule wurde erst nach dem 31.12.2025 vollständig geräumt/verlassen, der Neubau war zum Stichtag noch nicht bezogen; als Nein gewertet (Teilerfüllung, §2.2)."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Gesamtfertigstellung des Bauprojektes ist für Ende 2025 avisiert, die Kosten belaufen sich insgesamt auf rund 25 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle spricht von Sanierung des Bestands und Erweiterungsbau, nicht von einem Neubau."
 ---
 
 ## Kontext

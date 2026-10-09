@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschlu
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Entwurf Jahresabschluss 2025, Lagebericht S. 172: Investitionsauszahlungen „Verkehrsflächen und -anlagen, ÖPNV (86,6 Mio. Euro, Vorjahr 68,4 Mio. Euro)”; nur Baumaßnahmen 81,6 Mio EUR (S. 79). Differenz −12,4 Mio EUR (−12,5 %), außerhalb ±10 %. Hinweis: Produktbereich enthält auch Straßen/Radwege; ein reiner ÖPNV-Wert ist im Abschluss nicht ausgewiesen. Entwurf/vorläufig."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Schwerpunkte liegen im Jahr 2025 beim Schulbau mit 459,1 Millionen Euro, dem ÖPNV mit 99 Millionen Euro (davon 53,9 Millionen Euro für die Stadtbahnlinie U81) sowie 27,1 Millionen Euro für Bauen und Wohnen …« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt a6eb5d367015aa5b; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

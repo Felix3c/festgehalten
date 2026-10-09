@@ -25,6 +25,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Kosten DSW21-Dieselbusbeschaffung. Gleiche Suchlage wie dortmund-2025-013 — keine Zahlen gefunden."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: Kosten Dieselbus-Beschaffung DSW21 (wie -013, zusätzlich Geschäftsbericht 2025), nichts Belastbares — 55 Mio EUR war eine Vergleichsrechnung, keine Beschaffungssumme publiziert."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Daher wird in dem Artikel kalkuliert, dass die bisherigen E-Bus-Pläne mit knapp 200 statt 155 Fahrzeugen rund 140 Millionen Euro kosten würde – eine reine Diesel-Neubeschaffung von 155 Bussen aber nur 55 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 6fee9d7ff8c51d14; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die 155 Busse und 55 Millionen sind laut Quelle eine Vergleichsrechnung aus einem Bericht der Ruhr Nachrichten, kein beschlossener Plan; geplant ist laut Quelle, „zu rund einem Drittel auch künftig Dieselbusse“ zu bestellen."
 ---
 
 ## Kontext

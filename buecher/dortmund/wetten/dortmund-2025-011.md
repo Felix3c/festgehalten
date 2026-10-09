@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Sollten die angekündigten Bauvorhaben vollständig umgesetzt werden, kann Dortmund eine Glasfaserquote von 98 Prozent erreichen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 6515312f5094c049; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle knüpft die 98 Prozent an die Bedingung, dass die angekündigten Bauvorhaben vollständig umgesetzt werden."
 ---
 
 ## Kontext

@@ -25,6 +25,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: tatsächliche Stückzahl DSW21-Dieselbusbeschaffung. Radio 91.2 (03.08.2026, 'Weniger Geld für neue E-Busse der DSW21') und DSW21-Geschäftsbericht 2025 (22.04.2026) nennen nur die Zahl bereits fahrender E-Busse (30), keine Diesel-Beschaffungszahl."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: Stückzahl Dieselbus-Beschaffung DSW21 (DSW21-Stellungnahme wirindortmund Okt. 2024, t-online 18.10.2024, radio912.de 03.08.2026, DSW21-Bilanz 2025), nichts Belastbares — 155 war der Bestand, DSW21 nennt nur „durchschnittlich rund 12 Busse pro Jahr, davon vier Diesel” als Plan."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Daher wird in dem Artikel kalkuliert, dass die bisherigen E-Bus-Pläne mit knapp 200 statt 155 Fahrzeugen rund 140 Millionen Euro kosten würde – eine reine Diesel-Neubeschaffung von 155 Bussen aber nur 55 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt dfb8c7f22b1a3bed; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die 155 Busse und 55 Millionen sind laut Quelle eine Vergleichsrechnung aus einem Bericht der Ruhr Nachrichten, kein beschlossener Plan; geplant ist laut Quelle, „zu rund einem Drittel auch künftig Dieselbusse“ zu bestellen."
 ---
 
 ## Kontext

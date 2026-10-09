@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Nach Angaben der Stadt werden allein für das Schuljahr 2027/2028 insgesamt 19 zusätzliche Schulzüge an Gymnasien und Gesamtschulen benötigt.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt a97cd403e3689540; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

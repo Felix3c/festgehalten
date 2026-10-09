@@ -14,11 +14,13 @@ def abstand(wert: float, ausgang: float) -> float:
 
 
 def _status(w: dict) -> str:
+    # FORMAT.md §1.3.3: ein ersetzter Eintrag bleibt stehen, wird aber nicht mehr
+    # aufgelöst und nicht gewertet, auch wenn er vor dem Ersetzen schon einen Ausgang hatte.
+    if w.get("ersetzt_durch"):
+        return "ersetzt"
     a = w.get("ausgang")
     if a is None:
-        # FORMAT.md §1.3.3: ein ersetzter Eintrag bleibt stehen, wird aber nicht mehr
-        # aufgelöst. Er ist deshalb nicht "offen", sondern "ersetzt".
-        return "ersetzt" if w.get("ersetzt_durch") else "offen"
+        return "offen"
     if a in NICHT_AUFGELOEST:
         return a
     return "aufgeloest"

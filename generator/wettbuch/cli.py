@@ -1,8 +1,9 @@
 """Einstieg (als Befehl `festgehalten` oder `python -m wettbuch`):
     festgehalten neu   <buch-ordner> [--stadt "Name"]
-    festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]
+    festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen] [--zitate <archiv-quellen.csv>]
     festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name] [--url https://…/]
-                       [--seiten <ordner>]   (freie Seiten wie Impressum, verlinkt in jeder Fußzeile)"""
+                       [--seiten <ordner>]   (freie Seiten wie Impressum, verlinkt in jeder Fußzeile)
+                       [--zitate <archiv-quellen.csv>]   (warnt bei nicht wörtlichen Zitaten ohne Vermerk)"""
 from __future__ import annotations
 
 import subprocess
@@ -16,7 +17,7 @@ HILFE = (
     "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
     "        festgehalten bauen <buch-ordner> <ausgabe-ordner> [--pruefen]\n"
     "        festgehalten alle  <buecher-ordner> <ausgabe-ordner> [--pruefen] [--repo owner/name] [--url https://…/]\n"
-    "                           [--seiten <ordner>]\n"
+    "                           [--seiten <ordner>] [--zitate <archiv-quellen.csv>]\n"
     "(python -m wettbuch … geht ebenso)"
 )
 
@@ -34,7 +35,17 @@ def _neu(ziel: Path, stadt: str | None) -> int:
     return 0
 
 
-def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool, url: str | None = None) -> int:
+def _warnungen_zeigen(zeilen: list[str]) -> None:
+    for z in zeilen:
+        print(f"Warnung: {z}", file=sys.stderr)
+    if zeilen:
+        n = len(zeilen)
+        print(f"{n} Warnung{'en' if n != 1 else ''} (Zitat nicht wörtlich, Vermerk fehlt; Bau läuft weiter).",
+              file=sys.stderr)
+
+
+def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool, url: str | None = None,
+           nicht_woertlich: set[str] | None = None) -> int:
     try:
         buch = lesen.buch_lesen(buch_ordner)
     except lesen.LeseFehler as e:
@@ -48,6 +59,10 @@ def _bauen(buch_ordner: Path, ausgabe: Path, nur_pruefen: bool, url: str | None 
             print(f"{f.datei}: {f.feld} — {f.text}", file=sys.stderr)
         print(f"{len(fehler)} Fehler, nichts geschrieben.", file=sys.stderr)
         return 1
+
+    if nicht_woertlich is not None:
+        _warnungen_zeigen([f"{w.datei}: {w.feld} — {w.text}"
+                           for w in pruefen.zitat_warnungen(buch, nicht_woertlich)])
 
     n = len(buch["wetten"])
     plural = "n" if n != 1 else ""
@@ -128,13 +143,15 @@ def _bucheintrag(name: str, meta: dict, repo: str | None, zweig: str) -> dict:
 
 
 def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | None,
-          url: str | None = None, seiten_ordner: Path | None = None) -> int:
+          url: str | None = None, seiten_ordner: Path | None = None,
+          nicht_woertlich: set[str] | None = None) -> int:
     unterordner = _unterbuecher(buecher_ordner)
     if not unterordner:
         print(f"{buecher_ordner}: keine Unterordner mit BUCH.md gefunden", file=sys.stderr)
         return 1
 
     fehler_gesamt: list[str] = []
+    warnungen: list[str] = []
     gute: list[tuple[str, dict, dict]] = []
 
     for pfad in unterordner:
@@ -150,6 +167,10 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
             for f in fehler:
                 fehler_gesamt.append(f"{name}/{f.datei}: {f.feld} — {f.text}")
             continue
+
+        if nicht_woertlich is not None:
+            warnungen += [f"{name}/{w.datei}: {w.feld} — {w.text}"
+                          for w in pruefen.zitat_warnungen(buch, nicht_woertlich)]
 
         bewertet = bewerten.buch_bewerten(buch)
         kollision = _slug_kollision(bewertet)
@@ -176,6 +197,7 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
         print(f"{len(fehler_gesamt)} Fehler, nichts geschrieben.", file=sys.stderr)
         return 1
 
+    _warnungen_zeigen(warnungen)
     gesamt_wetten = sum(len(bewertet["wetten"]) for _, _, bewertet in gute)
     plural = "n" if gesamt_wetten != 1 else ""
     buch_wort = "Buch" if len(gute) == 1 else "Bücher"
@@ -236,6 +258,19 @@ def main(argv: list[str] | None = None) -> int:
         if url and not url.endswith("/"):
             url += "/"
 
+    nicht_woertlich = None
+    if "--zitate" in argv:
+        i = argv.index("--zitate")
+        if i + 1 >= len(argv):
+            print(HILFE, file=sys.stderr)
+            return 2
+        try:
+            nicht_woertlich = pruefen.nicht_woertlich_lesen(Path(argv[i + 1]))
+        except OSError as e:
+            print(f"--zitate: {e}", file=sys.stderr)
+            return 2
+        del argv[i:i + 2]
+
     seiten_ordner = None
     if "--seiten" in argv:
         i = argv.index("--seiten")
@@ -259,5 +294,5 @@ def main(argv: list[str] | None = None) -> int:
 
     ordner, ausgabe = Path(argv[1]), Path(argv[2])
     if argv[0] == "bauen":
-        return _bauen(ordner, ausgabe, nur_pruefen, url)
-    return _alle(ordner, ausgabe, nur_pruefen, repo, url, seiten_ordner)
+        return _bauen(ordner, ausgabe, nur_pruefen, url, nicht_woertlich)
+    return _alle(ordner, ausgabe, nur_pruefen, repo, url, seiten_ordner, nicht_woertlich)

@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Landeshauptstadt Düsseldorf investiert bis 2030 rund 2 Milliarden Euro in die städtischen Schulen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle sagt „in die städtischen Schulen“, nicht „in die Schulbauoffensive“."
 ---
 
 ## Kontext

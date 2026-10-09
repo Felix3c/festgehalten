@@ -19,6 +19,8 @@ beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansich
 vermerke:
   - am: 2026-08-28
     text: "Aufgelöst durch Claude für den Halter; Beleg: Pressemitteilung der Stadt Düsseldorf (11.07.2025) zum Bauauftakt der Radleitroute 2 stellt fest: „Der Abschnitt Luegallee bis Luegplatz ist bereits fertiggestellt.” (offen war zu diesem Zeitpunkt nur noch der Rückbau des alten Seitenraum-Radwegs) — damit vor dem Stichtag 31.12.2025 erfüllt."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die neue Radleitroute 2 wird auf rund 12 Kilometern von der westlichen Stadtgrenze zu Meerbusch in Heerdt bis zum Neusser Tor in Gerresheim verlaufen.« … »Die geschätzten Projektkosten für die Radleitroute 2 von der Hansaallee bis zum Luegplatz belaufen sich gegenwärtig auf rund 5,4 Millionen Euro.« … »Der Abschnitt Luegallee bis Luegplatz ist bereits fertiggestellt. Dort muss nur noch der bisherige Radweg im Seitenraum zurückgebaut werden. Die geplante Fertigstellung des Abschnittes ist noch in diesem Jahr geplant.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 7b2a27e1395985b0; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle nennt die 5,4 Millionen Euro für den Abschnitt Hansaallee bis Luegplatz, nicht für einen „1. Bauabschnitt“."
 ---
 
 ## Kontext

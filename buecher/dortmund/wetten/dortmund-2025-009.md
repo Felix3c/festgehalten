@@ -25,6 +25,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: Zahl der bis 31.12.2025 angeschlossenen Schulen. Weitere Folgeartikel (dortmund.de 15.07.2026 'Glasfaser-Turbo bis Ende 2026', Presse-Service 14.07.2026) bestätigen nur den laufenden 'Endspurt' mit insgesamt 150 profitierenden Schulen bis Ende 2026, keine 2025er-Teilzahl."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: Zahl der bis Ende 2025 angeschlossenen Schulen (dortmund-app.de 23.07.2026, dokom21-Blog, MWIKE-Glasfaserbericht Schulen Q4/2025, wirindortmund/mengede-intakt Juli 2026), nichts Belastbares — Stadt kommuniziert nur noch „alle 150 Schulen bis Ende 2026”."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Im Laufe dieses Jahres werden 41 Grund-, Haupt- und Förderschulen durch DOKOM21 an das Breitbandnetz angeschlossen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 6515312f5094c049; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle schreibt „Breitbandnetz“, nicht „Glasfasernetz“; der Beitrag handelt vom Glasfaserausbau."
 ---
 
 ## Kontext

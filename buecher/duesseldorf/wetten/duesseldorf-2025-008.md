@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschlu
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Entwurf Jahresabschluss 2025, Anhang S. 79: „Größte Baumaßnahme ist hier der Bau der Linie U81 mit 26,9 Mio. Euro (Vorjahr 35,4 Mio. Euro)”. Differenz −27,0 Mio EUR (−50,1 %), außerhalb ±10 %. Entwurf/vorläufig."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Schwerpunkte liegen im Jahr 2025 beim Schulbau mit 459,1 Millionen Euro, dem ÖPNV mit 99 Millionen Euro (davon 53,9 Millionen Euro für die Stadtbahnlinie U81) sowie 27,1 Millionen Euro für Bauen und Wohnen …« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt ad6c4cc8af0f0c1f; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschlu
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Entwurf Jahresabschluss 2025, Finanzrechnung (S. 10) Auszahlungen aus Investitionstätigkeit 677.359.806,26 EUR; Lagebericht S. 172: „Minderauszahlungen in Höhe von 295,3 Mio. Euro”. Differenz −295,2 Mio EUR (−30,4 %), außerhalb ±10 %. Entwurf/vorläufig."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Im Jahr 2025 kratzt das Investitionsvolumen dabei mit 972,6 Millionen Euro an der Marke von 1 Milliarden Euro und ist damit so hoch wie nie zuvor.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 3d721aa1b7b46d24; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

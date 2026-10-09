@@ -22,7 +22,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-08
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Aktuell gibt es sich stetig konkretisierende Planungen, die den Bau von 8.000 Wohnungen ermöglichen.« … »Diese setzen sich aus 4.000 Wohnungen auf städtischen Flächen und 4.000 Wohnungen auf weiteren Flächen im Zusammenhang mit Projekten der Wohnungswirtschaft zusammen.« (Quelle am 08.10.2026 abgerufen, SHA-256 beginnt 04d4c6f7a68b042d; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). „bis 2030“ steht nicht in dieser Quelle (PM 06.12.2024, kein Zieljahr). Die Stadt hat das Zieljahr früher selbst genannt: Meldung des Stadtplanungsamts vom 26.07.2023 „Wohnungsbauoffensive 2030 geht in die Umsetzung“, »Düsseldorf hat das Potential 8.000 neue Wohneinheiten bis zum Jahr 2030 zu aktivieren.« Archiv: https://web.archive.org/web/20261004021436/https://www.duesseldorf.de/stadtplanungsamt/aktuelles/detailansicht/newsdetail/wohnungsbauoffensive-2030-geht-in-die-umsetzung-1 (Inhaltsprüfung 04.10.2026). Frage und Prognosen unverändert."
 ---
 
 ## Kontext

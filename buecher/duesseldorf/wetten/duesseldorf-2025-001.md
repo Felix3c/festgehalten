@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansich
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Pressedienst Stadt Düsseldorf 27.04.2026 „Der vorläufige Jahresabschluss … für das Jahr 2025 weist ein Defizit in Höhe von 273,5 Millionen Euro aus”; Entwurf Jahresabschluss 2025 (duesseldorf.de/fileadmin/Amt20/finanzen/jahresabschluesse/entwurf_jahresabschluss_2025_bf.pdf, Ergebnisrechnung S. 9) −273.475.525,67 EUR. Differenz −11,7 Mio EUR (−4,5 %), innerhalb ±10 %. Hinweis: Entwurf/vorläufig, Feststellung durch den Rat noch nicht auffindbar; laut Übersetzung dieser Wette ist der Entwurf die Prüfgrundlage."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »… konnte insbesondere auf Grundlage einer gestiegenen Ertragserwartung bei der Gewerbesteuer dieser Fehlbetrag im Laufe des Planungsprozesses zum Haushaltsplanentwurf 2025 auf -261,8 Millionen Euro verbessert werden.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 83ccd5b57a19eb23; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Gemeint ist der Haushaltsplanentwurf 2025."
 ---
 
 ## Kontext

@@ -19,6 +19,8 @@ beleg_ausgang: https://dashboard.adv.aero/fileadmin/documents/Statistiken/2025/1
 vermerke:
   - am: 2026-08-28
     text: "Aufgelöst durch Claude für den Halter; Beleg: ADV-Monatsstatistik Dezember 2025 (Arbeitsgemeinschaft Deutscher Verkehrsflughäfen) weist für den Flughafen Dortmund 3.242.429 Passagiere für 2025 aus — über dem Vorjahresniveau von rund 3,1 Mio."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Wir erwarten für das Gesamtjahr ein Passagiervolumen von 3,1 Millionen Reisenden« … »Unser sehr ambitioniertes Ziel ist es, dass Passagiervolumen des Jahres 2024 auch in 2025 zu erreichen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt ee50c05cc7915d15; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Beides sind wörtliche Aussagen von Ludger van Bebber; die 3,1 Millionen sind eine Erwartung für 2024, kein Teil des Ziels für 2025."
 ---
 
 ## Kontext

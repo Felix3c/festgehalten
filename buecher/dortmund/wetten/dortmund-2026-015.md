@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Ab Ende 2026 können die Arbeiten für den Abschnitt Sonnenstraße von Arneckestraße bis Chemnitzer Straße beginnen. Es ist der zweite Bauabschnitt, der erste wurde bereits 2021 fertiggestellt.« … »Wenn alles nach Plan verläuft, könnten die Bauarbeiten Ende 2026 beginnen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 17b502450a123b29; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die eckige Klammer im Zitat ist eine Einfügung des Wettbuchs."
 ---
 
 ## Kontext

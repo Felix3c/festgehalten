@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Angesichts stark steigender Schülerzahlen plant die Stadt Dortmund den Bau von vier neuen weiterführenden Schulen – darunter Gesamtschulen und Gymnasien – bis zum Schuljahr 2027/2028.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt a97cd403e3689540; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle sagt „bis zum Schuljahr“, nicht „zum Schuljahr“."
 ---
 
 ## Kontext

@@ -26,6 +26,8 @@ vermerke:
     text: "2. Lauf 28.08.2026: keine Quelle; gesucht: festgestellter Jahresabschluss 2025 Dortmund über rathaus.dortmund.de/dosys. Zuletzt gefundener festgestellter Abschluss betrifft das Haushaltsjahr 2021 (Ratssitzung 18.11.2021); zudem verhängte die Stadt ab 13.01.2026 eine befristete Haushaltssperre wegen Finanzproblemen — Jahresabschluss 2025 liegt erwartungsgemäß noch nicht vor."
   - am: 2026-08-30
     text: "3. Lauf 30.08.2026: gesucht: festgestellter Jahresabschluss 2025 Dortmund. Teilbefund: Entwurf des Jahresabschlusses 2025 weist laut wirindortmund.de (Mai 2026, https://www.wirindortmund.de/dortmund/schwache-konjunktur-belastet-haushalt-dortmund-schliesst-2025-mit-deutlichem-minus-ab-307558) einen Fehlbetrag von rund 352,7 Mio EUR aus, Einbringung in den Rat am 28.05.2026; Nordstadtblogger 10.03./07.05.2026 bestätigt. Auf dortmund.de/rathaus/lokalpolitik/haushalt/jahresabschluesse/ ist 2025 noch nicht als festgestellt gelistet — Frage verlangt festgestellten Abschluss, daher offen."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Im Haushalt ist für das Jahr 2025 ein Jahresfehlbetrag von rund 335 Mio. Euro geplant; das Jahr 2026 schließt planerisch mit einem Minus von 55 Mio. Euro ab.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 3b244f9b1c292fc6; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Der Satz steht auf der Seite in einer angehängten Pressemitteilung der Stadt („Reaktionen“), nicht im Beitragstext; im Beitragstext steht die Zahl nur als Zitat von Michael Kauch (FDP/Bürgerliste): »Rekordminus von 335 Millionen Euro«."
 ---
 
 ## Kontext

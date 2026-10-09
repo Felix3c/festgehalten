@@ -23,7 +23,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Im Haushalt ist für das Jahr 2025 ein Jahresfehlbetrag von rund 335 Mio. Euro geplant; das Jahr 2026 schließt planerisch mit einem Minus von 55 Mio. Euro ab.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 3b244f9b1c292fc6; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

@@ -133,6 +133,16 @@ def test_wette_ersetzt_ist_nicht_offen():
     assert b["zuletzt_gesucht"] is None
 
 
+def test_ersetzte_aufgeloeste_wette_zaehlt_nicht_mehr():
+    # Wird ein schon aufgelöster Eintrag ersetzt (falsche Quelle), bleibt sein Ausgang
+    # als Geschichte stehen, zählt aber nicht doppelt: der neue Eintrag trägt die Wertung.
+    w = {"typ": "ja_nein", "ausgang": 1, "ersetzt_durch": "test-2025-009",
+         "prognosen": [{"von": "Stadt Test", "wert": 1.0}]}
+    b = bewerten.wette_bewerten(w)
+    assert b["status"] == "ersetzt"
+    assert b["scores"] == {"Stadt Test": None}
+
+
 def test_offene_wette_merkt_sich_letzte_suche():
     w = {"typ": "ja_nein", "ausgang": None,
          "prognosen": [{"von": "Stadt Test", "wert": 1.0}],

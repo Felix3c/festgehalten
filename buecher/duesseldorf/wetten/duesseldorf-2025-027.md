@@ -27,6 +27,8 @@ vermerke:
     text: "4. Lauf 02.09.2026: keine Kostenfeststellung oder Endabrechnung auffindbar; gesucht: duesseldorf.de Pressedienst (Richtfest 26.09.2025: „rund 106,5 Millionen Euro” Planzahl; „Düsseldorf macht Schule!” 22.07.2026: nur Summe 160 Mio für drei Projekte; Radleitroute 31.08.2026), WDR 10.07.2026 („für 106 Millionen Euro”), WZ 22.07.2026 (Paywall), RP (blockiert), Wikipedia mit RP-Teilkosten (Sporthalle 27, Mensa 8,5, MINT 6,5 Mio, keine Gesamtsumme), RIS nicht erreichbar. Teilbefund: Planstand 106,5 Mio EUR (Ratsbeschluss 12/2022) bis zum Bezug unverändert, keine Hinweise auf Nachfinanzierung, aber keine Ist-Zahl; Abrechnung erfahrungsgemäß 1–2 Jahre nach Bezug in einer Ausschussvorlage."
   - am: 2026-10-08
     text: "5. Lauf 08.10.2026: weiterhin keine Ist-Zahl; gesucht: Startseite luisen-gymnasium.de (verlinkt Presse zum Umzug 10.07.2026; Schulfest 9. Oktober), RP 10.07.2026 jetzt lesbar („Die geplanten Kosten für den modernen Neubau inklusive Sporthalle betragen rund 106,5 Millionen Euro“), WDR 10.07.2026 („hat die Stadt für 106 Millionen Eure [sic] ein modernes Schulgebäude gebaut“, „Die Bauarbeiten sind im Zeitplan“), Antenne Düsseldorf und ddorf-aktuell 10.07.2026 ohne Kostenangabe, Websuche nach Einweihung ohne Treffer. Teilbefund: Bezug zum Schuljahr 2026/27 belegt, Kosten bis zum Bezug nur als Planzahl. Nächster Blick: Berichte zum Schulfest 09.10.2026, sonst Abrechnungsvorlage im Ausschuss."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Der rund 106 Millionen Euro teure Neubau wird zum Schuljahr 2026/27 von der Schule bezogen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
 ---
 
 ## Kontext

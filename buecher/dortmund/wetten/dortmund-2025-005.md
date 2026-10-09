@@ -13,12 +13,17 @@ prognosen:
     wert: 1.00
     hinterlegt_am: 2024-11-12
     art: angekuendigt
+ersetzt_durch: dortmund-2025-015
 ausgang: 1
 aufgeloest_am: 2026-08-28
 beleg_ausgang: https://www.ruhrnachrichten.de/dortmund/stadt-dortmund-eroeffnet-riesen-kita-fabido-kinder-betreuung-kindergarten-200-plaetze-fredenbaum-eving-w1089011-2001843945/
 vermerke:
   - am: 2026-08-28
     text: "Aufgelöst durch Claude für den Halter; Beleg: Ruhr Nachrichten (15.10.2025) berichtet über die feierliche Eröffnung der Fabido-Kita am Burgweg mit 200 Plätzen in zehn Gruppenräumen — passend zur angekündigten Eröffnung zum 1.10.2025."
+  - am: 2026-10-09
+    text: "Ersetzt durch dortmund-2025-015 (Beschluss Felix Frage 76 vom 04.10.2026): Die hier genannte Quelle vom 12.11.2024 enthält weder die Platzzahl je Standort noch den Starttermin; beides nannte die Stadt erst am 07.07.2025. Der Ausgang oben bleibt als Geschichte stehen, gewertet wird nur noch der neue Eintrag (FORMAT.md §1.3.3)."
+  - am: 2026-10-09
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Bis Ende 2025 sollen vier Einrichtungen an den Standorten Burgweg (Innenstadt-Nord), Kleyer Weg (Lütgendortmund), Buschei (Scharnhorst) und Schragmüllerstraße (Mengede) mit insgesamt 491 Betreuungsplätzen eröffnet werden.« (Archivkopie 20241113015424 am 09.10.2026 abgerufen, SHA-256 beginnt a6ccca8649349a81; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Platzzahl je Standort und Starttermin stehen nicht in dieser Quelle, siehe dortmund-2025-015."
 ---
 
 ## Kontext
