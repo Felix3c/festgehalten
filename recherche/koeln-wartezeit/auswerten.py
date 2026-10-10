@@ -126,18 +126,30 @@ def compute_monthly_stats(
     Mit belege (Anzeige-Datei: die Hashes der vorhandenen Rohkopien) werden
     Zeilen, deren beleg_sha256 zu keiner Rohkopie passt, nur gezählt
     ("ohne_beleg"), nicht gemittelt.
+    Zeilen an einem von der Stadt angekündigten Schließtag (fenster.RUHETAGE) werden nur
+    gezählt ("ruhetag"), nicht gemittelt, es sei denn alle=True.
     Nicht-numerische wartezeit_minuten-Werte werden aus den Mittelwert-/
     Maximum-Berechnungen ausgeschlossen, zählen aber als Messtag.
     """
     def _draussen(row: dict) -> bool:
         return not alle and not _im_messfenster(row["abgerufen_am"])
 
+    def _ruhetag(row: dict) -> bool:
+        if alle:
+            return False
+        try:
+            return fenster.ruhetag(fenster.parse_abgerufen_am(row["abgerufen_am"])) is not None
+        except ValueError:
+            return False
+
     def _ohne_beleg(row: dict) -> bool:
         return belege is not None and (row.get(BELEG_SPALTE) or "").strip() not in belege
 
     # Zwei Messstellen: je Slot zählt nur der früheste Abruf, der beide Filter besteht.
     fruehester = (
-        frueheste_je_slot([r for r in rows if not _draussen(r) and not _ohne_beleg(r)])
+        frueheste_je_slot(
+            [r for r in rows if not _draussen(r) and not _ruhetag(r) and not _ohne_beleg(r)]
+        )
         if je_slot
         else None
     )
@@ -155,11 +167,15 @@ def compute_monthly_stats(
                 "tage": set(),
                 "ausgeschlossen": 0,
                 "ohne_beleg": 0,
+                "ruhetag": 0,
                 "doppelt": 0,
             },
         )
         if _draussen(row):
             eintrag["ausgeschlossen"] += 1
+            continue
+        if _ruhetag(row):
+            eintrag["ruhetag"] += 1
             continue
         if _ohne_beleg(row):
             eintrag["ohne_beleg"] += 1
@@ -199,6 +215,8 @@ def format_table(stats: dict) -> str:
             kopf += f", außerhalb des Messfensters nicht gezählt: {eintrag['ausgeschlossen']} Zeilen"
         if eintrag.get("ohne_beleg"):
             kopf += f", ohne Beleg nicht gezählt: {eintrag['ohne_beleg']} Zeilen"
+        if eintrag.get("ruhetag"):
+            kopf += f", Ruhetag laut Stadt nicht gezählt: {eintrag['ruhetag']} Zeilen"
         if eintrag.get("doppelt"):
             kopf += f", im selben Slot später gemessen, nicht gezählt: {eintrag['doppelt']} Zeilen"
         zeilen.append(kopf + ")")

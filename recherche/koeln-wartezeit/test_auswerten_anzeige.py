@@ -9,6 +9,7 @@ import csv
 import hashlib
 
 import auswerten
+import fenster
 import messen
 
 ROHKOPIE = b'{"stand_iso": "2026-10-07T10:00:03+02:00"}'
@@ -313,3 +314,52 @@ def test_mit_alle_werden_abrufe_ausserhalb_des_fensters_nicht_zusammengelegt(tmp
     # Assert
     assert stats["2026-10"]["gesamt"]["werte"] == [10.0, 20.0, 30.0]
     assert stats["2026-10"]["doppelt"] == 0
+
+
+# --- Frage 184 a (Vorschlag, wartet auf Felix): angekündigte Schließtage als Ruhetag ---
+
+MO_RUHETAG = "2026-10-12T10:00:00+02:00"  # Personalversammlung, alle Kundenzentren zu
+
+
+def test_ruhetag_aus_der_liste_wird_erkannt():
+    # Act / Assert
+    assert fenster.ruhetag(fenster.parse_abgerufen_am(MO_RUHETAG)) is not None
+    assert fenster.ruhetag(fenster.parse_abgerufen_am(MO_VORMITTAG)) is None
+
+
+def test_zeile_am_ruhetag_wird_nicht_gemittelt_aber_ausgewiesen(tmp_path):
+    # Arrange
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(
+        csv_path,
+        [
+            (MO_VORMITTAG, "Kalk", "30", SHA),
+            (MO_RUHETAG, "Kalk", "0", SHA),
+            (MO_RUHETAG, "Porz", "0", SHA),
+        ],
+    )
+    rows = auswerten.read_rows(csv_path)
+
+    # Act
+    stats = auswerten.compute_monthly_stats(rows, monat="2026-10", belege={SHA}, je_slot=True)
+
+    # Assert
+    eintrag = stats["2026-10"]
+    assert eintrag["gesamt"]["werte"] == [30.0]
+    assert eintrag["ruhetag"] == 2
+    assert eintrag["messtage"] == 1
+    assert "Ruhetag" in auswerten.format_table(stats)
+
+
+def test_mit_alle_zaehlt_auch_der_ruhetag(tmp_path):
+    # Arrange
+    csv_path = tmp_path / "messwerte-anzeige.csv"
+    _schreibe_anzeige_csv(csv_path, [(MO_RUHETAG, "Kalk", "0", SHA)])
+    rows = auswerten.read_rows(csv_path)
+
+    # Act
+    stats = auswerten.compute_monthly_stats(rows, monat="2026-10", alle=True, belege={SHA})
+
+    # Assert
+    assert stats["2026-10"]["gesamt"]["werte"] == [0.0]
+    assert stats["2026-10"]["ruhetag"] == 0
