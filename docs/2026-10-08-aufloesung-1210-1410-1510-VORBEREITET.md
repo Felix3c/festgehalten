@@ -108,3 +108,16 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
 
 - Die Kurzfassung `NAECHSTE-SCHRITTE.md` führt die Prüftage schon; essen-2025-001 dort unter Do 15.10. ergänzt.
 - essen-2025-002 (Überschuss 2026) bleibt offen, Feststellung frühestens Herbst 2027.
+
+## Nachtrag 10.10.2026 ~20:25 (Dauerlauf), alle vier Quellen am Samstagabend
+
+- muenster-2026-001: `api/item/1227865` HTTP 200, SHA-256 23068f14…b7b2, byte-gleich mit 04.10./09.10. Die 20 neuesten
+  Mitteilungen (`api/items`, neueste 09.10.2026 13:51) ohne Treffer zu „Lamberti“, „Blindgänger“, „Kampfmittel“,
+  „Evakuierung“, also keine Absage. Am Mo 12.10. wie oben prüfen.
+- bielefeld-2026-001: Projektseite `www.bielefeld.de/pfarrholz-tiesloh` HTTP 200, SHA-256 8b66dbda…b408d, byte-gleich
+  mit der Kopie vom 09.10. Termin Di 13.10. 17–18.30 Uhr steht, kein Verschiebungsvermerk.
+- hamm-2026-001: Meldung hamm.de (Quelle der Wette) HTTP 200, Satz „mit Beschluss des Rates am 13. Oktober 2026“ steht;
+  hamm.de/aktuelles ohne neue ISEK-Meldung nach dem 28.09. Ratsinfo nicht neu abgerufen (Hauptausschuss erst 12.10.).
+- essen-2025-001: OParl `meeting/33118` HTTP 200, Rat 9. Sitzung Mi 14.10.2026 15:00, nicht abgesagt, `modified`
+  unverändert 07.10.2026 14:17:40.
+- Prognosen unverändert, nichts committet.
