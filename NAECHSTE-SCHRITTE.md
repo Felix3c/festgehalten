@@ -9,6 +9,15 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 10.10. 19:05: **Sammelzweig `sammel-1010` (`1d18c4c`)** = master + `buch-wuppertal` + `buch-gatekeeper-2` + `buch-nrw-2` +
+  `buch-ki-3` + `buch-bund-2`, lokal gemergt. Einziger Konflikt: angehängte Zeilen in `recherche/archiv-quellen.csv`
+  (Gatekeeper 011–013 gegen KI 013), beide behalten. Ergebnis: 24 Bücher, 441 Wetten ohne Fehler (mit Zitat-Abgleich),
+  109 Tests grün. Wenn alle Fragen zu diesen Zweigen „steht“ sind, reicht `git merge --ff-only sammel-1010` auf master,
+  dann Push. Sagt eine Frage „nein“, den Sammelzweig verwerfen und einzeln mergen. Die Archivkopien von nrw-2026-012/015/016
+  und bund-2026-013/016 kommen am 11.10. dazu (Tagesprüfung).
+  Dazu: Für nrw-2026-012 bis -016 und bund-2026-009 bis -016 gibt es noch keine Zeile in `archiv-quellen.csv`. Die Archive
+  stehen nur in den Vermerken. Die Formatprüfung meldet das nicht. Nachtragen am 11.10. zusammen mit dem Archivabgleich.
+
 - 10.10. 18:05: Buch „Bund gegen Bund“ +4 Wetten, alle mit Prüftag 02.01.2027 (bisher hatten die Bücher Bund/NRW/KI/
   Gatekeeper fast nichts, das 2026 aufgelöst wird): bund-2026-013 Spritpreisdeckel gilt am 01.01.2027; -014 Bundestag
   beschließt bis 31.12. „kein Grundsicherungsbezug bei Haftbefehl“; -015 Kabinett beschließt bis 31.12. die
