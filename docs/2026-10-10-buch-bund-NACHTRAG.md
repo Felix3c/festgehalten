@@ -31,3 +31,27 @@ erscheint. 012 hängt an zwei offenen Rechtsänderungen.
 - Deutschlandticket-Preis 2027: keine Bundesquelle mit dem Preis gefunden (Beschluss des Koordinierungsrats).
 - Förderzentrale Deutschland „bis Ende 2027 alle Förderportale“: „alle“ nicht eindeutig prüfbar.
 - Grundfreibetrag 2027: selbes Gesetz wie bund-2026-002.
+
+## Nachtrag 10.10.2026 abends: bund-2026-013 bis -016 (Prüftag 02.01.2027)
+
+Anlass: Keins der Bücher Bund, NRW, KI und Gatekeeper hatte eine Wette, die noch 2026 aufgelöst wird (außer bund-2026-009).
+Gesucht wurden deshalb Ansagen der Bundesregierung mit Frist bis 31.12.2026. Recherche: Unteragent des Dauerlaufs.
+Wortlautprüfung und Anlage: Claude, 10.10.2026 gegen 17:55. Gleicher Prüfweg wie oben (curl, Text normalisiert,
+`zitat in text`; das PDF über `pdftotext`).
+
+| Wette | Quelle (Datum) | live | Archiv |
+|---|---|---|---|
+| bund-2026-013 Spritpreisdeckel zum 01.01.2027 | bundesregierung.de, FAQ Spritpreise (01.10.2026) | True | Kopie angelegt web.archive.org/web/20261010155234/…, Abgleich offen (Wayback sperrte den Abruf) |
+| bund-2026-014 Haftbefehl → keine Grundsicherung, Bundestag bis 31.12. | bundesregierung.de, RegPK 23.09.2026 | True | web.archive.org/web/20261010155302/… wörtlich True |
+| bund-2026-015 Kabinett Arbeitszeitgesetz bis 31.12. | dieselbe RegPK | True | dieselbe Kopie, True |
+| bund-2026-016 UVgO im Bundesanzeiger bis 31.12. | bmds.bund.de, Bericht Entlastungskabinett (15.07.2026), Nr. 16 | True | vorhandene Kopie web.archive.org/web/20260901210029/…, Abgleich offen (Wayback sperrte) |
+
+Schwächen, offen benannt: 014 misst nur eine Maßnahme des Aktionsplans (die der Sprecher selbst als Beispiel nennt).
+015 übersetzt „vorlegen“ als Kabinettsbeschluss; ein Referentenentwurf soll laut Fachpresse schon existieren
+(auf bmas.de ungeklärt). 016 misst die Bekanntmachung, strenger als „finalisiert“.
+
+Verworfen: Energiesteuersenkung bis Ende 2026 (verkündet, Ende ist Normalfall); Gemeinschaftsaufgabe Klimaanpassung
+(Entwurf kommt von der Umweltministerkonferenz der Länder); Panzerbrigade Litauen (BMVg korrigierte 02.10. auf Ende 2027);
+Einkommensteuerreform 2027 (selbes Gesetz wie 002); Pflegeneuordnungsgesetz (Nähe zu 004/005); Bonpflicht (wirkt 2028);
+33 Initiativen „ganz überwiegend“ bis Jahresende (Zählung nicht eindeutig); FPfZG-Darlehen abschaffen „noch in diesem
+Jahr“ (kein Entwurf gefunden, Reserve); Schiffssicherheits-Verordnung Dezember 2026 (Reserve, randständig).
