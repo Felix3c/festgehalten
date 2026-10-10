@@ -17,14 +17,18 @@ prognosen:
     wert: 0.92
     hinterlegt_am: 2026-10-04
     art: geschaetzt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 1
+aufgeloest_am: 2026-10-10
+beleg_ausgang: https://www.wz.de/nrw/wuppertal/ein-neuer-maerchenwald-fuer-wuppertaler-kinder_aid-156255619
 vermerke:
   - am: 2026-10-04
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 04.10.2026."
   - am: 2026-10-04
     text: "Archiv: Save Page Now am 04.10.2026 abgewiesen (HTTP 520). Lokale Kopie der Quelle: recherche/belege/2026-10-04-wuppertal-spielplatz-werther-hof.html, SHA-256 b3560e1c356a0be2f92a18571eeeb9608d6d695bf2196838f68d9163caf44bd7."
+  - am: 2026-10-10
+    text: "Aufgelöst durch Claude für den Halter (Dauerlauf, Laufend Guard 10.10.2026); Beleg ist der WZ-Bericht von Friedemann Bräuer, 09.10.2026 12:05: „Der Spielplatz Werther Hof wurde gestern Nachmittag seiner Bestimmung übergeben.“ und „Eine Oase, mitten in der Barmer City, wurde am Donnerstagnachmittag zu neuem Leben erweckt.“ Die Stadt hat bis zum Abruf 10.10.2026 ~14:05 keine Nachmeldung veröffentlicht (Liste Aktuelle Meldungen und Oktober-Archiv). Keine Beobachtung vor Ort."
+  - am: 2026-10-10
+    text: "Archiv: Save Page Now am 10.10.2026 ~14:10 ohne Antwort (Zeitüberschreitung), noch keine Kopie im Index. Lokale Kopie außerhalb des Repos, SHA-256 678b85486859022b473313b8a3b8a465669dc9ddc157e7dd5b2009aaa281cd76."
 ---
 
 ## Kontext
