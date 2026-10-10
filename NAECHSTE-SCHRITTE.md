@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 17:50 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 18:05 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -8,6 +8,13 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 **Phase:** v1 live, 24 Bücher / 418 Wetten öffentlich.
 
 ## Wo wir stehen
+
+- 10.10. 18:05: Buch „Bund gegen Bund“ +4 Wetten, alle mit Prüftag 02.01.2027 (bisher hatten die Bücher Bund/NRW/KI/
+  Gatekeeper fast nichts, das 2026 aufgelöst wird): bund-2026-013 Spritpreisdeckel gilt am 01.01.2027; -014 Bundestag
+  beschließt bis 31.12. „kein Grundsicherungsbezug bei Haftbefehl“; -015 Kabinett beschließt bis 31.12. die
+  Arbeitszeitgesetz-Reform; -016 neue UVgO bis 31.12. im Bundesanzeiger. Zitate live wörtlich, RegPK auch im Archiv;
+  Archivabgleich Spritpreis/UVgO offen (Wayback sperrte) → Tagesprüfung 11.10.; 432 Wetten ohne Fehler, 109 Tests grün;
+  Zweig `buch-bund-2` (`f13f564`), **nicht gepusht** (Frage 250).
 
 - 10.10. 17:50: Buch „KI gegen KI“ +1 Wette (ki-2026-013 ServiceNow University 3 Mio. Lernende bis Ende 2027,
   Prüftag 30.06.2028). Zitat live wörtlich, Archivkopie scheiterte (Wayback 520) → Tagesprüfung; 425 Wetten ohne Fehler,
