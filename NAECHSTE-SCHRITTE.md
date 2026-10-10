@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 08.10.2026 21:00 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 11:50 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -10,13 +10,15 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 ## Wo wir stehen
 
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
+- 10.10. 11:50: Buch „KI gegen KI“ (Frage 229): ki-2026-010 und -011 stehen, -012 verworfen (gerechnetes Datum
+  reicht nicht); `buch-ki-2` lokal nach master gemergt (`4c3df26`), 109 Tests grün, **nicht gepusht** (Push macht Felix).
 - 10.10. 11:43: Ruhetage-Regel (Frage 184 a) lokal nach master gemergt (`76b765d`): angekündigte Schließtage gelten als
   Ruhetag und werden nicht gemittelt; 109 + 81 Tests grün, **nicht gepusht** (Push macht Felix).
 - Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
 - 09.10. 14:45: **Gepusht** (`273dd60` auf master, Home-Tab): enthält bonn-2026-034 JA, Spalte „davon sonstige“,
   Wortlaut-Vermerke und Dortmund 015–017; die drei Rohkopien fremder Stadtseiten sind aus dem Index (nur Wayback-Link
   + SHA-256, Ordner in `.gitignore`). Offen aus demselben Beschluss: essen-2025-011 Stichtag 31.12.2027, essen-2025-013
-  verwerfen, dortmund-2025-013/-014 Vermerk bis 01.01.2028; `buch-ki-2` wartet auf Frage 229.
+  verwerfen, dortmund-2025-013/-014 Vermerk bis 01.01.2028; `buch-ki-2` seit 10.10. in master (229 entschieden).
 - 09.10. 12:05: Wörtliche Zitate fertig: keine Warnung mehr. Dortmund-Kita 005–007 nannten eine Quelle ohne Platzzahl
   und Termin; ersetzt durch 015–017 mit der Stadtmeldung vom 07.07.2025 (Ausgänge unverändert, alte Einträge bleiben
   mit `ersetzt_durch`). Zweig `wortlaut-vermerke` lokal in master gemergt (`04dc9e3`), 421 Wetten, 143 Tests grün,
