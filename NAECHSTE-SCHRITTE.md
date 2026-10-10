@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 15:05 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 16:35 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -9,6 +9,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 10.10. 16:35: Buch „Bund gegen Bund“ +4 Wetten (bund-2026-009 GKV-Zusatzbeitrag 2027 ≤ 2,9 %, Prüfung 02.11.2026;
+  -010 Beitragsbemessungsgrenze KV 2027 76.500 €; -011 Autobahn GmbH erster eigener Kredit bis Ende 2027; -012 i-Kfz zentral
+  beim KBA ab 01.07.2027). Zitate live und im Archiv wörtlich, 428 Wetten ohne Fehler, 109 Tests grün; Zweig `buch-bund-2`
+  (`161e981`), **nicht gepusht** (Frage 246). Prüfweg `docs/2026-10-10-buch-bund-NACHTRAG.md` (auf dem Zweig).
 - 10.10. 15:05: Buch „Gatekeeper gegen Gatekeeper“ +3 Wetten (gatekeeper-2026-011 Amazon, -012 Meta, -013 Alphabet),
   Zitate live und im Archiv wörtlich, 427 Wetten ohne Fehler, 109 Tests grün; Zweig `buch-gatekeeper-2` (`e6fb0f2`),
   **nicht gepusht** (Frage 238; 239 zu gatekeeper-2026-006). Prüfweg `docs/2026-10-10-buch-gatekeeper-NACHTRAG.md` (auf dem Zweig).
