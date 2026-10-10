@@ -11,6 +11,7 @@ Ergebnis ist eine Tabelle: recherche/archiv-quellen.csv (id, quelle, archiv, sta
 Aufruf:  python werkzeuge/archivsicherung.py buecher [weitere Ordner …] [--speichern] [--nur-live] [--max N]
 Ohne --speichern wird nur nach vorhandenen Kopien gesucht, nichts beim Archiv angestoßen.
 Läuft fortsetzbar: Zeilen mit Status ok/pdf_ok werden übersprungen.
+Mit --luecken nur auflisten, welche Wetten noch gar keine Zeile haben (kein Netz, Exit 1 bei Lücken).
 """
 from __future__ import annotations
 
@@ -222,6 +223,11 @@ def offene_wetten(wetten: list[dict], tabelle: dict[str, dict], nur_live: bool,
     return offen
 
 
+def ohne_zeile(wetten: list[dict], tabelle: dict[str, dict]) -> list[str]:
+    """Wetten, die in der Tabelle gar nicht vorkommen (Archiv steht dann höchstens im Vermerk)."""
+    return [w["id"] for w in wetten if w["id"] not in tabelle]
+
+
 def tabelle_lesen(pfad: Path) -> dict[str, dict]:
     if not pfad.exists():
         return {}
@@ -248,9 +254,17 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--nur-live", action="store_true", help="nur Wetten mit zitat_live=ja aus der Tabelle")
     p.add_argument("--nur-neue", action="store_true", help="nur Wetten ohne Befund in der Tabelle (oder mit Abruffehler)")
     p.add_argument("--max", type=int, default=0, help="höchstens N Wetten bearbeiten (0 = alle)")
+    p.add_argument("--luecken", action="store_true",
+                   help="ohne Netz: Wetten ohne Tabellenzeile auflisten, Exit 1 wenn welche fehlen")
     a = p.parse_args(argv)
 
     tabelle = tabelle_lesen(a.tabelle)
+    if a.luecken:
+        fehlen = ohne_zeile(wetten_sammeln(a.ordner), tabelle)
+        for i in fehlen:
+            print(i)
+        print(f"Ohne Zeile in {a.tabelle}: {len(fehlen)}")
+        return 1 if fehlen else 0
     offen = offene_wetten(wetten_sammeln(a.ordner), tabelle, a.nur_live, a.nur_neue)
     if a.max:
         offen = offen[: a.max]
