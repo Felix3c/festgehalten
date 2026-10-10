@@ -94,7 +94,7 @@ Prognosen wurden vor dem Ereignis hinterlegt. Nichts committet, Wettdateien unve
   Jahresabschlusses … zum 31.12.2025“ und TOP 8 „Verwendung des Jahresüberschusses 2025“ stehen, noch ohne Ergebnis.
 - **Am Do 15.10. prüfen:** Beschluss zu TOP 7 (Pressemeldung essen.de oder OParl-Beschlusstext der Sitzung). Nur wenn der Rat
   festgestellt hat, auflösen. Vertagt der Rat, bleibt die Wette offen (Verfall erst 31.12.2028).
-- **Offen: welche Zahl zählt (Frage 183 an Felix).** Die Wette fragt nach „dem Überschuss laut Jahresabschluss“. Zwei Zahlen
+- **Entschieden 10.10.2026 (Felix, 183 a): 1,07 Mio EUR zählt, beide Zahlen im Vermerk (lokal `0833691`, nicht gepusht).** Bisheriger Text: Die Wette fragt nach „dem Überschuss laut Jahresabschluss“. Zwei Zahlen
   stehen in derselben Vorlage: 1,07 Mio EUR (Jahresergebnis der Ergebnisrechnung, das die Stadt schon am 27.05. als
   „Jahresüberschuss 1,1 Mio“ gemeldet hat) und 0,19 Mio EUR (bilanziell, ohne Stiftungen).
   Empfehlung: **1,07 Mio EUR**. Gründe: Die Stadt nennt selbst diese Zahl „Jahresüberschuss“, und die Prognose 3,4 Mio
