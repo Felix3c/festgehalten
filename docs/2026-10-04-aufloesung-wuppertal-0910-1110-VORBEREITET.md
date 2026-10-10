@@ -94,3 +94,18 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   August mit „Anfang Oktober“. Rahmenterminplan Elberfeld (Stand 18.04.2026) unter der alten Adresse HTTP 404.
 - Richtung: kein Hinweis auf Fertigstellung, aber auch keine Verschiebung gemeldet. Am So 11.10. dieselben Stellen; ohne
   öffentlichen Beleg „fertig/in Betrieb“ bis 10.10. gilt NEIN (Regel oben).
+
+## Vorprüfung Sa 10.10.2026 20:39 (Dauerlauf, Guard Laufend, Abend des Stichtags), wuppertal-2026-002
+
+- Quelle (`…/august/brunnen-elberfeld.php`, HTTP 200, SHA-256 c3295c94…a847624): Satz „Die Fertigstellung des Brunnens ist
+  Anfang Oktober geplant.“ steht unverändert, `dateModified` weiter 2026-08-07T11:06.
+- Liste „Aktuelle Meldungen“ (HTTP 200, SHA-256 b0f2ca0f…9655e) und Oktober-Archiv (HTTP 200, SHA-256 6d55c1a6…fb23db):
+  19 Oktober-Meldungen, neueste vom 09.10., kein Treffer für „Brunnen“ oder „Alte Freiheit“.
+  ISG Poststraße (meldungen.php): wieder keine Verbindung (Zeitüberschreitung nach 30 s), ungeklärt.
+- Websuche (20:40, „Brunnen Alte Freiheit Wuppertal Oktober 2026“): neueste Treffer weiter vom August (Stadt 07.08.,
+  WZ, Rundschau, Radio Wuppertal 2724746, wuppertal-total, WZ-Kolumne 12.08.); kein Bericht über Fertigstellung oder
+  Inbetriebnahme, keine Verschiebung.
+- Richtung für den Prüftag So 11.10.: Bleibt es morgen so, gilt nach der Regel oben **NEIN mangels öffentlichem Beleg**
+  bis einschließlich 10.10. (Vermerk: „keine Meldung der Stadt, keine Presse; ob der Brunnen tatsächlich läuft, ungeklärt“).
+  Ein Bericht, der am 11.10. oder später erscheint und eine Inbetriebnahme bis 10.10. belegt, zählt noch (Stichtag gilt
+  für das Ereignis, nicht für die Meldung); dann JA.
