@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 16:35 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 16:50 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -9,6 +9,11 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 10.10. 16:50: Buch „NRW gegen NRW“ +5 Wetten (nrw-2026-012 Verbundsatz 23,5 % im GFG 2027; -013 Zentrales Schülerfeedback
+  2027/28 an allen Schulen verbindlich; -014 NRW.BANK.Energienetze offen bis 31.03.2027; -015 KI:Inferenzcluster.nrw Hardware
+  an der RWTH bis Ende 2027; -016 Landtagswahl im April 2027 ab 16). Zitate live wörtlich, Archiv: 013/014 wörtlich, 012/015/016
+  Kopie angelegt, Abgleich offen (Wayback sperrte); 429 Wetten ohne Fehler, 109 Tests grün; Zweig `buch-nrw-2` (`56be378`),
+  **nicht gepusht** (Frage 247). Prüfweg `docs/2026-10-10-buch-nrw-NACHTRAG.md` (auf dem Zweig).
 - 10.10. 16:35: Buch „Bund gegen Bund“ +4 Wetten (bund-2026-009 GKV-Zusatzbeitrag 2027 ≤ 2,9 %, Prüfung 02.11.2026;
   -010 Beitragsbemessungsgrenze KV 2027 76.500 €; -011 Autobahn GmbH erster eigener Kredit bis Ende 2027; -012 i-Kfz zentral
   beim KBA ab 01.07.2027). Zitate live und im Archiv wörtlich, 428 Wetten ohne Fehler, 109 Tests grün; Zweig `buch-bund-2`
