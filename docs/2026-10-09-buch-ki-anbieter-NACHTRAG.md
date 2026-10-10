@@ -1,7 +1,9 @@
 # Buch „KI gegen KI“ — Nachtrag, recherchiert am 09.10.2026
 
 Status: drei neue Wetten (ki-2026-010 bis -012) lokal auf Zweig `buch-ki-2`, **nicht gepusht** (Push erst nach
-„steht“). Recherche: Unteragent des Dauerlaufs; Wortlautprüfung und Anlage: Claude, 09.10.2026, ohne Rückfrage.
+„steht“). **Nachtrag 10.10.2026 (Felix, Frage 229):** 010 und 011 stehen, **012 (Dweve) ist verworfen**,
+weil das gerechnete Datum nicht reicht; Wettdatei und Archivzeile entfernt, die Zeilen unten bleiben als Protokoll.
+Recherche: Unteragent des Dauerlaufs; Wortlautprüfung und Anlage: Claude, 09.10.2026, ohne Rückfrage.
 Regeln wie am 03.10. (`docs/2026-10-03-buch-ki-anbieter-KANDIDATEN.md`): nur eigene Aussagen der Unternehmen, Zahl
 und Datum, Frist zwischen 01.11.2026 und 31.12.2028, höchstens zwei je Anbieter. Diesmal gezielt die
 Unterzeichner, für die am 03.10. nur die Startseiten durchgesehen waren (Blogs, Presseseiten, Sitemaps).
