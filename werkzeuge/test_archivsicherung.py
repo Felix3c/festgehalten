@@ -208,3 +208,23 @@ def test_neuer_befund_ersetzt_alten():
     alt = {"id": "x-1", "status": "zitat_fehlt"}
     neu = {"id": "x-1", "status": "ok"}
     assert a.zusammenfuehren(alt, neu) == neu
+
+
+def test_ohne_zeile_meldet_nur_wetten_ohne_tabellenzeile():
+    wetten = [{"id": i} for i in ("a", "b", "c")]
+    tabelle = {"a": {"status": "ok"}, "c": {"status": "fehler"}}
+    assert a.ohne_zeile(wetten, tabelle) == ["b"]
+
+
+def test_luecken_listet_ohne_netz_und_meldet_exit_1(tmp_path, monkeypatch, capsys):
+    buch = tmp_path / "b"
+    buch.mkdir()
+    for i in ("x-1", "x-2"):
+        (buch / f"{i}.md").write_text(f"---\nid: {i}\nquelle: https://q/{i}\n---\n", encoding="utf-8")
+    tab = tmp_path / "t.csv"
+    a.tabelle_schreiben(tab, {"x-1": {"id": "x-1", "status": "ok"}})
+    monkeypatch.setattr(a.requests, "Session", lambda: pytest.fail("kein Netz bei --luecken"))
+    assert a.main([str(buch), "--tabelle", str(tab), "--luecken"]) == 1
+    assert "x-2" in capsys.readouterr().out
+    a.tabelle_schreiben(tab, {i: {"id": i, "status": "ok"} for i in ("x-1", "x-2")})
+    assert a.main([str(buch), "--tabelle", str(tab), "--luecken"]) == 0
