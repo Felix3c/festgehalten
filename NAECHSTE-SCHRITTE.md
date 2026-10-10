@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 14:20 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 15:05 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -9,6 +9,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 10.10. 15:05: Buch „Gatekeeper gegen Gatekeeper“ +3 Wetten (gatekeeper-2026-011 Amazon, -012 Meta, -013 Alphabet),
+  Zitate live und im Archiv wörtlich, 427 Wetten ohne Fehler, 109 Tests grün; Zweig `buch-gatekeeper-2` (`e6fb0f2`),
+  **nicht gepusht** (Frage 238; 239 zu gatekeeper-2026-006). Prüfweg `docs/2026-10-10-buch-gatekeeper-NACHTRAG.md` (auf dem Zweig).
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
 - 10.10. 11:50: Buch „KI gegen KI“ (Frage 229): ki-2026-010 und -011 stehen, -012 verworfen (gerechnetes Datum
   reicht nicht); `buch-ki-2` lokal nach master gemergt (`4c3df26`), 109 Tests grün, **nicht gepusht** (Push macht Felix).
