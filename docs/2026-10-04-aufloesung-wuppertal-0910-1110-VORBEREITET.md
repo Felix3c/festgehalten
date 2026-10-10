@@ -109,3 +109,16 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   bis einschließlich 10.10. (Vermerk: „keine Meldung der Stadt, keine Presse; ob der Brunnen tatsächlich läuft, ungeklärt“).
   Ein Bericht, der am 11.10. oder später erscheint und eine Inbetriebnahme bis 10.10. belegt, zählt noch (Stichtag gilt
   für das Ereignis, nicht für die Meldung); dann JA.
+
+## Prüftag So 11.10.2026 00:25 (Dauerlauf, Tagesprüfung), wuppertal-2026-002
+
+- Quelle (`…/august/brunnen-elberfeld.php`, HTTP 200, SHA-256 6d88d6d0…): Satz „Die Fertigstellung des Brunnens ist
+  Anfang Oktober geplant.“ steht unverändert, `dateModified` weiter 2026-08-07T11:06.
+- Liste „Aktuelle Meldungen“ (HTTP 200, SHA-256 e8920258…) und Oktober-Archiv (HTTP 200, SHA-256 da066ddf…): kein Treffer
+  für „Brunnen“ oder „Alte Freiheit“. ISG Poststraße: wieder keine Verbindung, ungeklärt.
+- Websuche (00:20, erweitert): neueste Treffer weiter vom August (Rundschau, WZ, Radio Wuppertal 2724746); kein Bericht
+  über Fertigstellung oder Inbetriebnahme bis 10.10., keine Verschiebung gemeldet.
+- **Nicht aufgelöst**, gleiche Behandlung wie wuppertal-2026-001: bis ~15.10. auf einen Nachbericht warten (ein später
+  erscheinender Bericht über eine Inbetriebnahme bis 10.10. zählt noch), dann beide zusammen als Frage an Felix
+  (Vorschlag NEIN mangels öffentlichem Beleg, Vermerk). Beide Wetten liegen weiter nur auf `buch-wuppertal`; ohne Merge
+  gilt der Abschnitt „Wenn Felix nicht mergt“.
