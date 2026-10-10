@@ -118,7 +118,7 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   für „Brunnen“ oder „Alte Freiheit“. ISG Poststraße: wieder keine Verbindung, ungeklärt.
 - Websuche (00:20, erweitert): neueste Treffer weiter vom August (Rundschau, WZ, Radio Wuppertal 2724746); kein Bericht
   über Fertigstellung oder Inbetriebnahme bis 10.10., keine Verschiebung gemeldet.
-- **Nicht aufgelöst**, gleiche Behandlung wie wuppertal-2026-001: bis ~15.10. auf einen Nachbericht warten (ein später
-  erscheinender Bericht über eine Inbetriebnahme bis 10.10. zählt noch), dann beide zusammen als Frage an Felix
-  (Vorschlag NEIN mangels öffentlichem Beleg, Vermerk). Beide Wetten liegen weiter nur auf `buch-wuppertal`; ohne Merge
-  gilt der Abschnitt „Wenn Felix nicht mergt“.
+- **Nicht aufgelöst.** Wie bei wuppertal-2026-001, wo der Beleg erst als WZ-Nachbericht am 09.10. kam (aufgelöst JA
+  10.10. auf `buch-wuppertal` `72ec5d1`), bis ~15.10. auf einen Nachbericht warten; ein später erscheinender Bericht über
+  eine Inbetriebnahme bis 10.10. zählt noch. Danach Frage an Felix (Vorschlag NEIN mangels öffentlichem Beleg, Vermerk).
+  Die Wette liegt weiter nur auf `buch-wuppertal`; ohne Merge gilt der Abschnitt „Wenn Felix nicht mergt“.
