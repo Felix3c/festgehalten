@@ -10,7 +10,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 ## Wo wir stehen
 
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
-- 10.10. 11:50: Ruhetage-Regel (Frage 184 a) lokal nach master gemergt (`76b765d`): angekündigte Schließtage gelten als
+- 10.10. 11:43: Ruhetage-Regel (Frage 184 a) lokal nach master gemergt (`76b765d`): angekündigte Schließtage gelten als
   Ruhetag und werden nicht gemittelt; 109 + 81 Tests grün, **nicht gepusht** (Push macht Felix).
 - Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
 - 09.10. 14:45: **Gepusht** (`273dd60` auf master, Home-Tab): enthält bonn-2026-034 JA, Spalte „davon sonstige“,
