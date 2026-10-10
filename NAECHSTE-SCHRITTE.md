@@ -10,6 +10,8 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 ## Wo wir stehen
 
 - Live: https://felix3c.github.io/festgehalten/ — Repo https://github.com/Felix3c/festgehalten
+- 10.10. 11:50: Ruhetage-Regel (Frage 184 a) lokal nach master gemergt (`76b765d`): angekündigte Schließtage gelten als
+  Ruhetag und werden nicht gemittelt; 109 + 81 Tests grün, **nicht gepusht** (Push macht Felix).
 - Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
 - 09.10. 14:45: **Gepusht** (`273dd60` auf master, Home-Tab): enthält bonn-2026-034 JA, Spalte „davon sonstige“,
   Wortlaut-Vermerke und Dortmund 015–017; die drei Rohkopien fremder Stadtseiten sind aus dem Index (nur Wayback-Link
@@ -32,7 +34,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 - Fr 09.10.: bonn-2026-034 **aufgelöst JA** (09.10. 00:20, Beleg SWB-Meldung 28.09. „Nach erfolgreichen Sanierungsarbeiten an Gleis 1“, lokal committet, nicht gepusht); wuppertal-2026-001 **offen**: bis 09.10. 00:20 nur Ankündigungen (Stadt, Rundschau, talzeit vom 07.10.), kein Bericht über die Eröffnung; weiter prüfen bis ~15.10., dann Frage an Felix (Vorschlag NEIN mangels Beleg); Nachprüfung 09.10. 11:55: weiter kein Bericht nach dem Termin (Stadt-Meldungsliste nur die Ankündigung vom 01.10., Rundschau nur Vorbericht 02.10., Talzeit-Artikel erschien 08.10. ~05:00, also vor 15:30, „Seit heute (8. Oktober)“ ist Vorbericht, kein Beleg)
 - So 11.10.: wuppertal-2026-002 (Vorprüfung 09.10. 12:25: Quelle unverändert „Anfang Oktober geplant“, keine Meldung der Stadt, nichts in der Presse nach August, keine Verschiebung; ohne Beleg „fertig“ bis 10.10. gilt NEIN; Notiz in `docs/2026-10-04-aufloesung-wuppertal-0910-1110-VORBEREITET.md`, lokal `0360f4d`)
-- Mo 12.10.: muenster-2026-001 (Vorprüfung 09.10. 12:40: Quelle byte-gleich, keine Absage/Verschiebung in den Mitteilungen bis 09.10. 10:03, lokal `5dcbf4a`); Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen offen (Frage 184)
+- Mo 12.10.: muenster-2026-001 (Vorprüfung 09.10. 12:40: Quelle byte-gleich, keine Absage/Verschiebung in den Mitteilungen bis 09.10. 10:03, lokal `5dcbf4a`); Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen entschieden 10.10. (Variante a): angekündigte Schließtage zählen als Ruhetag, nicht ins Mittel; lokal gemergt `76b765d`, nicht gepusht
 - Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.; Vorberatung 07.10. mehrheitlich empfohlen 34/3/2, geprüft 09.10.)
 - Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025); alle vier Vorlagen 035–038 stehen auf der Tagesordnung (TOP 6, 19, 20, 25; zu 19/20 Änderungsanträge), geprüft 08.10.; TOP 7/8 Jahresabschluss erneut geprüft 09.10., unverändert
 - So 01.11.: essen-2026-039, wuppertal-2026-003, wuppertal-2026-004; Mo 02.11.: bonn-2026-033 (hängt an Frage 197);
