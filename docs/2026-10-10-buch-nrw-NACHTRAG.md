@@ -10,9 +10,9 @@ Landesregierung, Zahl und Datum. Kandidatenliste mit Verworfenem: `~/allein/tmp/
 Quellen am 10.10.2026 gegen 16:43 per `curl -sL --compressed` mit Browser-User-Agent abgerufen. HTML: script/style
 raus, Tags → Leerzeichen, `html.unescape`, Whitespace zusammengefasst; jedes durch „…“ getrennte Stück mit `in`
 geprüft. Live: alle fünf **True**. Wayback-Kopie per `web.archive.org/save` angelegt; Kopie (`id_`) geprüft:
-013 **True**, 014 **True** (zweiter Abruf). 012, 015, 016: Kopie angelegt, Abgleich **offen**, weil die Wayback
-Machine die Abrufe danach als Bot-Verkehr sperrte; bei der nächsten Tagesprüfung nachholen
-(`python ~/allein/tmp/nrw2check/pruef.py archiv`).
+013 **True**, 014 **True** (zweiter Abruf). 012, 015, 016: Kopie angelegt, Abgleich zunächst offen, weil die
+Wayback Machine die Abrufe danach als Bot-Verkehr sperrte; am 10.10.2026 ~19:35 nachgeholt: alle drei **True**
+(Zitat wörtlich in der Kopie, Zeilen in `recherche/archiv-quellen.csv`).
 
 | Wette | Stelle | Quelle (Datum) | Archiv |
 |---|---|---|---|
