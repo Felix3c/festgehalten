@@ -24,8 +24,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
   Essen 1), dazu 13 auf den Zweigen (Bund 009–016, NRW 012–016). Nachgetragen per vorhandener Wayback-Kopie (nichts neu
   gespeichert): 101 + 12 mit Kopie, in der das Zitat wörtlich steht. Damit ist der Archivabgleich nrw-2026-012/015/016 und
   bund-2026-013 erledigt. Ohne Kopie: 11 Wuppertal-Wetten (wuppertal.de antwortet dem Werkzeug mit 403, auch Save Page Now
-  scheitert) und bund-2026-016 (die Kopie vom 01.09. gibt beim Archiv 500; Zitat steht live wörtlich, Tagesprüfung
-  11.10. erneut versuchen). Zweig `archiv-luecken` (`ab6d994`, von master), `buch-bund-2` `030cd40`, `buch-nrw-2`
+  scheitert) und bund-2026-016 (die Kopie vom 01.09. gibt beim Archiv 500; Zitat steht live wörtlich; 11.10. 00:34
+  erneut: Archiv 429 Bot-Sperre, nächster Versuch frühestens Mo 12.10.). NACHTRAG-Dateien am 11.10. nachgezogen:
+  `buch-nrw-2` `5662129`, `buch-bund-2` `199b119` (noch nicht in `sammel-1010`). Zweig `archiv-luecken` (`ab6d994`, von master), `buch-bund-2` `030cd40`, `buch-nrw-2`
   `8161d60`; alle drei in `sammel-1010` gemergt (`22ae09b`, CSV-Konflikt als Vereinigung nach id gelöst). Sammelzweig:
   0 Lücken, 145 Tests grün, 24 Bücher / 441 Wetten ohne Fehler. **Nicht gepusht.**
 
