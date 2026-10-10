@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 14:40 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 14:20 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -17,7 +17,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - Prüfung 08.10. 20:40: 24 Bücher, 418 Wetten, keine Fehler; 99 Tests grün.
 - 09.10. 14:45: **Gepusht** (`273dd60` auf master, Home-Tab): enthält bonn-2026-034 JA, Spalte „davon sonstige“,
   Wortlaut-Vermerke und Dortmund 015–017; die drei Rohkopien fremder Stadtseiten sind aus dem Index (nur Wayback-Link
-  + SHA-256, Ordner in `.gitignore`). Aus demselben Beschluss seit 10.10. 14:40 lokal in master (`be7f4aa`, **nicht
+  + SHA-256, Ordner in `.gitignore`). Aus demselben Beschluss seit 10.10. 14:20 lokal in master (`be7f4aa`, **nicht
   gepusht**): essen-2025-011 ersetzt durch essen-2025-035 (Stichtag 31.12.2027, Zitat jetzt wörtlich, Stadt „angekündigt“
   1,00, Computer 0,55), essen-2025-013 verworfen (Datei entfernt, Grund im Commit), dortmund-2025-013/-014 Vermerk
   „offen bis Verfall 01.01.2028“; 109 Tests grün, 24 Bücher / 424 Wetten ohne Fehler. `buch-ki-2` seit 10.10. in master.
