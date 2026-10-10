@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 11:50 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 12:05 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -38,7 +38,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - So 11.10.: wuppertal-2026-002 (Vorprüfung 09.10. 12:25: Quelle unverändert „Anfang Oktober geplant“, keine Meldung der Stadt, nichts in der Presse nach August, keine Verschiebung; ohne Beleg „fertig“ bis 10.10. gilt NEIN; Notiz in `docs/2026-10-04-aufloesung-wuppertal-0910-1110-VORBEREITET.md`, lokal `0360f4d`)
 - Mo 12.10.: muenster-2026-001 (Vorprüfung 09.10. 12:40: Quelle byte-gleich, keine Absage/Verschiebung in den Mitteilungen bis 09.10. 10:03, lokal `5dcbf4a`); Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen entschieden 10.10. (Variante a): angekündigte Schließtage zählen als Ruhetag, nicht ins Mittel; lokal gemergt `76b765d`, nicht gepusht
 - Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.; Vorberatung 07.10. mehrheitlich empfohlen 34/3/2, geprüft 09.10.)
-- Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025); alle vier Vorlagen 035–038 stehen auf der Tagesordnung (TOP 6, 19, 20, 25; zu 19/20 Änderungsanträge), geprüft 08.10.; TOP 7/8 Jahresabschluss erneut geprüft 09.10., unverändert
+- Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025); alle vier Vorlagen 035–038 stehen auf der Tagesordnung (TOP 6, 19, 20, 25; zu 19/20 Änderungsanträge), geprüft 08.10.; TOP 7/8 Jahresabschluss erneut geprüft 09.10., unverändert; essen-2025-001 misst an 1,07 Mio (Ergebnisrechnung), Vermerk mit beiden Zahlen seit 10.10. lokal `0833691`, nicht gepusht
 - So 01.11.: essen-2026-039, wuppertal-2026-003, wuppertal-2026-004; Mo 02.11.: bonn-2026-033 (hängt an Frage 197);
   Sa 07.11.: bochum-2026-002; So 08.11.: koeln-2026-076 (Zitat ist Zusammenfassung wie bei 197). Vorlage mit Abruf
   08.10.: `docs/2026-10-08-aufloesung-0111-0811-VORBEREITET.md`, alle Quellen unverändert, keine Absage gefunden.
