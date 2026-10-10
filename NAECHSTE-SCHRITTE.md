@@ -1,6 +1,6 @@
 # festgehalten — Nächste Schritte
 
-**Stand:** 10.10.2026 21:05 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
+**Stand:** 10.10.2026 20:54 (Kurzfassung). Diese Datei ist öffentlich und enthält seit 07.10. nur noch Stand,
 nächste Prüftage und offene Punkte, ohne Namen Dritter und ohne Entwurfstexte (Beschluss 06.10., Frage 140 b).
 Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notizen/NAECHSTE-SCHRITTE-lang.md`
 (dort weiterschreiben; Stand bis 07.10. 10:05 ist byte-gleich mit dem bisherigen Inhalt dieser Datei).
@@ -9,7 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
-- 10.10. 21:05: **Merge-Probe `sammel-1010` auf heutiges master (`0932b19`)**, das seit dem Sammelzweig vier
+- 10.10. 20:54: **Merge-Probe `sammel-1010` auf heutiges master (`0932b19`)**, das seit dem Sammelzweig vier
   Doku-Commits weiter ist: konfliktfrei, 109 + 36 Tests grün, 24 Bücher / 441 Wetten ohne Fehler, Archivlücken 0.
   `git merge sammel-1010` auf master geht nach „steht“ weiterhin ohne Nacharbeit. Probe in Wegwerf-Arbeitsbaum, master unverändert.
 
