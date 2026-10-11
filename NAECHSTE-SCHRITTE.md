@@ -26,7 +26,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
   bund-2026-013 erledigt. Ohne Kopie: 11 Wuppertal-Wetten (wuppertal.de antwortet dem Werkzeug mit 403, auch Save Page Now
   scheitert) und bund-2026-016 (die Kopie vom 01.09. gibt beim Archiv 500; Zitat steht live wörtlich; 11.10. 00:34
   erneut: Archiv 429 Bot-Sperre, nächster Versuch frühestens Mo 12.10.). NACHTRAG-Dateien am 11.10. nachgezogen:
-  `buch-nrw-2` `5662129`, `buch-bund-2` `199b119` (noch nicht in `sammel-1010`). Zweig `archiv-luecken` (`ab6d994`, von master), `buch-bund-2` `030cd40`, `buch-nrw-2`
+  `buch-nrw-2` `5662129`, `buch-bund-2` `199b119` (seit 12.10. in `sammel-1010`). Zweig `archiv-luecken` (`ab6d994`, von master), `buch-bund-2` `030cd40`, `buch-nrw-2`
   `8161d60`; alle drei in `sammel-1010` gemergt (`22ae09b`, CSV-Konflikt als Vereinigung nach id gelöst). Sammelzweig:
   0 Lücken, 145 Tests grün, 24 Bücher / 441 Wetten ohne Fehler. **Nicht gepusht.**
 
