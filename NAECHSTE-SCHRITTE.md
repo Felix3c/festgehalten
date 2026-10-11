@@ -9,6 +9,13 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 12.10. 01:05: **bund-2026-016 Archivabgleich weiter offen.** Wayback sperrt den Inhaltsabruf (Bot-Sperre), neue Kopie
+  anlegen gibt 520; die CDX-Schnittstelle nennt die Kopie vom 01.09. (304.184 Byte). Die Live-PDF ist inzwischen eine
+  andere Fassung (286.575 Byte), das Zitat steht dort wörtlich. CSV bleibt `kein_archiv` (Prüfdatum 12.10.), Befund in
+  `docs/2026-10-10-buch-bund-NACHTRAG.md` auf `buch-bund-2` (`331d930`). `buch-bund-2` und `buch-nrw-2` neu in
+  `sammel-1010` gemergt (`bb9259a`): 109 Tests grün, 24 Bücher / 441 Wetten ohne Fehler mit Zitat-Abgleich, 0 Archivlücken,
+  Merge auf master weiter konfliktfrei. Nächster Archivversuch nur in einer Tagesprüfung, kein eigener Lauf. **Nicht gepusht.**
+
 - 10.10. 21:50: **essen-2026-036 vorbereitet:** Antrag 20.1 (1692/2026/CDU/SPD) ist ein Maßgaben-Antrag zur Umsetzung,
   keine Vertagung/Rückverweisung; 036 bleibt JA bei Kenntnisnahme am 14.10. Ratssitzung unverändert, TOPs stehen.
   Archivkopie scheiterte (Wayback 523/429), am Prüftag 15.10. erneut. Nachtrag in
