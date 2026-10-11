@@ -17,9 +17,9 @@ prognosen:
     wert: 0.93
     hinterlegt_am: 2026-10-04
     art: geschaetzt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 1
+aufgeloest_am: 2026-10-12
+beleg_ausgang: https://web.archive.org/web/20261011223924/https://pressemitteilungen.stadt-muenster.de/api/item/1229340
 vermerke:
   - am: 2026-10-04
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 04.10.2026."
@@ -27,6 +27,10 @@ vermerke:
     text: "Quelle ist die Schnittstelle des Presseportals der Stadt (Feld plain_article, Leerraum vereinheitlicht); Leseansicht derselben Mitteilung: https://www.stadt-muenster.de/aktuelles/pressemitteilungen#/item/1227865."
   - am: 2026-10-05
     text: "Archiv: https://web.archive.org/web/20261004170313/https://pressemitteilungen.stadt-muenster.de/api/item/1227865 (Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft; Archivkopie byte-gleich mit der lokalen Kopie). Lokale Kopie der Quelle: recherche/belege/2026-10-04-muenster-item-1227865.json, SHA-256 23068f14e84a97d4ba57e6f0b7a23df8b70549f71c2132b5367f39cccad9b7b2."
+  - am: 2026-10-12
+    text: "Aufgelöst durch Claude für den Halter (Dauerlauf, Tagesprüfung 12.10.2026); Beleg ist die Pressemitteilung der Stadt vom 11.10.2026, 08:37 („Entwarnung: Kein Blindgänger an der Lambertikirche“): „Kampfmittelräumer fanden bei der Überprüfung eines Verdachtspunkts an der Lambertikirche am Vormittag nur Eisenrohre.“ und „Dieser Verdacht konnte jetzt durch die Freilegung des Verdachtspunkts ausgeräumt werden.“ Die Überprüfung fand damit am 11.10.2026 statt; dass keine Bombe gefunden wurde, ändert die Frage nicht. Leseansicht: https://www.stadt-muenster.de/aktuelles/pressemitteilungen#/item/1229340. Keine Beobachtung vor Ort."
+  - am: 2026-10-12
+    text: "Archiv: Kopie 20261011223924 (UTC, Save Page Now am 12.10.2026 00:39), byte-gleich mit der lokalen Kopie recherche/belege/2026-10-12-muenster-item-1229340.json, SHA-256 404cad5d8323500a3da8865502fa37a3c41ff14e9a10c20ea64fd165aade2add."
 ---
 
 ## Kontext
