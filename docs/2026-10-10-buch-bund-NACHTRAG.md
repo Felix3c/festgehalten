@@ -41,10 +41,10 @@ Wortlautprüfung und Anlage: Claude, 10.10.2026 gegen 17:55. Gleicher Prüfweg w
 
 | Wette | Quelle (Datum) | live | Archiv |
 |---|---|---|---|
-| bund-2026-013 Spritpreisdeckel zum 01.01.2027 | bundesregierung.de, FAQ Spritpreise (01.10.2026) | True | Kopie angelegt web.archive.org/web/20261010155234/…, Abgleich offen (Wayback sperrte den Abruf) |
+| bund-2026-013 Spritpreisdeckel zum 01.01.2027 | bundesregierung.de, FAQ Spritpreise (01.10.2026) | True | web.archive.org/web/20261010155234/… wörtlich True (Abgleich nachgeholt 10.10. ~19:35) |
 | bund-2026-014 Haftbefehl → keine Grundsicherung, Bundestag bis 31.12. | bundesregierung.de, RegPK 23.09.2026 | True | web.archive.org/web/20261010155302/… wörtlich True |
 | bund-2026-015 Kabinett Arbeitszeitgesetz bis 31.12. | dieselbe RegPK | True | dieselbe Kopie, True |
-| bund-2026-016 UVgO im Bundesanzeiger bis 31.12. | bmds.bund.de, Bericht Entlastungskabinett (15.07.2026), Nr. 16 | True | vorhandene Kopie web.archive.org/web/20260901210029/…, Abgleich offen (Wayback sperrte) |
+| bund-2026-016 UVgO im Bundesanzeiger bis 31.12. | bmds.bund.de, Bericht Entlastungskabinett (15.07.2026), Nr. 16 | True | vorhandene Kopie web.archive.org/web/20260901210029/… (laut CDX 304.184 Byte, SHA-1 GFKVFYYV…), Abgleich weiter offen (Wayback: 10.10. 500, 11.10. 00:34 429, 12.10. 01:00 Bot-Sperre; neue Kopie anlegen 12.10. 520). Live-PDF ist seit der Kopie eine andere Fassung (12.10.: 286.575 Byte, anderer Digest), Zitat steht dort am 12.10. wörtlich unter Nr. 16 |
 
 Schwächen, offen benannt: 014 misst nur eine Maßnahme des Aktionsplans (die der Sprecher selbst als Beispiel nennt).
 015 übersetzt „vorlegen“ als Kabinettsbeschluss; ein Referentenentwurf soll laut Fachpresse schon existieren
