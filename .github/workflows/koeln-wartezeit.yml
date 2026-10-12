@@ -67,7 +67,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      # Seit 12.10.2026 rot-frei: Der Feed ist seit 16.09. eingefroren, messen.py bricht dann mit
+      # „Feed veraltet“ ab. Gemessen wird an der Anzeige (Schritt unten); der Feed-Versuch bleibt,
+      # falls die Stadt ihn wieder anwirft, färbt den Lauf aber nicht mehr rot.
       - name: Feed abrufen, Wayback anstoßen, CSV ergänzen (nur im Messfenster, je Slot einmal)
+        continue-on-error: true
         run: python recherche/koeln-wartezeit/messen.py ${{ inputs.erzwingen == true && '--erzwingen' || '' }}
       # Seit 05.10.2026 werden die Wetten an der Anzeige gemessen (Vermerk in koeln-2026-077 ff.).
       # GitHub ist die zweite Messstelle neben dem Laptop und schreibt in eine EIGENE Datei,
