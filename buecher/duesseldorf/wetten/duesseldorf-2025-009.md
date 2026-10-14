@@ -21,6 +21,8 @@ beleg_ausgang: https://www.duesseldorf.de/medienportal/pressedienst-einzelansich
 vermerke:
   - am: 2026-08-30
     text: "Aufgelöst durch Claude für den Halter (3. Lauf 30.08.2026); Beleg: Pressedienst Stadt Düsseldorf 27.04.2026, vorläufiger Jahresabschluss 2025: Defizit 273,5 Mio EUR. Differenz +83,5 Mio EUR gegenüber Controlling-Prognose −357,0 (23,4 % besser), außerhalb ±10 %. Entwurf/vorläufig, nicht vom Rat festgestellt."
+  - am: 2026-10-14
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Dieser prognostiziert ein negatives Jahresergebnis für das Haushaltsjahr 2025 in Höhe von -357,0 Millionen Euro. Gegenüber dem letzten Bericht nach dem 30. Juni 2025 bedeutet dies eine Verbesserung von 32,3 Millionen Euro.« (Quelle am 14.10.2026 abgerufen, SHA-256 beginnt a136f15b6a1f95ff; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Verbesserung gilt gegenüber dem Bericht nach dem 30.06.2025; die Prognose ist der Bericht nach dem Stichtag 30.09.2025."
 ---
 
 ## Kontext
