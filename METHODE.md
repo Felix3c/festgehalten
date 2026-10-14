@@ -1,6 +1,6 @@
 # METHODE — wie die Computer-Prognosen entstehen
 
-Stand 02.09.2026. Gilt für Lauf 1 (hinterlegt 28.08.2026): 133 Prognosen in fünf
+Stand 02.09.2026, Abschnitt 7 (Nachrechnen) neu am 16.10.2026. Gilt für Lauf 1 (hinterlegt 28.08.2026): 133 Prognosen in fünf
 Büchern, 65 Ja/Nein und 68 Punkt. Diese Seite beantwortet die Frage, die als erste
 kommt: „Ein Sprachmodell? Also Zufall?" — Nein. Hier steht, wie die Zahlen
 entstanden sind, und wie jeder sie nachrechnen oder besser machen kann.
@@ -98,3 +98,65 @@ es schreibt keine Methode vor.
   Das Format hat dafür kein Feld (§6); die Disziplin liegt beim Halter, Git zeigt sie.
 - Ein anderes Modell oder derselbe Halter an einem anderen Tag kann andere Werte
   setzen. Deshalb steht in jeder Datei die Begründung und nicht nur die Zahl.
+
+## 7. Nachrechnen mit einem Befehl
+
+Die Bewertung ist eine Formel, kein Urteil (FORMAT.md §3.1):
+
+    brier = (wert − ausgang)²        ausgang = 1, wenn die Ankündigung eintrat, sonst 0
+
+Kleiner ist besser. Wer 0,30 sagt und die Ankündigung tritt ein, bekommt
+(0,30 − 1)² = 0,49; tritt sie nicht ein, (0,30 − 0)² = 0,09. Sagt die
+Institution 1,00, bekommt sie 0 oder 1, nichts dazwischen. Die Münze (0,50 auf alles)
+bekommt immer 0,25. Das ist die Latte, unter der der Computer liegen muss.
+
+Jeder kann das über alle Bücher nachrechnen, ohne Konto und nach dem Herunterladen ohne
+Netz. Gebraucht werden Python 3.11 oder neuer und die zwei Pakete aus `pyproject.toml`; aufgerufen wird im
+obersten Ordner des Repos:
+
+    git clone https://github.com/Felix3c/festgehalten.git && cd festgehalten
+    pip install pyyaml markdown
+    python werkzeuge/nachrechnen.py buecher            # Schnitt und Kalibrierung
+    python werkzeuge/nachrechnen.py buecher --einzeln  # dazu der Rechenweg je Wette
+
+Das Werkzeug wertet mit derselben Funktion wie die Seite
+(`generator/wettbuch/bewerten.py`). Gezählt werden nur aufgelöste Ja/Nein-Wetten, für
+die der Computer eine Zahl hinterlegt hat. Die Institution wird auf genau denselben
+Wetten gerechnet, damit der Vergleich fair ist.
+
+**Kalibrierung** heißt: Sagt der Computer bei vielen Wetten „0,30", sollten davon etwa
+drei von zehn eintreten. Das Werkzeug teilt die Computer-Werte in Bänder zu 0,20 und
+zählt je Band, wie oft es eintrat. Liegt „eingetreten" deutlich über dem Schnitt des
+Bandes, war der Computer zu vorsichtig; liegt es darunter, zu zuversichtlich. Daraus
+entsteht die nächste datierte Tabelle in Abschnitt 3 (§4 letzter Punkt).
+
+**Stand 16.10.2026** (24 Bücher, 437 Wetten):
+
+| Wer | Brier-Schnitt über 18 Wetten |
+|---|---|
+| Computer | 0,092 |
+| Institution (angekündigt) | 0,147 |
+| Münze (0,50 auf alles) | 0,250 |
+
+| Computer-Wert | Wetten | Schnitt Computer | eingetreten |
+|---|---|---|---|
+| 0,20–0,40 | 1 | 0,35 | 0,00 |
+| 0,40–0,60 | 4 | 0,49 | 0,25 |
+| 0,60–0,80 | 5 | 0,70 | 1,00 |
+| 0,80–1,00 | 8 | 0,89 | 1,00 |
+
+(Bänder ohne Wette lässt die Tabelle weg; das Werkzeug zeigt sie mit „–“.)
+
+Was diese Zahlen tragen und was nicht:
+
+- **Nur 18 Wetten.** 48 Ja/Nein-Wetten sind aufgelöst, aber bei 30 davon war der
+  Ausgang schon bekannt, als der Computer seine Werte hinterlegt hat. Für sie gibt es
+  absichtlich keine Computer-Zahl (Abschnitt 6, keine Prognose nach dem Ereignis).
+  Die 26 aufgelösten Punkt-Wetten haben aus demselben Grund keine.
+- 18 Wetten sind zu wenig für ein Urteil über Bänder. Das Muster bis heute: Bei
+  Werten ab 0,60 trat alles ein, was der Computer für wahrscheinlich hielt; er war dort
+  eher zu vorsichtig. Ob das hält, zeigt erst eine größere Zahl. Die Tabelle in
+  Abschnitt 3 bleibt bis dahin unverändert.
+- Die Zahlen stehen hier mit Datum. Wer den Befehl später ausführt, bekommt neuere
+  Zahlen; die alten bleiben über `git log -p METHODE.md` sichtbar.
+
