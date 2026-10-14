@@ -40,7 +40,7 @@ def _warnungen_zeigen(zeilen: list[str]) -> None:
         print(f"Warnung: {z}", file=sys.stderr)
     if zeilen:
         n = len(zeilen)
-        print(f"{n} Warnung{'en' if n != 1 else ''} (Zitat nicht wörtlich, Vermerk fehlt; Bau läuft weiter).",
+        print(f"{n} Warnung{'en' if n != 1 else ''} (Wortlaut nicht belegt, Vermerk fehlt; Bau läuft weiter).",
               file=sys.stderr)
 
 
@@ -265,7 +265,7 @@ def main(argv: list[str] | None = None) -> int:
             print(HILFE, file=sys.stderr)
             return 2
         try:
-            nicht_woertlich = pruefen.nicht_woertlich_lesen(Path(argv[i + 1]))
+            nicht_woertlich = pruefen.wortlaut_offen_lesen(Path(argv[i + 1]))
         except OSError as e:
             print(f"--zitate: {e}", file=sys.stderr)
             return 2
