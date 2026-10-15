@@ -29,6 +29,8 @@ vermerke:
     text: "5. Lauf 08.10.2026: weiterhin keine Ist-Zahl; gesucht: Startseite luisen-gymnasium.de (verlinkt Presse zum Umzug 10.07.2026; Schulfest 9. Oktober), RP 10.07.2026 jetzt lesbar („Die geplanten Kosten für den modernen Neubau inklusive Sporthalle betragen rund 106,5 Millionen Euro“), WDR 10.07.2026 („hat die Stadt für 106 Millionen Eure [sic] ein modernes Schulgebäude gebaut“, „Die Bauarbeiten sind im Zeitplan“), Antenne Düsseldorf und ddorf-aktuell 10.07.2026 ohne Kostenangabe, Websuche nach Einweihung ohne Treffer. Teilbefund: Bezug zum Schuljahr 2026/27 belegt, Kosten bis zum Bezug nur als Planzahl. Nächster Blick: Berichte zum Schulfest 09.10.2026, sonst Abrechnungsvorlage im Ausschuss."
   - am: 2026-10-09
     text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Der rund 106 Millionen Euro teure Neubau wird zum Schuljahr 2026/27 von der Schule bezogen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert)."
+  - am: 2026-10-15
+    text: "6. Lauf 15.10.2026: Einweihung am 09.10.2026 mit OB Keller, Ministerin Feller und Königin Silvia. News4teachers (dpa-Material, 09.10.2026): Keller nannte das Luisen-Gymnasium „mit 106 Millionen Euro das größte Projekt der Schulbau-Offensive“, „Das ist ein stolzer Preis, aber er ist es wirklich wert.“ (Archiv web/20261015022611, Kopie recherche/belege/2026-10-15-duesseldorf-027-news4teachers.html); WZ 10.10.2026 ebenso „106 Millionen Euro teuren Neubaus“. Teilbefund: Die Stadt nennt bei der Übergabe weiter die Planzahl, keine Kostenfeststellung oder Abrechnung. Nicht aufgelöst (Frage nach tatsächlichen Kosten); nächster Blick: Abrechnungsvorlage im Schulausschuss oder Jahresabschluss 2026."
 ---
 
 ## Kontext
