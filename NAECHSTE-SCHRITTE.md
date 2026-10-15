@@ -9,6 +9,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~05:40: **dortmund-2026-020 (FATT 15.–21.09.) aufgelöst JA, master `1027b7c`, nicht gepusht.** Der fehlende Beleg
+  für den Schlusstag ist da: Rückblick auf sport-tech-city.de „am 21. September 2026 über 100 Teilnehmende im Salzlager der
+  Kokerei Hansa“ (Sport Tech Connect, laut FATT-Tagesprogramm Teil des Festivals). Wayback 20261015033452, lokale Kopie mit
+  SHA-256. 109 Tests, 24 Bücher / 424 Wetten ohne Fehler. Push nach Freigabe.
 - 15.10. ~04:55: **bonn-2025-025 (E-Busse SWB) 4. Suchlauf, master `ae46118`, nicht gepusht.** Weiter keine abgerechnete
   Summe; neu: Förderanteil Busse 1,76 Mio EUR, Akkus 490 statt 396 kWh geliefert. Nächster Blick Beteiligungsbericht
   Bonn / Jahresabschluss SWB Bus und Bahn 2025 (Bundesanzeiger), Verfall 01.07.2027. 24 Bücher / 424 Wetten ohne Fehler.
