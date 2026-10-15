@@ -9,6 +9,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~09:55: **essen-2025-031 (Baukosten Hallenbad Borbeck laut Eröffnungsmeldung) Vermerk „noch nicht auflösbar“, master `08f0445`, nicht gepusht.**
+  Prüfdatum 01.10. war verstrichen, aber ohne Vermerk: Der vorbereitete Vermerk vom 03.10. war bei der Freigabe von essen-2025-030 nicht mitgegangen.
+  Bad nicht eröffnet (Probebetrieb ab Januar 2027, Eröffnung Frühling 2027 laut Stadt gegenüber Radio Essen 09.07., heute erneut abgerufen),
+  keine neuere Kostenzahl als 34,8 Mio €. Wieder prüfen nach der Eröffnung, Verfall 01.10.2028. 109 Tests, 424 Wetten ohne Fehler.
 - 15.10. ~09:40: **koeln-2026-073 („r e t u r n“) erneut gesucht, kein neuer Beleg, master `0f02a7d`, nicht gepusht.** Eröffnungsseite
   unverändert (Foto vom Abend, kein Bericht), WZ-Artikel 16.09. 23:39 berichtet nur vom Rundgang, Museumskalender ohne Eintrag.
   Ausgang bleibt offen; Entscheidung beim Halter (JA mit Vermerk „Uhrzeit nicht belegt“ oder offen lassen). 109 Tests, 424 Wetten ohne Fehler.
