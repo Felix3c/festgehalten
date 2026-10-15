@@ -9,6 +9,12 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~09:30: **Wuppertal 11 Zitat-Warnungen geschlossen, Zweig `sammel-1010` `1abf917`, nicht gepusht.** wuppertal.de liest sich im
+  Chrome-Werkzeug (ohne Browser 403). Alle Zitatteile von wuppertal-2026-001/002/003/005/006/007/009/011/012/014/015 stehen
+  wörtlich auf der Live-Seite und in den lokalen Kopien vom 04.10. (`recherche/belege/2026-10-04-wuppertal-*.html`), darum kein
+  Wortlaut-Vermerk nötig, nur `zitat_live=ja` (Status bleibt `kein_archiv`, Save Page Now scheitert weiter an der Sperre der Stadt;
+  SHA-256 je Seite in der Commit-Nachricht). Prüfung mit `PYTHONPATH=generator`: 113 Tests, 24 Bücher / 441 Wetten ohne Fehler,
+  Wuppertal 0 Warnungen; die übrigen 10 (Bonn 9, duesseldorf-2026-033) sind auf master schon geschlossen und fehlen nur im Zweig.
 - 15.10. ~09:20: **wuppertal-2026-002 (Brunnen Alte Freiheit bis 10.10.) letzte Wartefrist abgelaufen, nicht aufgelöst.**
   Stadt (31 Oktober-Meldungen bis 14.10.) und Lokalpresse ohne Meldung zum Brunnen, Quelle sagt weiter „Anfang Oktober geplant“.
   Die Wette sagt „ohne Beleg: Nein“, FORMAT §2.1 verlangt einen Beleg, aus dem der Ausgang hervorgeht. Entscheidung beim Halter
