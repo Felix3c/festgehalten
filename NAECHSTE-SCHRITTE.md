@@ -9,6 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~06:35: bonn-2026-035 (nächtliche Kanalreinigung bis 25.09. abgeschlossen?) erneut geprüft: bonn.de-Pressemitteilungen ohne Folgemeldung (Suche „Kanal“/„Kanalreinigung“ im Chrome-Werkzeug). Ausgang bleibt offen; Rückfrage an die Pressestelle der Stadt liegt als Entwurf, senden = Felix (Behörde).
 - 15.10. ~06:10: duesseldorf-2026-034 („Die Brause“ bis 30.09. eröffnet?) erneut gesucht: Stadt und Verein ohne Eröffnungsmeldung, nur Vorberichte. Indiz Nein, kein Beleg, Ausgang bleibt offen; Vermerk + zwei Kopien mit SHA-256, master `6a6390b`, nicht gepusht. Nur eine Antwort der Stadt löst sie auf (offene Frage an den Halter).
 - 15.10. ~05:55: **bonn-2026-036 (Hauptausschuss 17.09.) aufgelöst JA, master `771562e`, nicht gepusht.** Neuer Weg: Die
   OParl-Schnittstelle des Bonner Ratsinfo (`www.bonn.sitzung-online.de/oparl/`) ist offen (Open-Data-Lizenz), nur die
