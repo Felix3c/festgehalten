@@ -9,6 +9,11 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~10:30: **koeln-2025-042 (Vorentwurfsplanung neue Rheinbrücken bis 31.03.) 5. Lauf, master `8358c0e`, nicht gepusht.**
+  Neuer Weg für alle Kölner Wetten: Das Kölner Ratsinfo hat eine offene OParl-Schnittstelle (`ratsinformation.stadt-koeln.de/oparl`,
+  Mobilitätsausschuss = `organizations/gr/201`). Alle Tagesordnungen des Ausschusses 2026 ohne Vorlage zu den neuen Brücken,
+  Themenseite der Stadt unverändert („viertes Quartal 2026“). Ausgang offen; wieder prüfen, wenn die Tagesordnung der Sitzung
+  vom 24.11. steht (~17.11.). Achtung: Die Vorlagen-Liste bricht bei großen Abfragen nicht ab (über 5.000 Einträge seit Januar), lieber über Sitzungen gehen. 109 Tests, 424 Wetten ohne Fehler.
 - 15.10. ~09:55: **koeln-2025-059 (Hauptmaßnahme Gymnasium Kreuzgasse bis 30.06. beauftragt?) 5. Lauf, master `cc6d84e`, nicht gepusht.**
   Neu: Die Ausschreibung steht im EU-Amtsblatt als TED 784835-2023 (Titel mit Tippfehler „Totelunternehmer“, darum bisher nicht gefunden).
   Nach ihrer Verfahrenskennung gibt es bis heute keine Vergabebekanntmachung, obwohl sie nach § 39 VgV 30 Tage nach Vergabe fällig wäre.
