@@ -17,14 +17,16 @@ prognosen:
     wert: 0.35
     hinterlegt_am: 2026-10-04
     art: geschaetzt
-ausgang: null
-aufgeloest_am: null
-beleg_ausgang: null
+ausgang: 0
+aufgeloest_am: 2026-10-15
+beleg_ausgang: https://www.wuppertal.de/presse/meldungen/meldungen-2026/august/brunnen-elberfeld.php
 vermerke:
   - am: 2026-10-04
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 04.10.2026."
   - am: 2026-10-04
     text: "Archiv: Save Page Now am 04.10.2026 abgewiesen (HTTP 520). Lokale Kopie der Quelle: recherche/belege/2026-10-04-wuppertal-brunnen-elberfeld.html, SHA-256 c1223856f373808dd2426a3910248750e363d2d3d9618ea109624d45fcb47d24."
+  - am: 2026-10-15
+    text: "Aufgelöst NEIN durch Claude für den Halter (Entscheidung Felix 15.10.2026, Frage 317): kein öffentlicher Beleg für eine Fertigstellung bis 10.10.2026, gesucht bis Mitte Oktober. Stand 15.10.2026 09:20: Quelle unverändert mit »Die Fertigstellung des Brunnens ist Anfang Oktober geplant.« (dateModified 2026-08-07, HTTP 200, SHA-256 beginnt 30bca080), Oktober-Archiv der Stadt (31 Meldungen bis 14.10.) ohne Treffer für »Brunnen« oder »Alte Freiheit«, Wuppertaler Rundschau, WZ und Radio Wuppertal ohne Bericht. Beleg ist hier die unveränderte Ankündigung plus diese erfolglose Suche, kein Bericht über eine Verzögerung. Erscheint später ein Beleg für Fertigstellung bis 10.10., wird die Auflösung berichtigt."
 ---
 
 ## Kontext
