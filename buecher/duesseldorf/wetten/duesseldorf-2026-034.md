@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-15
+    text: "Prüfung am 15.10.2026 durch Claude für den Halter (Dauerlauf, Laufend Guard), 15 Tage nach Fristende: kein öffentlicher Beleg für eine Eröffnung am Kirchplatz gefunden, darum bleibt der Ausgang offen (Beleg-Pflicht, FORMAT.md 2.1). Gesucht: Volltextsuche duesseldorf.de „Brause“ (genau eine Pressemitteilung, die vom 05.03.2026 mit „Die Eröffnung ist für September 2026 geplant“); Beiträge des Vereins über die WordPress-Schnittstelle von metzgereischnitzel.de (neuester Beitrag weiter „Konzert: Xtort am 25. September 2026“, zuletzt geändert 12.09.2026: Konzert wegen fehlender Planungssicherheit im Zwischenquartier A44 in das LZ Hinterhof verlegt; seit 01.09.2026 kein neuer Beitrag); Websuche nach Eröffnungsmeldungen (nur Vorberichte März–Juni 2026, u. a. bilkorama.de 06.06.2026 „Eröffnung: September 2026“). Indiz Nein, kein Beleg. Lokale Kopien: recherche/belege/2026-10-15-duesseldorf-034-brause-posts.json (SHA-256 2e28128ee419b709392ce0487ee5f910c41a44193a1a4b1c0f011a744e1a1595), recherche/belege/2026-10-15-duesseldorf-034-stadt-suche-brause.html (SHA-256 7118bb8e030ec384acffee7530f11afb955c738060ce885d97d6681082e21977)."
 ---
 
 ## Kontext
