@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations><efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7006</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Beschaffungsamt des BMI</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization>
+                  <efac:Organization>
+                     <efbc:GroupLeadIndicator>true</efbc:GroupLeadIndicator>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.stadt-koeln.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Stadt Köln, Amt für Recht, Vergabe und Versicherungen</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Stadthaus Deutz - Westgebäude, Willy-Brandt-Platz 2</cbc:StreetName>
+                           <cbc:CityName>Köln</cbc:CityName>
+                           <cbc:PostalZone>50679</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>07999</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 22122124789</cbc:Telephone>
+                           <cbc:Telefax>+49 22122123011</cbc:Telefax>
+                           <cbc:ElectronicMail>Submissionsdienst-Vergabe@stadt-koeln.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.bezreg-koeln.nrw.de/brk_internet/vergabekammer/index.html</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer Rheinland, Spruchkörper Köln, c/o Bezirksregierung Köln</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Zeughausstraße 2 - 10</cbc:StreetName>
+                           <cbc:CityName>Köln</cbc:CityName>
+                           <cbc:PostalZone>50667</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>000</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 221147-2120</cbc:Telephone>
+                           <cbc:Telefax>+49 221147-2889</cbc:Telefax>
+                           <cbc:ElectronicMail>VKRheinland@bezreg-koeln.nrw.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.bezreg-koeln.nrw.de/brk_internet/vergabekammer/index.html</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7005</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer Rheinland, Spruchkörper Köln, c/o Bezirksregierung Köln</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Zeughausstraße 2-10</cbc:StreetName>
+                           <cbc:CityName>Köln</cbc:CityName>
+                           <cbc:PostalZone>50667</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>000</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 221147-2120</cbc:Telephone>
+                           <cbc:Telefax>+49 221147-2889</cbc:Telefax>
+                           <cbc:ElectronicMail>VKRheinland@bezreg-koeln.nrw.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00784835-2023</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">247/2023</efbc:GazetteID><efbc:PublicationDate>2023-12-22Z</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.7</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5a766d54-b24f-4ede-95d9-6d24ad4187d6</cbc:ID>
+   <cbc:ContractFolderID>b72cf9d1-2a3e-45dc-aaa9-3e4e337d32b4</cbc:ContractFolderID>
+   <cbc:IssueDate>2023-12-21+01:00</cbc:IssueDate>
+   <cbc:IssueTime>09:54:32+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2023-12-21+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.stadt-koeln.de</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7006</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vob-a-eu</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>CrossBorderLaw</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">prof-misconduct</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten über den angegebenen Grund hinaus sämtliche gesetzliche Ausschlussgründe.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>2023-0308-260-31</cbc:ID>
+      <cbc:Name languageID="DEU">Totelunternehmer - Generalinstandsetzung und Neubau Gymnasium Kreuzgasse</cbc:Name>
+      <cbc:Description languageID="DEU">Das Projekt umfasst den Rückbau der Trakte D und E mit dem an gleicher Stelle verorteten Neubaus von Trakt H (6-fach Sporthalle) und Trakt I (Unterrichtsräume / Naturwissenschaften), sowie die Generalinstandsetzung der Trakte A und B. Dabei sind dive</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Hinweis zu Ausschlussgründen: Es gelten sämtliche gesetzliche Ausschlussgründe.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45214220</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>Vogelsanger Straße 1</cbc:StreetName>
+            <cbc:CityName>Köln</cbc:CityName>
+            <cbc:PostalZone>50672</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:CriterionTypeCode listName="selection-criterion">sui-act</cbc:CriterionTypeCode>
+                        <cbc:Description languageID="DEU">Eigenerklärung, die mit dem Teilnahmeantragsvordruck abgegeben wird, über: 
+(1) Erfüllung der gesetzlichen Verpflichtungen zur Zahlung der Steuern und Abgaben sowie der Beiträge zur gesetzlichen Sozialversicherung;
+(2) Eintragung in einem Berufs- oder Handelsregister für die ausgeschriebene Leistung
+(3) Nichtvorliegen einer Freiheitsstrafe in den letzten drei Jahren von mehr als 3 Monaten oder einer Geldstrafe von mehr als 90 Tagessätzen oder Geldbuße von mehr als 2.500 € gemäß § 21 Arbeitnehmerentsendegesetz, § 19 Mindestlohngesetz oder § 21 Absatz 1 Satz 1 und 2 Schwarzarbeiterbekämpfungsgesetz 
+(4) Erfüllung der gewerberechtlichen Voraussetzungen für die Ausführung der angebotenen Leistung
+(5) keine Eröffnung eines Insolvenzverfahrens oder eines vergleichbaren gesetzlich geregelten Verfahrens, keine Eröffnung beantragt und kein Insolvenzplan rechtskräftig bestätigt
+(6) das Unternehmen befindet sich nicht in Liquidation
+(7) es liegen keine weiteren Ausschlussgründe nach §§ 123, 124 GWB vor</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:CriterionTypeCode listName="selection-criterion">ef-stand</cbc:CriterionTypeCode>
+                        <cbc:Description languageID="DEU">A) Erklärung über den Umsatz des Unternehmens jeweils bezogen auf die letzten drei abgeschlossenen Geschäftsjahre (2020, 2021, 2022), soweit er Leistungen betrifft, die mit der zu vergebenen Leistungen vergleichbar sind, unter Einschluss des Anteils der gemeinsam mit anderen Unternehmen ausgeführten Aufträgen. Es ist neben der Angabe des Gesamtumsatzes auch die Umsatzangabe aus Planungsleistungen und Bauleistungen aufzuführen. 
+Zu A): 
+Mindestsumme Gesamtumsatz 75 Millionen € netto pro Jahr. Der jährliche Mindestumsatz kann bei einer Bietergemeinschaft von allen Mitgliedern gemeinsam erbracht werden. 
+
+B) Eigenerklärung über das Bestehen oder alternativ den Abschluss einer entsprechenden Betriebshaftpflichtversicherung. 
+Zu B):
+Deckungssumme für Personenschäden mindestens 5 Millionen Euro für Vermögens- und Sachschäden von je mindestens 1 Millionen Euro jährlich zweifach maximiert im Auftragsfall.
+
+Fortsetzung aus "Technische und berufliche Leistungsfähigkeit  (BT-747/BT-750)"
+a) Für den vorgesehenen Fachplaner für das Leistungsbild Objektplanung ist mindestens eine Referenz für ein Schulgebäude (Neubau) nachzuweisen, das mehr als 5.000 m² Bruttogeschoßfläche a (DIN 277) hat und mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 4)
+b) Für den vorgesehenen Fachplaner für das Leistungsbild Objektplanung ist mindestens eine Referenz für die Generalsanierung eines denkmalgeschützten Gebäudes nachzuweisen, das mehr als 3.000 m² Bruttogeschoßfläche  a (DIN 277) hat und mindestens in den Leistungsphasen 2 bis 5 HOAI und in der LeistungsphaseP 8 als denkmalpflegerische Begleitung bearbeitet wurde. (Anlage 1 - Referenzblatt 5)
+c)Für den vorgesehenen Fachplaner für das Leistungsbild Tragwerksplanung ist mindestens eine Referenz für ein Neubau (Gebäue) nachzuweisen, das mehr als 3.000 m² Bruttogeschoßfläche a (DIN 277) hat und mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 6)
+d)Für den vorgesehenen Fachplaner für das Leistungsbild Tragwerksplanung ist mindestens eine Referenz für eine Generalsanierung im Bestand nachzuweisen, das mehr als 3.000 m² Bruttogeschoßfläche a (DIN 277) hat und mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 7)
+e)Für den vorgesehenen Fachplaner für das Leistungsbild Technische Ausrüstung der Anlagengruppen 1 bis 3 und 8 (HLSK und GA/MSR) ist mindestens eine Referenz für eine Bildungseinrichtung oder ein vergleichbares Gebäude nachzuweisen, das mehr als 5.000 m² Bruttogeschoßfläche a (DIN 277) hat und mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 8)
+f) Für den vorgesehenen Fachplaner für das Leistungsbild Technische Ausrüstung der Anlagengruppen 4 bis 6 (Elektro) ist mindestens eine Referenz  für eine Bildungs/Kultureinrichtung oder ein vergleichbares Gebäude nachzuweisen, das mehr als 5.000 m² Bruttogeschoßfläche a (DIN 277) hat und mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 9)
+i. Hinweis: Wenn der Bewerber für alle Anlagengruppen der Technischen Ausrüstung nur einen Fachplaner vorsieht, kann anstatt der beiden Referenzen k) und l) auch nur eine Referenz mit den genannten Anforderungen vorgelegt werden, wenn diese alle Anlagengruppen beinhaltet.
+g) Für den vorgesehenen Fachplaner für das Leistungsbild Technische Ausrüstung Fachraumplanung Schulen ist mindestens eine Referenz für eine Schule mit naturwissenschatlichen Räumen nachzuweisen, die mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 10)
+h) Für den vorgesehenen Fachplaner für das Leistungsbild Freianlagen ist mindestens eine Referenz von Freianlagen für Bildungs-/Kultureinrichtungen oder vergleichbare Gebäude oder Parkanlagen mit Sport beziehungsweise Spielplatzflächen mit mehr als 1.000 m² Grundstückfläche nachzuweisen, welche mindestens in den Leistungsphasen 3 bis 5 HOAI bearbeitet wurde. (Anlage 1 - Referenzblatt 11)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:CriterionTypeCode listName="selection-criterion">tp-abil</cbc:CriterionTypeCode>
+                        <cbc:Description languageID="DEU">A) Zahl der in den letzten drei abgeschlossenen Kalenderjahren (2020, 2021, 2022) jahresdurchschnittlich beschäftigten Arbeitskräfte mit gesondert ausgewiesenem technischen Leitungspersonal. 
+Bietergemeinschaften werden dabei als Ganzes betrachtet.
+Zu A) Mindestanzahl jahresdurchschnittlich beschäftigte Arbeitskräfte: 50
+Mindestanzahl gesondert ausgewiesenes technisches
+Leitungspersonal: 20
+
+B) Es sind Referenzen (Ref.) für den Bewerber beziehungsweise Totalunternehmer (TU) sowie für die für die Fachplanungen vorgesehenen Nachunternehmer des Bewerbers beziehungsweise TU einzureichen.
+
+I. Für den Bewerber und Totalunternehmer ist mindestens eine Referenz einzureichen (Anlage 1 - Referenzblatt 1)
+1. Für den Bewerber sind die nachfolgenden Anforderungen a) und e) in der Referenz nachzuweisen:
+a) Das Referenzprojekt muss im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist Teilnahmeantrag fertig gestellt und abgenommen (baurechtliche Abnahme) worden sein.
+b) Im Referenzprojekt muss es sich mindestens um den Neubau einer Bildungseinrichtung handeln (Hochschule, Schule et cetera).
+c) Der Bewerber oder ein ARGE-Partner war im Referenzprojekt Total- oder Generalunternehmer für das Projekt. "Generalunternehmer" bedeutet, dass der Referenzinhaber mindestens alle wesentlichen Leistungen der Kostengruppen (KGR) 300 und 400 nach DIN 276 ausgeführt hat; "Totalunternehmer" bedeutet, dass der Referenzinhaber außerdem mindestens alle wesentlichen Planungsleistungen mindestens der Leistungsphasen (LP) 4, 5 und 8 HOAI ausgeführt hat.
+c) Baukosten (KGR 200-600) mindestens 25.000.000 EURO brutto.
+d) BGF a mindestens 10.000 m²
+e) Das Referenzprojekt muss in der Genehmigungs- und Ausführungsplanung (Leistungsphase 4 und 5 HOAI) mindestens in den Leistungsbildern 
+a. Objektplanung gemäß § 34 HOAI 
+b. Tragwerksplanung gemäß § 51 HOAI 
+c. Technische Gebäudeausrüstung gemäß § 55 HOAI sowie in der 
+d. Bauleitung und Bauausführung durch den Bewerber beziehungsweise Totalunternehmer bearbeitet worden sein.
+
+II. Für den Bewerber und Totalunternehmer ist mindestens eine Referenz einzureichen (Anlage 1 - Referenzblatt 2)
+1. Für den Bewerber sind die nachfolgenden Anforderungen a) und e) in der Referenz nachzuweisen:
+a) Das Referenzprojekt muss im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist Teilnahmeantrag fertig gestellt und abgenommen (baurechtliche Abnahme) worden sein.
+b) Im Referenzprojekt muss es sich mindestens um die Generalsanierung eines denkmalgeschützten Gebäudes handeln.
+c) Der Bewerber oder ein ARGE-Partner war im Referenzprojekt Total- oder Generalunternehmer für das Projekt. "Generalunternehmer" bedeutet, dass der Referenzinhaber mindestens alle wesentlichen Leistungen der KGR 300 und 400 nach DIN 276 ausgeführt hat; "Totalunternehmer" bedeutet, dass der Referenzinhaber außerdem mindestens alle wesentlichen Planungsleistungen mindestens der Leistungsphasen 4, 5 und 8 HOAI ausgeführt hat.
+d) Bruttogeschoßfläche a mindestens 3.000 m²
+e) Das Referenzprojekt muss in der Genehmigungs- und Ausführungsplanung (Leistungsphasen  4, 5 und 8 HOAI) mindestens in den Leistungsbildern 
+a. Objektplanung gemäß § 34 HOAI
+b. Tragwerksplanung gemäß § 51 HOAI
+c. Technische Gebäudeausrüstung gemäß § 55 HOAI sowie in der 
+d. Bauleitung und Bauausführung durch den Bewerber beziehungsweise Totalunternehmer bearbeitet worden sein.
+
+III. Für den Bewerber und Totalunternehmer ist mindestens eine Referenz einzureichen (Anlage 1 - Referenzblatt 3)
+1. Für den Bewerber sind die nachfolgenden Anforderungen a) und d) in der Referenz nachzuweisen:
+a) Das Referenzprojekt muss im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist Teilnahmeantrag fertig gestellt und abgenommen (baurechtliche Abnahme) worden sein.
+b) Im Referenzprojekt muss es sich mindestens um den Neubau einer Sporthalle handeln. 
+c) Der Bewerber oder ein ARGE-Partner war im Referenzprojekt Total- oder Generalunternehmer für das Projekt. "Generalunternehmer" bedeutet, dass der Ref.inhaber mindestens alle wesentlichen Leistungen der KGR 300 und 400 nach DIN 276 ausgeführt hat; "Totalunternehmer" bedeutet, dass der Referenzinhaber außerdem mindestens alle wesentlichen Planungsleistungen mindestens der Leistungsphasen 4, 5 und 8 HOAI ausgeführt hat.
+d) Das Referenzprojekt muss in der Genehmigungs- und Ausführungsplanung (Leistungsphasen 4 und 5 HOAI) mindestens in den Leistungsbildern 
+a. Objektplanung gemäß § 34 HOAI 
+b. Tragwerksplanung gemäß § 51 HOAI 
+c. Technische Gebäudeausrüstung gemäß § 55 HOAI sowie in der 
+d. Bauleitung und Bauausführung durch den Bewerber beziehungsweise Totalunternehmer bearbeitet worden sein.
+
+IV. Für die vom Bewerber angegebenen Fachplaner der Leistungsbilder (8x Anlage 1 (Referenzblätter 4 - 11))
+- Objektplanung (§ 34 HOAI), 
+- Tragwerksplanung (§ 51 HOAI)
+- Technische Ausrüstung (§ 55 HOAI, ALG 1-3, 8)
+- Technische Ausrüstung (§ 55 HOAI, ALG 4-6, 8)
+- Technische Ausrüstung (Fachraumplanung Schulen)
+- Freianlagen (§ 39 HOAI)
+ist jeweils mindestens eine Referenz je Leistungsbild und teilweise je Aufgabenstellung (siehe Objektplanung zwei Referenzen) einzureichen, auch wenn mehrere Leistungsbilder von einem Nachunternehmer erbracht werden sollen (Anlage 1 (Referenzblätter 4 - 11))
+1. Für die Fachplaner der Leistungsbilder Objektplanung, Tragwerksplanung, Technischen Ausrüstung und Freianlagen ist die nachfolgende Anforderung in allen Referenzen nachzuweisen:
+Die Referenz muss im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist Teilnahmeantrag fertig gestellt worden sein und abgenommen (baurechtliche Abnahme) worden sein.
+2. Für die Fachplaner der Leistungsbilder Objektplanung, Tragwerksplanung, Technischen Ausrüstung, Fachraumplanung und Freianlagen sind die nachfolgenden Anforderungen b) bis i) in der angegebenen Referenz nachzuweisen:
+
+Die Anforderungen a) bis h) werden im Punkt "Wirtschaftliche und finanzielle Leistungsfähigkeit  (BT-747/BT-750)" fortgesetzt</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>TenderDoc</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cbc:LanguageID>DEU</cbc:LanguageID>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://vergabeplattform.stadt-koeln.de/NetServer/TenderingProcedureDetails?function=_Details&amp;TenderOID=54321-Tender-18c10b0f714-49a5cc21ed4647f0</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">-</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:Description languageID="DEU">Die Vergabe des Auftrages richtet sich unter anderem nach dem Gesetz über die Sicherung von Tariftreue und Mindestlohn bei der Vergabe öffentlicher Aufträge (Tariftreue- und Vergabegesetz Nordrhein-Westfalen TVgG NRW) vom 21.03.2018 (TVgG). Hiernach müssen beauftragte Unternehmen sowie deren Nachunternehmerinnen beziehungsweise Nachunternehmer die nach dem TVgG festgelegten Mindestentgelte bzw. Tariflöhne zahlen und Mindestarbeitsbedingungen gewähren (§ 2 TVgG). Die Stadt Köln ist als öffentliche Auftraggeberin berechtigt, Kontrollen durchzuführen, um die Einhaltung dieser Pflichten zu überprüfen. Weitere Ausführungsbedingungen sind den Vergabeunterlagen zu entnehmen.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://vergabeplattform.stadt-koeln.de/NetServer/ParticipationControllerServlet</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Siehe § 160 Absatz 3 GWB
+- innerhalb einer Frist von 10 Kalendertagen gegenüber der Stadt Köln nach Erkennen des Verstoßes gegen Vergabevorschriften im Vergabeverfahren
+ - spätestens bis Ablauf der Angebots-/Bewerbungsfrist bei Verstößen gegen Vergabevorschriften in der Bekanntmachung
+ - spätestens bis Ablauf der Angebots-/Bewerbungsfrist bei Verstößen gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind
+ - spätestens bis Ablauf der Angebots-/Bewerbungsfrist bei Verstößen gegen Vergabevorschriften, die in den Vergabeunterlagen erkennbar sind
+ - innerhalb von 15 Tagen nach Eingang der Mitteilung der Stadt Köln, der Rüge nicht abhelfen zu wollen
+ Siehe § 135 Absatz 2 GWB
+ - 30 Kalendertage nach der Information der betroffenen Bieter und Bewerber durch die Stadt Köln über den Abschluss des Vertrages, spätestens jedoch sechs Monate nach Vertragsschluss 
+ Im Fall der Bekanntmachung der Auftragsvergabe im Amtsblatt der EU 30 Kalendertage nach Veröffentlichung der Auftragsvergabe im Amtsblatt der EU</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7005</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">allowed</cbc:SubmissionMethodCode>
+         <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:ParticipationRequestReceptionPeriod>
+            <cbc:EndDate>2024-01-30+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:ParticipationRequestReceptionPeriod>
+         <cac:OpenTenderEvent>
+            <cbc:Description languageID="DEU">Es dürfen keine Personen bei der Öffnung der Angebote anwesend sein, d.h. die Öffnung ist nicht öffentlich.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="DEU">Stadt Köln, Amt für Recht, Vergabe und Versicherungen, Zimmer 10.A21</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0000</cbc:ID>
+         <cbc:Name languageID="DEU">Totelunternehmer - Generalinstandsetzung und Neubau Gymnasium Kreuzgasse</cbc:Name>
+         <cbc:Description languageID="DEU">Gegenstand dieser Ausschreibung der Gebäudewirtschaft der Stadt Köln ist die vollständige Planung sowie die schlüsselfertige und betriebsbereite Errichtung der Schulgebäude des Gymnasiums Kreuzgasse an der Vogelsanger Straße 1 Köln. Durch einen Totalunternehmer sind auf Grundlage einer funktionalen Leistungsbeschreibung folgende wesentlichen Baumaßnahmen zu planen und zu realisieren:
+
+Rückbau des Bestandstraktes D (3-fach Turnhalle mit Umkleide- und sonstigen Nebenräumen)
+
+Rückbau des Bestandstraktes Trakt E (Naturwissenschaftliche Räume, Fachklassen, SEK II-Räume)
+
+Neubau des Traktes H (6-fach Sporthalle mit Umkleide- und sonstigen Nebenräumen)
+
+Neubau des Traktes I (Unterrichtsräume in Clusterform, Naturwissenschaftliche Räume, Mensa, Kantine, Bücherei et cetera)
+
+Generalinstandsetzung des denkmalgeschützten Bestands-Traktes A (Klassenräume, Kunsträume)
+
+Generalinstandsetzung des denkmalgeschützten Bestands-Traktes B (Verwaltungsräume, Aula et cetera)
+
+Außenanlagen (insbesondere Schulhof)</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">Rechtzeitig gestellte Fragen werden nach § 12 a EU Absatz 3 VOB/A bis sechs Tage vor Ablauf der Angebotsfrist beantwortet.
+
+Der Preis ist nicht das einzige Zuschlagskriterien. Sämtliche Zuschlagskriterien ergeben sich aus den Vergabeunterlagen . 
+Der Teilnahmeantrag ist zwingend auf den von der Vergabestelle zur Verfügung gestellten Formualren auszufüllen. 
+
+Jeder nicht bezuschlagte Bieter, der ein fristgerechtes und wertbares, entsprechend den Vorgaben der Vergabestelle erstelltes Finales Angebot eingereicht hat, erhält für seine Aufwendungen im Ausschreibungsverfahren eine Entschädigungssumme in Höhe von pauschal 100.000 Euro einschließlich Umsatzsteuer. Weitere Ansprüche, gleich aus welchem Rechtsgrund, sind ausgeschlossen. 
+Den Unterlagen liegt informationshalber eine Eigenerklärung (Anlage zum BMWK-Rundschreiben vom 14.04.2022) bei. Die Stadt Köln weist darauf hin, dass sie den für den Zuschlag vorgesehenen Bieter vor Zuschlagserteilung auffordern wird, diese Eigenerklärung abzugeben.
+
+Die Auswahlkriterien kommen erst zur Anwendung, wenn mehr als 4 Bewerber die Anforderungen der Eignungskriterien und Mindeststandards erfüllen. In diesem Fall wird die Rangfolge der Bewerber mittels der nachfolgend beschriebenen Auswahlkriterien festgelegt. Die 4 Bewerber mit der jeweils höchsten Punktzahl werden zur Angebotsabgabe aufgefordert.
+
+Für die Auswahlkriterien sind drei realisierte Referenzobjekte des Bewerbers beziehungsweise der Bietergemeinschaft als Totalunternehmer einzureichen. Das Referenzobjekt, welches für die Erfüllung des Eignungskriteriums eingereicht wird, kann für die Auswahlkriterien ebenfalls eingereicht werden, solange die dazugehörigen weiteren Anforderungen durch die Referenz (Ref.) erfüllt werden. 
+
+Folgende Kriterien sind für die Auswahl der begrenzten Anzahl von Bewerbern ausschlaggebend. Es werden ausschließlich Referenz des Bewerbers beziehungsweise Totalunternehmers und der Fachplaner für selbst erbrachte Leistungen gewertet:
+
+Für die schlüsselfertige Planung und Ausführung einer Bildungseinrichtung (Punkt I) werden maximal 3 Referenzen gewertet. Wenn der Bewerber mehr als 3 Referenzen einreicht, werden jeweils die 3 bestbewerteten Referenz gewertet. Die Baukosten (I. 2.) sowie die Anforderungen aus I.3. und I.4. beziehen sich auf die 3 Referenzen für die schlüsselfertige Planung und Ausführung einer Bildungseinrichtung.
+Für die Generalsanierung eines denkmalgeschützten Gebäudes werden maximal drei Ref. gewertet (Punkt II). Wenn der Bewerber mehr als 3 Referenzen einreicht, werden jeweils die 3 bestbewerteten Referenzen gewertet.
+Für den Neubau einer Sporthalle werden maximal drei Referenzen gewertet (Punkt III). Wenn der Bewerber mehr als 3 Ref. einreicht, werden jeweils die 3 bestbewerteten Referenzen gewertet.
+Alle Referenzen. müssen im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist Teilnahmeantrag fertig gestellt und abgenommen (baurechtliche Abnahme) worden sein.
+
+I.Schlüsselfertige Planung und Ausführung einer Bildungseinrichtung als Total/Generalunternehmer mit Leistungen mindestens analog den Leistungsbildern
+-Objektplanung gemäß § 34 HOAI 
+-Tragwerksplanung (§ 51 HOAI)
+-Technische Gebäudeausrüstung gemäß § 55 HOAI 
+1.Vergleichbarkeit der Referenz:
+Bildungseinrichtung (zum Beispiel Universität, Fachhochschule) 7 Punkte oder
+Schule (zum Beispiel Grundschule, Förderschule, Berufskolleg, Realschule et cetera 15 Punkte oder
+Gymnasium oder Gesamtschule (Schule mit Sek I und II) 20 Punkte
+2. Baukosten
+Baukosten 0 bis 10 Millionen € brutto (KGR 200-600) 0 Punkte oder Baukosten 10 bis 20 Millionen € brutto (KGR 200-600) 3 Punkte oder Baukosten 20 bis 30 Millionen € brutto (KGR 200-600) 7 Punkte oder Baukosten über 30 Millionen € brutto (KGR 200-600) 10 Punkte 
+3. Übermittelte Referenz beinhaltet eine Mensa / Kantine 5 Punkte
+4.Übermittelte Referenz beinhaltet Cluster 10 Punkte
+Es werden nur Referenz mit Planungsanteilen ab inklusive Leistungsphase 4 analog HOAI gewertet.
+
+II.Planung und Ausführung eines denkmalgeschützten Gebäudes
+Generalsanierung eines denkmalgeschützten Gebäudes 7 Punkte oder Generalsanierung einer denkmalgeschützten Schule (zum Beispiel Grundschule, Förderschule, Berufskolleg, Realschule et cetera) 15 Punkte oder Generalsanierung eines denkmalgeschützten Gymnasiums oder einer Gesamtschule (Schule mit Sek I und II) 20 Punkte
+Es werden nur Referenzen mit Planungsanteilen ab inklusive Leistungsphase 4 analog HOAI gewertet.
+
+III.Schlüsselfertige Planung und Ausführung einer Sporthalle als Total/Generalunternehmer mit Leistungen mindestens analog den Leistungsbildern
+-Objektplanung gemäß § 34 HOAI
+-Tragwerksplanung (§ 51 HOAI)
+-Technische Gebäudeausrüstung gemäß § 55 HOAI 
+Neubau einer 2-fach Turnhalle (eingeschossig, Alle Halleneinheiten in einer Geschossebene) 10 Punkte oder Neubau einer mindestens 3-fach Turnhalle (eingeschossig, Alle Halleneinheiten in einer Geschossebene) 15 Punkte oder Neubau einer 2-fach Turnhalle (mind. zweigeschossig, Halleneinheiten in mehreren Geschossebenen) 15 Punkte oder Neubau einer mindestens 3-fach Turnhalle (mindestens zweigeschossig, Halleneinheiten in mehreren Geschossebenen) 20 Punkte 
+
+Die Punkte in I. werden pro Referenz vergeben und addiert. Maximal erreichbare Punktzahl pro Referenz 45 Punkte, für 3 Referenzen 135 Punkte. 
+Die Punkte in II. werden pro Referenz vergeben und addiert. Maximal erreichbare Punktzahl pro Referenz 20 Punkte, für 3 Referenzen 60 Punkte. 
+Die Punkte in III. werden pro Referenz vergeben und addiert. Maximal erreichbare Punktzahl pro Referenz 20 Punkte, für 3 Refenzen 60 Punkte.
+Für den Bewerber beziehungsweise Totalunternehmer (Punkte I. - III.) können maximal 255 Punkte erreicht werden. 
+
+Für die Fachplaner der Leistungsbilder Objektplanung, Tragwerksplanung, Technischen Ausrüstung (ALG 1-3 und ALG 8 Mechanik), Technische Ausrüstung der Anlagengruppen (ALG 4 bis 6 Elektro), Technische Ausrüstüng Fachraumplanung Schulen und Freianlagenplanung. Je Kriterium und Leistungsbild werden maximal 3 Referenzen gewertet. Die Punkte werden je Leistungsbild und Referenz vergeben. Die Planung in der Referenz muss mindestens in den Leistungsphasen 3, 4 und 5 erfolgt sein.
+
+IV. Planung und Objektüberwachung Schulgebäude (Objektplanung, Tragwerksplanung, Technische Gebäudeausrüstung ALG 1-3 und 8, Technische Gebäudeausrüstung ALG 4-6, Fachraumplanung) beziehungsweise Bildungseinrichtung (Schule, Berufskolleg, Hochschule / Universität, Fachhochschule). (Die Punkte werden addiert.)
+1.wenn die Referenz die Planung einer Kantine/Mensa enthält 3 Punkte 
+2.wenn die Referenz die Planung von Naturwissenschaftlichen Räumen enthält 3 Punkte
+3.wenn die Referenz Cluster enthält 3 Punkte	
+4.wenn die Referenz ein denkmalgeschütztes Gebäude enthält 3 Punkte
+5.wenn die Ref. die Planung von einer Turnhalle enthält 3 Punkte
+Die Punkte 1. - 5. werden pro Referenz vergeben und addiert. Maximal erreichbare Punktzahl pro Referenz 15 Punkte und für alle Fachplaner (5 Fachrichtungen) insgesamt 225 Punkte (15 (maximale Punktzahl) x 3 (Anzahl Referenz) x 5 (Fachrichtungen) = 225).
+Hinweis: Wenn der Bewerber für alle Anlagengruppen der Technischen Ausrüstung nur einen Fachplaner vorsieht, kann anstatt der einzelnen Referenz für die mechanische und elektrotechnische Planung auch nur eine Ref. mit den genannten Anforderungen vorgelegt werden, wenn diese alle Anlagengruppen beinhaltet. Gewertet wird dann für beide Fachplanungsgruppen.
+
+V. Planung und Objektüberwachung Freianlagen Bildungs-/Kultureinrichtungen oder vergleichbare Gebäude oder Parkanlagen mit Sport beziehungsweise Spielplatzflächen. (Die Punkte werden addiert	
+1.wenn die Referenz die Planung eines Schulhofs 5 Punkte 
+2.wenn die Referenz die Planung von Spiel- und Sportgeräten 5 Punkte
+Hinweise für die Wertung der Referenzen des Totalunternehmers und der Fachplaner:
+-Wertbar sind ausschließlich Referenz, in den oben angegebenen Zeiträumen errichtet wurden, das heißt bei den Referenzen muss es sich um Projekte handeln, die im Zeitraum vom 01.01.2012 bis zum Ablauf der Teilnahmefrist fertig gestellt und abgenommen (baurechtliche Abnahme) wurden, sie können aber vor dem Zeitraum begonnen worden sein.
+-Die Bewerber werden gebeten, sich auf die Vorlage vergleichbarer Referenzen zu beschränken. Wenn der Bewerber mehr als 3 Referenzen pro Kriterium einreichen sollten, werden die besten 3 Referenzen gewertet.
+-Die Referenzen sind mit den im Teilnahmeantrag enthaltenen Formblättern nachzuweisen. Die Formblätter sind je nach Anzahl der Referenz entsprechend zu kopieren.
+-Bei Arbeitsgemeinschaften sind die Referenzkriterien insgesamt nachzuweisen, das heißt der Referenznachweis ist nicht von jedem Mitglied der Bietergemeinschaft einzeln zu führen.
+Bei gleicher Bewertung in der Gesamtsumme aller Auswahlkriterien entscheidet das Los.</cbc:Note>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45214220</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Vogelsanger Straße 1</cbc:StreetName>
+               <cbc:CityName>Köln</cbc:CityName>
+               <cbc:PostalZone>50672</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">63</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>
