@@ -9,6 +9,13 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~06:45: **Bonner Zitat-Warnungen geschlossen, master `d486a2d`, nicht gepusht.** OParl hilft hier nicht (die 9 Quellen
+  sind Pressemitteilungen, keine Ratsunterlagen), aber bonn.de liest sich im Chrome-Werkzeug. Für bonn-2025-024/025/027/028 und
+  bonn-2026-032–036 je ein Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…«“, jeder Wortlaut vor dem Schreiben
+  wörtlich gegen die Live-Seite geprüft, SHA-256 des sichtbaren Textes im Vermerk. Bonn jetzt 0 Warnungen (Code aus
+  `sammel-1010`); übrig Wuppertal 11 und duesseldorf-2026-033. 143 Tests grün. **Für die Auflösung am 02.11.:**
+  bonn-2026-033 fragt nach „7 Dezernaten“ zum 01.11., die Stadt nimmt das neue Dezernat aber ausdrücklich vom 1. November
+  aus. bonn-2026-035: Die Quelle lässt bis zu drei Tage Verschiebung zu.
 - 15.10. ~06:35: bonn-2026-035 (nächtliche Kanalreinigung bis 25.09. abgeschlossen?) erneut geprüft: bonn.de-Pressemitteilungen ohne Folgemeldung (Suche „Kanal“/„Kanalreinigung“ im Chrome-Werkzeug). Ausgang bleibt offen; Rückfrage an die Pressestelle der Stadt liegt als Entwurf, senden = Felix (Behörde).
 - 15.10. ~06:10: duesseldorf-2026-034 („Die Brause“ bis 30.09. eröffnet?) erneut gesucht: Stadt und Verein ohne Eröffnungsmeldung, nur Vorberichte. Indiz Nein, kein Beleg, Ausgang bleibt offen; Vermerk + zwei Kopien mit SHA-256, master `6a6390b`, nicht gepusht. Nur eine Antwort der Stadt löst sie auf (offene Frage an den Halter).
 - 15.10. ~05:55: **bonn-2026-036 (Hauptausschuss 17.09.) aufgelöst JA, master `771562e`, nicht gepusht.** Neuer Weg: Die
