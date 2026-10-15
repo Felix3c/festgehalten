@@ -9,6 +9,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~09:20: **wuppertal-2026-002 (Brunnen Alte Freiheit bis 10.10.) letzte Wartefrist abgelaufen, nicht aufgelöst.**
+  Stadt (31 Oktober-Meldungen bis 14.10.) und Lokalpresse ohne Meldung zum Brunnen, Quelle sagt weiter „Anfang Oktober geplant“.
+  Die Wette sagt „ohne Beleg: Nein“, FORMAT §2.1 verlangt einen Beleg, aus dem der Ausgang hervorgeht. Entscheidung beim Halter
+  (Rückfrage bei der Stadt / offen lassen / Nein). Stand in `docs/2026-10-04-aufloesung-wuppertal-0910-1110-VORBEREITET.md`, master `4810665`, nicht gepusht.
 - 15.10. ~06:55: **duesseldorf-2026-033 Quelle nachbelegt, nicht gepusht.** Die Pressemitteilung der Stadt vom 19.03. ist
   404 ohne Wayback-Kopie, steht aber noch in der Volltextsuche von duesseldorf.de (Titel, Datum 19.03.2026 11:03, Anreißer).
   Suchseite archiviert (Wayback 20261015044005, Titel geprüft), lokale Kopie mit SHA-256, Quellenvermerk in der Wette.
