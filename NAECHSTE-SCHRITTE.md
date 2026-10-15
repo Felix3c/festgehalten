@@ -9,6 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~11:25: **koeln-2025-052 (Kosten Modulbau Gymnasium Rondorf) 6. Lauf über die Kölner OParl-Schnittstelle, master `78e01cb`, nicht gepusht.** Keine Ist-Kosten; Vorlage 1943/2026 (Schulausschuss 21.09.): Erweiterung des Interims Eygelshovener Straße geht erst 2026 (Teil 1) und 2027 (Teil 2) in Betrieb, Fertigstellung des endgültigen Gymnasiums zum Schuljahr 2029/30 „kann nicht mehr gehalten werden“. Beleg-PDF mit SHA in recherche/belege. Wiedervorlage 2027.
 - 15.10. ~11:05: **koeln-2025-050 aufgelöst: 5 statt 62 Straßenbäume Innenstadt 2025/26** (Stadt-Antwort Vorlage 1826/2026, BV Innenstadt 17.09., über die Kölner OParl-Schnittstelle gefunden), Teilbefund bei koeln-2025-049 (Innenstadt 5, Rodenkirchen ab Herbst 2026, Lindenthal ohne Planung; stadtweit offen). master `493191e`, nicht gepusht. Archivkopie (Wayback) steht aus, Save Page Now gab 429; nächster Lauf nachholen. koeln-2025-029/032 in den Vorlagen seit 09/2025 ohne Zahl.
 - 15.10. ~10:30: **koeln-2025-042 (Vorentwurfsplanung neue Rheinbrücken bis 31.03.) 5. Lauf, master `8358c0e`, nicht gepusht.**
   Neuer Weg für alle Kölner Wetten: Das Kölner Ratsinfo hat eine offene OParl-Schnittstelle (`ratsinformation.stadt-koeln.de/oparl`,
