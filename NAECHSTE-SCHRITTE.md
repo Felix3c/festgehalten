@@ -9,7 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
-- 15.10. ~09:30: **Wuppertal 11 Zitat-Warnungen geschlossen, Zweig `sammel-1010` `1abf917`, nicht gepusht.** wuppertal.de liest sich im
+- 15.10. ~09:10: **Wuppertal 11 Zitat-Warnungen geschlossen, Zweig `sammel-1010` `1abf917`, nicht gepusht.** wuppertal.de liest sich im
   Chrome-Werkzeug (ohne Browser 403). Alle Zitatteile von wuppertal-2026-001/002/003/005/006/007/009/011/012/014/015 stehen
   wörtlich auf der Live-Seite und in den lokalen Kopien vom 04.10. (`recherche/belege/2026-10-04-wuppertal-*.html`), darum kein
   Wortlaut-Vermerk nötig, nur `zitat_live=ja` (Status bleibt `kein_archiv`, Save Page Now scheitert weiter an der Sperre der Stadt;
