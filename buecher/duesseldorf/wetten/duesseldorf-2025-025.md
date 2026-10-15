@@ -27,6 +27,8 @@ vermerke:
     text: "3. Lauf 30.08.2026: gesucht: Abrechnung/Fertigstellung Erweiterungsbau Comenius-Gymnasium (Pressedienst „Düsseldorf macht Schule”, Schul-Homepage, Entwurf Jahresabschluss 2025 Großprojekte), nichts Belastbares — nur Planzahl rund 25 Mio EUR und avisierte Gesamtfertigstellung Ende 2025."
   - am: 2026-10-09
     text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Die Gesamtfertigstellung des Bauprojektes ist für Ende 2025 avisiert, die Kosten belaufen sich insgesamt auf rund 25 Millionen Euro.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 298eaf51c2c52c09; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle spricht von der Erweiterung des Comenius-Gymnasiums."
+  - am: 2026-10-15
+    text: "4. Lauf 15.10.2026: gesucht: abgerechnete Kosten der Erweiterung des Comenius-Gymnasiums (Volltextsuche duesseldorf.de, Nachrichten neueste zuerst: letzte Meldung zum Bau ist die Schulbautour vom 17.07.2025, keine Einweihungs- oder Abschlussmeldung, keine Schulbautour 2026; Website und Elternbriefe der Schule). Neu: Elternbrief der Schule vom 13.07.2026: »Die Bau- und Modernisierungsarbeiten im Bestandsgebäude sowie im Neubau für die Sekundarstufe II sind nach fast vier Jahren Bautätigkeit abgeschlossen und auch die Außenanlagen sind am gesamten Standort fertiggestellt.« Aula/Mensa erst ab September 2026 nutzbar (Kopie recherche/belege/2026-10-15-duesseldorf-025-comenius-elternbrief-2026-07-13.pdf, SHA-256 beginnt ec4de2845c500f9f). Der Brief nennt keine Kosten; eine Kostenzahl nach Fertigstellung ist nirgends veröffentlicht. Nichts Belastbares, Auflösung steht aus; nächste Chance eine Einweihungsmeldung der Stadt oder der Jahresabschluss 2026."
 ---
 
 ## Kontext
