@@ -9,6 +9,11 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~06:10: **bonn-2026-036 (Hauptausschuss 17.09.) aufgelöst JA, master `771562e`, nicht gepusht.** Neuer Weg: Die
+  OParl-Schnittstelle des Bonner Ratsinfo (`www.bonn.sitzung-online.de/oparl/`) ist offen (Open-Data-Lizenz), nur die
+  Webseiten haben die Menschen-Prüfung. Sitzung 17.09. 18:00–18:48, TOP 6.1 Vorlage 261626-01 „ohne Votum“ (behandelt,
+  keine Empfehlung an den Rat). Wayback-Kopien 20261015035212/035334, lokale JSON-Kopien mit SHA-256. Bonn-36 ohne Fehler,
+  109 Tests. Hinweis: Über OParl lassen sich womöglich auch die Bonner Zitat-Warnungen schließen (nächster Guard-Lauf).
 - 15.10. ~05:40: **dortmund-2026-020 (FATT 15.–21.09.) aufgelöst JA, master `1027b7c`, nicht gepusht.** Der fehlende Beleg
   für den Schlusstag ist da: Rückblick auf sport-tech-city.de „am 21. September 2026 über 100 Teilnehmende im Salzlager der
   Kokerei Hansa“ (Sport Tech Connect, laut FATT-Tagesprogramm Teil des Festivals). Wayback 20261015033452, lokale Kopie mit
