@@ -9,7 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
-- 15.10. ~06:10: **bonn-2026-036 (Hauptausschuss 17.09.) aufgelöst JA, master `771562e`, nicht gepusht.** Neuer Weg: Die
+- 15.10. ~05:55: **bonn-2026-036 (Hauptausschuss 17.09.) aufgelöst JA, master `771562e`, nicht gepusht.** Neuer Weg: Die
   OParl-Schnittstelle des Bonner Ratsinfo (`www.bonn.sitzung-online.de/oparl/`) ist offen (Open-Data-Lizenz), nur die
   Webseiten haben die Menschen-Prüfung. Sitzung 17.09. 18:00–18:48, TOP 6.1 Vorlage 261626-01 „ohne Votum“ (behandelt,
   keine Empfehlung an den Rat). Wayback-Kopien 20261015035212/035334, lokale JSON-Kopien mit SHA-256. Bonn-36 ohne Fehler,
