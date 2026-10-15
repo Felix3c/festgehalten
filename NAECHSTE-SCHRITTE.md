@@ -9,6 +9,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~09:40: **koeln-2026-073 („r e t u r n“) erneut gesucht, kein neuer Beleg, master `0f02a7d`, nicht gepusht.** Eröffnungsseite
+  unverändert (Foto vom Abend, kein Bericht), WZ-Artikel 16.09. 23:39 berichtet nur vom Rundgang, Museumskalender ohne Eintrag.
+  Ausgang bleibt offen; Entscheidung beim Halter (JA mit Vermerk „Uhrzeit nicht belegt“ oder offen lassen). 109 Tests, 424 Wetten ohne Fehler.
 - 15.10. ~09:10: **Wuppertal 11 Zitat-Warnungen geschlossen, Zweig `sammel-1010` `1abf917`, nicht gepusht.** wuppertal.de liest sich im
   Chrome-Werkzeug (ohne Browser 403). Alle Zitatteile von wuppertal-2026-001/002/003/005/006/007/009/011/012/014/015 stehen
   wörtlich auf der Live-Seite und in den lokalen Kopien vom 04.10. (`recherche/belege/2026-10-04-wuppertal-*.html`), darum kein
