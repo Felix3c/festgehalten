@@ -27,6 +27,8 @@ vermerke:
     text: "3. Lauf 30.08.2026: gesucht: Zahl der bis Ende 2025 angeschlossenen Schulen (dortmund-app.de 23.07.2026, dokom21-Blog, MWIKE-Glasfaserbericht Schulen Q4/2025, wirindortmund/mengede-intakt Juli 2026), nichts Belastbares — Stadt kommuniziert nur noch „alle 150 Schulen bis Ende 2026”."
   - am: 2026-10-09
     text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Im Laufe dieses Jahres werden 41 Grund-, Haupt- und Förderschulen durch DOKOM21 an das Breitbandnetz angeschlossen.« (Quelle am 09.10.2026 abgerufen, SHA-256 beginnt 6515312f5094c049; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Die Quelle schreibt „Breitbandnetz“, nicht „Glasfasernetz“; der Beitrag handelt vom Glasfaserausbau."
+  - am: 2026-10-15
+    text: "5. Lauf 15.10.2026 (Dauerlauf): keine Quelle. Gesucht: Zahl der bis 31.12.2025 angeschlossenen Dortmunder Grund-, Haupt- und Förderschulen. MWIKE-Glasfaserbericht Schulen Stand Q4/2025 (Januar 2026, wirtschaft.nrw, abgerufen 15.10.2026, SHA-256 beginnt e16347bce3545a3f) nennt nur NRW gesamt (88 Prozent der Schulen mit Glasfaserzugriff), keine Stadtwerte; Stadt-PM 21.03.2025 zum IT-Schulcampus ohne Anschlusszahl; dortmund-app.de 23.07.2026 und Stadt-PM Juli 2026 weiter nur „150 Schulen profitieren“, Abschluss bis Ende 2026; im Ratsinformationssystem per Websuche nichts gefunden. Nächster Blick nach Projektabschluss (Anfang 2027) oder bei einer Sachstandsvorlage."
 ---
 
 ## Kontext
