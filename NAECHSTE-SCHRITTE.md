@@ -9,6 +9,42 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~03:30: **Archivkopien nachgezogen, Zweig `sammel-1010` `d98e5ac`, nicht gepusht.** koeln-2025-032/048/050 und
+  ki-2026-013 haben jetzt eine Wayback-Kopie, in der das Zitat wörtlich steht (Status ok). 149 Tests grün, 24 Bücher /
+  441 Wetten ohne Fehler, Zitat-Warnungen weiter 21 (Bonn 9, Wuppertal 11, duesseldorf-2026-033).
+- 14.10. ~09:32: **london-2026-001 Datumskonflikt** (Zweig `buch-london` `1cf5815`, nicht gepusht): Verordnung sagt weiter
+  30.10., die TfL-Lizenzseite inzwischen 27.11.; Vermerk gesetzt, Prognosen unverändert. Push vor Fr 30.10. oder 001 verwerfen (Frage an Felix).
+- 14.10. ~08:55: **Trefferquote je Stadt (KR3, Kachel 3.8 Vorstufe), Zweig `trefferquote-stadt` `fd2e0e9` (von
+  `methode-nachrechnen`), nicht gepusht.** Neu `werkzeuge/trefferquote.py buecher` (liest nur, wertet mit `bewerten.py`):
+  je Buch aufgelöst, eingetreten, Brier Institution/Computer, Rechenschaft, offen; „noch kein Rang“ unter 10. 6 neue
+  Tests, 162 grün; METHODE §7 Absatz „Je Stadt“. Stand: 43 aufgelöste Ja/Nein, nur Köln mit Rang (21, davon 10
+  eingetreten, Brier 0,495), Essen 6, Bonn/Dortmund/Düsseldorf je 5, Wuppertal 1. Zahlen nur aus diesem Zweig
+  (münster-2026-001 JA liegt auf `buch-muenster`, noch nicht drin). Kurve erst, wenn mehrere Städte über 10 sind.
+  Push zusammen mit `methode-nachrechnen` nach Felix' Antwort auf Frage 287.
+- 14.10. ~08:30: **Methode nachrechenbar (KR2, Kachel 6.6), Zweig `methode-nachrechnen` `d8fe85f` (von `sammel-1010`),
+  nicht gepusht.** Neu `werkzeuge/nachrechnen.py` (liest nur, wertet mit `bewerten.py`): Brier Computer/Institution/Münze,
+  Kalibrierung in Bändern zu 0,20, Punkt-Bilanz, `--einzeln` mit Rechenweg je Wette; METHODE.md §7 erklärt Formel und
+  Befehl, mit Zahlen Stand 14.10.: 13 gewertete Wetten, Computer 0,116, Institution 0,151, Münze 0,250 (30 aufgelöste
+  Ja/Nein-Wetten ohne Computer-Zahl, weil vor dem Hinterlegen schon entschieden). 7 neue Tests, 156 grün, 24 Bücher /
+  441 Wetten ohne Fehler. Tests im Worktree nur mit `PYTHONPATH=generator`, sonst greift das installierte master-Paket.
+  Veröffentlichen = Frage an Felix.
+- 14.10. ~08:00: **Wortlaut-Vermerke für die sinngemäßen Zitate gesetzt (KR1b), Zweig `sammel-1010` `819303f`, nicht
+  gepusht.** 13 Vermerke (dortmund-2026-017/018, duesseldorf-2025-009, duisburg-2026-003, essen-2025-030/031,
+  essen-2026-035–039, koeln-2025-047, koeln-2026-076), jeder Wortlaut vor dem Schreiben automatisch wörtlich gegen die
+  Live-Quelle geprüft (Skript `~/allein/tmp/kr1b-skript/vermerke.py`, Gegenprobe mit falschem Satz schlägt an).
+  duesseldorf-2026-033: Quelle 404, Wayback-Verzeichnis leer → Vermerk „Wortlaut nicht mehr prüfbar“, Warnung bleibt
+  (ehrlich, Ausgang über beleg_ausgang belegt). **Rest 21 Warnungen:** Bonn 9 + Wuppertal 11 (Bot-Sperren, nur Felix im
+  eigenen Browser) + duesseldorf-2026-033. 149 Tests grün, 24 Bücher / 441 Wetten ohne Fehler.
+- 14.10. 07:30: **Zitat/Archiv-Lücken neu gezählt (KR1, Kachel 3.6), Zweig `sammel-1010`, nicht gepusht.**
+  Die alte Zahl „12 offen“ war zu klein: `--zitate` warnte nur bei `zitat_fehlt`; Wetten ohne Archivkopie, deren
+  Zitat live nicht bestätigt ist, blieben stumm. Neu `pruefen.wortlaut_offen_lesen` + Warnung „Wortlaut ungeprüft“
+  (Test zuerst, `813e70b`, 113 + 36 Tests grün). Geschlossen: aachen-2026-002/-008 (ok), bund-2026-016 (pdf_ok,
+  Kopie 01.09. trägt wieder) `f908ab2`; koeln-2025-032/-048/-050 live wörtlich (Fehlalarm) `4f29712`.
+  **Rest 34 Warnungen:** Bonn 024/025/027/028/032–036 (302, Bot-Sperre, nur im eigenen Browser), Wuppertal 001–015
+  (403, 11 Wetten), 14 sinngemäße Zitate ohne Vermerk (dortmund-2026-017/018, duesseldorf-2025-009, -2026-033 (404),
+  duisburg-2026-003, essen-2025-030/031, essen-2026-035–039, koeln-2025-047, koeln-2026-076) → je Wortlaut-Vermerk
+  wie am 09.10. (nächste Portion). ki-2026-013 Zitat live ja, Archiv offline (14.10. „Temporarily Offline“) →
+  Tagesprüfung; Köln 032/048/050 ebenso Archiv nachziehen. 24 Bücher / 441 Wetten ohne Fehler, 0 Archivlücken.
 - 12.10. 01:05: **bund-2026-016 Archivabgleich weiter offen.** Wayback sperrt den Inhaltsabruf (Bot-Sperre), neue Kopie
   anlegen gibt 520; die CDX-Schnittstelle nennt die Kopie vom 01.09. (304.184 Byte). Die Live-PDF ist inzwischen eine
   andere Fassung (286.575 Byte), das Zitat steht dort wörtlich. CSV bleibt `kein_archiv` (Prüfdatum 12.10.), Befund in
@@ -99,8 +135,12 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 - Fr 09.10.: bonn-2026-034 **aufgelöst JA** (09.10. 00:20, Beleg SWB-Meldung 28.09. „Nach erfolgreichen Sanierungsarbeiten an Gleis 1“, lokal committet, nicht gepusht); wuppertal-2026-001 **aufgelöst JA am 10.10. ~14:10** (Beleg WZ-Bericht vom 09.10. 12:05: Spielplatz „wurde gestern Nachmittag seiner Bestimmung übergeben“; nur auf dem lokalen Zweig `buch-wuppertal` `72ec5d1`, Arbeitsbaum `~/wettbuch-wuppertal`, nicht gemergt; Wayback-Save lief in eine Zeitüberschreitung, Kopie lokal außerhalb des Repos mit SHA-256; die Stadt hat bis 10.10. keine Nachmeldung). Alter Stand: bis 09.10. 00:20 nur Ankündigungen (Stadt, Rundschau, talzeit vom 07.10.), kein Bericht über die Eröffnung; weiter prüfen bis ~15.10., dann Frage an Felix (Vorschlag NEIN mangels Beleg); Nachprüfung 09.10. 11:55: weiter kein Bericht nach dem Termin (Stadt-Meldungsliste nur die Ankündigung vom 01.10., Rundschau nur Vorbericht 02.10., Talzeit-Artikel erschien 08.10. ~05:00, also vor 15:30, „Seit heute (8. Oktober)“ ist Vorbericht, kein Beleg)
 - So 11.10.: wuppertal-2026-002 **am Prüftag ohne Beleg** (11.10. 00:25: Quelle unverändert, Stadt-Liste und Oktober-Archiv ohne „Brunnen“, Websuche nichts nach August; nicht aufgelöst, bis ~15.10. auf Nachbericht warten, dann Frage an Felix, Vorschlag NEIN; lokal `c2f9dac`) (Vorprüfung 10.10. 20:39 am Stichtag-Abend: Quelle unverändert, 19 Oktober-Meldungen ohne Brunnen, Presse nichts nach August → Richtung NEIN mangels Beleg, `8e49aad`; Nachprüfung 10.10. ~14:05: Stadt-Meldungsliste und Oktober-Archiv ohne „Brunnen“/„Alte Freiheit“, Websuche findet nichts nach August; Vorprüfung 09.10. 12:25: Quelle unverändert „Anfang Oktober geplant“, keine Meldung der Stadt, nichts in der Presse nach August, keine Verschiebung; ohne Beleg „fertig“ bis 10.10. gilt NEIN; Notiz in `docs/2026-10-04-aufloesung-wuppertal-0910-1110-VORBEREITET.md`, lokal `0360f4d`)
 - Mo 12.10.: muenster-2026-001 **aufgelöst JA** (12.10. 00:40, Beleg Stadt-Mitteilung 11.10. 08:37 „Entwarnung: Kein Blindgänger an der Lambertikirche“: Verdachtspunkt freigelegt, nur Eisenrohre; Wayback 20261011223924 byte-gleich, lokal committet, nicht gepusht) (Vorprüfung 09.10. 12:40: Quelle byte-gleich, keine Absage/Verschiebung in den Mitteilungen bis 09.10. 10:03, lokal `5dcbf4a`); Köln-Messung 10:00 und 14:00 — Achtung: alle Kundenzentren an dem Tag geschlossen (Personalversammlung, Hinweis der Stadt, abgerufen 08.10.); Umgang mit Nullen entschieden 10.10. (Variante a): angekündigte Schließtage zählen als Ruhetag, nicht ins Mittel; lokal gemergt `76b765d`, nicht gepusht
-- Mi 14.10.: bielefeld-2026-001, hamm-2026-001 (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.; Vorberatung 07.10. mehrheitlich empfohlen 34/3/2, geprüft 09.10.)
+- Mi 14.10.: bielefeld-2026-001, hamm-2026-001 **am Prüftag ohne Beleg** (14.10. ~09:35, Vermerke lokal `f7a481c`: Hamm Ratsinfo noch Status „Einladung“, kein Ergebnis für HPFA 12.10./Rat 13.10., aber 1. Ergänzung BV-183/26: HPFA empfahl einstimmig bei 1 Enthaltung, Punkt 6 Tiefgaragen-Studie dazu; Bielefeld Projektseite „Der Termin findet statt (Stand: 12. Oktober 2026, 15:25 Uhr)“, kein Bericht danach; beide bis ~20.10. auf Beschlussauszug/Bericht warten, dann Frage) (Hamm: Punkt steht als TOP 2.15 auf der Ratssitzung 13.10., geprüft 08.10.; Vorberatung 07.10. mehrheitlich empfohlen 34/3/2, geprüft 09.10.)
 - Do 15.10.: essen-2026-035 bis -038 und essen-2025-001 (Rat 14.10., Feststellung Jahresabschluss 2025); alle vier Vorlagen 035–038 stehen auf der Tagesordnung (TOP 6, 19, 20, 25; zu 19/20 Änderungsanträge), geprüft 08.10.; TOP 7/8 Jahresabschluss erneut geprüft 09.10., unverändert; essen-2025-001 misst an 1,07 Mio (Ergebnisrechnung), Vermerk mit beiden Zahlen seit 10.10. lokal `0833691`, nicht gepusht
+- Do 15.10.: **Kill-Check Köln** (Plan „Köln zuerst“), Vorlage `docs/2026-10-15-killcheck-koeln-VORBEREITET.md`. Neu 14.10. 10:09: erste menschliche Antwort (Winterhager/BauNetz, Bonn, kein Kölner Lokalmedium; weiß keinen Termin für die Schlussrechnung, Nachträge laufen). Ob das zählt, entscheidet Felix (ALLEIN Frage 305, Empfehlung NEIN mit Vermerk). Am 15.10. nur noch Gmail-Schritt 1 und Felix' Search Console.
+- So 25.10.: essen-2026-040 (Zentralbibliothek, Eröffnung 24.10. am 15.10. weiter angekündigt); Mo 26.10.:
+  muelheim-2026-001 (Brücke Saarner Straße, am 15.10. keine Fertig- oder Verlängerungsmeldung). Vorlage
+  `docs/2026-10-08-aufloesung-2510-2610-VORBEREITET.md`, Nachtrag 15.10.
 - So 01.11.: essen-2026-039, wuppertal-2026-003, wuppertal-2026-004; Mo 02.11.: bonn-2026-033 (hängt an Frage 197);
   Sa 07.11.: bochum-2026-002; So 08.11.: koeln-2026-076 (Zitat ist Zusammenfassung wie bei 197). Vorlage mit Abruf
   08.10.: `docs/2026-10-08-aufloesung-0111-0811-VORBEREITET.md`, alle Quellen unverändert, keine Absage gefunden.
