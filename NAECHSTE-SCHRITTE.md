@@ -9,6 +9,9 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~04:55: **bonn-2025-025 (E-Busse SWB) 4. Suchlauf, master `ae46118`, nicht gepusht.** Weiter keine abgerechnete
+  Summe; neu: Förderanteil Busse 1,76 Mio EUR, Akkus 490 statt 396 kWh geliefert. Nächster Blick Beteiligungsbericht
+  Bonn / Jahresabschluss SWB Bus und Bahn 2025 (Bundesanzeiger), Verfall 01.07.2027. 24 Bücher / 424 Wetten ohne Fehler.
 - 15.10. ~03:30: **Archivkopien nachgezogen, Zweig `sammel-1010` `d98e5ac`, nicht gepusht.** koeln-2025-032/048/050 und
   ki-2026-013 haben jetzt eine Wayback-Kopie, in der das Zitat wörtlich steht (Status ok). 149 Tests grün, 24 Bücher /
   441 Wetten ohne Fehler, Zitat-Warnungen weiter 21 (Bonn 9, Wuppertal 11, duesseldorf-2026-033).
