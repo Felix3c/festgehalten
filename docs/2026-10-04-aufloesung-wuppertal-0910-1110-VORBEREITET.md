@@ -122,3 +122,25 @@ Dann gibt es nichts aufzulösen. Die Datei dient nur noch als Begründung, wenn 
   10.10. auf `buch-wuppertal` `72ec5d1`), bis ~15.10. auf einen Nachbericht warten; ein später erscheinender Bericht über
   eine Inbetriebnahme bis 10.10. zählt noch. Danach Frage an Felix (Vorschlag NEIN mangels öffentlichem Beleg, Vermerk).
   Die Wette liegt weiter nur auf `buch-wuppertal`; ohne Merge gilt der Abschnitt „Wenn Felix nicht mergt“.
+
+## Letzte Wartefrist Do 15.10.2026 ~09:20 (Dauerlauf, Guard Laufend), wuppertal-2026-002
+
+- Quelle (`…/august/brunnen-elberfeld.php`, HTTP 200, SHA-256 30bca080…cdcef89f): Satz „Die Fertigstellung des Brunnens ist
+  Anfang Oktober geplant.“ steht unverändert, `dateModified` weiter 2026-08-07T11:06.
+- Liste „Aktuelle Meldungen“ (HTTP 200, SHA-256 c09abee2…) und Oktober-Archiv (HTTP 200, SHA-256 bdfe3e79…): 31
+  Oktober-Meldungen, neueste vom 14.10., kein Treffer für „Brunnen“ oder „Alte Freiheit“. Die zwei Bau-Meldungen
+  (Ursula-Lietz-Weg 08.10., Verkehrsmeldungen 14.10.) betreffen andere Orte. ISG Poststraße: wieder keine Verbindung, ungeklärt.
+- Presse: Websuche (zwei Suchen, 09:15) und Startseiten Wuppertaler Rundschau (Elberfeld-Innenstadt), WZ Wuppertal, Radio
+  Wuppertal (alle HTTP 200): kein Treffer für „Brunnen“; neueste Berichte weiter vom August.
+- **Nicht aufgelöst, Widerspruch in den Regeln.** Die Übersetzung der Wette sagt „Ohne Beleg bis zum Prüftag: Nein“.
+  FORMAT §2.1 verlangt aber für jeden Ausgang einen öffentlichen Beleg, *aus dem der Ausgang hervorgeht*; „keine Meldung
+  gefunden“ ist das nicht (Vorbild essen-2025-030 hatte einen positiven Beleg für die Verzögerung). Ein NEIN ohne solchen
+  Beleg würde der Generator zwar annehmen, wenn man die Quelle als Beleg einträgt, wäre aber nicht ehrlich angreifbar.
+- Wege (Entscheidung Felix): (a) bei der Pressestelle der Stadt nachfragen und mit der Antwort auflösen (Behörde, senden
+  nur Felix; Adresse der Pressestelle konnte nicht sicher belegt werden, nur das Muster `@stadt.wuppertal.de`);
+  (b) offen lassen und weiter suchen, bei Verfall ohne Beleg `verfallen`; (c) NEIN nach der Übersetzung, Beleg = Quelle
+  mit unverändertem „geplant“ + Vermerk „keine Meldung bis 15.10.“. Empfehlung: (a), wenn keine Antwort bis Ende Oktober,
+  dann (b).
+- Entwurf der Rückfrage (nur Text, nicht als Mail angelegt): „Guten Tag, am 7. August hat die Stadt gemeldet, die
+  Fertigstellung des neuen Brunnens an der Alten Freiheit sei für Anfang Oktober geplant. Ist der Brunnen inzwischen fertig
+  oder in Betrieb, und falls ja, seit wann? Falls nicht: Gibt es einen neuen Termin? Vielen Dank, Felix Lind“
