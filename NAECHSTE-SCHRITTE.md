@@ -9,7 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
-- 15.10. ~10:05: **koeln-2025-059 (Hauptmaßnahme Gymnasium Kreuzgasse bis 30.06. beauftragt?) 5. Lauf, master `cc6d84e`, nicht gepusht.**
+- 15.10. ~09:55: **koeln-2025-059 (Hauptmaßnahme Gymnasium Kreuzgasse bis 30.06. beauftragt?) 5. Lauf, master `cc6d84e`, nicht gepusht.**
   Neu: Die Ausschreibung steht im EU-Amtsblatt als TED 784835-2023 (Titel mit Tippfehler „Totelunternehmer“, darum bisher nicht gefunden).
   Nach ihrer Verfahrenskennung gibt es bis heute keine Vergabebekanntmachung, obwohl sie nach § 39 VgV 30 Tage nach Vergabe fällig wäre.
   Indiz Nein, kein Beleg; Ausgang bleibt offen. Nächster Blick: TED nach derselben Kennung (API-Abfrage `procedure-identifier`). 109 Tests, Köln 88 Wetten ohne Fehler.
