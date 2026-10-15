@@ -9,6 +9,10 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 15.10. ~06:55: **duesseldorf-2026-033 Quelle nachbelegt, nicht gepusht.** Die Pressemitteilung der Stadt vom 19.03. ist
+  404 ohne Wayback-Kopie, steht aber noch in der Volltextsuche von duesseldorf.de (Titel, Datum 19.03.2026 11:03, Anreißer).
+  Suchseite archiviert (Wayback 20261015044005, Titel geprüft), lokale Kopie mit SHA-256, Quellenvermerk in der Wette.
+  Auflösung JA vom 03.10. unverändert. 143 Tests, 24 Bücher / 424 Wetten ohne Fehler. Übrig nur noch Wuppertal 11 (Zweig, Frage 318).
 - 15.10. ~06:45: **Bonner Zitat-Warnungen geschlossen, master `d486a2d`, nicht gepusht.** OParl hilft hier nicht (die 9 Quellen
   sind Pressemitteilungen, keine Ratsunterlagen), aber bonn.de liest sich im Chrome-Werkzeug. Für bonn-2025-024/025/027/028 und
   bonn-2026-032–036 je ein Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…«“, jeder Wortlaut vor dem Schreiben
