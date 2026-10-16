@@ -56,3 +56,18 @@ der 04.02.2027 ist aus „fortnightly rounds from 1 October 2026“ und „tenth
 - **Almawave (Almaviva):** Almawave wurde in Almaviva verschmolzen. Laut Suchergebnis ist Almawave Labs am 09.09.2026 gegründet worden. Das PDF der Pressemitteilung auf almaviva.it leitet auf almavivagroup.com um und war nicht abrufbar, die Website almawave.com ist inzwischen eine Single-Page-App ohne lesbaren Text. Ziele mit Zahl und Frist: ungeklärt.
 - **AI Studio Delta:** Keine eigene Website gefunden, nicht geprüft.
 - **Domyn, Belegschaft heute:** Ein aktueller Zwischenstand (nach April 2026) ist nicht veröffentlicht.
+
+## Runde 3 (16.10.2026 ~02:50, Dauerlauf Laufend Guard): Newsrooms 09.–16.10. ohne neuen Kandidaten
+
+Geprüft, nur Beiträge seit dem 09.10.2026 (Abruf 16.10.2026):
+
+| Anbieter | Neu seit 09.10. | Ergebnis |
+|---|---|---|
+| Mistral AI | „Introducing Timestral“ (15.10.2026, mistral.ai/news/timestral/) | Keine Zusage mit Zahl und Datum, nur „A technical report with the full results will follow“. |
+| Anthropic | Singapur-Büro + MOU (14.10.), Cyber Mission (08.10.), Genesis Mission (08.10.), Usage Policy (08.10.), unabhängige Evaluatoren (15.10.), US-Wahlen (14.10.) | Singapur ohne Zahl/Datum. Genesis: „committing $150 million over three years“ ist eine Ausgabezusage, die öffentlich nicht nachprüfbar ist (keine Pflicht zur Offenlegung), und läuft bis 2029 → nicht aufgenommen. |
+| Cohere | Absichtserklärung Übernahme AISLE (15.10.2026) | Nur „proposed agreement“, kein Closing-Datum, kein Preis → nicht aufgenommen. Wieder prüfen, wenn Cohere ein Closing ankündigt. |
+| IBM | Suche ergab keine Mitteilung nach dem 10.09. mit Europa-Bezug | Ungeklärt, ob der Index aktuell ist; Newsroom ohne Browser nicht vollständig lesbar. |
+| OpenAI | openai.com antwortet ohne Browser mit HTTP 403; Suche: Berlin-Büro „very soon“ ohne Datum (Handelsblatt, Aug. 2026) | Kein Kandidat aus eigener Quelle. |
+| ServiceNow | Pressebereich lädt Liste nur per Skript | Ungeklärt. |
+
+Folge: Buch KI bleibt bei 11 Wetten. Nächste Runde frühestens in 7 Tagen (Pflege-Deckel), dann mit Browser für OpenAI, IBM und ServiceNow.
