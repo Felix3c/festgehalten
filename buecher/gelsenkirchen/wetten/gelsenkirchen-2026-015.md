@@ -27,6 +27,8 @@ vermerke:
     text: "Archiv: Save Page Now am 16.10.2026 fehlgeschlagen (HTTP 520, Verfügbarkeitsabfrage 429), nachholen. Lokale Kopie der Quelle: recherche/belege/2026-10-16-gelsenkirchen-artikel-73219.html, SHA-256 307a5af3858631169b79b604861703cda19224a78af28ad0922e4753bd8dc7c2."
   - am: 2026-10-16
     text: "Kein Vorbehaltswort in der Meldung („Ab Montag, 19. Oktober, wird … erneuert“, „einwöchige Bauzeit“), darum angekuendigt mit 1,00."
+  - am: 2026-10-17
+    text: "Archiv: keine Kopie möglich. Save Page Now meldet am 17.10.2026 „The target server blocks access“ (HTTP 403), gelsenkirchen.de sperrt das Internet Archive wie bonn.de. Zitat am 17.10.2026 live geprüft, unverändert. Beleg bleibt die lokale Kopie vom 16.10.2026 (SHA-256 oben)."
 ---
 
 ## Kontext
