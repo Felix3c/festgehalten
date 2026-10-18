@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-14
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Glasfaserausbau: Bis Ende 2026 errichtet DOKOM21 noch 90 Kilometer Glasfaser-Kabeltrassen« … »DOKOM21 verlegt die letzten rund 90 Kilometer Glasfaser im Fördergebiet. Davon profitieren viele Dortmunder Haushalte, Unternehmen und 150 Schulen.« (Quelle am 14.10.2026 abgerufen, SHA-256 beginnt e0b229f9792ab5b6; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Der Zusatz „150 Schulen profitieren“ steht so nur in der Adresse der Seite; im Text heißt es „rund 90 Kilometer“."
 ---
 
 ## Kontext

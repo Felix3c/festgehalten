@@ -76,3 +76,42 @@ def test_cli_ohne_zitate_keine_warnung(buch: Path, tmp_path: Path, capsys):
     rc = cli.main(["bauen", str(buch), str(tmp_path / "site"), "--pruefen"])
     assert rc == 0
     assert "Warnung" not in capsys.readouterr().err
+
+
+# KR1 (14.10.2026): kein Archiv und Zitat live nicht bestätigt war bisher unsichtbar.
+
+def test_offen_liest_auch_ungepruefte(tmp_path: Path):
+    p = _csv(tmp_path, [
+        "a-1,https://x,,zitat_fehlt,nein,wort,2026-10-04",
+        "a-2,https://x,https://web.archive.org/web/1/x,ok,ja,,2026-10-04",
+        "a-3,https://x,,kein_archiv,ja,,2026-10-04",
+        "a-4,https://x,,kein_archiv,nein,,2026-10-04",
+        "a-5,https://x,,kein_archiv,403,,2026-10-04",
+        "a-6,https://x,,speichern_fehlgeschlagen,302,,2026-10-04",
+        "a-7,https://x,https://web.archive.org/web/1/x.pdf,pdf_ok,,,2026-10-04",
+    ])
+    assert pruefen.wortlaut_offen_lesen(p) == {
+        "a-1": "nicht_woertlich", "a-4": "ungeprueft", "a-5": "ungeprueft", "a-6": "ungeprueft",
+    }
+
+
+def test_warnung_ungeprueft_eigener_text(buch: Path):
+    w = pruefen.zitat_warnungen(lesen.buch_lesen(buch), {"test-2025-001": "ungeprueft"})
+    assert [(x.datei, x.feld) for x in w] == [("test-2025-001.md", "zitat")]
+    assert "ungeprüft" in w[0].text and "nicht wörtlich in Quelle" not in w[0].text
+
+
+def test_ungeprueft_mit_vermerk_still(buch: Path):
+    b = lesen.buch_lesen(buch)
+    b["wetten"][0]["vermerke"] = [
+        {"am": "2026-10-14", "text": "Zitat nicht wörtlich; Wortlaut der Quelle: »Das Haus wird Ende Oktober fertig gestellt.«"},
+    ]
+    assert pruefen.zitat_warnungen(b, {"test-2025-001": "ungeprueft"}) == []
+
+
+def test_cli_warnt_bei_ungeprueft(buch: Path, tmp_path: Path, capsys):
+    p = _csv(tmp_path, ["test-2025-001,https://x,,kein_archiv,403,,2026-10-04"])
+    rc = cli.main(["bauen", str(buch), str(tmp_path / "site"), "--pruefen", "--zitate", str(p)])
+    assert rc == 0
+    err = capsys.readouterr().err
+    assert "test-2025-001.md: zitat" in err and "ungeprüft" in err

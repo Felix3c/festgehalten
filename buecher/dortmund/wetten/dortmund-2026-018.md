@@ -20,7 +20,9 @@ prognosen:
 ausgang: null
 aufgeloest_am: null
 beleg_ausgang: null
-vermerke: []
+vermerke:
+  - am: 2026-10-14
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Dortmund bleibt bis Ende Dezember Gastgeber der Pop-up-IGA, bevor das Format nach Lünen weiterzieht.« (Quelle am 14.10.2026 abgerufen, SHA-256 beginnt 6823622ee517f892; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Das Jahr 2026 ergibt sich nur aus dem Datum der Meldung (August 2026)."
 ---
 
 ## Kontext

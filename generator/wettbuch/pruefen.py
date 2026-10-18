@@ -174,18 +174,39 @@ def nicht_woertlich_lesen(pfad: Path) -> set[str]:
         return {z["id"] for z in csv.DictReader(f) if z.get("status") == "zitat_fehlt"}
 
 
-def zitat_warnungen(buch: dict, nicht_woertlich: set[str]) -> list[Fehler]:
+UNGEPRUEFT = {"kein_archiv", "speichern_fehlgeschlagen"}
+
+
+def wortlaut_offen_lesen(pfad: Path) -> dict[str, str]:
+    """Wie nicht_woertlich_lesen, dazu Wetten ohne Archivkopie, deren Zitat live nicht bestätigt ist
+    (Seite geändert, 403/302-Sperre). Die blieben bis 14.10.2026 ohne Warnung (KR1)."""
+    offen: dict[str, str] = {}
+    with pfad.open(encoding="utf-8", newline="") as f:
+        for z in csv.DictReader(f):
+            if z.get("status") == "zitat_fehlt":
+                offen[z["id"]] = "nicht_woertlich"
+            elif z.get("status") in UNGEPRUEFT and z.get("zitat_live") != "ja":
+                offen[z["id"]] = "ungeprueft"
+    return offen
+
+
+def zitat_warnungen(buch: dict, nicht_woertlich: set[str] | dict[str, str]) -> list[Fehler]:
     """Warnt, wenn ein gelistetes Zitat noch keinen Wortlaut-Vermerk trägt (Frage 61, 04.10.2026).
-    Bricht nichts ab; FORMAT.md §1 verlangt das Zitat wörtlich, der Vermerk legt den Wortlaut offen."""
+    Bricht nichts ab; FORMAT.md §1 verlangt das Zitat wörtlich, der Vermerk legt den Wortlaut offen.
+    Ein dict aus wortlaut_offen_lesen unterscheidet „nicht wörtlich“ von „ungeprüft“."""
     w: list[Fehler] = []
     for wette in buch["wetten"]:
-        if str(wette.get("id")) not in nicht_woertlich:
+        wid = str(wette.get("id"))
+        if wid not in nicht_woertlich:
             continue
         vermerke = wette.get("vermerke") or []
         if any(isinstance(v, dict) and str(v.get("text", "")).startswith(VERMERK_WORTLAUT) for v in vermerke):
             continue
-        w.append(Fehler(wette.get("_datei", "?"), "zitat",
-                        "nicht wörtlich in Quelle oder Archiv, Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…«“ fehlt"))
+        if isinstance(nicht_woertlich, dict) and nicht_woertlich[wid] == "ungeprueft":
+            text = "Wortlaut ungeprüft: keine Archivkopie, Quelle live ohne Zitat oder gesperrt"
+        else:
+            text = "nicht wörtlich in Quelle oder Archiv, Vermerk „Zitat nicht wörtlich; Wortlaut der Quelle: »…«“ fehlt"
+        w.append(Fehler(wette.get("_datei", "?"), "zitat", text))
     return w
 
 

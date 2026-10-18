@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 03.10.2026."
+  - am: 2026-10-14
+    text: "Zitat nicht wörtlich; Wortlaut der Quelle: »Das Gesamtinvestitionsvolumen für den Neubau beträgt 117 Millionen Euro.« … »Nach aktuellem Stand findet der Umzug in die Schulgebäude zum Schuljahr 2027/28 statt.« (Quelle am 14.10.2026 abgerufen, SHA-256 beginnt be30c23798c725ea; Vermerk nach Beschluss Frage 61 vom 04.10.2026, Kopf unverändert). Beide Sätze stehen in der Quelle, aber nicht hintereinander."
 ---
 
 ## Kontext
