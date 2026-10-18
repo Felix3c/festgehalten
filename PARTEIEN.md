@@ -43,6 +43,19 @@ Datum nennen und darum seltener vorkommen, steht offen in der `BUCH.md`.
   eines Papiers.
 - Der Halter gründet keine Partei und tritt für keine an: Wer Parteien misst, wirbt nicht für eine.
 
+## R5 Feste Buchsorte „X gegen X“
+
+Beschlossen vom Halter am 18.10.2026. Parteien-Bücher sind eine feste Buchsorte neben den Stadtbüchern.
+
+- **Reichweite:** dieselben Großstädte wie die Stadtbücher (Hauptstädte und sehr große Städte, keine kleinen
+  Städte) und der Bundestag. Landtage und nationale Regierungen anderer Länder nicht.
+- **Auslöser:** Ein neues Sondierungspapier oder ein neuer Koalitionsvertrag liegt als PDF auf der Seite einer
+  beteiligten Partei (R1 Nr. 1). Ohne Papier gibt es kein Buch, auch nicht aus Presseberichten.
+- **Form:** eigenes Buch neben dem Stadtbuch, Name „X gegen X“ (z. B. „Berlin gegen Berlin“, für den Bund
+  „Bund gegen Bund“), damit Verwaltung und Parteien getrennt messbar bleiben. Die Suchregel (R3) steht in der
+  `BUCH.md`, bevor gelesen wird.
+- **Opposition:** kommt über R1 Nr. 2 ins selbe Buch, mit derselben Suchregel.
+
 ## Was das an der Rangliste ändert
 
 Nichts. Die Parteien stehen gemeinsam als eine `institution` („Die Linke, Bündnis 90/Die Grünen und SPD,
