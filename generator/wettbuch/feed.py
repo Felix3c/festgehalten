@@ -7,6 +7,8 @@ from __future__ import annotations
 from datetime import date, datetime, timezone
 from xml.sax.saxutils import escape
 
+from . import sprache
+
 FEED_MAX = 50
 AUFGELOEST = "aufgeloest"
 
@@ -19,31 +21,33 @@ def _iso(d) -> str:
     return str(d)
 
 
-def _ausgang_wort(w: dict) -> str:
+def _ausgang_wort(w: dict, sp: str = sprache.STANDARD) -> str:
     if w["typ"] == "ja_nein":
-        return "Ja" if int(w["ausgang"]) == 1 else "Nein"
+        return sprache.t(sp, "feed_ja" if int(w["ausgang"]) == 1 else "feed_nein")
     einheit = w.get("einheit") or ""
     return f"{w['ausgang']} {einheit}".strip()
 
 
-def eintrag(w: dict, pfad: str) -> dict:
+def eintrag(w: dict, pfad: str, sp: str = sprache.STANDARD) -> dict:
     """Ein Feed-Eintrag aus einer bewerteten Wette. `pfad` ist der Link relativ zur Feed-Wurzel."""
+    def t(k: str) -> str:
+        return sprache.t(sp, k)
     zusammenfassung = (
-        f"{w['institution']}: „{w['zitat']}“ ({w.get('gesagt_von', '')}, {w['gesagt_am']}). "
-        f"Ausgang: {_ausgang_wort(w)}. Beleg: {w.get('beleg_ausgang', '')}"
+        f"{w['institution']}: {t('zitat_auf')}{w['zitat']}{t('zitat_zu')} ({w.get('gesagt_von', '')}, {w['gesagt_am']}). "
+        f"{t('feed_ausgang')}: {_ausgang_wort(w, sp)}. {t('feed_beleg')}: {w.get('beleg_ausgang', '')}"
     )
     return {
         "id": f"urn:festgehalten:{w['id']}",
-        "titel": f"{_ausgang_wort(w)}: {w['frage']}",
+        "titel": f"{_ausgang_wort(w, sp)}: {w['frage']}",
         "link": pfad,
         "aktualisiert": w["aufgeloest_am"],
         "zusammenfassung": zusammenfassung,
     }
 
 
-def eintraege_aus(wetten: list[dict], praefix: str = "") -> list[dict]:
+def eintraege_aus(wetten: list[dict], praefix: str = "", sp: str = sprache.STANDARD) -> list[dict]:
     """Aufgelöste Wetten eines gebauten Buchs als Feed-Einträge. `praefix` z. B. 'koeln/'."""
-    return [eintrag(w, f"{praefix}wette/{w['id']}.html")
+    return [eintrag(w, f"{praefix}wette/{w['id']}.html", sp)
             for w in wetten
             if w["_bewertung"]["status"] == AUFGELOEST and w.get("aufgeloest_am")]
 

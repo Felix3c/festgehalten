@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import bewerten, feed, lesen, neu, pruefen, seiten
+from . import bewerten, feed, lesen, neu, pruefen, seiten, sprache
 
 HILFE = (
     "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
@@ -215,7 +215,8 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
         seiten.seiten_schreiben(buch["meta"], bewertet, ausgabe / name, build_zeit,
                                 url=f"{url}{name}/" if url else None, fuss_links=fuss_buch)
         wetten = bewertet["wetten"]
-        feed_eintraege += feed.eintraege_aus(wetten, praefix=f"{name}/")
+        feed_eintraege += feed.eintraege_aus(wetten, praefix=f"{name}/",
+                                          sp=sprache.von_meta(buch["meta"]))
         aufgeloest = sum(1 for w in wetten if w["_bewertung"]["status"] == "aufgeloest")
         offen = sum(1 for w in wetten if w["_bewertung"]["status"] == "offen")
         institutionen = sorted({w["institution"] for w in wetten})
