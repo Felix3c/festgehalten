@@ -55,3 +55,10 @@ Verworfen: Energiesteuersenkung bis Ende 2026 (verkündet, Ende ist Normalfall);
 Einkommensteuerreform 2027 (selbes Gesetz wie 002); Pflegeneuordnungsgesetz (Nähe zu 004/005); Bonpflicht (wirkt 2028);
 33 Initiativen „ganz überwiegend“ bis Jahresende (Zählung nicht eindeutig); FPfZG-Darlehen abschaffen „noch in diesem
 Jahr“ (kein Entwurf gefunden, Reserve); Schiffssicherheits-Verordnung Dezember 2026 (Reserve, randständig).
+
+## Nachtrag 18.10.2026: GKV-Zusatzbeitrag vor Veröffentlichung zurückgezogen
+
+Die Wette zum durchschnittlichen GKV-Zusatzbeitrag 2027 (Zitat aus der BMG-Pressemitteilung vom 04.09.2026,
+zuletzt geführt als bund-2026-010) wurde nie veröffentlicht und ist gestrichen. Grund: Der Schätzerkreis hat am
+14.10.2026 bereits 2,9 Prozent geschätzt. Eine Wette, die erst nach dem Ergebnis online geht, wäre nicht mehr
+vorher hinterlegt. Die Zeile in `recherche/archiv-quellen.csv` bleibt als Archivnachweis stehen.
