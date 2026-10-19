@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Helsinki book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-18."
   - am: 2026-10-18
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261018085022/https://www.hel.fi/en/news/kaisaniemi-park-renovation-to-be-completed-ahead-of-schedule (saved and checked by the keeper on 2026-10-18, the copy contains the quote word for word). The keeper keeps a local copy of the source fetched on 2026-10-18 (not published), SHA-256 0919115c5f703e8a9fb858de93ef38c95978eeeb55c10d291fc33014d0dc3c40."
+  - am: 2026-10-20
+    text: "Checked on pruefung_am (Dauerlauf, 00:50): no source of the City yet that says the works were finished on 19 October (hel.fi/en/news up to 19.10. 12:00 has no item on the park; project page still says “Under construction”, no date; Finnish release of 15.10. only future tense). Not resolved; checked again from 21.10. No outcome guessed."
 ---
 
 ## Context
