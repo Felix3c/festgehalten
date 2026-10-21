@@ -29,6 +29,8 @@ vermerke:
     text: "Archiv: https://web.archive.org/web/20261016035420/https://pressemitteilungen.stadt-muenster.de/api/item/1229440 (Zitat am 16.10.2026 wörtlich in der Archivkopie geprüft). Lokale Kopie der Quelle: recherche/belege/2026-10-16-muenster-item-1229440.json, SHA-256 b76951f37b08751a4a2e1d25ddf3bfaa1dc2e6f05c657b267c6cf3fca1358df9."
   - am: 2026-10-16
     text: "Nur der zweite Abschnitt ist Gegenstand. Der erste (Gartenstraße/Hörstertor, 13. bis voraussichtlich 17.10.) lief beim Hinterlegen schon und wird darum nicht gewettet."
+  - am: 2026-10-22
+    text: "Geprüft am pruefung_am (Dauerlauf, Tagesprüfung 22.10. ~00:30): Kein Beleg abrufbar. Das Presseportal der Stadt (pressemitteilungen.stadt-muenster.de) antwortet nicht (Zeitüberschreitung), www.stadt-muenster.de zeigt auf Start-, Pressemitteilungs- und Baustellenseite nur „404 Seite“ mit „Wartungsarbeiten“ (Abschaltung seit 21.10., BSI-Hinweis zu PHP-Schwachstellen bei mehreren NRW-Städten), www.muenster.de ohne Antwort. Nicht aufgelöst, offen gelassen; täglich neu prüfen, ab 26.10. Nachfrage beim Presseamt. Kein Ausgang geraten."
 ---
 
 ## Kontext
