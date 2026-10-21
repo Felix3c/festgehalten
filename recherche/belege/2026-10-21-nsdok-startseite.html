@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>NS-Dokumentationszentrum Köln - Start</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="fonts/fonts.css" rel="stylesheet" />
+    <link href="fonts/font-awesome-4.4.0/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/artcontent.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/jquery.1.7.2.js"></script>
+    <script type="text/javascript" src="js/royalslider/jquery.easing-1.3.js"></script>
+    <script type="text/javascript" src="js/royalslider/jquery.royalslider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/royalslider/royalslider.css" />
+    <link rel="stylesheet" type="text/css" href="js/royalslider/default/rs-default.css" />
+    <link rel="stylesheet" type="text/css" href="js/royalslider/royalnearby.css" />
+    <link rel="stylesheet" type="text/css" href="js/royalslider/minimal-white/rs-minimal-white.css" />
+    <link rel="stylesheet" type="text/css" href="js/prettyPhoto_compressed_3.1.3/css/prettyPhoto.css" />
+    <script src="js/prettyPhoto_compressed_3.1.3/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="js/externeSeite/style.css" />
+    <script type="text/javascript" src="js/externeSeite/externeSeite.js"></script>
+
+    <script src="js/touchcarousel/jquery.touchcarousel-1.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/touchcarousel/touchcarousel.css" />
+    <link rel="stylesheet" type="text/css" href="js/touchcarousel/black-and-white-skin/black-and-white-skin.css" />
+    <script type="text/javascript">
+
+
+        $(window).load(function () {
+
+            try {
+                $(".touchcarousel").touchCarousel({
+                    pagingNav: false,
+                    snapToItems: true,
+                    itemsPerMove: 1,
+                    scrollToLast: false,
+                    loopItems: false,
+                    scrollbar: false,
+                    autoplayDelay: 2000,
+                    loopItems: true,
+                    dragUsingMouse: true,
+                    scrollToLast: true,
+                    keyboardNav: true,
+                    autoplay: false
+
+                });
+            }
+            catch (err) {  /*Handle errors here*/ }
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/tipsy.css" />
+    <script type="text/javascript" src="js/tipsy.js"></script>
+
+    <script>
+
+        jQuery(document).ready(function ($) {
+
+            $('.fenster').externeSeite();
+
+
+            /**/
+            try {
+                $(".sliderkopf").royalSlider({
+                    arrowsNavAutoHide: true,
+                    keyboardNavEnabled: true,
+                    autoPlay: {
+                        // Aktiviert die automatische Wiedergabe
+                        enabled: true,
+                        // Zeit zwischen den Folien (in Millisekunden)
+                        pauseOnHover: true,
+                        delay: 3000, // 3000ms = 3 Sekunden
+                        // Setzt die Wiedergabe nach dem letzten Slide fort
+                        loop: true,
+                        // Aktiviert Pause bei Hover
+                        stopAtAction: false
+                    }
+                });
+            } catch (err) { }
+
+
+
+            var vMaxHeight = $('#ContWrapper').height();
+
+            $(window).scroll(function () {
+                var height = $(window).height();
+                var scrollTop = $(window).scrollTop();
+
+                $('#test').html(scrollTop + height + '/' + vMaxHeight + '/' + $('#footer').height());
+
+                if ((scrollTop + height) < vMaxHeight) {
+                    if (height > $('#SubMenue').height() + 50) {
+                        if (scrollTop >= 420) {
+                            var top = $('#SubMenue').offset().top;
+                            $('#SubMenue').css('margin-top', (scrollTop - 420) + 'px');
+                        } else {
+                            $('#SubMenue').css('margin-top', (15) + 'px');
+                        }
+                    }
+                }
+            });
+
+
+            /*$('#img10').caption({
+                fixed:false,
+                animation:'fade'
+            });*/
+
+            $('.bildbu').tipsy({ gravity: 's', title: 'title', html: true }); // nw | n | ne | w | e | sw | s | se
+
+            //$('.bildstrecke').bildstrecke();
+
+
+            $("a.[rel^='prettyPhoto']").prettyPhoto({
+                animation_speed: 'normal',
+                theme: 'dark_square',
+                default_width: 900,
+                show_title: false,
+                default_height: 600,
+                slideshow: false,
+                autoplay_slideshow: false,
+                social_tools: false,
+                opacity: 0.50,
+                modal: false, show_title: true
+            });
+            //$("a.[rel^='prettyPhoto']").attr('title', '');
+
+        });
+
+
+
+
+
+
+
+    </script>
+    <script src="js/artcontent.js"></script>
+
+
+    <script type="text/javascript" src="artcontent_matomo/artcontent.js" id="ac_script"></script>
+</head>
+
+<body>
+    <div id="respM">
+        <div class="close"><i class="fa fa-times"></i></div>
+        <div style="clear:both;"></div>
+        
+ 
+ 
+    <ul id="MainMenuUL">    	 
+                            	
+            <li id="mm11"><a href="default.aspx?s=11"  style=" ">Ihr Besuch</a></li>
+                            	
+            <li id="mm12"><a href="default.aspx?s=12"  style=" ">Ausstellungen</a></li>
+                            	
+            <li id="mm17"><a href="default.aspx?s=17"  style=" ">Programm</a></li>
+                            	
+            <li id="mm32"><a href="default.aspx?s=32"  style=" ">Das Haus</a></li>
+                            	
+            <li id="mm33"><a href="default.aspx?s=33"  style=" ">Forschung & Sammlungen</a></li>
+                            	
+            <li id="mm49"><a href="default.aspx?s=49"  style=" ">Beratung</a></li>
+                   
+    </ul>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var vAktivesElement = $("#breadcrump").find(".mpfad").first().attr('data-id');
+        $('#mm' + vAktivesElement).addClass('aktiv');        
+    });
+
+</script>
+    </div>
+
+    <div class="container">
+
+        <!--<div class="row mt-4 mt-md-0  ">
+        <div class="col-12 col-md-12 text-right     d-none d-md-block">
+            <div style="" id="lang">
+                <div class="liste">
+                    <div class="mpunktKopf"><a href="default.aspx?s=1">Über uns</a></div>
+                    <div class="mpunktKopf"><a href="default.aspx?s=7">News</a></div>
+                    <div class="mpunktKopf"><a href="default.aspx?s=8">Kontakt</a></div>
+                    <div class="mpunktKopf"><a href="default.aspx?s=9">Newsletter</a></div>
+                    <div class="mpunktKopf"><a href="default.aspx?s=10">Presse</a></div>
+
+                    <div class="mpunktSocial"><a href="https://de-de.facebook.com/ns.dokumentationszentrum.koeln" target="_blank"><i class="fa fa-facebook"></i></a></div>
+                    <div class="mpunktSocial"><a href="https://www.instagram.com/ns_dok" target="_blank"><i class="fa fa-instagram"></i>&nbsp;&nbsp;</a></div>
+
+                    <div class="aktiv mpunktLang"><a href="default.aspx?s=120">DE</a></div>
+                    <div class="mpunktLang"><a href="default.aspx?s=1667">EN</a></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+        
+ <style type="text/css">
+  .form-control{   border: 2px solid #3B256E !important;
+  border-radius: 0 !important;}
+ </style>
+
+        <div class="row mt-4 mt-md-0  ">
+            <div class="col-12 col-md-12 text-right     d-none d-md-block">
+                <div style="" id="lang">
+                    <div class="liste">
+
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=1">Über uns </a></div>
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=7">News</a></div>
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=8">Kontakt </a></div>
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=9">Newsletter</a></div>
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=10">Presse</a></div>
+                                 
+                            <div class="mpunktKopf"><a href="default.aspx?s=5">Förderverein</a></div>
+                            
+
+                      <div class="mpunktKopf" style="padding-bottom:7px;" ><a href="javascript:void(0);" onclick="javascript:$('#suchleiste').slideToggle();"><i class="fa fa-search"></i></a></div>
+
+                        <div class="mpunktSocial"><a href="https://de-de.facebook.com/ns.dokumentationszentrum.koeln" target="_blank"><i class="fa fa-facebook"></i></a></div>
+                        <div class="mpunktSocial"><a href="https://www.instagram.com/ns_dok" target="_blank"><i class="fa fa-instagram"></i>&nbsp;&nbsp;</a></div>
+
+                        
+                            <div class="aktiv mpunktLang"><a href="default.aspx?s=120">DE</a></div>
+                            <div class=" mpunktLang"><a href="default.aspx?s=1667">EN</a></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="row" id="suchleiste" style="display:none;">
+    <div class="col-9 text-right"></div>
+    <div class="col-3 text-right" style="padding-right:0">
+        
+                            <form name="formsuche2" action="suche.aspx?s=2097" method="post"  >
+                    <input type="search" name="such" class="form-control" id="inputSuch">
+                </form>
+                        
+        
+    </div>
+    
+</div>
+
+ 
+    
+
+<script type="text/javascript">
+
+    //$(document).ready(function () {
+    //    var vAktivesElement = $("#breadcrump").find(".mpfad").first().attr('data-id');
+    //    $('#mm' + vAktivesElement).addClass('aktiv');        
+    //});
+
+</script>
+
+
+
+
+
+<div class="row  mb-5">
+    <div class="col-3 col-md-2 ">
+        
+            <a href="default.aspx">
+                <img src="img/NS-DOK2.png" style="width: 100%; max-width: 200px; margin: 5px 0px 0px 0px;" />
+            </a>
+        
+    </div>
+    <div class="col-7 col-md-10" style="position: relative;">
+        <div style="position: absolute; bottom: -7px; margin-left: 20px;" id="breadcrump">
+
+            <ul>
+                
+                    <li class="mpfad"><a href="default.aspx?s=120" class="inPage">Start</a><span></span></li>
+                
+                
+                
+            </ul>
+        </div>
+    </div>
+    <div class="col-2 d-block d-md-none text-right" id="respMOpen">
+        <img src="img/bars.png" />
+    </div>
+
+</div>
+
+
+
+        <!-- =================================================== HEADER =================================================== -->
+        <div class="row" id="header">
+            <div class="col-12 col-lg-9">
+                <div id="Bereich2" class="Bereich"  data-id="2"><div class="block sp1" id="block8225"> 	<div id="abs29083" data-sort="1"  class="royalSlider sliderkopf rsMinW abs abs13" style="overflow:hidden">                		<div class="rsContent" id="intro">	<div class="image" >		<img  style=" width:100%;" src="medien/abb/120/6248__1937816_lo.JPG"   title=""    />	</div>	<div class="imageInfo" >		<div class="titel2"></div>		<div class="abstand"></div>		<div class="infotext2"></div>	</div>	<div class="clear"></div>	</div>	<div class="rsContent" id="intro">	<div class="image" >		<img  style=" width:100%;" src="medien/abb/120/8091__240709_6842848_lo.jpg"   title=""    />	</div>	<div class="imageInfo" >		<div class="titel2"></div>		<div class="abstand"></div>		<div class="infotext2"></div>	</div>	<div class="clear"></div>	</div>	<div class="rsContent" id="intro">	<div class="image" >		<img  style=" width:100%;" src="medien/abb/120/8091__240709_0525444_lo.jpg"   title=""    />	</div>	<div class="imageInfo" >		<div class="titel2"></div>		<div class="abstand"></div>		<div class="infotext2"></div>	</div>	<div class="clear"></div>	</div>	<div class="rsContent" id="intro">	<div class="image" >		<img  style=" width:100%;" src="medien/abb/120/8091__240709_0630664_lo.jpg"   title=""    />	</div>	<div class="imageInfo" >		<div class="titel2"></div>		<div class="abstand"></div>		<div class="infotext2"></div>	</div>	<div class="clear"></div>	</div>	<div class="rsContent" id="intro">	<div class="image" >		<img  style=" width:100%;" src="medien/abb/120/8091__240709_6658003_lo.jpg"   title=""    />	</div>	<div class="imageInfo" >		<div class="titel2"></div>		<div class="abstand"></div>		<div class="infotext2"></div>	</div>	<div class="clear"></div>	</div></div>         	<div class="clear"></div><div class="clear"></div></div></div>
+            </div>
+
+            <!-- Dritte Spalte bleibt wie sie war -->
+            <div class="col-12 col-md-3 ps-md-5 d-none d-lg-block">
+                <div id="menue">
+                    <div class="abstandInnen">
+                        
+ 
+ 
+    <ul id="MainMenuUL">    	 
+                            	
+            <li id="mm11"><a href="default.aspx?s=11"  style=" ">Ihr Besuch</a></li>
+                            	
+            <li id="mm12"><a href="default.aspx?s=12"  style=" ">Ausstellungen</a></li>
+                            	
+            <li id="mm17"><a href="default.aspx?s=17"  style=" ">Programm</a></li>
+                            	
+            <li id="mm32"><a href="default.aspx?s=32"  style=" ">Das Haus</a></li>
+                            	
+            <li id="mm33"><a href="default.aspx?s=33"  style=" ">Forschung & Sammlungen</a></li>
+                            	
+            <li id="mm49"><a href="default.aspx?s=49"  style=" ">Beratung</a></li>
+                   
+    </ul>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var vAktivesElement = $("#breadcrump").find(".mpfad").first().attr('data-id');
+        $('#mm' + vAktivesElement).addClass('aktiv');        
+    });
+
+</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <!-- =================================================== MAIN-CONTENT =================================================== -->
+            <div class="col-12">
+                <div id="Bereich1" class="Bereich"  data-id="1"><div class="block sp1" id="block8226"> <div class="abs inh3 abs3" data-sort="1"  id="abs29112"><!--  --> 
+
+<a name="b29112"></a>
+
+
+
+<h3>Wiederöffnung des NS-DOK nach Angriff am Freitag, 16. Oktober</h3>
+<div class="clear"></div>
+<p>Die Eingangsbereiche des NS-DOK wurden in der Nacht auf Freitag, 16. Oktober von bislang unbekannten T&#228;tern mit einer &#252;belriechenden Fl&#252;ssigkeit (Butters&#228;ure) begossen. Die Stadt K&#246;ln hat Anzeige bei der Polizei erstattet.</p>
+<p>&#8222;Ohne den polizeilichen Ermittlungen vorgreifen zu wollen, m&#252;ssen wir den Vorfall als gezielten Angriff auf die Gedenkst&#228;tte und die Erinnerungskultur zum Nationalsozialismus in K&#246;ln begreifen. Wir verurteilen den Angriff scharf und werden uns davon nicht einsch&#252;chtern lassen.&#8220;&#160;(Dr. Henning Borggr&#228;fe, Direktor)</p>
+<p>Wir danken allen, die uns in diesen Tagen ihre Unterst&#252;tzung und Solidarit&#228;t auf vielf&#228;ltige Weise zum Ausdruck bringen.</p>
+<p>Wegen Reinigungsarbeiten in Folge des Angriffs musste die Gedenkst&#228;tte am Wochenende geschlossen bleiben. Ab Dienstag, 20. Oktober, ist das NS-DOK wieder regul&#228;r ab 10 Uhr ge&#246;ffnet.</p>
+<p>Weitere Informationen zur Einordnung der Situation finden Sie <a href="https://nsdok.de/News">hier</a>.</p>
+<div class="clear"></div>
+</div> <div class="abs abs11 Text1Bild Event   " data-sort="2"  id="abs29084">    
+        <div class="clear"></div>
+
+
+<a name="b29084"></a>
+
+
+	 
+	
+
+
+
+	<h3>Willkommen im NS-DOK</h3>
+	<div class="clear"></div>
+
+	<div class="Bildrahmen" ><a href="medien/abb/120/921__8254388.jpg"    title=""  rel="prettyPhoto[29084]">
+	<img  src="medien/abb/120/921__8254388_lo.jpg" class="bildbu" title=""/>
+</a></div>
+
+
+	
+	
+
+	<p>Das NS-DOK ist der zentrale Ort f&#252;r die kritische Auseinandersetzung mit dem Nationalsozialismus in K&#246;ln und Umgebung. Als zeitgeschichtliches Museum und Gedenkst&#228;tte sammeln und bewahren wir Zeugnisse und Lebensgeschichten zur NS-Zeit, wir forschen und machen Ausstellungen. Mit Bildungs-, Beratungs- und Veranstaltungsangeboten richten wir den Blick auch auf die heutige Gesellschaft, wollen informieren und sensibilisieren. Gegen&#252;ber den Opfern der NS-Verfolgung und ihren Angeh&#246;rigen sehen wir uns in besonderer Verantwortung.&#160;Sitz des NS-DOK ist die ehemalige Gestapo-Zentrale im EL-DE-Haus, mitten in K&#246;ln. In den Gef&#228;ngniszellen im Kellergeschoss f&#252;hren hunderte Wandinschriften der H&#228;ftlinge den nationalsozialistischen Terror eindr&#252;cklich vor Augen. Die in diesen Spuren dokumentierte und einst vom Haus aus organisierte Gewalt macht das NS-DOK begreifbar. Es stellt die vielf&#228;ltigen Verflechtungen von st&#228;dtischem Alltag und Verfolgung in den Mittelpunkt, aus denen sich auch Fragen nach dem Wissen und Handeln, dem Zustimmen und Mitmachen &#8222;ganz gew&#246;hnlicher&#8220; K&#246;lner*innen ergeben.</p>
+<p>In den kommenden Jahren werden die Dauerausstellung und weitere Bereiche des Museums schrittweise neugestaltet. Das Haus bleibt w&#228;hrenddessen f&#252;r Sie ge&#246;ffnet. Derzeit stehen alle Angebote ohne Einschr&#228;nkungen zur Verf&#252;gung.</p>
+	<div class="clear"></div>
+
+
+
+ <!--  --> 
+</div><div class="abs inh3 abs38  " data-sort="3"  id="abs29088"> 
+<a name="b29088"></a>
+
+<h2>Aktuell im NS-DOK</h2>
+</div><div class="abs abs15  absVHg weiter s_drittel " data-sort="4"  id="abs29085">        <!-- Wechselausstellungen --> 
+
+<a href="default.aspx?s=15" >
+
+	<!--<img  src="medien/abb/120/6285__4424690_lo.jpg"    title=""   />-->
+<div class="bgImg" style="background-image:url('medien/abb/120/6285__4424690_lo.jpg'); background-size:cover;background-position:center center; height:100%;"   title="" ></div>           
+
+  
+
+	<div class="weiter"><h2>Wechselausstellungen</h2></div> 
+		 
+		
+	 
+
+  <i class="fa fa-chevron-right  "></i></a>
+ 
+	
+<div class="clearfix"></div> 
+</div><div class="abs abs15  absVHg weiter s_drittel " data-sort="5"  id="abs29086">        <!-- Dauerausstellung --> 
+
+<a href="default.aspx?s=13" >
+
+	<!--<img  src="medien/abb/120/6186__2613353_lo.jpg"    title=""   />-->
+<div class="bgImg" style="background-image:url('medien/abb/120/6186__2613353_lo.jpg'); background-size:cover;background-position:center center; height:100%;"   title="" ></div>           
+
+  
+
+	<div class="weiter"><h2>Dauerausstellung</h2></div> 
+		 
+		
+	 
+
+  <i class="fa fa-chevron-right  "></i></a>
+ 
+	
+<div class="clearfix"></div> 
+</div><div class="abs abs15  absVHg weiter s_drittel lastColumn" data-sort="6"  id="abs29087">        <!-- News --> 
+
+<a href="default.aspx?s=7" >
+
+	<!--<img  src="medien/abb/120/6287__5577510_lo.JPG"    title=""   />-->
+<div class="bgImg" style="background-image:url('medien/abb/120/6287__5577510_lo.JPG'); background-size:cover;background-position:center center; height:100%;"   title="" ></div>           
+
+  
+
+	<div class="weiter"><h2>News</h2></div> 
+		 
+		
+	 
+
+  <i class="fa fa-chevron-right  "></i></a>
+ 
+	
+<div class="clearfix"></div> 
+</div><div class="abs abstandGross" data-sort="7"  id="abs29095"></div><div class="abs abstand" data-sort="8"  id="abs29111">
+<div  style="clear:both!important;"></div>
+</div><div id="abs29109" class="   txtSchmal abs ">   
+
+<style type="text/css">
+#Kursauflistung   { margin:0px 0px 15px 0px ;}
+#Kursauflistung img  { width:200px; height:auto; border:1px solid #000; float:left; margin:4px 20px 20px 0px;}
+#Kursauflistung p { margin:0px !important; margin-bottom:5px !important;  padding:0px !important;}
+#Kursauflistung h3 { margin:3px 0px 8px 0px !important; padding:0px !important;}
+#Kursauflistung a {text-decoration:none;}
+#Kursauflistung a:hover {text-decoration:underline;}
+</style>
+       
+<form method="post" action="../includes/kalender_kurz.aspx?mID=143&amp;typ=1&amp;x=19.10.2026+14%3a43%3a35&amp;lang=1&amp;&amp;s=120&amp;setlang=" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTYxNTA3NTU1MQ9kFgICAQ9kFgICAQ8WAh4LXyFJdGVtQ291bnQCBhYMZg9kFgJmDxUEBTU0NjM5HERpLiAyNy4gT2t0LiAyMDI2LCAxODowMCBVaHITUG9kaXVtc2Rpc2t1c3Npb246IDFEaWUgVm9yYmVyZWl0dW5nOiBXaXNzZW5zd2VydGVzIHZvciBkZXIgUmVjaGVyY2hlZAIBD2QWAmYPFQQFNTQwMDMcRG8uIDI5LiBPa3QuIDIwMjYsIDE1OjAwIFVocgtFeGt1cnNpb246IElUcmVmZnB1bmt0IE3DvGxoZWltIOKAkyBOUy1ad2FuZ3NhcmJlaXQgaW4gZWluZW0gS8O2bG5lciBJbmR1c3RyaWV2aWVydGVsZAICD2QWAmYPFQQFNTQ2NDMcRG8uIDA1LiBOb3YuIDIwMjYsIDE4OjAwIFVochNQb2RpdW1zZGlza3Vzc2lvbjogKURlciBFaW5zdGllZzogRGllIEtpc3RlIGF1ZiBkZW0gRGFjaGJvZGVuZAIDD2QWAmYPFQQFNTQwMTQcRG8uIDA1LiBOb3YuIDIwMjYsIDE4OjAwIFVocgpXb3Jrc2hvcDogNlJlbW90ZSBJc2xhbmQg4oCTIEFiZW50ZXVlciBEZW1va3JhdGllIGF1ZiBlaW5lciBJbnNlbGQCBA9kFgJmDxUEBTU0MDEwHERvLiAwNS4gTm92LiAyMDI2LCAxODozMCBVaHIKRsO8aHJ1bmc6IE5EYXMgS8O2bG5lciBFTC1ERS1IYXVzOiBEaWUgR2VzY2hpY2h0ZSBkZXIgR2VzdGFwby1aZW50cmFsZSBpbm1pdHRlbiBkZXIgU3RhZHRkAgUPZBYCZg8VBAU1NDk2MRxEby4gMDUuIE5vdi4gMjAyNiwgMjA6MDAgVWhyCkbDvGhydW5nOiA+RsO8aHJ1bmc6IEludGVydmVudGlvbiEgV2llIGVyesOkaGxlbiB3aXIgTlMtR2VzY2hpY2h0ZSBoZXV0ZT9kZIo3Xg1ayt77iB19IkNs8b0ym8WMvukA4Uwhph50cfMk" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="24F6EE8A" />
+</div>
+        <a href="default.aspx?s=18">
+      <h3>Die nächsten Veranstaltungen</h3>
+        </a>
+         	                            <div class="clear"></div>
+    <div class="abstand10"></div>
+    <div class="abstand10"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54639" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Di. 27. Okt. 2026, 18:00 Uhr</p>
+                            	<p><strong> Podiumsdiskussion: </strong> Die Vorbereitung: Wissenswertes vor der Recherche</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54003" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Do. 29. Okt. 2026, 15:00 Uhr</p>
+                            	<p><strong> Exkursion: </strong> Treffpunkt Mülheim – NS-Zwangsarbeit in einem Kölner Industrieviertel</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54643" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Do. 05. Nov. 2026, 18:00 Uhr</p>
+                            	<p><strong> Podiumsdiskussion: </strong> Der Einstieg: Die Kiste auf dem Dachboden</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54014" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Do. 05. Nov. 2026, 18:00 Uhr</p>
+                            	<p><strong> Workshop: </strong> Remote Island – Abenteuer Demokratie auf einer Insel</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54010" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Do. 05. Nov. 2026, 18:30 Uhr</p>
+                            	<p><strong> Führung: </strong> Das Kölner EL-DE-Haus: Die Geschichte der Gestapo-Zentrale inmitten der Stadt</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                            <div id="Kursauflistung" class="startseite" >
+                            <a href="default.aspx?s=18#v54961" style="margin:0px!important; padding:0px!important;">
+                                <p class="overlineDT">Do. 05. Nov. 2026, 20:00 Uhr</p>
+                            	<p><strong> Führung: </strong> Führung: Intervention! Wie erzählen wir NS-Geschichte heute?</p>
+                             
+                                
+                          </a>   
+                             </div>   
+                     <div class="clear"></div>
+                        
+                        
+                      
+         
+   
+</form>
+
+ &nbsp;</div><div class="abs abstandGross" data-sort="10"  id="abs29110"></div><div class="abs inh3 abs38  " data-sort="11"  id="abs29096"> 
+<a name="b29096"></a>
+
+<h2>Unsere Angebote</h2>
+</div><div class="abs abs42 Text1Bild weiter s_drittel " data-sort="12"  id="abs29092">        <!-- Mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29092"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6205__5093875_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>Führungen</h4>		
+
+<p>Das NS-DOK bietet im Haus und im Stadtraum F&#252;hrungen zur Geschichte des Nationalsozialismus in K&#246;ln an.&#160;</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=19" class="btn btn-default" >
+		Mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abs42 Text1Bild weiter s_drittel " data-sort="13"  id="abs29093">        <!-- Mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29093"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6206__1517502_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>Workshops</h4>		
+
+<p>Wir bieten Workshops zu Jugend im Nationalsozialismus, Rassismus, Antisemitismus und extreme Rechte an.</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=25" class="btn btn-default" >
+		Mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abs42 Text1Bild weiter s_drittel lastColumn" data-sort="14"  id="abs29094">        <!-- mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29094"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6207__1476265_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>Lernräume</h4>		
+
+<p>Hier finden Sie Informationen zu den Lernr&#228;umen Junges Museum, Remote Island und den Erz&#228;hlcaf&#233;s im NS-DOK.</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=22" class="btn btn-default" >
+		mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abstandGross" data-sort="15"  id="abs29097"></div><div class="abs inh3 abs38  " data-sort="16"  id="abs29098"> 
+<a name="b29098"></a>
+
+<h2>Forschung & Sammlungen</h2>
+<p>Die Erforschung der K&#246;lner NS-Geschichte und die Sammlung von Dokumenten, Fotos, Objekten und weiteren Quellen, die &#252;ber diese Geschichte Auskunft geben, sind Arbeitsschwerpunkte des NS-DOK. Zudem bietet das NS-DOK eine &#246;ffentliche Pr&#228;senzbibliothek, die allen Interessierten f&#252;r ihre Forschungen zur Verf&#252;gung steht.</p></div> 
+<!-- abs -->
+<div id="abs29089" data-sort="17"  class="absFlaeche abs  abs36 mitHover s_drittel   ">                
+   <div class="col-12  "> 
+	
+	<a href="default.aspx?s=34" >
+	
+		<div class="inner">
+			<h1>Forschungsprojekte</h1>
+			
+		</div>   
+
+		<i class="fa fa-chevron-right  "></i>
+	
+	</a>
+ 
+    </div>    
+</div>
+
+ 
+<!-- abs -->
+<div id="abs29090" data-sort="18"  class="absFlaeche abs  abs36 mitHover s_drittel   ">                
+   <div class="col-12  "> 
+	
+	<a href="default.aspx?s=47" >
+	
+		<div class="inner">
+			<h1>Bibliothek</h1>
+			
+		</div>   
+
+		<i class="fa fa-chevron-right  "></i>
+	
+	</a>
+ 
+    </div>    
+</div>
+
+ 
+<!-- abs -->
+<div id="abs29091" data-sort="19"  class="absFlaeche abs  abs36 mitHover s_drittel  lastColumn ">                
+   <div class="col-12  "> 
+	
+	<a href="default.aspx?s=48" >
+	
+		<div class="inner">
+			<h1>Archiv & Dokumentation</h1>
+			
+		</div>   
+
+		<i class="fa fa-chevron-right  "></i>
+	
+	</a>
+ 
+    </div>    
+</div>
+
+<div class="abs abstandGross" data-sort="20"  id="abs29101"></div><div class="abs inh3 abs38 s_halb " data-sort="21"  id="abs29099"> 
+<a name="b29099"></a>
+
+<h2>Beratung</h2>
+<p>Sie recherchieren zur NS-Geschichte Ihrer Familie oder Ihres Viertels? Sie wollen rassistische und rechtsextreme &#196;u&#223;erungen in Ihrem privaten oder beruflichen Umfeld nicht akzeptieren und suchen Rat? Sie sind mit Antisemitismus konfrontiert oder wollen einen Vorfall melden? Hier finden Sie Unterst&#252;tzung.</p></div><div class="abs abs15  absVHg weiter s_halb lastColumn" data-sort="22"  id="abs29100">        <!-- Beratung --> 
+
+<a href="default.aspx?s=49" >
+
+	<!--<img  src="medien/abb/120/9017__9894292_lo.jpg"    title=""   />-->
+<div class="bgImg" style="background-image:url('medien/abb/120/9017__9894292_lo.jpg'); background-size:cover;background-position:center center; height:100%;"   title="" ></div>           
+
+  
+
+	 
+		 
+		
+	 
+
+  <i class="fa fa-chevron-right  "></i></a>
+ 
+	
+<div class="clearfix"></div> 
+</div><div class="abs abstandGross" data-sort="23"  id="abs29105"></div><div class="abs abs42 Text1Bild weiter s_drittel " data-sort="24"  id="abs29102">        <!-- mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29102"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6236__6956438_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>digital unterwegs</h4>		
+
+<p>Seit seiner Gr&#252;ndung hat das NS-DOK zu zahlreichen Themen geforscht und die Ergebnisse auch digital zug&#228;nglich gemacht. Hier laden wir Sie zum digitalen St&#246;bern ein.</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=27" class="btn btn-default" >
+		mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abs42 Text1Bild weiter s_drittel " data-sort="25"  id="abs29103">        <!-- Mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29103"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6898__1031155_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>Datenbanken</h4>		
+
+<p>Hier finden Sie unsere Datenbanken: Gedenkbuch der j&#252;dischen Opfer, Stolpersteine, Zwangsarbeitslager und Opfer von Krieg und Gewaltherrschaft.</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=42" class="btn btn-default" >
+		Mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abs42 Text1Bild weiter s_drittel lastColumn" data-sort="26"  id="abs29104">        <!-- Mehr erfahren --> 
+            <div class="clear"></div>
+
+<a name="b29104"></a>
+
+<div class="Bildrahmen">
+	<img  src="medien/abb/120/6238__7578996_lo.jpg" class="bildbu" title=""/>
+</div>
+<div class="clearfix"></div> 
+<h4>Onlineportale</h4>		
+
+<p>Verschiedene Onlineportale und weitere Websites beleuchten einzelne historische Themen, die vom NS-DOK in zahlreichen Projekten erarbeitet wurden.</p>
+
+	<div style=" " class="arrowsright">
+		<a href="default.aspx?s=41" class="btn btn-default" >
+		Mehr erfahren
+		</a>
+	</div>
+ 
+<div class="clearfix"></div> 
+</div><div class="abs abstandGross" data-sort="27"  id="abs29107"></div><div class="abs abs15  absVHg weiter s_halb " data-sort="28"  id="abs29106">        <!-- Ihr Besuch --> 
+
+<a href="default.aspx?s=11" >
+
+	<!--<img  src="medien/abb/120/6241__4631440_lo.jpg"    title=""   />-->
+<div class="bgImg" style="background-image:url('medien/abb/120/6241__4631440_lo.jpg'); background-size:cover;background-position:center center; height:100%;"   title="" ></div>           
+
+  
+
+	 
+		 
+		
+	 
+
+  <i class="fa fa-chevron-right  "></i></a>
+ 
+	
+<div class="clearfix"></div> 
+</div><div class="abs inh3 abs38 s_halb lastColumn" data-sort="29"  id="abs29108"> 
+<a name="b29108"></a>
+
+<h2>Besuchen Sie uns!</h2>
+<p>Hier finden Sie alle Informationen rund um Anfahrt, &#214;ffnungszeiten und Eintrittspreise. Wir freuen uns auf Sie!</p></div><div class="clear"></div></div></div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <div class="clear"></div>
+    <div id="toTop"><a href="#top"><i class="fa fa-angle-up"></i></a></div>
+
+    <footer style="background-color:#3B256E;color:#fff;margin-top:40px;padding-top:40px;padding-bottom:40px;">
+
+        
+
+<div class="container">
+        <div class="row">
+        	<div style="" class="col">
+            	
+                
+                    <h3>Adresse</h3>
+                    <p>Appellhofplatz 23-25<br />
+                    50667 Köln<br />
+                       0221/221-26332 <br /> 
+                    Führungen: 0221/2212-6331<br /> 
+                    <a href="mailto:nsdok@stadt-koeln.de">nsdok@stadt-koeln.de</a></p>
+                    <p>&nbsp;</p>
+                    <p><a href="default.aspx?s=1120">Impressum / Datenschutz</a></p>
+                    <p>&nbsp;</p>
+                    <p>
+
+                
+                        Ein Museum der<br />
+                    <img src="img/Logo-stadt-koeln.png" height="30" /> <br />
+                    <br />
+        </p>
+            </div>
+            
+            
+            
+
+ 
+            <div class="col" >	 
+                            	
+            	<h3><a href="default.aspx?s=11">Ihr Besuch</a></h3>
+                <p><a href="default.aspx?s=11"></a></p>  
+           
+             
+
+                            	
+            	<h3><a href="default.aspx?s=12">Ausstellungen</a></h3>
+                <p><a href="default.aspx?s=12"></a></p>  
+           
+             
+
+                            	
+            	<h3><a href="default.aspx?s=17">Programm</a></h3>
+                <p><a href="default.aspx?s=17"></a></p>  
+           
+             
+
+                            	
+            	<h3><a href="default.aspx?s=32">Das Haus</a></h3>
+                <p><a href="default.aspx?s=32"></a></p>  
+           
+             
+
+                            	
+            	<h3><a href="default.aspx?s=33">Forschung & Sammlungen</a></h3>
+                <p><a href="default.aspx?s=33"></a></p>  
+           
+             
+
+                            	
+            	<h3><a href="default.aspx?s=49">Beratung</a></h3>
+                <p><a href="default.aspx?s=49"></a></p>  
+           
+             
+
+                   
+            </div>            
+  
+            <div class="col d-none d-md-block" ></div>
+ 
+            
+            </div>
+       
+    </div>
+
+
+
+
+    </footer>
+
+
+
+    <link href="js/bootstrap.bundle.min.js" type="text/javascript" />
+
+</body>
+
+</html>
+
