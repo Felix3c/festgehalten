@@ -7,7 +7,8 @@ name: Köln-Fall — Wächter (lief die Messung?)
 #   09:13 UTC Mo+Mi = 11:13 MESZ / 10:13 MEZ → mindestens 1 Abruf heute
 #   12:43 UTC Mo    = 14:43 MESZ / 13:43 MEZ → mindestens 2 Abrufe heute
 # Fehlt ein Abruf: Messlauf per workflow_dispatch nachstoßen (falls nicht schon einer läuft)
-# und laut scheitern — GitHub mailt bei fehlgeschlagenen Zeitplan-Läufen.
+# und laut scheitern — GitHub mailt bei fehlgeschlagenen Zeitplan-Läufen. Ist das Messfenster
+# schon zu (GitHub startet montags oft 4–5 h zu spät), nur melden (Frage 453, 22.10.2026).
 # Krumme Minuten mit Absicht, wie beim Messlauf.
 # Grenze: Fällt GitHubs Zeitplan ganz aus, fällt auch der Wächter aus. Dafür gibt es die
 # Rückfallebene (Windows-Aufgaben, siehe ~/REIHENFOLGE.txt).
@@ -32,22 +33,27 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - name: Erwartete Abrufe bestimmen
-        id: soll
-        run: |
-          if [ -n "${{ inputs.erwartet }}" ]; then n="${{ inputs.erwartet }}"
-          elif [ "$(date +%u)" = 1 ] && [ "$(date +%H)" -ge 13 ]; then n=2
-          else n=1; fi
-          echo "Erwartet: $n Abruf(e) heute ($(date '+%a %H:%M %Z'))"
-          echo "n=$n" >> "$GITHUB_OUTPUT"
       - name: Messwerte von heute zählen
         id: check
-        continue-on-error: true
         # Seit der Messung an der Anzeige (05.10.2026) zählt die Datei der GitHub-Messstelle;
         # messwerte.csv bekommt keine Zeilen mehr, solange der Feed eingefroren ist.
-        run: python recherche/koeln-wartezeit/waechter.py --erwartet "${{ steps.soll.outputs.n }}" --csv recherche/koeln-wartezeit/messwerte-anzeige-github.csv
+        # Soll bestimmt waechter.py selbst (Frage 453, 22.10.2026): Mo 13–15 Uhr zwei Abrufe, sonst
+        # einer; ist das Messfenster zu (Mo 15:00, Mi 12:00), Exit 3 = nur melden, nicht nachstoßen.
+        run: |
+          set +e
+          if [ -n "${{ inputs.erwartet }}" ]; then extra="--erwartet ${{ inputs.erwartet }}"; else extra=""; fi
+          python recherche/koeln-wartezeit/waechter.py $extra --csv recherche/koeln-wartezeit/messwerte-anzeige-github.csv
+          code=$?
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = 3 ]; then
+            echo "::warning::Messung heute unvollständig, Messfenster schon zu: nur gemeldet. Laptop-Messung (messwerte-anzeige.csv) prüfen."
+            echo "Messung unvollständig, Fenster zu — nur gemeldet, nichts nachgestoßen." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          exit $code
+        continue-on-error: true
       - name: Fehlende Messung nachstoßen und laut scheitern
-        if: steps.check.outcome == 'failure'
+        if: steps.check.outputs.code == '1'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

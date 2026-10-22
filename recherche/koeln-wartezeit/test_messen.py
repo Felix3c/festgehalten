@@ -300,8 +300,12 @@ def test_waechter_exit_code_haengt_an_erwarteter_zahl(tmp_path, monkeypatch):
     assert waechter.main() == 1
 
     monkeypatch.setenv("WAECHTER_DATUM", "2026-09-15")
-    monkeypatch.setattr(sys, "argv", ["waechter.py"])
+    monkeypatch.setattr(sys, "argv", ["waechter.py", "--erwartet", "1"])
     assert waechter.main() == 1
+
+    # Ohne --erwartet (Frage 453): Tag vorbei, Fenster zu → nur melden, nicht rot
+    monkeypatch.setattr(sys, "argv", ["waechter.py"])
+    assert waechter.main() == waechter.EXIT_MELDEN
 
 
 # --- Messfenster und Slot-Schutz (seit 16.09.2026) -----------------------
