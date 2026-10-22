@@ -9,6 +9,9 @@ Ausgabe (Markdown, zum Einfügen in METHODE.md):
   2. Kalibrierung: Computer-Werte in Bändern zu 0,20, je Band wie oft die Ankündigung eintrat.
      Ein ehrlicher Wert 0,30 heißt: Von zehn solchen Ankündigungen treten etwa drei ein.
   3. Punkt-Wetten: wer näher dran war.
+  4. Was die Worte der Institution wert waren (Frage 468, 22.10.2026): je Stadt und Wort
+     („angekündigt“ = 1,00, „voraussichtlich“ = 0,80), wie oft es eintrat. Nur Anzeige, die
+     festen Werte bleiben (FORMAT.md §1.2): Das Buch nimmt die Stadt beim Wort.
 
 Aufruf:  python werkzeuge/nachrechnen.py buecher [--einzeln]
 --einzeln zeigt für jede aufgelöste Ja/Nein-Wette den Rechenweg, z. B. (0,30 − 1)² = 0,4900.
@@ -112,6 +115,30 @@ def punkt_bilanz(wetten: list[dict]) -> dict:
     return bilanz
 
 
+WORTE = {"angekuendigt": "angekündigt", "voraussichtlich": "voraussichtlich"}
+ALLE = "Alle"
+
+
+def worte_bilanz(wetten: list[dict]) -> list[dict]:
+    """Je Institution und Wort: aufgelöste Ja/Nein-Wetten, versprochener Wert, wie oft eingetreten.
+    Am Ende je Wort eine Zeile „Alle“. Gezählt wird die Art der Institutions-Prognose."""
+    gruppen: dict[tuple[str, str], list[dict]] = {}
+    for w in wetten:
+        if w.get("typ") != "ja_nein" or bewerten.wette_bewerten(w)["status"] != "aufgeloest":
+            continue
+        eigene = next((p for p in w["prognosen"] if p["von"] == w["institution"]), None)
+        if eigene is None or eigene.get("art") not in WORTE:
+            continue
+        for wer in (w["institution"], ALLE):
+            gruppen.setdefault((wer, eigene["art"]), []).append({"wert": float(eigene["wert"]),
+                                                                 "ausgang": int(w["ausgang"])})
+    reihenfolge = list(WORTE)
+    schluessel = sorted(gruppen, key=lambda k: (k[0] == ALLE, k[0], reihenfolge.index(k[1])))
+    return [{"institution": i, "art": a, "n": len(gruppen[(i, a)]),
+             "versprochen": _schnitt([g["wert"] for g in gruppen[(i, a)]]),
+             "eingetreten": sum(g["ausgang"] for g in gruppen[(i, a)])} for i, a in schluessel]
+
+
 def _alle_wetten(ordner: list[Path]) -> list[dict]:
     wetten = []
     for wurzel in ordner:
@@ -140,6 +167,11 @@ def bericht(wetten: list[dict], einzeln: bool = False) -> str:
                    f"{_oder_strich(b['eingetreten'])} |")
     out += ["", f"Punkt-Wetten aufgelöst: {p['n']} — Computer näher dran {p['computer']}, "
                 f"Institution näher dran {p['institution']}, Gleichstand {p['gleichstand']}"]
+    out += ["", "Was die Worte der Institution wert waren (Ja/Nein, aufgelöst):", "",
+            "| Institution | Wort (fester Wert) | aufgelöst | eingetreten |", "|---|---|---|---|"]
+    for z in worte_bilanz(wetten):
+        out.append(f"| {z['institution']} | {WORTE[z['art']]} ({_komma(z['versprochen'])}) | {z['n']} | "
+                   f"{z['eingetreten']} von {z['n']} ({_komma(z['eingetreten'] / z['n'])}) |")
     if einzeln:
         out += ["", "| Wette | Ausgang | Computer | Institution |", "|---|---|---|---|"]
         for z in zs:

@@ -63,3 +63,42 @@ def test_punkt_bilanz_naeher_dran():
     b = punkt_bilanz([_pk("a", 10, 12, 11.5), _pk("b", 10, 12, 9), _pk("c", 10, 12, 11),
                       _pk("d", 10, 12, None), _jn("e", 0.3, 0)])
     assert b == {"n": 3, "computer": 1, "institution": 1, "gleichstand": 1}
+
+
+# --- Frage 468 (Felix 22.10.2026): „Was die Worte der Stadt wert waren“, nur Anzeige ---
+def _wort(id_, institution, art, ausgang, wert=None):
+    wert = {"angekuendigt": 1.0, "voraussichtlich": 0.8}[art] if wert is None else wert
+    return {"id": id_, "institution": institution, "typ": "ja_nein", "ausgang": ausgang,
+            "prognosen": [{"von": institution, "wert": wert, "art": art}]}
+
+
+def test_worte_bilanz_zaehlt_je_stadt_und_wort():
+    from nachrechnen import worte_bilanz
+    wetten = [
+        _wort("a", "Stadt Köln", "angekuendigt", 1), _wort("b", "Stadt Köln", "angekuendigt", 0),
+        _wort("c", "Stadt Köln", "voraussichtlich", 1), _wort("d", "Stadt Bonn", "angekuendigt", 1),
+    ]
+    zeilen_ = {(z["institution"], z["art"]): z for z in worte_bilanz(wetten)}
+    assert zeilen_[("Stadt Köln", "angekuendigt")]["n"] == 2
+    assert zeilen_[("Stadt Köln", "angekuendigt")]["eingetreten"] == 1
+    assert zeilen_[("Stadt Köln", "voraussichtlich")]["versprochen"] == pytest.approx(0.8)
+    assert zeilen_[("Alle", "angekuendigt")]["n"] == 3
+    assert zeilen_[("Alle", "angekuendigt")]["eingetreten"] == 2
+
+
+def test_worte_bilanz_ohne_offene_verfallene_ersetzte_und_punkt():
+    from nachrechnen import worte_bilanz
+    wetten = [
+        _wort("a", "Stadt X", "angekuendigt", None), _wort("b", "Stadt X", "angekuendigt", "verfallen"),
+        dict(_wort("c", "Stadt X", "angekuendigt", 1), ersetzt_durch="d"),
+        _pk("e", 10, 12, 11), _wort("f", "Stadt X", "voraussichtlich", 0),
+    ]
+    assert [(z["institution"], z["art"], z["n"]) for z in worte_bilanz(wetten)] == [
+        ("Stadt X", "voraussichtlich", 1), ("Alle", "voraussichtlich", 1)]
+
+
+def test_bericht_zeigt_die_worte_tabelle():
+    from nachrechnen import bericht
+    text = bericht([_wort("a", "Stadt Köln", "angekuendigt", 1), _wort("b", "Stadt Köln", "angekuendigt", 0)])
+    assert "Was die Worte der Institution wert waren" in text
+    assert "| Stadt Köln | angekündigt (1,00) | 2 | 1 von 2 (0,50) |" in text

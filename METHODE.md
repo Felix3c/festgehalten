@@ -160,3 +160,40 @@ Was diese Zahlen tragen und was nicht:
 - Die Zahlen stehen hier mit Datum. Wer den Befehl später ausführt, bekommt neuere
   Zahlen; die alten bleiben über `git log -p METHODE.md` sichtbar.
 
+
+### Was die Worte der Stadt wert waren
+
+Die Stadt bekommt in jedem Buch einen festen Wert aus ihren eigenen Worten: Sagt sie etwas
+ohne Vorbehalt zu, steht dort 1,00 („angekündigt“); schreibt sie „voraussichtlich“, „geplant“
+oder Ähnliches, steht dort 0,80 (FORMAT.md §1.2). Diese Werte bleiben fest, denn das Buch
+nimmt die Stadt beim Wort. Das Werkzeug zählt aber mit, wie oft das Wort dann gehalten hat.
+Diese Tabelle ist nur eine Anzeige. Sie ändert keinen Wert und keine Rangliste.
+
+**Stand 22.10.2026** (alle aufgelösten Ja/Nein-Wetten, auch die ohne Computer-Zahl):
+
+| Institution | Wort (fester Wert) | aufgelöst | eingetreten |
+|---|---|---|---|
+| Stadt Bielefeld | angekündigt (1,00) | 1 | 1 von 1 |
+| Stadt Bonn | angekündigt (1,00) | 4 | 3 von 4 |
+| Stadt Bonn | voraussichtlich (0,80) | 3 | 3 von 3 |
+| Stadt Dortmund | angekündigt (1,00) | 5 | 4 von 5 |
+| Stadt Dortmund | voraussichtlich (0,80) | 1 | 1 von 1 |
+| Stadt Düsseldorf | angekündigt (1,00) | 3 | 3 von 3 |
+| Stadt Düsseldorf | voraussichtlich (0,80) | 2 | 1 von 2 |
+| Stadt Essen | angekündigt (1,00) | 3 | 3 von 3 |
+| Stadt Essen | voraussichtlich (0,80) | 4 | 1 von 4 |
+| Stadt Hamm | voraussichtlich (0,80) | 1 | 1 von 1 |
+| Stadt Köln | angekündigt (1,00) | 17 | 8 von 17 |
+| Stadt Köln | voraussichtlich (0,80) | 5 | 3 von 5 |
+| Stadt Münster | angekündigt (1,00) | 1 | 1 von 1 |
+| Stadt Wuppertal | angekündigt (1,00) | 1 | 1 von 1 |
+| Stadt Wuppertal | voraussichtlich (0,80) | 1 | 0 von 1 |
+| **Alle** | angekündigt (1,00) | 35 | **24 von 35** |
+| **Alle** | voraussichtlich (0,80) | 17 | **10 von 17** |
+
+Wenn eine Stadt etwas ohne Vorbehalt angekündigt hat, kam es bisher in 24 von 35 Fällen,
+also in gut zwei von drei. Bei „voraussichtlich“ kam es in 10 von 17 Fällen, das ist
+seltener als die 0,80, die das Buch dafür einträgt. Die meisten Städte haben erst eine bis
+fünf aufgelöste Wetten; einzeln trägt erst eine Stadt mit zehn oder mehr eine Aussage (bisher
+nur Köln: 8 von 17). Nachrechnen mit demselben Befehl wie oben, die Tabelle steht am Ende der
+Ausgabe.
