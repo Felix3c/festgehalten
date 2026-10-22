@@ -31,6 +31,8 @@ vermerke:
     text: "Nur der zweite Abschnitt ist Gegenstand. Der erste (Gartenstraße/Hörstertor, 13. bis voraussichtlich 17.10.) lief beim Hinterlegen schon und wird darum nicht gewettet."
   - am: 2026-10-22
     text: "Geprüft am pruefung_am (Dauerlauf, Tagesprüfung 22.10. ~00:30): Kein Beleg abrufbar. Das Presseportal der Stadt (pressemitteilungen.stadt-muenster.de) antwortet nicht (Zeitüberschreitung), www.stadt-muenster.de zeigt auf Start-, Pressemitteilungs- und Baustellenseite nur „404 Seite“ mit „Wartungsarbeiten“ (Abschaltung seit 21.10., BSI-Hinweis zu PHP-Schwachstellen bei mehreren NRW-Städten), www.muenster.de ohne Antwort. Nicht aufgelöst, offen gelassen; täglich neu prüfen, ab 26.10. Nachfrage beim Presseamt. Kein Ausgang geraten."
+  - am: 2026-10-22
+    text: "Zweite Prüfung 22.10. ~04:50 (Dauerlauf): Presseportal weiter ohne Antwort, www.stadt-muenster.de weiter Wartungsseite, www.muenster.de ohne Antwort. Lokalradio geprüft (robots.txt sperrt KI-Abrufe nur für dpa-Seiten): Newsticker https://www.antennemuenster.de/artikel/der-antenne-muenster-newsticker-618851 (Stand 21.10.2026 17:50) nennt für den 20.10. nur eine geänderte Busumleitung ab 26.10. wegen des nächsten Bauabschnitts an der Hörsterstraße, nichts zum Ende der nächtlichen Asphaltarbeiten an der Kreuzung. Das ist kein Beleg für Ja oder Nein. Offen, weiter täglich prüfen, ab 26.10. Nachfrage beim Presseamt."
 ---
 
 ## Kontext
