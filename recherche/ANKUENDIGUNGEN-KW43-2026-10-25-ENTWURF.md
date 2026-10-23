@@ -10,6 +10,7 @@
 - Jedes Zitat unten per Skript gegen den abgerufenen Seitentext geprüft (Gleichheit nach Leerzeichen-Normalisierung), 5 von 5 bestanden. Skripte und Rohabrufe: `C:\Users\skyla\allein\tmp\kw43-guard\`.
 - SHA-256 = Fingerabdruck der lokalen Rohkopie (Abruf 22.10.2026 ~23:45).
 - **Archiv:** Save Page Now am 22.10. ~23:55 für alle vier Seiten HTTP 520 (Archiv drosselt seit dem Abend). Bei Übernahme nachholen.
+- **Archiv nachgeholt 23.10. ~02:35 (Dauerlauf):** Save Page Now für die drei Dortmund-Seiten angenommen (CDX Status 200). H-Bahn `20261023003323`, Rohkopie `recherche/belege/2026-10-23-archiv-dortmund-h-bahn-stadion.html`, SHA-256 `bb0f17da758a118ac6c8431b4d6b06cfe0a3a2f7bc14af749af7f401fdff4c81`, Zitat wörtlich. Kiebitzweg `20261023003537`, Rohkopie `recherche/belege/2026-10-23-archiv-dortmund-kiebitzweg.html`, SHA-256 `2244cc424c1ee25b65693fbcba2ba122fdb60fcb684b50f285964096a2e66f61`, Zitat wörtlich. Calvinstraße `20261023003402` liegt laut CDX vor (200), Abruf der Kopie scheiterte (Archiv nahm keine Verbindung an), Zitat gegen die Kopie bei Übernahme prüfen.
 - Dublettenprüfung: `git grep` über buecher/ und recherche/ in allen lokalen Zweigen nach Calvin, Kiebitz, Lütgenholthauser, H-Bahn: keine Wette. Die H-Bahn wurde in KW41 und KW42 verworfen („Infoabend, kein Termin“); die Nachricht vom 20.10. nennt jetzt erstmals einen Termin.
 
 ---
