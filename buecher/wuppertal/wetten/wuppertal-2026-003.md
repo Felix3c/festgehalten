@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 04.10.2026."
   - am: 2026-10-04
     text: "Archiv: Save Page Now am 04.10.2026 abgewiesen (HTTP 520). Lokale Kopie der Quelle: recherche/belege/2026-10-04-wuppertal-verzoegerung-fischertal.html, SHA-256 0d27e14d39aaed093f1d74e405ca132dd991ce4566929a28ad6e3022b3c52a35."
+  - am: 2026-10-23
+    text: "Vorprüfung (Dauerlauf, 23.10.2026 ~02:25): Quelle live mit HTTP 403 (Cloudflare) abgewiesen, Inhalt nicht prüfbar. Wayback hat für die Oktober-Meldungen der Stadt nur zwei Kopien, keine zur Brücke Fischertal. Websuche ohne Freigabe- oder Verzögerungsmeldung. Ungeklärt, nicht aufgelöst; Entscheidung am Prüftag 01.11."
 ---
 
 ## Kontext
