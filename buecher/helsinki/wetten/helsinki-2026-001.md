@@ -29,6 +29,8 @@ vermerke:
     text: "Checked on pruefung_am (Dauerlauf, 00:50): no source of the City yet that says the works were finished on 19 October (hel.fi/en/news up to 19.10. 12:00 has no item on the park; project page still says “Under construction”, no date; Finnish release of 15.10. only future tense). Not resolved; checked again from 21.10. No outcome guessed."
   - am: 2026-10-21
     text: "Checked again (Dauerlauf, daily check ~10:15): hel.fi/en/news and hel.fi/fi/uutiset list no item on the park after the release of 15.10. (Finnish list: newest Kaisaniemi item still „Kaisaniemenpuiston peruskorjaus valmistuu etuajassa“, 15.10.2026 9:52); the release itself is unchanged (future tense). Not resolved; next look ~24.10. (project page, site notice, dated photo). No outcome guessed."
+  - am: 2026-10-22
+    text: "Checked again 22.10.2026 (Dauerlauf, daily check ~00:30): hel.fi answers again (HTTP 200, no longer 403). hel.fi/en/news and hel.fi/fi/uutiset list no item on the park after the release of 15.10. (newest items 19.10.: budget proposal, vaccinations); the release is unchanged (published 15.10. 09:53, modified 15.10. 15:57, future tense). Request made to the City on 21.10. (e-mail to the City Registry, automatic receipt only), awaiting the answer; an answer from the City counts as evidence. Not resolved; next look ~24.10. No outcome guessed."
 ---
 
 ## Context
