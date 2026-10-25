@@ -21,7 +21,9 @@ London, Paris, Hamburg, Munich and Vienna.
 
 Sources: the news list at https://www.comune.roma.it/web/it/notizie.page (ten per page). On
 17 October 2026 the keeper read all 560 news items from 14 July to 16 October 2026; 100
-sentences named a future date, twelve were checked word for word, nine became bets. Left out
+sentences named a future date, twelve were checked word for word, nine became bets. On 25
+October 2026 the keeper read the 48 news items from 17 to 25 October 2026; three more bets
+(010 to 012) came from them. Left out
 on purpose: events, exhibitions and calls for applications, budget figures, targets for 2030
 and later, and promises made by others (the State, Sport e Salute, the AS Roma football club,
 the railway company RFI) even when the City reported them.
