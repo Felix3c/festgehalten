@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from . import bewerten, feed, lesen, neu, pruefen, seiten, sprache
+from . import bewerten, feed, lesen, neu, pruefen, seiten, sitemap, sprache
 
 HILFE = (
     "Aufruf: festgehalten neu   <buch-ordner> [--stadt \"Name\"]\n"
@@ -236,6 +236,13 @@ def _alle(buecher_ordner: Path, ausgabe: Path, nur_pruefen: bool, repo: str | No
     seiten.zusatzseiten_schreiben(zusatz, ausgabe, build_zeit, fuss_links=fuss_wurzel)
     zweig = _zweig(buecher_ordner)
     seiten.buecher_schreiben([_bucheintrag(name, buch["meta"], repo, zweig) for name, buch, _ in gute], ausgabe)
+    if url:
+        karte = [e for name, _, bewertet in gute
+                 for e in sitemap.eintraege_buch(name, bewertet["wetten"], seiten.slug)]
+        bekannt = {rel for rel, _ in karte}
+        karte = sitemap.zusatz_eintraege(ausgabe, bekannt) + karte
+        (ausgabe / "sitemap.xml").write_text(sitemap.sitemap_xml([(url + rel, lm) for rel, lm in karte]),
+                                             encoding="utf-8")
     print(f"OK: {len(gute)} {buch_wort}, {gesamt_wetten} Wette{plural}, nach {ausgabe}")
     return 0
 
