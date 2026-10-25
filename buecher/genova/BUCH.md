@@ -82,9 +82,9 @@ is also allowed by art. 70 of the Italian copyright law (Legge 633/1941) (not ch
 This book is not endorsed by the City of Genoa; the City has not agreed with it or with any question
 in it. Everything else CC0. The source pages are not copied into this repository. For each source
 the keeper keeps a local copy fetched on 25 October 2026 and gives the SHA-256 checksum of its text
-(title and paragraphs), and a link to a Wayback Machine copy where the archive has one. On 25
-October 2026 the archive had a copy for one source only (genova-2026-007); the others are marked
-and will be added. Quotes were checked against the text after removing markup, decoding entities
+(title and paragraphs), and a link to a Wayback Machine copy. On 25 October 2026 the archive had a
+copy for one source only (genova-2026-007); the keeper saved the other thirteen the same day, and
+every copy contains its quote word for word. Quotes were checked against the text after removing markup, decoding entities
 and collapsing repeated spaces.
 
 The "Computer" in this book is a language model (Claude, Anthropic) with access to public
