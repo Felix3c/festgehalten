@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Edinburgh book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019111402/https://www.edinburgh.gov.uk/news/article/14452/edinburgh-visitor-levy-comes-into-effect (saved and checked by the keeper on 2026-10-19; contains the quote word for word). The keeper keeps a local copy of the live page fetched on 2026-10-19 (not published), SHA-256 5e815d2bef17493f68e15a7440f58ab4e20d141e03b5991f472de200d767562e."
+  - am: 2026-10-25
+    text: "New statement by the Council on 2026-10-20 (news release “New Visitor Levy fund to help futureproof Edinburgh's cultural and heritage buildings”, https://www.edinburgh.gov.uk/news/article/14508/new-visitor-levy-fund-to-help-futureproof-edinburgh-s-cultural-and-heritage-buildings): “The Council will receive the first levy receipts by November.” Consistent with the bet; question and forecasts unchanged. Quote checked word for word on 2026-10-25; Save Page Now created a copy (https://web.archive.org/web/20261025161017/https://www.edinburgh.gov.uk/news/article/14508/new-visitor-levy-fund-to-help-futureproof-edinburgh-s-cultural-and-heritage-buildings), wording of the copy not yet checked (archive refused the connection). Local copy SHA-256 0d988a45d22ce06c138184cee4e973c0b3ada649bb2688b77ab7e581dae3d3b4."
 ---
 
 ## Context

@@ -31,6 +31,10 @@ author line; the sender is the Council. The date a statement was said is the “
 the release. One source is the Council Leader's monthly report, published in the same news section
 (edinburgh-2026-012).
 
+Update 25 October 2026: the keeper read the seven releases of 19 to 22 October 2026. Two sentences
+from one release became edinburgh-2026-016 and -017 (Silverlea homes and green space); a third
+repeats the date of edinburgh-2026-002 and is noted there.
+
 Left out on purpose: works of other bodies, even when the Council reports them (the Scottish
 Government and Transport Scotland, Network Rail, the regional transport partnership SEStran,
 developers, Edinburgh Leisure, event organisers), and joint programmes paid for by the Scottish
