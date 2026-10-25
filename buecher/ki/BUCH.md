@@ -17,10 +17,14 @@ Kontakt oben.
 
 Wer gemessen wird, entscheidet eine Liste, nicht der Halter: die Vollunterzeichner des
 General-Purpose AI Code of Practice laut EU-Kommission
-(https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai, Stand 31.07.2026,
-abgerufen 03.10.2026): AI Studio Delta, Aleph Alpha, Almawave, Anthropic, Black Forest Labs,
-Bria AI, Cohere, Domyn, Dweve, Fastweb, IBM, LINAGORA, Mistral AI, Open Hippo, OpenAI,
-Pleias, ServiceNow, WRITER. Amazon, Google und Microsoft stehen ebenfalls auf der Liste,
+(https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai, Stand 07.10.2026,
+abgerufen 25.10.2026; vorher Stand 31.07.2026, abgerufen 03.10.2026): AI Studio Delta,
+Aleph Alpha, Almawave, Anthropic, Black Forest Labs, Bria AI, Cohere, Domyn, Dweve, Fastweb,
+IBM, LINAGORA, Mistral AI, Open Hippo, OpenAI, Pleias, Reflection AI, ServiceNow, WRITER.
+Reflection AI steht seit dem Stand vom 07.10.2026 neu auf der Liste. Seine einzige
+gefundene Aussage mit Datum („We will release the weights … later this month“, 05.10.2026)
+war beim Nachlesen am 25.10.2026 schon eingelöst (Gewichte am 16.10.2026 veröffentlicht)
+und ist deshalb keine Wette. Amazon, Google und Microsoft stehen ebenfalls auf der Liste,
 sind aber DMA-Gatekeeper und werden im eigenen Buch „Gatekeeper gegen Gatekeeper“ gemessen.
 xAI hat nur das Kapitel Safety and Security unterzeichnet und ist deshalb nicht drin. Meta
 hat den Kodex nicht unterzeichnet. Eine Liste der KI-Modelle mit systemischem Risiko nach
