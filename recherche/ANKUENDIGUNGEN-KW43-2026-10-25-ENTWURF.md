@@ -2,7 +2,7 @@
 
 **Zweck:** Wöchentliche Sammlung datierter, prüfbarer Ankündigungen der fünf Städte aus den eigenen Pressemitteilungen, als Vorrat für neue Wetten.
 **Stand:** So 25.10.2026 ~01:50 (Dauerlauf, Wöchentlich KW 43), alle fünf Städte. Dortmund-Vorlauf vom Do 22.10. ~23:55 (Fenster 17.–22.10.), dazu Dortmund 23.10. und Köln, Bonn, Düsseldorf, Essen für etwa 16.–23.10. Neueste Meldungen vom Fr 23.10.
-**Übernommen 25.10.2026 ~21:45 (Freigabe Frage 543):** bonn-2026-041, duesseldorf-2026-044, dortmund-2026-029 stehen im Buch (master `8b4aebf`). Die übrigen Vorschläge bleiben Entwurf.
+**Übernommen 25.10.2026 ~21:00 (Freigabe Frage 543):** bonn-2026-041, duesseldorf-2026-044, dortmund-2026-029 stehen im Buch (master `8b4aebf`). Die übrigen Vorschläge bleiben Entwurf.
 **Status:** ENTWURF. Nichts davon steht im Buch. Übernahme nur nach Felix' „steht“. IDs mit „?“ sind Vorschläge.
 
 **Nächste freie Nummern** (über alle lokalen Zweige, alle Vorschläge KW40–KW43 als belegt): **koeln 094, bonn 041, duesseldorf 044, essen 047, dortmund 032.** koeln-2026-092 (Severinsbrücke, PM 28735) und 093 stehen schon im Buch.
