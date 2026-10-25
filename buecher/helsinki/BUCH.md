@@ -28,6 +28,12 @@ decision (Hanasaari), and three statements that are hard to check from outside (
 start, the end date of one construction site, and summer streets that are to continue “at
 least” in 2027).
 
+Update 25 October 2026: the keeper read the sixteen English releases of 19 to 23 October 2026.
+Two sentences became helsinki-2026-018 (Malmi indoor skatepark) and -019 (applications for new
+street charging points). Left out: the 2027 budget proposal (the City Council decides later),
+ticket sales for the 2030 European Athletics Championships (an organiser's promise), and a
+Karamzininranta update that repeats the timing of helsinki-2026-015.
+
 Language: this edition is in English, and so are the quotations, exactly as published by the
 City in English. The question under each bet is the keeper's own wording and is the only thing
 that is resolved.
