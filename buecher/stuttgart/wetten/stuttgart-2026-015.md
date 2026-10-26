@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Guard weiterbauen: neue Meldungen der Stadt seit 18.10.2026, zwölf vom 20. bis 23.10. gelesen); Quelle abgerufen am 25.10.2026, Zitat wörtlich gegen den Text geprüft."
   - am: 2026-10-25
     text: "Archiv: Save Page Now hat am 25.10.2026 eine Kopie angelegt (https://web.archive.org/web/20261025150231/https://www.stuttgart.de/service/aktuelle-meldungen/2026/oktober/umfassende-sanierungsarbeiten-im-kunstmuseum-stuttgart-dauern-an), das Archiv verweigerte danach die Verbindung; der Wortlaut der Kopie ist noch nicht geprüft. Der Halter hat eine lokale Kopie der am 25.10.2026 abgerufenen Quelle (nicht veröffentlicht), SHA-256 96a8bf6cb891a1e7718fbce9a5815ccd2955b6f3becb5faa75388e1ebc7929f7."
+  - am: 2026-10-26
+    text: "Archiv: https://web.archive.org/web/20261025150231/https://www.stuttgart.de/service/aktuelle-meldungen/2026/oktober/umfassende-sanierungsarbeiten-im-kunstmuseum-stuttgart-dauern-an (am 26.10.2026 geprüft, die Kopie enthält das Zitat wörtlich)."
 ---
 
 ## Kontext

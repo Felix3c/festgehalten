@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Guard weiterbauen: neue Meldungen der Stadt seit 18.10.2026, zwölf vom 20. bis 23.10. gelesen); Quelle abgerufen am 25.10.2026, Zitat wörtlich gegen den Text geprüft."
   - am: 2026-10-25
     text: "Archiv: Save Page Now hat am 25.10.2026 eine Kopie angelegt (https://web.archive.org/web/20261025150428/https://www.stuttgart.de/service/aktuelle-meldungen/2026/oktober/lebenswerte-innenstadt-erste-umgestaltungen-stehen-bevor), das Archiv verweigerte danach die Verbindung; der Wortlaut der Kopie ist noch nicht geprüft. Der Halter hat eine lokale Kopie der am 25.10.2026 abgerufenen Quelle (nicht veröffentlicht), SHA-256 1367074d92e90a7dc288ab3e3447da18bddae5a40b88864b34e74f4b4151ba31."
+  - am: 2026-10-26
+    text: "Archiv: https://web.archive.org/web/20261025150428/https://www.stuttgart.de/service/aktuelle-meldungen/2026/oktober/lebenswerte-innenstadt-erste-umgestaltungen-stehen-bevor (am 26.10.2026 geprüft, die Kopie enthält das Zitat wörtlich)."
 ---
 
 ## Kontext
