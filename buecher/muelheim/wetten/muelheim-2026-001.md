@@ -27,6 +27,8 @@ vermerke:
     text: "Archiv: Save Page Now am 05.10.2026 ohne geprüfte Kopie (HTTP 404; Save Page Now nannte danach die Aufnahme 20261005102106, sie ließ sich am selben Tag nicht abspielen). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-muelheim-bruecke-saarner-strasse.html, SHA-256 47b9479a64120c48fb2ced628ae626227efed832d1af31f474e33f9363671d2c."
   - am: 2026-10-08
     text: "Archiv nachgetragen: https://web.archive.org/web/20261005102106/https://cms.muelheim-ruhr.de/rathaus/aktuelles/aktuelle-meldungen/bruecke-saarner-strasse-neuer-belag-fuer-fahrbahn-und-gehwege (Archivkopie vom 05.10.2026, am 08.10.2026 abspielbar, HTTP 200; Zitat am 08.10.2026 wörtlich in der Archivkopie geprüft, Kopie byte-gleich mit der lokalen Kopie, SHA-256 wie oben)."
+  - am: 2026-10-26
+    text: "Prüftag, nicht aufgelöst: keine Quelle für den Ausgang. Gesucht am 26.10.2026 abends: Meldungsliste der Stadt (cms.muelheim-ruhr.de/rathaus/aktuelles/aktuelle-meldungen, 202 Einträge, neueste Meldung zur Brücke weiter die vom 21.08.2026, keine Fertigmeldung); Baustellenportal der Stadt (geo.muelheim-ruhr.de/baustellen): kein Eintrag zur Brücke Saarner Straße, nur eine RWW-Maßnahme Saarner Straße Hausnummer 75 bis Wintgensweg (Ende 10.2026), die nichts mit der Brücke zu tun hat; Websuche (Radio Mülheim, WAZ) ohne Bericht nach dem 24.08.2026. Dass die Brücke im Portal fehlt, belegt weder Ja noch Nein (sie stand dort am 05.10. auch nicht). Ausgang bleibt offen; weiter suchen über Lokalpresse oder eine Anfrage bei der Pressestelle."
 ---
 
 ## Kontext
