@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-25
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Freigabe Felix 25.10.2026 zu Frage 543, Home-Tab; Kandidat aus recherche/ANKUENDIGUNGEN-KW43-2026-10-25-ENTWURF.md). Quelle am 25.10.2026 abgerufen (Meldung erstellt 19.10.2026), Zitat wörtlich; lokale Kopie recherche/belege/2026-10-25-duesseldorf-pm-deichluecke-himmelgeist.html, SHA-256 3a986eb8dcc61f479a8544a2f25d44b6f00784879bcb3d118144aa7b3ab74725. Noch keine Archivkopie (Wayback-CDX am 25.10.2026 ohne Eintrag); nachholen."
+  - am: 2026-10-26
+    text: "Archiv erneut gesucht (Dauerlauf): Wayback-CDX und archive.today ohne Kopie, eigene Sicherung über Save Page Now auf diesem Rechner gesperrt. Quelle am 26.10.2026 live abgerufen (HTTP 200), Zitat weiter wörtlich. Archivkopie bleibt offen."
 ---
 
 ## Kontext
