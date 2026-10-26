@@ -27,12 +27,11 @@ kommen vom Servicebetrieb Öffentlicher Raum (Sör), vom U-Bahnbauamt oder von d
 also von Teilen der Stadt selbst; wer spricht, steht in jeder Wette. Die Stadt Nürnberg unterstützt dieses
 Buch nicht und hat es nicht geprüft.
 
-Rechte, offen gesagt: Die Seite „Haftung für Inhalte“ der Stadt sagt, Verwertung „außerhalb der Grenzen des
-Urheberrechtes“ brauche die schriftliche Zustimmung des Autors, und: „Downloads und Kopien dieser Seite sind
-nur für den privaten, nicht kommerziellen Gebrauch gestattet.“ Eine freie Lizenz gibt es nicht, auch keine
-Ausnahme für Pressemitteilungen. Dieses Buch zitiert je Wette einen Satz oder einen Teil davon mit Quelle und
-verlinkt die Meldung; Fotos und Grafiken werden nicht übernommen. Ob das im Zitatrecht liegt, wurde nicht
-juristisch geprüft. Die lokalen Kopien des Halters bleiben privat.
+Rechte: Die Stadt Nürnberg (Amt für Kommunikation und Stadtmarketing) hat am 26.10.2026 schriftlich
+erlaubt, die Meldungen hier zu zitieren, mit Quellenverweis auf die Stadt Nürnberg und mit dem Hinweis, dass
+die Stadt dieses Register nicht unterstützt. Darum steht bei jeder Wette die Adresse der Meldung auf nuernberg.de,
+und noch einmal: Die Stadt Nürnberg unterstützt dieses Buch nicht und hat es nicht geprüft. Fotos und Grafiken
+werden nicht übernommen. Die lokalen Kopien des Halters bleiben privat.
 
 Jede Wette nennt die Adresse der einzelnen Meldung und eine Kopie im Internet Archive, die das Archiv selbst
 angelegt hat. Maßgeblich ist der Wortlaut am Tag der Hinterlegung, belegt durch die Archivkopie. Das Datum
