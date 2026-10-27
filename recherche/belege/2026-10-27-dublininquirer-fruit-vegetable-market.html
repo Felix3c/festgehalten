@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="system">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="#9932cc">
+    <meta name="ghost-theme" content="Maali 1.8.0">
+
+
+    <link rel="preload" href="https://www.dublininquirer.com/assets/dist/app.min.js?v=MnMkJ7QJr2yQFt-b" as="script">
+    <link rel="preload" href="https://www.dublininquirer.com/assets/dist/app.min.css?v=CM55BRKpXa1-75rJ" as="style">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+  <link rel="preload stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" 
+        as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>    
+  <style>
+    body { --font-headings: var(--gh-font-heading, 'Bitter'), serif; --font-body: var(--gh-font-body, 'Inter'), sans; } 
+    body .content, p { --font-body: var(--gh-font-body, 'Bitter'), serif; font-family: var(--font-body); }
+    .notification-msg, .content button { font-family: 'Inter', sans; }
+  </style>
+
+
+
+
+
+
+
+
+
+    <script async defer src="https://www.dublininquirer.com/assets/dist/app.min.js?v=MnMkJ7QJr2yQFt-b"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://www.dublininquirer.com/assets/dist/app.min.css?v=CM55BRKpXa1-75rJ">
+
+    <style>
+  :root {
+    --global-max-width: 1400px; /* site max width */
+    --global-content-width: 700px; /* post-content-width */
+    --global-wide-width: 960px; /* site max width */
+    --global-radius: 0px; /* default radius */
+    --global-gallery-gap: 1em; /* Image gallery distance between images */
+    --global-hyphens: none; /* none/auto */
+    --global-header-height: 92px;
+    --global-theme-notifications: visible; /* visible/hidden */
+    --global-progress-bar: visible; /* visible/hidden */
+    --global-content-preview-fading: 0%; /* 50%-100% for fading effect */
+    --global-scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  let preferredTheme = localStorage.getItem('PREFERRED_COLOR_SCHEME') || `system`;
+  document.documentElement.setAttribute('data-color-scheme', preferredTheme);
+  
+  // Global values needed
+  const themeGlobal = {
+    currentPage: parseInt(''),
+    nextPage: parseInt(''),
+    nextPageLink: '',
+    maxPages: parseInt(''), 
+    lastPage: `` === `` ? true : false,
+    postsPerPage: parseInt('12'),
+    scrollPos: 0,
+    imageLightbox: false
+  }
+
+  // Calculate contrast & HSL value;
+  function getBrandColorInfo(hexcolor) {
+    // get contrast
+    if (hexcolor.slice(0, 1) === '#') { hexcolor = hexcolor.slice(1); }
+    if (hexcolor.length === 3) { hexcolor = hexcolor.split('').map(function (hex) { return hex + hex;}).join(''); }
+    let r = parseInt(hexcolor.substr(0,2),16), g = parseInt(hexcolor.substr(2,2),16), b = parseInt(hexcolor.substr(4,2),16);
+    let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+    const colorContrast = (yiq >= 128) ? '#000' : '#fff';
+
+    //get HSL
+    r /= 255, g /= 255, b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min)  /  2;  
+    if ( max == min ) { h = s = 0; } else {
+      let d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch(max){
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+    const colorHSL = [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+
+    // return
+    return { colorContrast, colorHSL }
+  };
+
+  const brandColor = getBrandColorInfo("#9932cc");
+  let style = document.createElement('style');
+  style.innerHTML = `:root { 
+    --color-brand-contrast: ${brandColor.colorContrast}; 
+    --color-brand-h: ${brandColor.colorHSL[0]};
+    --color-brand-s: ${brandColor.colorHSL[1]}%;
+    --color-brand-l: ${brandColor.colorHSL[2]}%;
+    --color-brand-hsl: ${brandColor.colorHSL[0]} ${brandColor.colorHSL[1]}% ${brandColor.colorHSL[2]}%;
+  }`
+  document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    
+    
+     
+
+    <meta name="description" content="It doesn&#x27;t propose really major changes, but quite a few small improvements: more pedestrianisation, more greening, better lighting.">
+    <link rel="icon" href="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w256h256/format/jpeg/2025/01/Favicon-2.jpg" type="image/jpeg">
+    <link rel="canonical" href="https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/">
+    <link rel="alternate" type="text/markdown" href="https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation.md">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Dublin InQuirer">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation">
+    <meta property="og:description" content="It doesn&#x27;t propose really major changes, but quite a few small improvements: more pedestrianisation, more greening, better lighting.">
+    <meta property="og:url" content="https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/">
+    <meta property="og:image" content="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/2026/10/Greek-Street-vision--from-council-report.jpg">
+    <meta property="article:published_time" content="2026-10-22T23:26:59.000Z">
+    <meta property="article:modified_time" content="2026-10-22T23:26:59.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/dublininquirer">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation">
+    <meta name="twitter:description" content="It doesn&#x27;t propose really major changes, but quite a few small improvements: more pedestrianisation, more greening, better lighting.">
+    <meta name="twitter:url" content="https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/">
+    <meta name="twitter:image" content="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/2026/10/Greek-Street-vision--from-council-report.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Dublin Inquirer">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="600">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Dublin InQuirer",
+        "url": "https://www.dublininquirer.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Dublin Inquirer",
+        "url": "https://www.dublininquirer.com/author/dublin/",
+        "sameAs": []
+    },
+    "headline": "A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation",
+    "url": "https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/",
+    "datePublished": "2026-10-22T23:26:59.000Z",
+    "dateModified": "2026-10-22T23:26:59.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/2026/10/Greek-Street-vision--from-council-report.jpg",
+        "width": 900,
+        "height": 600
+    },
+    "description": "It doesn't propose really major changes, but quite a few small improvements: more pedestrianisation, more greening, better lighting. ",
+    "mainEntityOfPage": "https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 6.73">
+    <link rel="alternate" type="application/rss+xml" title="Dublin InQuirer" href="https://www.dublininquirer.com/latest/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.72/umd/portal.min.js" data-i18n="true" data-ghost="https://www.dublininquirer.com/" data-key="b24fb326d143379e8ed0945118" data-api="https://dublin-inquirer.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style><script async src="https://js.stripe.com/v3/"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.9/umd/sodo-search.min.js" data-key="b24fb326d143379e8ed0945118" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.9/umd/main.css" data-sodo-search="https://dublin-inquirer.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://www.dublininquirer.com/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=ShRHxgy4po8zN-Wf"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=WwnU9jw5ancNC8Gc">
+    <script defer src="/public/comment-counts.min.js?v=oFYkaGLdiMqB8VN9" data-ghost-comments-counts-api="https://www.dublininquirer.com/members/api/comments/counts/"></script>
+    <script defer src="/public/member-attribution.min.js?v=AKG4hWena9j3yX3I"></script>
+    <script defer src="/public/ghost-stats.min.js?v=vFcCUf6ZQ0Hyhc8h" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://www.dublininquirer.com/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="9f782dda-9dc9-44d1-b817-fe80588bdc76" tb_post_uuid="518fd2a1-bf6d-4988-9f6b-5cf1d2a72a77" tb_post_type="post" tb_member_uuid="undefined" tb_member_status="undefined" tb_gift_link=""></script><style>:root {--ghost-accent-color: #9932cc;}</style>
+    <script defer data-domain="dublin-inquirer.ghost.io" src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+<style>
+/* Make the Digital Subscription membership card purple */
+.membership .tier[data-tier="2"] {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+.membership .tier[data-tier="2"],
+.membership .tier[data-tier="2"] .text-acc,
+.membership .tier[data-tier="2"] .tier__title,
+.membership .tier[data-tier="2"] .discount {
+  color: #ffffff;
+}
+.membership .tier[data-tier="2"] li:before {
+  color: #ffffff;
+}
+.membership .tier[data-tier="2"] hr {
+  background: rgba(255, 255, 255, 0.5);
+}
+/* The button is already purple, so flip it to white to stay visible */
+.membership .tier[data-tier="2"] .btn {
+  --bg-accent: #ffffff;
+  color: var(--color-brand);
+}
+</style>
+
+<style>
+  :root {
+    /* color configuration */
+    --color-text: hsl(0 0% 0%);
+    --color-text-acc: hsl(0 0% 25%);
+    --color-text-reverse: hsl(0 0% 85%);
+    --color-bg: #f3f1eb;
+    --color-bg-acc: #f3f1eb;
+    --color-bg-reverse: hsl(0 0% 15%);
+    --color-bg-base: hsl(0 0% 15%);
+    --color-bg-base-reverse: 0 0% 0%;
+    --color-neutral: hsl(0 0% 50%);
+    --color-border: hsl(0 0% 0%);
+  }
+
+  .author-avatar {
+    display: none;
+}
+.post-info__avatars {
+    display: none;
+}
+    .post-date__time { 
+     display: none; 
+}
+
+article p {
+  margin-bottom: 1.2em;
+}
+  
+
+ /* .gh-announcement-bar {
+    background-color: #fce205 !important;
+    color: #000000 !important;
+  }
+  .gh-announcement-bar a {
+    color: #9932cc !important;
+  }
+
+</style>
+
+
+<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/0c7ae2264a3ddfd465b36cc1/script.js"></script> <!-- End cookieyes banner -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('time[datetime]').forEach(function (el) {
+    var dateStr = el.getAttribute('datetime');
+    if (!dateStr) return;
+    var date = new Date(dateStr + 'T00:00:00');
+    var formatted = date.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+    var span = el.querySelector('span:first-child');
+    if (span) {
+      span.textContent = formatted;
+    } else {
+      el.textContent = formatted;
+    }
+  });
+});
+</script>
+
+<script>
+  function redirectToMembership() {
+    const hash = window.location.hash;
+    const isPortal = hash.includes('portal');
+    const isNotMembershipPage = window.location.pathname !== '/membership/';
+    const isOffer = hash.includes('/portal/offers/');
+    const isThingsToDo = hash.includes('tier=things-to-do-supporter-1') || 
+                       hash.includes('tier=things-to-do-supporter-2') || 
+                       hash.includes('tier=things-to-do-supporter-3');
+  if (isPortal && isNotMembershipPage && !isOffer && !isThingsToDo) {
+    window.location.href = '/membership/';';
+    }
+  }
+  redirectToMembership();
+  window.addEventListener('hashchange', redirectToMembership);
+</script>
+
+<link rel="manifest" href="https://progressier.app/P89EScQU8jgN7r7SQObm/progressier.json"/>
+<script defer src="https://progressier.app/P89EScQU8jgN7r7SQObm/script.js"></script>
+
+<script src="https://unpkg.com/@magicpages/ghost-typesense-search-ui/dist/search.min.js"></script>
+<script>
+  window.__MP_SEARCH_CONFIG__ = {
+    typesenseNodes: [{
+      host: 'tzylkd7x15vfpagcp-1.a2.typesense.net',
+      port: '443',
+      protocol: 'https'
+    }],
+    typesenseApiKey: 'T4ok2CHM3IYru3T6PgvjZ9Kp2YtiV4qt',
+    collectionName: 'ghost',
+    theme: 'system',
+    typesenseSearchParams: {
+      sort_by: 'published_at:desc'
+    }
+  };
+</script>
+  </head>
+  <body class="post-template "  data-drop-caps="true">
+    <div class="progress-bar"></div>
+
+      <header class="header js-header" data-logo="center" data-style="sticky">
+  <div class="container wrapper flex items-center header__container">
+    <div class="header__more">
+      <button class="btn header__menu-toggle js-menu-toggle" title="Menu" aria-label="Menu">
+        <i class="icon icon-menu">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M4 8l16 0"></path>
+  <path d="M4 16l16 0"></path>
+</svg>
+</i>        <i class="icon icon-x">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg>
+</i>        <span>Menu</span>
+      </button>
+
+      <button class="btn header__search-toggle" data-ghost-search title="Search" aria-label="Search">
+        <i class="icon icon-search">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+</i>        <span>Search</span>
+      </button>
+    </div>
+
+    <div class="header__brand">
+<a href="https://www.dublininquirer.com">          <picture class="dark-theme-logo">
+  <source     
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/format/webp/2026/08/Dark-Theme-Logo.png 100w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2026/08/Dark-Theme-Logo.png 300w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2026/08/Dark-Theme-Logo.png 600w"
+    sizes="200px"
+    data-sizes="auto"
+    type="image/webp"
+  >
+  <img class="header__logo"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/format/webp/2026/08/Dark-Theme-Logo.png 100w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2026/08/Dark-Theme-Logo.png 300w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2026/08/Dark-Theme-Logo.png 600w"
+    sizes="200px"
+    data-sizes="auto"
+    data-src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/2026/08/Dark-Theme-Logo.png"
+    src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2026/08/Dark-Theme-Logo.png"
+    alt="Dublin InQuirer"
+  >
+</picture>          <picture class="default-logo">
+  <source 
+    sizes="(max-width: 800px) 200px, 320px"
+    
+    
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 600w"
+    type="image/webp"
+  >
+  <img class="header__logo"
+    sizes="(max-width: 800px) 200px, 320px"
+    
+    data-srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 600w"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 30w"
+    data-src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png"
+    src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png"
+    alt="Dublin InQuirer"
+    loading="eager"
+  >
+</picture></a>    </div>
+
+    <div class="header__actions">
+          <a href="/signin/" class="btn signin-link radius" data-portal="signin">Log in</a>
+          <a href="/membership/" class="btn signup-link btn--brand radius">Subscribe</a>
+        
+
+      <div class="member-menu js-member-menu">
+      <a href="/signup/" data-portal="signup" class="signup-link">
+        <i class="icon icon-arrow-up-right icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="17" y1="7" x2="7" y2="17" />
+  <polyline points="8 7 17 7 17 16" />
+</svg>
+
+
+
+</i>Sign up
+      </a>
+
+      <a href="/signin/" data-portal="signin" class="signin-link">
+        <i class="icon icon-login icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in">
+  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+  <polyline points="10 17 15 12 10 7"></polyline>
+  <line x1="15" y1="12" x2="3" y2="12"></line>
+</svg>
+</i>Sign in
+      </a>
+</div>    </div>
+  </div>
+</header>
+
+<div class="header-menu">
+  <div class="container wrapper flex">
+
+    <nav class="header-menu-nav">
+      <ul class="nav">
+    <li class="nav-home" 
+      data-label="Home" data-length="4">
+      <a href="https://www.dublininquirer.com/">
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-city" 
+      data-label="City" data-length="4">
+      <a href="https://www.dublininquirer.com/tag/city-desk/">
+        <span>City</span>
+      </a>
+    </li>
+    <li class="nav-fingal" 
+      data-label="Fingal" data-length="6">
+      <a href="https://www.dublininquirer.com/tag/fingal/">
+        <span>Fingal</span>
+      </a>
+    </li>
+    <li class="nav-culture-desk" 
+      data-label="Culture Desk" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/culture-desk/">
+        <span>Culture Desk</span>
+      </a>
+    </li>
+    <li class="nav-things-to-do" 
+      data-label="Things To Do" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/things-to-do/">
+        <span>Things To Do</span>
+      </a>
+    </li>
+    <li class="nav-about" 
+      data-label="About" data-length="5">
+      <a href="https://www.dublininquirer.com/about/">
+        <span>About</span>
+      </a>
+    </li>
+    <li class="nav-subscribe" 
+      data-label="Subscribe" data-length="9">
+      <a href="https://www.dublininquirer.com/membership/">
+        <span>Subscribe</span>
+      </a>
+    </li>
+    <li class="nav-advertise-with-us" 
+      data-label="Advertise with us" data-length="17">
+      <a href="https://www.dublininquirer.com/advertise-with-us/">
+        <span>Advertise with us</span>
+      </a>
+    </li>
+    <li class="nav-merchandise" 
+      data-label="Merchandise" data-length="11">
+      <a href="https://dublin-inquirer-shop.tpopsite.com/">
+        <span>Merchandise</span>
+      </a>
+    </li>
+    <li class="nav-donate" 
+      data-label="Donate" data-length="6">
+      <a href="https://www.dublininquirer.com/tip-jar/">
+        <span>Donate</span>
+      </a>
+    </li>
+</ul>
+    </nav>
+
+  </div>
+</div>
+
+
+
+      <div class="menu js-menu">
+  <div class="container wrapper">
+    <div class="menu__content">
+      <nav class="menu__navigation">
+        <ul class="nav">
+    <li class="nav-home" 
+      data-label="Home" data-length="4">
+      <a href="https://www.dublininquirer.com/">
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-city" 
+      data-label="City" data-length="4">
+      <a href="https://www.dublininquirer.com/tag/city-desk/">
+        <span>City</span>
+      </a>
+    </li>
+    <li class="nav-fingal" 
+      data-label="Fingal" data-length="6">
+      <a href="https://www.dublininquirer.com/tag/fingal/">
+        <span>Fingal</span>
+      </a>
+    </li>
+    <li class="nav-culture-desk" 
+      data-label="Culture Desk" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/culture-desk/">
+        <span>Culture Desk</span>
+      </a>
+    </li>
+    <li class="nav-things-to-do" 
+      data-label="Things To Do" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/things-to-do/">
+        <span>Things To Do</span>
+      </a>
+    </li>
+    <li class="nav-about" 
+      data-label="About" data-length="5">
+      <a href="https://www.dublininquirer.com/about/">
+        <span>About</span>
+      </a>
+    </li>
+    <li class="nav-subscribe" 
+      data-label="Subscribe" data-length="9">
+      <a href="https://www.dublininquirer.com/membership/">
+        <span>Subscribe</span>
+      </a>
+    </li>
+    <li class="nav-advertise-with-us" 
+      data-label="Advertise with us" data-length="17">
+      <a href="https://www.dublininquirer.com/advertise-with-us/">
+        <span>Advertise with us</span>
+      </a>
+    </li>
+    <li class="nav-merchandise" 
+      data-label="Merchandise" data-length="11">
+      <a href="https://dublin-inquirer-shop.tpopsite.com/">
+        <span>Merchandise</span>
+      </a>
+    </li>
+    <li class="nav-donate" 
+      data-label="Donate" data-length="6">
+      <a href="https://www.dublininquirer.com/tip-jar/">
+        <span>Donate</span>
+      </a>
+    </li>
+</ul>
+
+          <ul class="nav secondary submenu">
+    <li class="nav-subscription-faqs" 
+      data-label="Subscription FAQs" data-length="17">
+      <a href="https://www.dublininquirer.com/subscription-faqs/">
+        <span>Subscription FAQs</span>
+      </a>
+    </li>
+    <li class="nav-merchandise" 
+      data-label="Merchandise" data-length="11">
+      <a href="https://dublin-inquirer-shop.tpopsite.com/">
+        <span>Merchandise</span>
+      </a>
+    </li>
+    <li class="nav-active-travel-collision-tracker" 
+      data-label="Active Travel Collision Tracker" data-length="31">
+      <a href="https://collisiontracker.ie">
+        <span>Active Travel Collision Tracker</span>
+      </a>
+    </li>
+    <li class="nav-council-vote-tracker" 
+      data-label="Council Vote Tracker" data-length="20">
+      <a href="https://councilvotetracker.ie/">
+        <span>Council Vote Tracker</span>
+      </a>
+    </li>
+    <li class="nav-no-show-bus-tracker" 
+      data-label="No-Show Bus Tracker" data-length="19">
+      <a href="https://noshowbus.ie">
+        <span>No-Show Bus Tracker</span>
+      </a>
+    </li>
+    <li class="nav-neighbourhood-mapping-project" 
+      data-label="Neighbourhood Mapping Project" data-length="29">
+      <a href="https://neighbourhoods.civictech.ie/">
+        <span>Neighbourhood Mapping Project</span>
+      </a>
+    </li>
+    <li class="nav-privacy-and-cookies" 
+      data-label="Privacy and Cookies" data-length="19">
+      <a href="https://www.dublininquirer.com/privacy-and-cookies/">
+        <span>Privacy and Cookies</span>
+      </a>
+    </li>
+    <li class="nav-terms-of-service" 
+      data-label="Terms of Service" data-length="16">
+      <a href="https://www.dublininquirer.com/terms-of-service/">
+        <span>Terms of Service</span>
+      </a>
+    </li>
+</ul>
+      </nav>
+
+      <div class="menu__posts">
+        <span class="menu__posts-title">Latest news</span>
+            <article class="post-card has-img is-featured horizontal js-post-card">
+
+  <div class="post-card__content flex flex-col ">
+    <div class="flex post-card-tags">
+        <a class="post-tag mr-sm tag-history" href="/tag/history/" aria-label="history"
+          
+        >history</a>
+    </div>
+
+      <h2 class="post-card__title"><a href="https://www.dublininquirer.com/its-giving-colonialism-ireland-still-owes-rent-to-dukes-and-earls/">“It’s giving colonialism”: Ireland still owes rent to dukes and earls</a></h2>
+    
+    <p class="post-card__excerpt opacity-080">
+      Although, even though the OPW lists these rents as payable, some of the named beneficiaries say they haven&#39;t been getting them.
+    </p>
+
+    <div class="post-info">
+  <ul class="post-info__avatars">
+        <li class="author-avatar has-icon">
+          <a href="/author/eoinglackin-2/" title="Eoin Glackin" aria-label="Eoin Glackin">
+              <i class="icon icon-user">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+  <circle cx="12" cy="7" r="4"></circle>
+</svg>
+</i>          </a>
+        </li>
+  </ul>
+  
+    <span class="post-info__authors"><a href="/author/eoinglackin-2/">Eoin Glackin</a></span>
+  
+  <time datetime="2026-10-23">Oct 23, 2026</time> 
+
+</div>  </div>
+</article>            <article class="post-card has-img is-featured horizontal js-post-card">
+
+  <div class="post-card__content flex flex-col ">
+    <div class="flex post-card-tags">
+        <a class="post-tag mr-sm tag-city-centre" href="/tag/city-centre/" aria-label="city centre"
+          
+        >city centre</a>
+    </div>
+
+      <h2 class="post-card__title"><a href="https://www.dublininquirer.com/robert-watts-not-going-to-be-tsar-of-dublin-city-councillors-say/">Robert Watt&#x27;s not going to be Tsar of Dublin, city councillors say</a></h2>
+    
+    <p class="post-card__excerpt opacity-080">
+      They&#39;re set to back the creation of a special purpose vehicle he&#39;s been picked to head, which is meant to play a major role in regenerating the city centre – but how major is in dispute.
+    </p>
+
+    <div class="post-info">
+  <ul class="post-info__avatars">
+        <li class="author-avatar has-icon">
+          <a href="/author/laoise-neylon/" title="Laoise Neylon" aria-label="Laoise Neylon">
+              <i class="icon icon-user">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+  <circle cx="12" cy="7" r="4"></circle>
+</svg>
+</i>          </a>
+        </li>
+  </ul>
+  
+    <span class="post-info__authors"><a href="/author/laoise-neylon/">Laoise Neylon</a></span>
+  
+  <time datetime="2026-10-23">Oct 23, 2026</time> 
+
+</div>  </div>
+</article>            <article class="post-card has-img is-featured horizontal js-post-card">
+
+  <div class="post-card__content flex flex-col ">
+    <div class="flex post-card-tags">
+        <a class="post-tag mr-sm tag-dunsink" href="/tag/dunsink/" aria-label="Dunsink"
+          
+        >Dunsink</a>
+    </div>
+
+      <h2 class="post-card__title"><a href="https://www.dublininquirer.com/fingal-councillors-approve-revised-plan-for-new-dunsink-town/">Fingal councillors approve revised plan for new Dunsink town</a></h2>
+    
+    <p class="post-card__excerpt opacity-080">
+      Changes include a buffer aimed at reducing the project&#39;s impact on neighbouring Finglas – and density reductions expected to shave off thousands of homes.
+    </p>
+
+    <div class="post-info">
+  <ul class="post-info__avatars">
+        <li class="author-avatar has-icon">
+          <a href="/author/sam-tranum-9836/" title="Sam Tranum" aria-label="Sam Tranum">
+              <i class="icon icon-user">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+  <circle cx="12" cy="7" r="4"></circle>
+</svg>
+</i>          </a>
+        </li>
+  </ul>
+  
+    <span class="post-info__authors"><a href="/author/sam-tranum-9836/">Sam Tranum</a></span>
+  
+  <time datetime="2026-10-23">Oct 23, 2026</time> 
+
+</div>  </div>
+</article>      </div>
+    </div>
+  </div>
+
+  <div class="w-100 mt border-top">
+    <div class="menu__actions">
+          <a href="/signin/" data-portal="signin" class="btn signin-link radius">
+            Log in
+          </a>
+          <a href="/signup/" data-portal="signup" class="btn signup-link btn--brand radius">
+            Subscribe
+          </a>
+
+      <span class="flex-1"></span>
+
+      <div class="social-links items-center mb">
+        <span class="fw-600 mr-sm">Follow</span>
+        <a href="https://www.facebook.com/dublininquirer" class="facebook" aria-label="Facebook"><i class="icon icon-facebook icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+
+
+
+</i><span>Facebook</span></a>
+
+
+
+<a href="https://www.dublininquirer.com/latest/rss" class="rss" aria-label="RSS"><i class="icon icon-rss icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+</i><span>RSS</span></a>
+
+<a href="https://bsky.app/profile/dublininquirer.com" class="bluesky" aria-label="Bluesky"><i class="icon icon-bluesky icon--sm">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" /></svg>
+</i><span>Bluesky</span></a>
+
+<a href="https://instagram.com/dublininquirer" class="instagram" aria-label="Instagram"><i class="icon icon-instagram icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-instagram</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+
+
+
+</i><span>Instagram</span></a>
+
+<a href="https://chat.whatsapp.com/D6WGDxK0DDhB7UtvFzqp8I?mode=wwt" class="whatsapp" aria-label="Whatsapp"><i class="icon icon-whatsapp icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-whatsapp</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+  <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
+</svg>
+
+
+
+</i><span>Whatsapp</span></a>
+
+
+  <a href="https://mastodon.ie/@dublininquirer" class="mastodon" aria-label="Mastodon"><i class="icon icon-mastodon icon--sm">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mastodon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z" /><path d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722" /></svg>
+</i><span>Mastodon</span></a>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    <main class="main flex-1">
+      
+  <div class="container wrapper">
+        <div class="post-hero is-post wide" 
+    data-feature-image="true">
+    
+    <div class="post-hero__content flex flex-col">
+
+      <h1 class="post-hero__title">A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation</h1>
+    
+        <p class="post-hero__excerpt text-acc">It doesn&#x27;t propose really major changes, but quite a few small improvements: more pedestrianisation, more greening, better lighting. </p>
+
+        <div class="post-info">
+  <ul class="post-info__avatars">
+        <li class="author-avatar has-icon">
+          <a href="/author/dublin/" title="Dublin Inquirer" aria-label="Dublin Inquirer">
+              <i class="icon icon-user">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+  <circle cx="12" cy="7" r="4"></circle>
+</svg>
+</i>          </a>
+        </li>
+  </ul>
+  
+    <span class="post-info__authors"><a href="/author/dublin/">Dublin Inquirer</a></span>
+  
+  <time datetime="2026-10-23">Oct 23, 2026</time> 
+
+</div>    </div>
+
+      <div class="post-hero__media">
+        <figure class="post-hero__figure">
+          <picture class="">
+  <source 
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2026/10/Greek-Street-vision--from-council-report.jpg 30w"
+    data-srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2026/10/Greek-Street-vision--from-council-report.jpg 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2026/10/Greek-Street-vision--from-council-report.jpg 600w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w1000/format/webp/2026/10/Greek-Street-vision--from-council-report.jpg 1000w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w2000/format/webp/2026/10/Greek-Street-vision--from-council-report.jpg 2000w"
+    type="image/webp"
+  >
+  <img class="lazyload post-hero__img"
+    sizes="(max-width: 400px) 280px, 580px"
+    data-sizes="auto"
+    data-srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/2026/10/Greek-Street-vision--from-council-report.jpg 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/2026/10/Greek-Street-vision--from-council-report.jpg 600w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w1000/2026/10/Greek-Street-vision--from-council-report.jpg 1000w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w2000/2026/10/Greek-Street-vision--from-council-report.jpg 2000w"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2026/10/Greek-Street-vision--from-council-report.jpg 30w"
+    data-src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/2026/10/Greek-Street-vision--from-council-report.jpg"
+    src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2026/10/Greek-Street-vision--from-council-report.jpg"
+    alt="A council plan to revamp area around Victorian Fruit and Vegetable Market is out for public consultation"
+    
+  >
+</picture>          <figcaption><span style="white-space:pre-wrap">The plan's vision for Greek Street.</span></figcaption>
+        </figure>
+      </div>
+
+  </div>
+
+        <div class="post-date-share">
+  <time datetime="2026-10-23">
+    <span>October 23 2026</span>
+    <span class="post-date__time">12:26 AM</span>
+  </time>
+
+    <span class="post-readtime">4 min read</span>
+  
+
+  <span class="spacing"></span>
+
+  <button class="share-toggle" onclick="this.classList.toggle('is-active')">
+    <span>Share</span>
+    <i class="icon icon-chevron-down">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+</i>  </button>
+
+  <div class="social-share content-width ">
+  <a class="social-share__item twitter js-share" target="_blank"
+      href="https://twitter.com/share?text=A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation&amp;url=https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/"
+      title="Share on X" aria-label="Share on X">
+    <i class="icon icon-twitter-x icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item bluesky js-share" target="_blank"
+      href="https://bsky.app/intent/compose?text=A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation%20https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/"
+      title="Share on Bluesky" aria-label="Share on Bluesky">
+    <i class="icon icon-bluesky icon--sm filled">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" /></svg>
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item facebook js-share" target="_blank"
+      href="https://www.facebook.com/sharer.php?u=https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/"
+      title="Share on Facebook" aria-label="Share on Facebook">
+    <i class="icon icon-facebook icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+
+
+
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item linkedin js-share" target="_blank"
+      href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/&title=A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation&summary=A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation"
+      title="Share on Linkedin" aria-label="Share on Linkedin">
+    <i class="icon icon-linkedin icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+  <rect x="2" y="9" width="4" height="12"></rect>
+  <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</i>    <span>Share</span>
+  </a>
+  <a class="social-share__item mail"
+      href="mailto:?subject=A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation&body=https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/&nbsp;A%20council%20plan%20to%20revamp%20area%20around%20Victorian%20Fruit%20and%20Vegetable%20Market%20is%20out%20for%20public%20consultation"
+      title="Share by email" aria-label="Share by email">
+    <i class="icon icon-mail icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="3" y="5" width="18" height="14" rx="2" />
+  <polyline points="3 7 12 13 21 7" />
+</svg>
+</i>    <span>Email</span>
+  </a>
+  <button class="copy-link copy js-copy-link" data-url="https://www.dublininquirer.com/a-council-plan-to-revamp-area-around-victorian-fruit-and-vegetable-market-is-out-for-public-consultation/"
+      title="Copy to clipboard" data-label="Copied!" aria-label="Copy to clipboard">
+    <i class="icon icon-link icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 15l6 -6"></path>
+   <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
+   <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
+</svg>
+</i>    <span>Copy</span>
+  </button>
+</div>
+
+</div>
+      <article class="post content post-access-public">
+        <p>Dublin City Council’s <a href="https://www.documentcloud.org/documents/28829279-21d04-draft-city-markets-area-prp-sept-26-for-issue-1/?ref=dublininquirer.com"><u>draft plan</u></a> to revamp the area around the Victorian Fruit and Vegetable Market in the north inner city is out for <a href="https://engage.dublincity.ie/en-IE/projects/the-markets-area-public-realm-plan-2026?ref=dublininquirer.com"><u>public consultation.&nbsp;</u></a></p><p>The council plans to do up two small parks in the area –&nbsp;St Michan’s Park and Ormond Square – and to build two new small plazas at St Mary’s Abbey and Mary’s Lane, it shows.</p><p>As it stands, Mary Street Little would become a pedestrian zone after 11am. Cuckoo Lane, would get a surface upgrade so the part of the road that<strong> </strong>is currently tarmac would be paved and cars would be restricted to local access only.<strong> </strong></p><p>Footpaths would be widened in places, trees and greenery planted, and better lighting installed, it says.&nbsp;</p><p>Reducing vehicle traffic to one lane on Greek Street would create space for wider footpaths with trees and plantings to green the street.&nbsp;</p><p>Social Democrats Councillor Ellen O’Doherty says it is good that the council is looking at improving the whole area around the market. “It's a golden opportunity.”</p><p>“I think in terms of urban development, regeneration, things like that, it has to be a holistic approach,” she says.&nbsp;</p><p>Green Party Councillor Janet Horner said she finds the plans disappointing, though. It's mostly just plantings, she says.</p><p>She had asked council staff to look at making the council-owned  surface-level car park opposite the market on St Michan’s Street into a recreational space.&nbsp;</p><p>That idea hasn’t made it into the plans. “That is such a waste of space in the inner-city,” says Horner. “That place is crying out to be a sports pitch or a park.”</p><p>Council officials told her that it would need to be rezoned, she says. But its current zoning of "city centre" would allow recreational uses, says Horner.&nbsp;</p><p>Said O'Doherty: “The plan is definitely not ambitious; I don’t think it's going to blow anyone's socks off. But I do appreciate the sentiment of getting the basics right.”</p><h2 id="whats-in-the-plan">What's in the plan?</h2><p>Works are underway to renovate the Victorian Fruit and Vegetable Market itself. On Wednesday, the old building was surrounded by scaffolding, wrapped with Purcell-branded white netting.&nbsp;</p><p>"This project is progressing well, with procurement of an operator now the focus of attention after initial on-site works were completed. Completion of Shell and Core works is expected July 2027," says a <a href="https://www.documentcloud.org/documents/28829368-building-momentum-reporting-progress-on-the-roadmap-for-delivery-of-the-dublin-city-taskforce-ud-1/?ref=dublininquirer.com" rel="noreferrer">July 2026 report</a>, for the Dublin City Taskforce. </p><p>The plans out for public consultation at the moment concern the area around this. </p><p>Under the draft plans, the council would plant trees and other greenery at Chancery Street, Charles Street North, Mary Street Little, Greek Street and Ormond Square.&nbsp;</p><p>It would need planning permission for works at Halston Street, Green Street and Little Britain Street, where it proposes to widen footpaths, creating space for public seating and planting trees and other greenery.&nbsp;</p><p>It would also revamp St Michan’s Park, to bring it closer to its original design. “The public realm improvement works will enhance the setting of the historic St Michan’s Church and Park,” says the plan.&nbsp;</p><p>Meanwhile, Mary Street Little would be pedestrian-only after 11am, meaning people could walk freely and safely from the Victorian market to traffic-free Capel Street.</p><p>At Mary’s Abbey, in front of the building that used to house the Complex,<strong> t</strong>he council would install a small paved plaza, with trees and outdoor seating and upgrade the nearby lane, at Meeting House Lane.&nbsp;</p><h2 id="small-changes">Small changes</h2><p>These are minor improvements and she was expecting more, says Horner.</p><p>There are no major<strong> </strong>changes to traffic layout in the plan, she says. “For three years, they said they were having to revise the traffic movement."</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://www.dublininquirer.com/council-plans-to-revamp-streets-around-the-victorian-fruit-and-veg-market/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Council plans to revamp streets around the Victorian Fruit and Veg Market - Dublin Inquirer</div><div class="kg-bookmark-description">There’d be wider footpaths, more trees, more cycle routes, and new public spaces with seating.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/icon/Favicon-2-90b94104-67f1-4b3f-8a59-0a385be517dc.jpg" alt=""><span class="kg-bookmark-author">Dublin InQuirer</span><span class="kg-bookmark-publisher">Laoise Neylon</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/thumbnail/fruit-and-veg-market-from-inside-maurice-lawlors-shop-by-laoise-neylon-scaled-fb7f66bb-3bcf-4652-807d-1f2e3ccc841b.jpg" alt="" onerror="this.style.display = 'none'"></div></a></figure><p>Mostly though, she is frustrated about the car park left untouched. “That place is crying out to be a sports pitch or a park,” says Horner, “it has to have some community or social use.”</p><p>She imagines a park with benches, where people could sit and picnic, and children could play, she says.&nbsp;</p><p>Or, the council could extend the sports facilities on the spot, she says. There's already a small astroturf beside the car park.&nbsp;</p><p>“You could put a tennis court; there is no tennis court in the city,” she says. “There is a whole variety of things you could do there.”</p><p>O’Doherty says she understands the council wants to make the area a destination rather than a through-route. “The idea of trying to create a place where people stay and make it a destination in itself is definitely the right approach.”&nbsp;</p><p>The small parks currently have low biodiversity and this is the council’s opportunity to address that, she says. “That should be a huge focus of the plan.”</p><p>She is keen to hear from residents and hopes that the council will take on board their submissions and listen closely to what they say. “I’d like this to be the floor, not the ceiling,” says O’Doherty.&nbsp;</p><p>The public consultation runs to 6 November. </p>
+      </article>
+
+
+      
+        <div class="post-authors mb-xl">
+    <span class="section-title xs">Author</span>
+    <div class="grid gap-200">
+        <div class="author-card author-dublin">
+
+
+  <div class="author-card__content flex-1 flex flex-col text-acc">
+    <div class="author-card__header">
+      <h3 class="author-card__name fw-700 mb-0">
+        <a href="https://www.dublininquirer.com/author/dublin/">Dublin Inquirer</a>
+      </h3>
+
+      <ul class="author-card__social ">
+      </ul>
+    </div>
+    
+    
+    
+    <a class="author-card__view text-08 text-acc opacity-075 fw-600" href="https://www.dublininquirer.com/author/dublin/">View articles</a>
+  </div>
+</div>
+    </div>
+  </div>
+  </div>
+
+        <div class="bg-acc">
+      <div class="container wrapper">
+        <div class="post-comments radius-double p-lg pb-0 flex-1 self-align-start" id="comments">
+          <div class="content-width">
+            
+        <script defer src="https://cdn.jsdelivr.net/ghost/comments-ui@~1.6/umd/comments-ui.min.js" data-locale="en" data-ghost-comments="https://www.dublininquirer.com/" data-api="https://dublin-inquirer.ghost.io/ghost/api/content/" data-admin="https://dublin-inquirer.ghost.io/ghost/" data-key="b24fb326d143379e8ed0945118" data-title="Comments" data-count="true" data-post-id="6ada9537d580ef000143ec77" data-color-scheme="auto" data-avatar-saturation="60" data-accent-color="#9932cc" data-comments-enabled="all" data-publication="Dublin InQuirer" crossorigin="anonymous"></script>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  
+    </main>
+    
+      
+      <footer class="footer">
+  <div class="container wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="footer__brand flex items-center">
+            <picture class="dark-theme-logo">
+  <source     
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/format/webp/2026/08/Dark-Theme-Logo.png 100w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2026/08/Dark-Theme-Logo.png 300w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2026/08/Dark-Theme-Logo.png 600w"
+    sizes="200px"
+    data-sizes="auto"
+    type="image/webp"
+  >
+  <img class="footer__logo mr lazyload"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/format/webp/2026/08/Dark-Theme-Logo.png 100w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2026/08/Dark-Theme-Logo.png 300w,https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2026/08/Dark-Theme-Logo.png 600w"
+    sizes="200px"
+    data-sizes="auto"
+    data-src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/2026/08/Dark-Theme-Logo.png"
+    src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2026/08/Dark-Theme-Logo.png"
+    alt="Dublin InQuirer"
+  >
+</picture>            <picture class="default-logo">
+  <source 
+    sizes="200px"
+    data-sizes="auto"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 30w"
+    data-srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/format/webp/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/format/webp/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 600w"
+    type="image/webp"
+  >
+  <img class="footer__logo mr lazyload"
+    sizes="200px"
+    data-sizes="auto"
+    data-srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w300/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 300w, https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w600/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 600w"
+    srcset="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png 30w"
+    data-src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w100/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png"
+    src="https://storage.ghost.io/c/9f/78/9f782dda-9dc9-44d1-b817-fe80588bdc76/content/images/size/w30/2025/04/Wide-Masthead-Logo_with-Fox-2_650px-wide.png"
+    alt="Dublin InQuirer"
+    
+  >
+</picture>        </div>
+
+        <div class="footer__description" id="footer-input-label">
+          Dublin Inquirer is an independent, primarily subscriber-funded newspaper serving Ireland&#x27;s capital since 2015, publishing Wednesdays and Fridays online, and in print monthly.
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/dublininquirer" class="facebook" aria-label="Facebook"><i class="icon icon-facebook icon--sm filled">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+</svg>
+
+
+
+</i><span>Facebook</span></a>
+
+
+
+<a href="https://www.dublininquirer.com/latest/rss" class="rss" aria-label="RSS"><i class="icon icon-rss icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+</i><span>RSS</span></a>
+
+<a href="https://bsky.app/profile/dublininquirer.com" class="bluesky" aria-label="Bluesky"><i class="icon icon-bluesky icon--sm">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" /></svg>
+</i><span>Bluesky</span></a>
+
+<a href="https://instagram.com/dublininquirer" class="instagram" aria-label="Instagram"><i class="icon icon-instagram icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-instagram</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+
+
+
+</i><span>Instagram</span></a>
+
+<a href="https://chat.whatsapp.com/D6WGDxK0DDhB7UtvFzqp8I?mode=wwt" class="whatsapp" aria-label="Whatsapp"><i class="icon icon-whatsapp icon--sm">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <desc>Download more icon variants from https://tabler-icons.io/i/brand-whatsapp</desc>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+  <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
+</svg>
+
+
+
+</i><span>Whatsapp</span></a>
+
+
+  <a href="https://mastodon.ie/@dublininquirer" class="mastodon" aria-label="Mastodon"><i class="icon icon-mastodon icon--sm">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-mastodon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z" /><path d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722" /></svg>
+</i><span>Mastodon</span></a>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-8">
+        <span class="fw-700 mb-xs display-block text-12">Navigation</span>
+        <ul class="nav">
+    <li class="nav-home" 
+      data-label="Home" data-length="4">
+      <a href="https://www.dublininquirer.com/">
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-city" 
+      data-label="City" data-length="4">
+      <a href="https://www.dublininquirer.com/tag/city-desk/">
+        <span>City</span>
+      </a>
+    </li>
+    <li class="nav-fingal" 
+      data-label="Fingal" data-length="6">
+      <a href="https://www.dublininquirer.com/tag/fingal/">
+        <span>Fingal</span>
+      </a>
+    </li>
+    <li class="nav-culture-desk" 
+      data-label="Culture Desk" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/culture-desk/">
+        <span>Culture Desk</span>
+      </a>
+    </li>
+    <li class="nav-things-to-do" 
+      data-label="Things To Do" data-length="12">
+      <a href="https://www.dublininquirer.com/tag/things-to-do/">
+        <span>Things To Do</span>
+      </a>
+    </li>
+    <li class="nav-about" 
+      data-label="About" data-length="5">
+      <a href="https://www.dublininquirer.com/about/">
+        <span>About</span>
+      </a>
+    </li>
+    <li class="nav-subscribe" 
+      data-label="Subscribe" data-length="9">
+      <a href="https://www.dublininquirer.com/membership/">
+        <span>Subscribe</span>
+      </a>
+    </li>
+    <li class="nav-advertise-with-us" 
+      data-label="Advertise with us" data-length="17">
+      <a href="https://www.dublininquirer.com/advertise-with-us/">
+        <span>Advertise with us</span>
+      </a>
+    </li>
+    <li class="nav-merchandise" 
+      data-label="Merchandise" data-length="11">
+      <a href="https://dublin-inquirer-shop.tpopsite.com/">
+        <span>Merchandise</span>
+      </a>
+    </li>
+    <li class="nav-donate" 
+      data-label="Donate" data-length="6">
+      <a href="https://www.dublininquirer.com/tip-jar/">
+        <span>Donate</span>
+      </a>
+    </li>
+</ul>
+
+          <span class="footer__subtitle fw-700 mb-xs display-block text-12">More</span>
+          <ul class="nav secondary submenu">
+    <li class="nav-subscription-faqs" 
+      data-label="Subscription FAQs" data-length="17">
+      <a href="https://www.dublininquirer.com/subscription-faqs/">
+        <span>Subscription FAQs</span>
+      </a>
+    </li>
+    <li class="nav-merchandise" 
+      data-label="Merchandise" data-length="11">
+      <a href="https://dublin-inquirer-shop.tpopsite.com/">
+        <span>Merchandise</span>
+      </a>
+    </li>
+    <li class="nav-active-travel-collision-tracker" 
+      data-label="Active Travel Collision Tracker" data-length="31">
+      <a href="https://collisiontracker.ie">
+        <span>Active Travel Collision Tracker</span>
+      </a>
+    </li>
+    <li class="nav-council-vote-tracker" 
+      data-label="Council Vote Tracker" data-length="20">
+      <a href="https://councilvotetracker.ie/">
+        <span>Council Vote Tracker</span>
+      </a>
+    </li>
+    <li class="nav-no-show-bus-tracker" 
+      data-label="No-Show Bus Tracker" data-length="19">
+      <a href="https://noshowbus.ie">
+        <span>No-Show Bus Tracker</span>
+      </a>
+    </li>
+    <li class="nav-neighbourhood-mapping-project" 
+      data-label="Neighbourhood Mapping Project" data-length="29">
+      <a href="https://neighbourhoods.civictech.ie/">
+        <span>Neighbourhood Mapping Project</span>
+      </a>
+    </li>
+    <li class="nav-privacy-and-cookies" 
+      data-label="Privacy and Cookies" data-length="19">
+      <a href="https://www.dublininquirer.com/privacy-and-cookies/">
+        <span>Privacy and Cookies</span>
+      </a>
+    </li>
+    <li class="nav-terms-of-service" 
+      data-label="Terms of Service" data-length="16">
+      <a href="https://www.dublininquirer.com/terms-of-service/">
+        <span>Terms of Service</span>
+      </a>
+    </li>
+</ul>
+
+          <span class="footer__subtitle fw-700 mb-xs display-block text-12">Topics</span>
+            <ul class="nav">
+                <li><a href="/tag/from-the-archive/">From the Archive</a></li>
+                <li><a href="/tag/projects/">projects</a></li>
+            </ul>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copy">
+        <span>&copy;2026&nbsp;<a href="https://www.dublininquirer.com">Dublin InQuirer</a>.</span>
+        <span>Published with&nbsp;<a href="https://ghost.org">Ghost</a>&nbsp;&&nbsp;<a href="https://brightthemes.com/themes/maali/">Maali</a>.</span>
+      </div>
+
+      <div class="color-scheme flex flex-cc radius-half">
+  <div class="color-scheme-symbol">
+    <span class="accent-bg"></span>
+  </div>
+  <select class="color-scheme-select radius-half js-color-scheme-select" aria-label="Change color scheme">
+    <option value="system" selected>System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+  <i class="icon icon-select">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-select" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M17 8.517L12 3 7 8.517M7 15.48l5 5.517 5-5.517"></path>
+</svg>
+
+
+
+</i></div>    </div>
+
+  </div>
+</footer>
+
+    <dialog class="notification">
+  <i class="icon icon-success notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M9 12l2 2l4 -4" />
+</svg>
+
+
+
+</i>  <i class="icon icon-error notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-octagon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8.7 3h6.6c.3 0 .5 .1 .7 .3l4.7 4.7c.2 .2 .3 .4 .3 .7v6.6c0 .3 -.1 .5 -.3 .7l-4.7 4.7c-.2 .2 -.4 .3 -.7 .3h-6.6c-.3 0 -.5 -.1 -.7 -.3l-4.7 -4.7c-.2 -.2 -.3 -.4 -.3 -.7v-6.6c0 -.3 .1 -.5 .3 -.7l4.7 -4.7c.2 -.2 .4 -.3 .7 -.3z" />
+  <line x1="12" y1="8" x2="12" y2="12" />
+  <line x1="12" y1="16" x2="12.01" y2="16" />
+</svg>
+
+
+
+</i>  <i class="icon icon-warning notification-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M12 9v2m0 4v.01" />
+  <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
+</svg>
+
+
+
+</i>  <p class="notification-msg signup-success">Great! You’ve successfully signed up.</p> 
+  <p class="notification-msg signin-success">Welcome back! You&#x27;ve successfully signed in.</p> 
+  <p class="notification-msg subscribe-success">You&#x27;ve successfully subscribed to Dublin InQuirer.</p> 
+  <p class="notification-msg link-expired">Your link has expired.</p> 
+  <p class="notification-msg checkout-success">Success! Check your email for magic link to sign-in.</p> 
+  <p class="notification-msg billing-success">Success! Your billing info has been updated.</p> 
+  <p class="notification-msg billing-cancel">Your billing was not updated.</p> 
+  <button class="notification-close js-notification-close" aria-label="Close" onclick="closeNotification(event.currentTarget.parentNode);">
+    <i class="icon icon-x">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+</svg>
+</i>  </button>
+</dialog>
+
+      
+    
+
+      <script>
+    // Copy button
+    const copyBtn = document.querySelector('.js-copy-link');
+    if (copyBtn) {
+      copyBtn.onclick = function(event) {
+        copyToClipboard(event.currentTarget, event.currentTarget.getAttribute('data-url'));
+      }
+    }
+    
+    /** 
+    * Copy to clipboard
+    * @src - source element
+    * @str - string to copy
+    */ 
+    const copyToClipboard = function(src, str) {
+      const el = document.createElement('textarea');
+      el.value = str;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+
+      src.classList.add('has-tooltip');
+      src.setAttribute('data-label', 'Copied!');
+
+      src.onmouseleave = function() { 
+        src.classList.remove('has-tooltip');
+        setTimeout(function(){
+          src.setAttribute('data-label', '');
+        }, 500); 
+      }
+    };
+  </script>
+
+<script>
+  const navItems = document.querySelectorAll('.header-menu .nav:not(.submenu) li')
+  const allNavItems = document.querySelectorAll('.is-subitem')
+
+  // Remove '-' signs
+  allNavItems.forEach(item => {
+    const itemName = item.querySelector('a span')
+    itemName.innerText = itemName.innerText.slice(1)
+  });
+
+  // Add subitems in place
+  let subMenu, hasItems
+  navItems.forEach((item, index) => {
+    if (item.classList.contains('is-subitem') && !navItems[index - 1].classList.contains('is-subitem')) navItems[index - 1].classList.add('is-mainitem'); 
+    subMenu = item.classList.contains('is-subitem') ? subMenu : document.createElement('ul');
+    if (item.classList.contains('is-subitem')) { 
+      subMenu.appendChild(item)
+      subMenu.classList.add('nav','submenu')
+    } else { 
+      item.appendChild(subMenu)
+    }
+  });
+</script>
+
+  <script>
+    // Give the parameter a variable name
+    const qsParams = new URLSearchParams(window.location.search);
+    const isAction = qsParams.has('action');
+    const isStripe = qsParams.has('stripe');
+    const success = qsParams.get('success');
+    const action = qsParams.get('action');
+    const stripe = qsParams.get('stripe');
+
+    if (qsParams && isAction) {
+      if (success === "true") {
+        switch (action) {
+          case 'subscribe':
+            openNotification('subscribe-success');
+            break;
+          case 'signup': 
+            openNotification('signup-success');
+            break;
+          case 'signin':
+            openNotification('signin-success');
+            break;
+          default:
+            break;
+        }
+      } else {
+        openNotification('link-expired');
+      }
+    }
+
+    if (qsParams && isStripe) {
+      switch (stripe) {
+        case 'success':
+          openNotification('checkout-success');
+          break;
+        case 'billing-update-success':
+          openNotification('billing-success');
+          break;
+        case 'billing-update-cancel':
+          openNotification('billing-cancel');
+          break;
+        default:
+          break;
+      }
+    }
+
+    /**
+    * Handle Notifications
+    */
+    function openNotification(type) {
+      const notification = document.querySelector('dialog.notification');
+      if (notification) { 
+        notification.setAttribute('data-msg-type', type);
+        notification.show();
+        setTimeout(function(){ closeNotification(notification); }, 3000);
+      }
+    }
+    
+    /**
+    * Clean URI
+    */
+    function clearURI() {
+      window.history.replaceState({}, '', `${window.location.pathname}`);
+    }
+
+    function closeNotification(notification) {
+      notification.close();
+      clearURI();
+      setTimeout(function(){ notification.removeAttribute('data-msg-type') }, 500);
+    }
+  </script>
+
+
+    <script>
+(function () {
+  var API_KEY = 'f9aca1392e731bba4bde0394f0';
+  var TAG     = 'from-the-archive';
+  var COUNT   = 4;
+
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+    return arr;
+  }
+
+  function formatDate(str) {
+    return new Date(str)
+      .toLocaleDateString('en-IE', { day: 'numeric', month: 'long', year: 'numeric' })
+      .toUpperCase();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var archiveSection = document.querySelector('section.from-the-archive');
+    if (!archiveSection) return;
+
+    var cards = archiveSection.querySelectorAll('article');
+    if (!cards.length) return;
+
+    fetch('/ghost/api/content/posts/?key=' + API_KEY + '&filter=tag%3A' + TAG + '&limit=all&fields=title,url,feature_image,published_at&include=authors', { cache: 'no-store' })      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var posts = shuffle(data.posts || []).slice(0, COUNT);
+        cards.forEach(function (card, i) {
+          if (i >= posts.length) return;
+          var p = posts[i];
+
+          // Update image link and replace figure content to bypass lazyload
+          var mediaLink = card.querySelector('.post-card__media');
+          if (mediaLink) {
+            mediaLink.href = p.url;
+            if (p.feature_image) {
+              var figure = mediaLink.querySelector('figure');
+              if (figure) {
+                figure.innerHTML = '<img src="' + p.feature_image + '" alt="' + p.title + '" style="width:100%;height:100%;object-fit:cover;">';
+              }
+            }
+          }
+
+          // Update title link
+          var titleLink = card.querySelector('.post-card__title a');
+          if (titleLink) {
+            titleLink.href = p.url;
+            titleLink.textContent = p.title;
+          }
+
+          // Update author
+          var author = card.querySelector('.post-info__authors');
+          if (author && p.authors && p.authors[0]) author.textContent = p.authors[0].name;
+
+          // Update date
+          var time = card.querySelector('time');
+          if (time) { time.textContent = formatDate(p.published_at); time.setAttribute('datetime', p.published_at); }
+        });
+      })
+      .catch(function (e) { console.warn('Archive error:', e); });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var projectMap = [
+    { match: 'waited-for-a-bus',        url: 'https://noshowbus.ie/' },
+    { match: 'cycle-collision-tracker', url: 'https://collisiontracker.ie/' },
+    { match: 'dublin-neighbourhood',    url: 'https://neighbourhoods.civictech.ie/' },
+    { match: 'councillors-have-voted',  url: 'https://councilvotetracker.ie/' }
+  ];
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var projectSection = document.querySelector('section.projects');
+    if (!projectSection) return;
+
+    var cards = projectSection.querySelectorAll('article');
+    cards.forEach(function (card) {
+      var mediaLink = card.querySelector('.post-card__media');
+      if (!mediaLink) return;
+
+      var currentHref = mediaLink.getAttribute('href') || '';
+      var externalUrl = null;
+
+      projectMap.forEach(function (entry) {
+        if (currentHref.indexOf(entry.match) !== -1) {
+          externalUrl = entry.url;
+        }
+      });
+
+      if (!externalUrl) return;
+
+      // Hide title, author and date
+      var content = card.querySelector('.post-card__content');
+      if (content) content.style.display = 'none';
+
+      // Update all links in the card to point to the external URL
+      card.querySelectorAll('a').forEach(function (a) {
+        a.href = externalUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+      });
+    });
+  });
+})();
+</script>
+    <script>
+!function(w,d,id,ns,s){var c=w[ns]=w[ns]||{};if(c.ready||(c.q=[],c.ready=function(){c.q.push(arguments)}),!d.getElementById(id)){var e=d.createElement(s);e.id=id,e.defer=true,e.src="https://assets.context.ly/kit/6.latest/loader.js";var h=d.getElementsByTagName(s)[0];h.parentNode.insertBefore(e,h)}}(window,document,"ctx-loader","Contextly","script");
+</script>
+<script>
+Contextly.ready('widgets');
+</script>
+    <script>
+  const OutpostPub = {
+    apiDomain: "https://dublininquirerghostio.outpost.pub",
+    apiKey: "5e463286-fe85-4634-99f0-e01ad768bacc",
+    siteName: "Dublin InQuirer",
+    memberId: "",
+    memberEmail: "",
+        post: {
+          id: "6ada9537d580ef000143ec77",
+          tags: [""],
+        }
+  }
+</script>
+<script defer src="https://assets.outpostpublishingcoop.com/assets/v2/js/outpost-pub.js"></script>
+  </body>
+</html>
