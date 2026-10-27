@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Ljubljana book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019140815/https://www.ljubljana.si/sl/aktualno/novice/septembrska-stevilka-glasila-ljubljana-je-ze-z-vami (saved and checked by the keeper on 2026-10-19; after unpacking it contains the quote word for word). The keeper keeps a local copy of the live page fetched on 2026-10-19 (not published), SHA-256 2d7b616624c60fb1e1e6b1c45ccef9874a8098c136887722fbb21718af689a3f."
+  - am: 2026-10-27
+    text: "Said again, in stronger words: the City's news item “Odlično sodelovanje Dunaja in Ljubljane” of 26 October 2026 (https://www.ljubljana.si/sl/aktualno/novice/odlicno-sodelovanje-dunaja-in-ljubljane) reports from a round table with Vienna on 23 October: “Direktor LPP dr. Rok Vihar je izpostavil zavezo, da bomo v Ljubljani do konca leta 2030 zagotovili ogljično nevtralno floto mestnih avtobusov, načrtujemo tudi vzpostavitev rumenih pasov na glavnih vpadnicah in večjo zmogljivost prevoza potnikov.” The City now calls it a commitment (“zaveza”) “by the end of 2030”; the question and the forecasts of this bet stay as they are. Page fetched on 2026-10-27 (HTTP 200), quote word for word; local copy kept by the keeper (not published), SHA-256 e217345932e0b1bd4c91934f57ad4f85ebb0e80034f827c09869bc98e0801b1b. Archive: none yet (Wayback index empty on 2026-10-27; saving a copy is not possible from this computer for now)."
 ---
 
 ## Context
