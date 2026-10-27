@@ -39,6 +39,15 @@ spans over several years (roads with the Academy of Sciences 2027–2029); and 9
 for 2027 that cannot be counted from outside. The next municipal election is due in autumn 2027;
 its exact date was not yet set on 19 October 2026.
 
+Second scan, 27 October 2026: the keeper read the 27 news items added to the list since 16 October
+2026 (dated 16 to 27 October) in the same way (14 sentences). Three became bets sofia-2026-015 to
+-017. Left out: the airport works around Terminal 2 (by the operator „СОФ Кънект“, not the City),
+seasons and events (tree planting every weekend until 29 November, a football tournament), a
+target for 2035, and dates that only repeat the term of an EU grant. “Сред заявените намерения”
+(among the stated intentions) counts as said with a reservation (`voraussichtlich`, 0.80). For
+these three bets there is no Wayback Machine copy yet; the bet says so and names the checksum of
+the keeper's local copy.
+
 Reading the dates: a fixed day counts to that day; a month to its last day (“до февруари 2027
 г.”, by February 2027, is read in favour of the City as by 28 February); “до януари 2027 г.” (by
 January 2027) as by 31 January; “в началото на 2027 г.” (at the beginning of 2027) to the end of
