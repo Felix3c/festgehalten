@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Rotterdam book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019023955/https://www.rotterdam.nl/samen-eigen-woningen-bouwen-in-nesselande (saved and checked by the keeper on 2026-10-19; after unpacking it is byte-identical with the live page fetched on 2026-10-19 and contains the quote word for word). The keeper keeps a local copy of the source (not published), SHA-256 d1986586d56151ec41d1c0f78c45bab1cc1b2e065a5bfd6701e5ef6a7a183795."
+  - am: 2026-10-27
+    text: "Not an outcome yet: on 2026-10-27 the City's news item is unchanged (“Eind oktober publiceert de gemeente een selectieleidraad.” still there, checked word for word) and no selection guide is linked. The platform named in the item, Crowdbuilding, now gives a looser window on its page for the plot (https://crowdbuilding.com/d/locaties/wooncooperatie-kavel-nesselande, fetched 2026-10-27): “Oktober - november 2026 In deze periode wordt aanvullende informatie over de kavel gepubliceerd, waaronder de uitgangspunten, de selectieleidraad en de conceptovereenkomsten.” That is the platform, not the City, so the bet still reads the City's “eind oktober”. The keeper keeps local copies (not published), SHA-256 ab77b81831cb23e30d9f6b4fa5e079b505e41c55566a866a0ad42fafb21e39c7 (Crowdbuilding). Question unchanged."
 ---
 
 ## Context

@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Bratislava book; large cities and capitals first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019183134/https://bratislava.sk/spravy/bratislavska-mhd-je-este-zelensia-vdaka-novym-elektrobusom (checked by the keeper on 2026-10-19; it contains the quote word for word). The keeper keeps a local copy of the live page fetched on 2026-10-19 (not published), SHA-256 fee060d21ee9bc8cf9a6c30bb6682bb8331cdceec14dfc706a78a5259d62fbbc."
+  - am: 2026-10-27
+    text: "New statement, no change to the bet: in its news item of 15 October 2026 (“Bratislavská MHD má našliapnuté na nový rekord v počte cestujúcich, investície za pol miliardy eur prinášajú výsledky”, https://bratislava.sk/spravy/bratislavska-mhd-ma-nasliapnute-na-novy-rekord-v-pocte-cestujucich-investicie-za-pol-miliardy-eur-prinasaju-vysledky) the City writes: “Flotila 123 nových kĺbových autobusov, ktoré v týchto dňoch prichádzajú do DPB” (the fleet of 123 new articulated buses arriving at DPB these days). It gives no new date and no count of buses already delivered. Quote checked live word for word on 2026-10-27; local copy SHA-256 c3c144e2fd33c0014fc267288823dcd5cae05f455a24c300f26dfb938a834a66. Up to the newest item in the City's sitemap (26 October 2026) the City reported no delivery of the 20 CNG buses."
 ---
 
 ## Context

@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Rotterdam book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019024331/https://www.rotterdam.nl/maastunnel-3-weken-geen-lift (saved and checked by the keeper on 2026-10-19; after unpacking it is byte-identical with the live page fetched on 2026-10-19 and contains the quote word for word). The keeper keeps a local copy of the source (not published), SHA-256 307f02039f9f5d0c821040a2eec2d244aaf3afafc73c54eac2dd9c515f0dd1ab."
+  - am: 2026-10-27
+    text: "Checked 2026-10-27: the City re-dated the news item from 16 to 19 October 2026; the text is otherwise unchanged and the quote is still there word for word (end of works Friday 6 November, 18:00). The keeper keeps a local copy (not published), SHA-256 2fb4981236a5c85f73d7b459bc9e2350777ac12905c4de8097556bba7473bd8f. Question unchanged."
 ---
 
 ## Context
