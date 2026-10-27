@@ -79,14 +79,15 @@ the City, a decision or minutes of a City committee or the City Council, a procu
 dated photo) and a date; if in doubt, it is marked `strittig` (disputed). Pages of the City may be
 updated in place, so an entry can also be resolved by a dated copy of the page.
 
-Rights: unclear. Quotations remain (c) Göteborgs Stad. The keeper found no terms of use and no
-licence for the texts of goteborg.se: the page “Om webbplatsen” (about the website, read 23 October
-2026) deals only with cookies, logging in and searching, and the footer says only “goteborg.se är
-Göteborgs Stads officiella webbplats.” This book therefore takes from each item one sentence, with
-the title of the item, its date and a link, for criticism and review; that is what the quotation
-right in Swedish copyright law allows (upphovsrättslagen, 22 §). Whether the items are free of
-copyright as statements of Swedish authorities (upphovsrättslagen, 9 §) is also unclear. Neither
-point has been checked by a lawyer. This book uses no pictures or coats of arms; the City's photos
+Rights: the communications department of the City Executive Office (Stadsledningskontoret) of
+Göteborgs Stad answered in writing on 27 October 2026 that the City's website is public
+information that is free to use (“Vår webb är offentlig information som är fri att använda”); it
+asked that the City be named as the source and that its logo and coat of arms not be used. Before
+that, the keeper found no terms of use for the texts of goteborg.se: the page “Om webbplatsen”
+(about the website, read 23 October 2026) deals only with cookies, logging in and searching. This
+book takes from each item one sentence, with the title of the item, its date and a link. Short
+quotation for criticism and review is also allowed by the Swedish copyright law
+(upphovsrättslagen, 22 §) (not checked by a lawyer). This book uses no pictures or coats of arms; the City's photos
 name their photographers and are never copied. This book is not endorsed by the City of
 Gothenburg; the City does not support it and has not agreed with it or with any question in it.
 Everything else CC0. The source pages are not copied into this repository. For each source there is
