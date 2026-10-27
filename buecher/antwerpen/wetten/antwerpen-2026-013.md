@@ -27,6 +27,8 @@ vermerke:
     text: "Dates: the release shows datePublished 2026-03-23; this is used as the day the statement was made."
   - am: 2026-10-20
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261020023157/https://pers.antwerpen.be/heraanleg-wapper-is-gestart (saved and checked by the keeper on 2026-10-20; after unpacking it contains the quote word for word). The keeper keeps a local copy of the live page fetched on 2026-10-20 (not published), SHA-256 21079ad982f8dbc6485f8f9343ac495ee8a428f0ac6f6201d567bcec02570d57."
+  - am: 2026-10-27
+    text: "New statement, no change to the bet: in its press release of 22 October 2026 (“Vernieuwing Wapper: aanleg bestrating gestart”, https://pers.antwerpen.be/vernieuwing-wapper-aanleg-bestrating-gestart) the City writes that paving has begun on the Rubens House side: “Tegen eind november zal een groot deel van deze zone opnieuw toegankelijk zijn voor voetgangers. Ook de handelaars krijgen daardoor opnieuw meer ruimte voor hun activiteiten en terrassen.” (by the end of November a large part of this zone will be open to pedestrians again; the shopkeepers will also get more room for their activities and terraces). All works are now expected to be finished in spring 2028 (separate bet antwerpen-2026-025). Quote checked live word for word on 2026-10-27; no Wayback copy yet, local copy SHA-256 b3679faf275c651eb4b518104e458ca3b965e994a850994f7af9788691ae40f3."
 ---
 
 ## Context
