@@ -29,6 +29,12 @@ Die Bedingung: Die Zusagen gelten nur, wenn diese drei Parteien die Regierung bi
 zustande, werden alle Wetten aus dem Papier auf `verfallen` gesetzt und zählen nicht als Nein (PARTEIEN.md R2).
 Stand 18.10.2026: Grüne und SPD-Landesvorstand entscheiden am 19.10.2026 über Koalitionsverhandlungen, die Linke auf
 einem Parteitag am 31.10.2026.
+Stand 27.10.2026: Der SPD-Landesvorstand und die Grünen (kleiner Parteitag) haben am 19.10.2026 für
+Koalitionsverhandlungen gestimmt; die SPD Berlin schreibt auf ihrer Seite „Stand der Gespräche“ wörtlich: „Am 19. Oktober
+2026 stimmte der SPD-Landesvorstand für die Aufnahme von Koalitionsverhandlungen mit Linken und Grünen. Die Grünen
+sprachen sich ebenfalls für die Aufnahme von Koalitionsverhandlungen aus, die Linke wird am 31. Oktober entscheiden.“
+(https://spd.berlin/magazin/aktuelles/stand-der-gespraeche/, abgerufen 27.10.2026, lokale Kopie SHA-256
+6b559eda506dc18ca745f298983e6a4eeb9306349ee7338de773122bda75d671). Bis zum Beschluss der Linken bleiben alle Wetten offen.
 
 Lesarten für ungefähre Fristen: „Mitte“ eines Jahres heißt bis 30.06., „im Jahr“ und „bis“ eines Jahres heißen bis
 31.12. dieses Jahres. Die Lesart steht zusätzlich in jeder Wette.
