@@ -29,6 +29,8 @@ vermerke:
     text: "Kein Vorbehaltswort in der Meldung („Ab Montag, 19. Oktober, wird … erneuert“, „einwöchige Bauzeit“), darum angekuendigt mit 1,00."
   - am: 2026-10-17
     text: "Archiv: keine Kopie möglich. Save Page Now meldet am 17.10.2026 „The target server blocks access“ (HTTP 403), gelsenkirchen.de sperrt das Internet Archive wie bonn.de. Zitat am 17.10.2026 live geprüft, unverändert. Beleg bleibt die lokale Kopie vom 16.10.2026 (SHA-256 oben)."
+  - am: 2026-10-27
+    text: "Prüftag, nicht aufgelöst: keine Quelle für den Ausgang. Gesucht am 27.10.2026 mittags: Meldung der Stadt erneut abgerufen, Wortlaut unverändert, kein Nachtrag (lokale Kopie recherche/belege/2026-10-27-gelsenkirchen-artikel-73219.html, SHA-256 b47bf3db258273edbc2fd8dc40d76367b2b29727c3791bc87be39a2b05fee3a3); Meldungsliste der Stadt (neueste Meldungen bis Artikel 73303) ohne Fertig- oder Verlängerungsmeldung zur Emil-Zimmermann-Allee; Websuche (WAZ Gelsenkirchen, news.de-Verkehrsmeldungen) ohne Bericht aus dem Oktober. verkehrslage.de führt am 27.10.2026 einen Eintrag „Baustellen auf der Emil-Zimmermann-Allee in Gelsenkirchen“, zuletzt bestätigt 27.10.2026 10:44, ohne Abschnitt, Art oder Richtungsangabe (Kopie recherche/belege/2026-10-27-verkehrslage-gelsenkirchen-baustellen.html, SHA-256 cbe29ac0e19078bb417f853f5c2eb1f95858cb092813c0569e65fa145baaa134). Das belegt kein Nein: Die Straße ist lang, und news.de nannte im August für sie eine Gesamtmaßnahme bis 31.12.2027. Ausgang bleibt offen; ein Ja oder Nein braucht eine Meldung der Stadt, einen Pressebericht oder ein datiertes Foto des Abschnitts."
 ---
 
 ## Kontext
