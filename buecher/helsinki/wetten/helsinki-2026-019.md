@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, Guard: new City releases since 17.10.2026, all sixteen English releases of 19–23 October read); source read and quote checked word for word on 2026-10-25. Whether the Urban Environment Committee approved the proposal on 20 October 2026 was not found on hel.fi news by 2026-10-25 (unresolved)."
   - am: 2026-10-25
     text: "Archive: no Wayback copy yet (saving was not possible on 2026-10-25). The keeper keeps a local copy of the source fetched on 2026-10-25 (not published), SHA-256 d40d1d941bcefbc5ddfefda7088bcd1a11d9606094e917a09024862456845cbe."
+  - am: 2026-10-27
+    text: "Committee decision found: the Urban Environment Committee approved the leasing principles on 20 October 2026 (meeting 31/2026, item 7, § 537, case HEL 2026-015182; https://paatokset.hel.fi/fi/asia/hel-2026-015182?paatos=46bbd61e-9935-4701-8d33-080e1f797044): “Kaupunkiympäristölautakunta päätti yksimielisesti hyväksyä Johanna Forss-Lähdesmäen vastaehdotuksen mukaan muutetun ehdotuksen.” (unanimously, with one added sentence on the look of the charging points). The decision was made public on 27 October 2026. The condition in the release is met; the question and the forecasts of this bet stay as they are. Page fetched on 2026-10-27 (HTTP 200), quote word for word; local copy kept by the keeper (not published), SHA-256 2a41a3a41b9ef9fe05546ef328873525d4c3be229c23908fa27582b8210ce71d. Archive: none yet."
 ---
 
 ## Context
