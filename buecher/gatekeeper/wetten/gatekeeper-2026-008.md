@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen und Zitat wörtlich geprüft 03.10.2026, Prüfweg in docs/2026-10-03-buch-gatekeeper-KANDIDATEN.md."
+  - am: 2026-10-28
+    text: "Meta hat die Kostenspanne am 21.10.2026 auf 175–179 Mrd. $ angehoben, um Rechtskosten von 9,9 Mrd. $ aus dem dritten Quartal einzurechnen (Pressemitteilung zum dritten Quartal 2026). Neue Wette gatekeeper-2026-014; diese Wette bleibt offen und wird nach ihrer eigenen Frage aufgelöst (FORMAT §1.3 Regel 5). Neun Monate laut derselben Mitteilung: 127,077 Mrd. $."
 ---
 
 ## Kontext
