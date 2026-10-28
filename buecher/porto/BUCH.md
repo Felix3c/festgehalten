@@ -26,6 +26,9 @@ the keeper looked for sentences that name a future date together with a promise 
 candidates), then read each candidate in its item. Eleven became bets. The date a statement was
 said is the publication date the page gives (`article:published_time`); the portal may update
 this date when a page is republished, so it is the latest publication, not necessarily the first.
+On 28 October 2026 the keeper read the 49 items the sitemap listed as changed from 20 to 27
+October (18 candidate sentences); one became a bet (porto-2026-012), one added a note to
+porto-2026-007.
 
 Two things the City says twice, differently. On 3 September 2026 it counted 5.8 km of new bus
 lanes for 2026; on 16 September it promised to grow the bus lanes from 15 to 21 km by the end of
