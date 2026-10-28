@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen 03.10.2026."
+  - am: 2026-10-28
+    text: "Vermerk: Radio Duisburg schreibt am 16.10.2026 (https://www.radioduisburg.de/artikel/duisburg-welche-bibliotheken-koennten-schliessen-2782202): „Die Stadt Duisburg muss sparen und hat ein Haushaltssicherungskonzept mit 270 Einzelmaßnahmen vorgelegt.“ Darunter der Vorschlag, sechs Bibliotheksstandorte zu schließen; dagegen gibt es eine Petition und Widerstand der Bezirksschülervertretung. „Die nächste Ratssitzung zu dem Thema findet am 23. November statt.“ Kein neuer Termin für den Haushaltsbeschluss genannt (Zitate am 28.10.2026 zweimal wörtlich geprüft, beide Abrufe byte-gleich; lokale Kopie recherche/belege/2026-10-28-duisburg-radio-bibliotheken-haushalt.html, SHA-256 d08d1ac74c3452c0b511a0c601f798629caed9f978e39b5a84682701a417d438). Prognosen unverändert."
 ---
 
 ## Kontext
