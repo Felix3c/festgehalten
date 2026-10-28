@@ -41,6 +41,16 @@ theatres; wishes (“vrem”, “își dorește”, we want, he wishes) and plan
 One candidate, the statue of King Ferdinand I on Piața Victoriei by the end of 2026, is left out
 because the Wayback Machine could not save its source on 19 October 2026 (three tries, error 520).
 
+Second scan, 28 October 2026: the keeper read the 19 press releases dated 16 to 27 October 2026
+through the same interface. Two became bets: bukarest-2026-021, the safety works at Curtea Veche,
+started on 19 October and to last three months, and bukarest-2026-022, the international design
+competition for Bulevardele Magheru and Bălcescu, to be launched in spring 2027. Left out: events
+and theatre seasons, works already finished, steps “this week”, a contract signed “at the earliest
+in December” (no promise), heating “this winter” (no fixed end, and close to bukarest-2026-002),
+and Prelungirea Ghencea and the 12 unblocked projects, which already carry notes on
+bukarest-2026-004, -005, -014, -015 and -018. No Wayback Machine copy yet for these two; each bet
+names the checksum of the keeper's local copy of the interface response.
+
 Reading the dates: a fixed day counts to that day; a month to its last day (“până în decembrie
 2027”, by December 2027, is read in favour of the City as by 31 December); “la sfârșitul lunii”
 (at the end of the month) to its last day; “până la finalul anului” (by the end of the year), “anul
