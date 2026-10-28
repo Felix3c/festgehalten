@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen und Zitat wörtlich geprüft 03.10.2026, Prüfweg in docs/2026-10-03-buch-gatekeeper-KANDIDATEN.md."
+  - am: 2026-10-28
+    text: "Meta hat die Spanne am 21.10.2026 auf 135–145 Mrd. $ verengt (Pressemitteilung zum dritten Quartal 2026). Neue Wette gatekeeper-2026-015; diese Wette bleibt offen und wird nach ihrer eigenen Frage aufgelöst (FORMAT §1.3 Regel 5). Neun Monate laut derselben Mitteilung: 85,824 Mrd. $."
 ---
 
 ## Kontext

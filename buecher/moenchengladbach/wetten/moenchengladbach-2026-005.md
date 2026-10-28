@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle am 05.10.2026 zweimal abgerufen, Zitat beide Male wörtlich."
   - am: 2026-10-05
     text: "Archiv: https://web.archive.org/web/20261005011159/https://www.moenchengladbach.de/aktuell-aktiv/newsroom/rathaus-neubau-entscheidende-rueckbauphase-beginnt (Archivkopie vom 05.10.2026, Zitat am 05.10.2026 wörtlich in der Archivkopie geprüft). Lokale Kopie der Quelle vom 05.10.2026: recherche/belege/2026-10-05-moenchengladbach-rathaus-rueckbau.html, SHA-256 8052a15f93399aab681129100495c37f39522b63348e1107d2fca6b0bac8ee3b."
+  - am: 2026-10-28
+    text: "Vermerk: In der Meldung „Abbrucharbeiten für Rathaus-Neubau starten“ vom 27.10.2026 (https://www.moenchengladbach.de/aktuell-aktiv/newsroom/abbrucharbeiten-fuer-rathaus-neubau-starten) schreibt die Stadt: Baustelleneinrichtung ab Montag, 2. November, dann Abbruch erst Am Neumarkt, dann Limitenstraße; „Voraussichtlich Anfang nächsten Jahres soll der Gebäudeteil am Markt zwischen den beiden Denkmälern abgebrochen werden.“ Parallel rund 140 Bohrpfähle. Kein neues Enddatum für den Rückbau genannt (Zitat am 28.10.2026 zweimal wörtlich geprüft, beide Abrufe byte-gleich; lokale Kopie recherche/belege/2026-10-28-moenchengladbach-rathaus-abbruch.html, SHA-256 73691ef4806f7e21a3239d253403f298d27ac992040ac506fd784c1c03f289e3). Prognosen unverändert."
 ---
 
 ## Kontext
