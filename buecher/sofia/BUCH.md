@@ -48,6 +48,15 @@ target for 2035, and dates that only repeat the term of an EU grant. “Сред
 these three bets there is no Wayback Machine copy yet; the bet says so and names the checksum of
 the keeper's local copy.
 
+Third scan, 28 October 2026: the keeper read the three news items added since 27 October 2026.
+One of them, an interview with deputy mayor Иван Николов (27 October), gave three bets
+sofia-2026-018 to -020: the first new electric buses by the end of June 2027, 50 electric buses and
+75 trolleybuses in 2027, and the low-emission zone from 1 December 2026. The same interview names
+75 trolleybuses where the item of 19 October named 75 trams; bet sofia-2026-013 carries a note on
+this and stays as entered. Left out: a sports tournament (event), a report on abandoned cars (past
+figures), targets for 2030, and about 200 more vehicles ordered in 2027, which repeats bet
+sofia-2026-004. No Wayback Machine copy yet; each bet names the checksum of the local copy.
+
 Reading the dates: a fixed day counts to that day; a month to its last day (“до февруари 2027
 г.”, by February 2027, is read in favour of the City as by 28 February); “до януари 2027 г.” (by
 January 2027) as by 31 January; “в началото на 2027 г.” (at the beginning of 2027) to the end of
