@@ -34,6 +34,8 @@ Der „Computer“ in diesem Buch ist ein Sprachmodell (Claude, Anthropic) mit Z
 auf öffentliche Quellen, keine Spezialsoftware. Er steht in derselben Liste wie die
 Stadt und es gelten für ihn dieselben Regeln.
 
+Am 27.10.2026 wurden die Medieninformationen vom 20. bis 27.10. ein zweites Mal durchgesehen; daraus kamen vier neue Wetten (leipzig-2026-021 bis -024) und zwei Vermerke.
+
 Dieses Buch ist noch dünn. Wer Behauptungen der Stadt Leipzig mit Zahl, Datum und
 Quelle kennt, kann sie beisteuern.
 
