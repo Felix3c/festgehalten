@@ -22,7 +22,9 @@ dates sit in the PDF press kits attached to them, not in the release itself.
 Sources: the press release list at https://presse.paris.fr/communiques (six per page). On
 8 October 2026 the keeper read the titles of all 53 releases since the Mayor took office
 (election in the Conseil de Paris on 29 March 2026), and the full text of 13 releases and 2
-press kits; on 16 October the three releases published since. Seven bets come from five of
+press kits; on 16 October the three releases published since; on 28 October the five published since
+(16 to 22 October: the riots of 17 October, the curfew, the 24 October demonstrations, a
+speech), none of which has a dated or numbered promise of the City. Seven bets come from five of
 these documents. Left out on purpose: calls to action without a promise ("mobilisons-nous"),
 promises whose outcome cannot be seen from outside ("planning completed"), dates already
 past, and promises made by the State or the Préfecture rather than the City.
