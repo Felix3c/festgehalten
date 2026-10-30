@@ -9,6 +9,8 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 30.10. ~06:50 (Dauerlauf, Guard DU-A): **Dublin: letzter Versuch, zehn Meldungen der Stadt (21.–27.10.) gelesen, kein Kandidat.** Keine Zusage mit prüfbarem Datum (Beteiligungsfrist Sandymount 26.11. ist reiner Verfahrensschritt). Buch unverändert (15). Notiz in `wettbuch-notizen/dublin-belege/KANDIDATEN-DUBLIN-2026-10-18.md`.
+
 - 30.10. ~06:30 (Dauerlauf, Guard ZW-A): **leeds-2026-003 am Prüftag geprüft, offen mit Vermerk.** Die Meldung der Stadt vom 29.10. belegt nur die erste Nacht von Light Night (28.10.), die zweite ist dort nur angekündigt. Zweig `buch-leeds` `af01f56` lokal, nicht gepusht; ab Sa 31.10. nach einem Rückblick suchen.
 - 30.10. ~05:50 (Dauerlauf, Guard reihum): **Luxemburg dritter Durchgang (zuletzt 27.10.): kein Fund, keine neue Wette.** 5 neue Meldungen der Stadt (28.–29.10.): zwei Baustellen von 1 und 10 Tagen, eine Veranstaltung, eine schon eröffnete Ausstellung, ein Wohnangebot ohne Datum. Alle 18 Zitate live noch wörtlich da. luxemburg-2026-001 (E-Reider bis 31.10.) wird ab So 01.11. aufgelöst.
 - 30.10. ~06:40 (Dauerlauf, Guard PU-31): **Probe-Zweig `probe-alle-1027` nachgeführt auf `861b964`** (master bis `025edc9`: Gatekeeper-001-Vermerk mit Alphabet-Mitschrift als PDF, Luxemburg-Notiz, Doku; ohne Konflikt). 127 + 89 Tests grün, 64 Bücher / 1.198 Wetten ohne Fehler. GitHub laut `ls-remote` weiter `9285f24`, der Befehl in der Karte geht glatt; Frist Nürnberg 001/002 Sa 31.10.
