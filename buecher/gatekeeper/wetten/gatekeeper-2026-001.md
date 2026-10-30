@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen und Zitat wörtlich geprüft 03.10.2026, Prüfweg in docs/2026-10-03-buch-gatekeeper-KANDIDATEN.md."
+  - am: 2026-10-29
+    text: "Q3-Mitteilung vom 28.10.2026 (s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf), Kapitalflussrechnung, wörtlich: \"Purchases of property and equipment (23,953) (51,355) (63,596) (131,953)\" (Mio. $; Q3 2025, Q3 2026, neun Monate 2025, neun Monate 2026). Nach neun Monaten 131,953 Mrd. $; für 195–205 Mrd. $ müssen im vierten Quartal 63,0–73,0 Mrd. $ anfallen (Q3: 51,355). Die Mitteilung nennt keine neue Spanne; die steht nur in der Telefonkonferenz, Mitschrift am 29.10.2026 05:55 noch nicht online (404). Lokale Kopie: recherche/belege/2026-10-29-alphabet-2026q3-earnings-release.pdf, SHA-256 2f9b94e9194ea4b462bf754c4b651615ab53518b314550f3402b27aabf0735e9."
 ---
 
 ## Kontext

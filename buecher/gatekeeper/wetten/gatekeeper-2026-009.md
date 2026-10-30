@@ -23,6 +23,8 @@ beleg_ausgang: null
 vermerke:
   - am: 2026-10-03
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen und Zitat wörtlich geprüft 03.10.2026, Prüfweg in docs/2026-10-03-buch-gatekeeper-KANDIDATEN.md."
+  - am: 2026-10-29
+    text: "Erstes Quartal GJ 2027 (Pressemitteilung 28.10.2026, microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast), wörtlich: \"Revenue was $92.3 billion and increased 19%\" und \"Operating income was $45.9 billion and increased 21% (up 22% in constant currency)\". Beide Werte liegen nach einem von vier Quartalen über der 10-%-Schwelle. Den Ausblick fürs Gesamtjahr nennt Microsoft nur in der Telefonkonferenz (\"Business Outlook\": \"on its earnings conference call and webcast\"); Mitschrift am 29.10.2026 05:55 noch nicht online (404). Lokale Kopie: recherche/belege/2026-10-29-microsoft-fy27-q1-press-release.html, SHA-256 c371e34a856179f536afd6607446ebd63ad91f2a8b2d0b7ba954f1c2ddd668ac."
 ---
 
 ## Kontext
