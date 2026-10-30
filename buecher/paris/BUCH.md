@@ -24,7 +24,9 @@ Sources: the press release list at https://presse.paris.fr/communiques (six per 
 (election in the Conseil de Paris on 29 March 2026), and the full text of 13 releases and 2
 press kits; on 16 October the three releases published since; on 28 October the five published since
 (16 to 22 October: the riots of 17 October, the curfew, the 24 October demonstrations, a
-speech), none of which has a dated or numbered promise of the City. Seven bets come from five of
+speech), none of which has a dated or numbered promise of the City; on 30 October the one
+published since (29 October: 3 million euros for the Region's emergency fund for shopkeepers,
+2,500 euros per damaged shop), which has amounts but no date, so no bet. Seven bets come from five of
 these documents. Left out on purpose: calls to action without a promise ("mobilisons-nous"),
 promises whose outcome cannot be seen from outside ("planning completed"), dates already
 past, and promises made by the State or the Préfecture rather than the City.
