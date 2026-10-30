@@ -25,6 +25,8 @@ vermerke:
     text: "Hinterlegt durch Claude für den Halter (Dauerlauf, Auftrag Guard weiterbauen, Felix 03.10.2026); Quelle abgerufen und Zitat wörtlich geprüft 03.10.2026, Prüfweg in docs/2026-10-03-buch-gatekeeper-KANDIDATEN.md."
   - am: 2026-10-29
     text: "Q3-Mitteilung vom 28.10.2026 (s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf), Kapitalflussrechnung, wörtlich: \"Purchases of property and equipment (23,953) (51,355) (63,596) (131,953)\" (Mio. $; Q3 2025, Q3 2026, neun Monate 2025, neun Monate 2026). Nach neun Monaten 131,953 Mrd. $; für 195–205 Mrd. $ müssen im vierten Quartal 63,0–73,0 Mrd. $ anfallen (Q3: 51,355). Die Mitteilung nennt keine neue Spanne; die steht nur in der Telefonkonferenz, Mitschrift am 29.10.2026 05:55 noch nicht online (404). Lokale Kopie: recherche/belege/2026-10-29-alphabet-2026q3-earnings-release.pdf, SHA-256 2f9b94e9194ea4b462bf754c4b651615ab53518b314550f3402b27aabf0735e9."
+  - am: 2026-10-30
+    text: "Mitschrift der Q3-Telefonkonferenz vom 28.10.2026 jetzt online (s206.q4cdn.com/479360582/files/doc_events/2026/Oct/28/2026_Q3_Earnings_Transcript.pdf), Anat Ashkenazi wörtlich: \"Moving to investments, our full-year 2026 CapEx guidance range of $195-$205 billion remain unchanged. We continue to expect our CapEx to increase significantly in 2027, and we'll provide further details on our Q4 call.\" Die Spanne bleibt, also keine neue Wette (FORMAT §1.3 Nr. 5). Dazu wörtlich: \"CapEx was $51.4 billion in the third quarter\". Lokale Kopie: recherche/belege/2026-10-30-alphabet-2026q3-earnings-transcript.pdf, SHA-256 7e92f1db003536fb7cdc80546c3d5cc2c7f9528368efd4b7421cb550ac75db64."
 ---
 
 ## Kontext
