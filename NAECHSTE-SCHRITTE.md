@@ -9,6 +9,7 @@ Die ausführlichen Arbeitsnotizen liegen außerhalb des Repos: `~/wettbuch-notiz
 
 ## Wo wir stehen
 
+- 30.10. ~06:45 (Dauerlauf, Guard GK-Q3c): **Neue Wette gatekeeper-2026-016: Microsoft-Investitionen im Kalenderjahr 2026 zwischen 165 und 175 Mrd. $** (Hood 28.10.: „approximately $170 billion“, im April noch rund 190, im Juli rund 175). Die Mitschrift liegt nicht unter der alten Adresse, sondern hinter aka.ms/transcriptfy27q1. Gemeldet bis September 118,1 Mrd. $; Microsoft 0,80, Computer 0,60. Keinen Vermerk an 009, weil die Konferenz keine Zahl fürs ganze Geschäftsjahr nennt. 127 Tests grün, 55 Bücher / 1.060 Wetten ohne Fehler, master `ff07292` lokal, nicht gepusht. Prüftag 15.02.2027.
 - 30.10. ~06:50 (Dauerlauf, Guard DU-A): **Dublin: letzter Versuch, zehn Meldungen der Stadt (21.–27.10.) gelesen, kein Kandidat.** Keine Zusage mit prüfbarem Datum (Beteiligungsfrist Sandymount 26.11. ist reiner Verfahrensschritt). Buch unverändert (15). Notiz in `wettbuch-notizen/dublin-belege/KANDIDATEN-DUBLIN-2026-10-18.md`.
 
 - 30.10. ~06:30 (Dauerlauf, Guard ZW-A): **leeds-2026-003 am Prüftag geprüft, offen mit Vermerk.** Die Meldung der Stadt vom 29.10. belegt nur die erste Nacht von Light Night (28.10.), die zweite ist dort nur angekündigt. Zweig `buch-leeds` `af01f56` lokal, nicht gepusht; ab Sa 31.10. nach einem Rückblick suchen.
