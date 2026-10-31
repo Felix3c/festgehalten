@@ -34,6 +34,12 @@ street charging points). Left out: the 2027 budget proposal (the City Council de
 ticket sales for the 2030 European Athletics Championships (an organiser's promise), and a
 Karamzininranta update that repeats the timing of helsinki-2026-015.
 
+Update 31 October 2026: the keeper read seven English releases of 28 to 30 October 2026. One
+sentence became helsinki-2026-022 (Pukinmäki Library opens in February 2027, earlier than the
+March–April of helsinki-2026-011, which stays as entered). Left out: repeats of old releases
+with a new save date, the tram start of 7 November (already helsinki-2026-002),
+and Finnish-only releases.
+
 Language: this edition is in English, and so are the quotations, exactly as published by the
 City in English. The question under each bet is the keeper's own wording and is the only thing
 that is resolved.

@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Helsinki book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-18."
   - am: 2026-10-18
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261018091117/https://www.hel.fi/en/news/new-temporary-premises-for-pukinmaki-library-and-youth-centre (saved and checked by the keeper on 2026-10-18, the copy contains the quote word for word). The keeper keeps a local copy of the source fetched on 2026-10-18 (not published), SHA-256 6f69ad2d6de72516742288bdeb969b87223adb495e3064537f6ea17957fe4a31."
+  - am: 2026-10-31
+    text: "The City release of 29.10.2026 “Pukinmäki Library to close for move” now gives February 2027 instead of March–April. This bet stays as entered; the earlier date is helsinki-2026-022."
 ---
 
 ## Context
