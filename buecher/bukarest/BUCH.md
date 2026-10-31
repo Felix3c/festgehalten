@@ -51,6 +51,13 @@ and Prelungirea Ghencea and the 12 unblocked projects, which already carry notes
 bukarest-2026-004, -005, -014, -015 and -018. No Wayback Machine copy yet for these two; each bet
 names the checksum of the keeper's local copy of the interface response.
 
+Third scan, 31 October 2026: the keeper read the 3 press releases dated 29 and 30 October 2026.
+Two bets came from one of them: bukarest-2026-023, the block at Str. Biserica Enei nr. 14, due at
+the start of January 2027, and bukarest-2026-024, the block at Str. Blănari nr. 14, due at the end
+of that month. Left out: the theatre programme, the Rahovei tram junction (“by 1 November”, too
+close to be a test), and the five other blocks “in 2027”, which have no date of their own. No
+Wayback Machine copy yet; each bet names the checksum of the keeper's local copy.
+
 Reading the dates: a fixed day counts to that day; a month to its last day (“până în decembrie
 2027”, by December 2027, is read in favour of the City as by 31 December); “la sfârșitul lunii”
 (at the end of the month) to its last day; “până la finalul anului” (by the end of the year), “anul
