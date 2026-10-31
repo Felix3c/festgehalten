@@ -27,6 +27,8 @@ vermerke:
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019220729/https://reykjavik.is/en/news/2026/construction-naustin-set-begin (saved and checked by the keeper; it contains the quote word for word). The Icelandic original https://reykjavik.is/frettir/2026/framkvaemdir-i-naustum-ad-hefjast was also saved (https://web.archive.org/web/20261019214502/https://reykjavik.is/frettir/2026/framkvaemdir-i-naustum-ad-hefjast); it contains the Icelandic sentence “Gert er ráð fyrir að framkvæmdum ljúki í desember.” word for word. The keeper keeps a local copy of the live English page fetched on 2026-10-19 (not published), SHA-256 9f8660efaa486ea992121cb8cc9fa4136815f464967d971c9af03c4f71930ba7."
   - am: 2026-10-20
     text: "Rights: short quote with source and link, under the quotation rule of the Icelandic Copyright Act (Höfundalög nr. 73/1972, Article 14); the keeper found no terms of use or licence for reykjavik.is; not checked by a lawyer. Not endorsed by Reykjavíkurborg."
+  - am: 2026-10-31
+    text: "City item of 29 October 2026 (https://reykjavik.is/frettir/2026/naustin-verda-vistgata-sem-opnar-i-desember, fetched on 2026-10-31, local copy not published, SHA-256 cb177692a30e7fa27e049d8c4508da2cf52b53e231929115bd52b1abe0b3c0ea) keeps the date: “Verkinu mun ljúka í desember og nú er verið að helluleggja.” (the work will end in December and paving is under way now). A repeated promise, not a result; the outcome stays open."
 ---
 
 ## Context
