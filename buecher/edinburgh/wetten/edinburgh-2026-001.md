@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Edinburgh book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-19."
   - am: 2026-10-19
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261019111229/https://www.edinburgh.gov.uk/news/article/14417/edinburgh-to-introduce-ten-firework-control-zones-for-2026 (saved and checked by the keeper on 2026-10-19; contains the quote word for word). The keeper keeps a local copy of the live page fetched on 2026-10-19 (not published), SHA-256 a5d7af10f7df339a60a15cd0b8ca1d9b69668ef3cb9dd426c801438a4944ea01."
+  - am: 2026-10-31
+    text: "New statement by the Council on 2026-10-30 (news release “Edinburgh residents urged to celebrate Bonfire Night safely”, https://www.edinburgh.gov.uk/news/article/14518/edinburgh-residents-urged-to-celebrate-bonfire-night-safely): “Firework Control Zones will be in place across 14 areas of the city from 30 October to 8 November”. Consistent with the bet; 14 areas instead of the ten in the title of the source, a number that is not part of the question. An announcement, not proof that the zones were in force: question, forecasts and `pruefung_am` unchanged. Quote checked word for word on 2026-10-31. No archive copy; the keeper keeps a local copy (not published), SHA-256 97063d4606d758bd04665a2b05b9155e9a2ffc03e8291121aa7a6ea31885a733."
 ---
 
 ## Context
