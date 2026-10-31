@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, Guard: new City news items since 28.10.2026, both new items of 28–29 October read in full); source read and quote checked word for word on 2026-10-30."
   - am: 2026-10-30
     text: "Archive: no Wayback copy (not attempted, as on 2026-10-25). The keeper keeps a local copy of the source fetched on 2026-10-30 (not published), SHA-256 d768e2989836872a8244a294a79d95d29d9e7b0741e0d83089513c50818a73cd."
+  - am: 2026-10-31
+    text: "The City Assembly approved the proposal at its session of 30 October 2026 with 17 votes in favour and 11 abstentions, according to 24.hu (Dienes Gábriel, citing MTI, 30 October 2026, https://24.hu/fn/gazdasag/2026/10/30/karacsony-budapest-regionalis-bkk/), which also calls this only the first step: laws, decrees and company steps are still needed. No City or register source read yet, so the question stays open. The keeper keeps a local copy (not published), SHA-256 6524758abd0d214b0bd720973bd9fb9e7b51d497611d153e13c91b3b9513d4e0."
 ---
 
 ## Context

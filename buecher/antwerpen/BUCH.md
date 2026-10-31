@@ -32,6 +32,8 @@ for sentences that name a future date together with a promise word (116 sentence
 candidate in its release. Twenty-one sentences from twenty-one releases were checked live and in
 the archive; twenty became bets. The date a statement was said is the date of publication of the
 release.
+On 31 October 2026 the keeper read the releases of 29 and 30 October and added one bet (026), with
+a local copy and checksum only.
 
 Weaknesses, said openly: most of the bets are about works on streets, squares and parks, because
 that is what the City's releases promise most often with a date. Three bets (antwerpen-2026-003,
