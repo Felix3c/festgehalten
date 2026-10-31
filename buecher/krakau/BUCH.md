@@ -42,6 +42,8 @@ its item. Twenty sentences from sixteen items were checked live and in the archi
 became bets. On 27 October 2026 the keeper read the 42 items published since, checked all twenty
 quotes live again (all still there word for word) and added three bets (021 to 023); for these
 there is no archive copy yet, only the keeper's local copy with its checksum.
+On 31 October 2026 the keeper read nine of the 19 items published since and added two bets (024 and
+025), again with a local copy and checksum only.
 
 Dates, said openly: the City updates its news items in place, under the same address, and sometimes
 rewrites them (an item first published on 28 September described the run-off of 11 October). Each
