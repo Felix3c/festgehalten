@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Budapest book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-18."
   - am: 2026-10-18
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261018131503/https://budapest.hu/hirek/2026/10/16/tarsadalmi-egyeztetesre-bocsatjuk-a-margitsziget-helyi-zajvedelmi-szabalyairol-szolo-rendelet-tervezetet (saved and checked by the keeper on 2026-10-18; the archive serves the page gzip-compressed, after unpacking it is byte-identical with the live page fetched on 2026-10-18 and contains the quote word for word). The keeper keeps a local copy of the source (not published), SHA-256 e9f77d408c8efa17138defbe57a002ac6821be9d782ce90aac524794ba457986."
+  - am: 2026-10-31
+    text: "Check on the due date (night after the session): the City's news item of 29 October 2026 lists the proposal as item 3 of the session of 30 October (“Javaslat a Margitsziget helyi zajvédelmi szabályairól szóló rendelet elfogadására”), so it did go to the named session (https://budapest.hu/hirek/2026/10/29/ezekkel-az-eloterjesztesekkel-es-temakkal-foglalkozik-a-2026-oktoberi-kozgyules). Being on the agenda is not adoption. No report of the vote is published yet, so the bet stays open; next check when the Assembly's decisions or a City news item appear. Local copy SHA-256 ed9b9c16431bfefd3d748d173bc8e194c9ffd348334aa031eb1dcf442d5c97ac (not published)."
 ---
 
 ## Context
