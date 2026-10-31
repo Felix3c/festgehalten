@@ -25,6 +25,8 @@ vermerke:
     text: "Entered by Claude for the keeper (Dauerlauf, task Brussels book; large cities first, Felix 17.10.2026); source read and quote checked word for word on 2026-10-18."
   - am: 2026-10-18
     text: "Archive: Wayback Machine copy https://web.archive.org/web/20261018174233/https://www.beliris.be/actualites/debut-des-travaux-dramenagement-de-la-cyclostrade-dans-le-parc-l28.html (saved and checked by the keeper on 2026-10-18; after unpacking it is byte-identical with the live page fetched on 2026-10-18 and contains the quote word for word). The keeper keeps a local copy of the source (not published), SHA-256 d9bf7ec1997898ed5ed498e8ea54dae17d9ca50c113864805ae62144b9f2e486."
+  - am: 2026-10-31
+    text: "Beliris wrote on 2026-10-29 (news item “Cyclostrade C223 du parc L28 : planning mis à jour”, https://www.beliris.be/actualites/parcl28-nov2026.html) that the works are late: “La fin du chantier est prévue pour le printemps 2027.” Local copy recherche/belege/2026-10-31-bruessel-parcl28-nov2026.html, SHA-256 a8a4b8467e318f6628e386d0dc8a7565798e41064dbc3c6a2e19ed3092c06b9f. The bet stays as it is and is checked on 2026-12-01; the new date is recorded in bruessel-2026-020."
 ---
 
 ## Context
